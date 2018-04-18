@@ -15,6 +15,7 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito+Sans" rel="stylesheet">
         <script src="js/jquery.mobile-1.4.5.min.js"></script>
         <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-database.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&amp;subset=latin-ext" rel="stylesheet">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -149,6 +150,7 @@
      <div style="width: 100%; margin: 20px auto 0px auto; text-align: center;">
     <a href="" data-enhance="false" data-role="button" class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect" id="signOut" style="padding: 0px 120px 0px 120px;"> Wyloguj </a>
   </div>
+  <div id="statuslog"></div>
 
   </div>
   </div>
@@ -164,26 +166,26 @@
   <div style="width: 40%; margin:0 auto; text-align: center">
       <form action="#">
   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-    <input class="mdl-textfield__input" type="text" id="sample3" data-role="none">
+    <input class="mdl-textfield__input" type="text" id="imejl2" data-role="none">
     <label class="mdl-textfield__label" for="sample3" style="text-transform: none">E-mail</label>
   </div>
 </form>
 <form action="#">
   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-    <input class="mdl-textfield__input" type="text" id="sample3" data-role="none">
+    <input class="mdl-textfield__input" type="password" id="pw2" data-role="none">
     <label class="mdl-textfield__label" for="sample3" style="text-transform: none">Password</label>
   </div>
 </form>
 <form action="#">
   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-    <input class="mdl-textfield__input" type="text" id="sample3" data-role="none">
+    <input class="mdl-textfield__input" type="text" id="imie" data-role="none">
     <label class="mdl-textfield__label" for="sample3" style="text-transform: none">Name</label>
   </div>
 </form>
 
 <form action="#">
   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-    <input class="mdl-textfield__input" type="text" id="sample3" data-role="none">
+    <input class="mdl-textfield__input" type="text" id="nazwisko" data-role="none">
     <label class="mdl-textfield__label" for="sample3" style="text-transform: none">Surname</label>
   </div>
 </form>
@@ -489,6 +491,7 @@
             messagingSenderId: "278088023798"
         });
         const provider = new firebase.auth.GoogleAuthProvider();
+        var database = firebase.database();
 
 document.querySelector('#loginButton').addEventListener('click', function () {
 
@@ -521,16 +524,7 @@ document.querySelector('#loginButton').addEventListener('click', function () {
     var user = firebase.auth().currentUser;
 var name, email, photoUrl, uid, emailVerified;
 
-if (user != null) {
-  name = user.displayName;
-  email = user.email;
-  photoUrl = user.photoURL;
-  emailVerified = user.emailVerified;
-  uid = user.uid;  // The user's ID, unique to the Firebase project. Do NOT use
-                   // this value to authenticate with your backend server, if
-                   // you have one. Use User.getToken() instead.
-                   alert(name + email + photoUrl + emailVerified + uid);
-}
+
   } else {
         // alert("spierdalaj dziubasku");
   }
@@ -540,9 +534,14 @@ if (user != null) {
 });
       });
 
+
+        //funkcja sluząca do rejestrowania użytkownika
 document.querySelector('#signUpButton').addEventListener('click', function () {
-          var login = document.getElementById('imejl').value;
-          var pw = document.getElementById('pw').value;
+          var login = document.getElementById('imejl2').value;
+          var pw = document.getElementById('pw2').value;
+          var imie = document.getElementById('imie').value;
+          var nazwisko = document.getElementById('nazwisko').value;
+           // var sex = document.getElementById('nazwisko').value;
 firebase.auth().createUserWithEmailAndPassword(login, pw).catch(function(error) {
   // Handle Errors here.
   var errorCode = error.code;
@@ -551,17 +550,55 @@ firebase.auth().createUserWithEmailAndPassword(login, pw).catch(function(error) 
   console.log(errorCode);
   // ...
 });
+// var user = firebase.auth().currentUser;
+// user.updateProfile({
+//   displayName: "Marian",
+//   photoURL: "http://printthatthing.xyz/images/chinese-black-dick-lovers-2594.jpg"
+// }).then(function() {
+//   // Update successful.
+// }).catch(function(error) {
+//   // An error happened.
+// });
+
+
+ firebase.auth().onAuthStateChanged(function(user) {
+          
+          
+          //   var user = firebase.auth().currentUser;
+  if (user) {
+    // User is signed in.
+      
+
 var user = firebase.auth().currentUser;
-user.updateProfile({
-  displayName: "Marian",
-  photoURL: "http://printthatthing.xyz/images/chinese-black-dick-lovers-2594.jpg"
-}).then(function() {
-  // Update successful.
+ var uid = user.uid;
+         firebase.database().ref('users/' + uid).set({
+    email : login,
+    name : imie,
+    secondname: nazwisko
+    
+   
+  });
+         firebase.auth().signOut().then(function() {
+  // Sign-out successful.
+
 }).catch(function(error) {
   // An error happened.
 });
-});
+    window.location.href = "#login";
 
+
+
+}
+  else {
+        
+
+         var errorCode = error.code;
+  var errorMessage = error.message;
+    alert(errorMessage);
+  console.log(errorCode);
+  }
+});
+});
 
 document.querySelector('#signOut').addEventListener('click', function () {
 firebase.auth().signOut().then(function() {
@@ -571,6 +608,22 @@ firebase.auth().signOut().then(function() {
   // An error happened.
 });
 });
+
+
+function status(){
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    // User is signed in.
+    var status = document.getElementById('statuslog');
+    status.innerHTML = "użytkownik zalogowany!"
+  } else {
+    // No user is signed in.
+    var status = document.getElementById('statuslog');
+    status.innerHTML = "użytkownik nie zalogowany!"
+  }
+});
+}
+status();
         // const hLogInfo = document.querySelector('#logInfo');
         // document.querySelector('#googleLogIn').addEventListener('click', function () {
         //     firebase.auth().signInWithPopup(provider).then(function (result) {
