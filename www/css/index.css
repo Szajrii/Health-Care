@@ -159,9 +159,9 @@ left: 0;
  
 .Home{
   text-shadow: none;
-  background-image: url("../img/bg1.png");
-     background-repeat: no-repeat;
-    background-size: 100% auto;
+  background-color: white;
+/*     background-repeat: no-repeat;
+    background-size: 100% auto;*/
 
 }
  
@@ -370,4 +370,8 @@ text-transform: none;
  .menu-element2{
   font-size: 13px;
   font-weight: bold;
+ }
+
+ .chuj{
+  background-color: transparent !important; border: 0;
  }
