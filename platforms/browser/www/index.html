@@ -126,25 +126,29 @@
 
 <form action="#" style="width: 80%; margin: 0 auto">
   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0;">
-    <input class="mdl-textfield__input " type="text" id="sample3" data-role="none" >
+    <input class="mdl-textfield__input " type="text" id="imejl" data-role="none" >
     <label class="mdl-textfield__label " for="sample3" style="text-transform: none">Login...</label>
   </div>
 
   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0;">
-    <input class="mdl-textfield__input " type="password" id="sample3" data-role="none" >
+    <input class="mdl-textfield__input " type="password" id="pw" data-role="none" >
     <label class="mdl-textfield__label " for="sample3" style="text-transform: none">Password...</label>
   </div>
 </form>
 
 
    <div style="width: 100%; margin: 20px auto 0px auto; text-align: center;">
-    <a href="#home" data-enhance="false" data-role="button" class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect" style="padding: 0px 120px 0px 120px;"> LOGIN </a>
+    <a href="" data-enhance="false" data-role="button" class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect" id="loginButton" style="padding: 0px 120px 0px 120px;"> LOGIN </a>
   </div>
 </div>
   <div>
   <div style="width: 100%; margin: 20px auto 0px auto; text-align: center; padding-top: 10px;">
-    <a href="#login" data-role="button" class="mdl-button mdl-js-button mdl-button--accent" style="padding: 0px 120px 0px 120px;"> SIGN  UP </a>
+    <a href="#login" data-role="button" class="mdl-button mdl-js-button mdl-button--accent" id="signUpButton"style="padding: 0px 120px 0px 120px;"> SIGN  UP </a>
     <div style="padding-top: 20px; text-transform: none; color: #21579a; ">Załóż darmowe konto</div>
+
+     <div style="width: 100%; margin: 20px auto 0px auto; text-align: center;">
+    <a href="" data-enhance="false" data-role="button" class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect" id="signOut" style="padding: 0px 120px 0px 120px;"> Wyloguj </a>
+  </div>
 
   </div>
   </div>
@@ -424,7 +428,7 @@
         </ul>
     </div>
 </div>
-<!-- <script>
+<script>
         // Initialize Firebase
         firebase.initializeApp({
             apiKey: "AIzaSyDNJfmduRSncwtKmw3wX69KWz36gNgWj9Y",
@@ -435,51 +439,133 @@
             messagingSenderId: "278088023798"
         });
         const provider = new firebase.auth.GoogleAuthProvider();
-        const hLogInfo = document.querySelector('#logInfo');
-        document.querySelector('#googleLogIn').addEventListener('click', function () {
-            firebase.auth().signInWithPopup(provider).then(function (result) {
-                // This gives you a Google Access Token. You can use it to access the Google API.
-                var token = result.credential.accessToken;
-                // The signed-in user info.
-                var user = result.user;
-                console.log(user);
-                // ...
-            }).catch(function (error) {
-                // Handle Errors here.
-                var errorCode = error.code;
-                var errorMessage = error.message;
-                // The email of the user's account used.
-                var email = error.email;
-                // The firebase.auth.AuthCredential type that was used.
-                var credential = error.credential;
-                console.log(error);
-                // ...
-            });
-        });
-        document.querySelector('#googleLogOut').addEventListener('click', function () {
-            firebase.auth().signOut().then(function () {
-                // Sign-out successful.
-            }).catch(function (error) {
-                // An error happened.
-            });
-        });
-        firebase.auth().onAuthStateChanged(function (user) {
-            if (user) {
-                hLogInfo.textContent = "Zalogowany";
-                console.log(user);
-            } else {
-                hLogInfo.textContent = "Niezalogowany";
-            }
-        });
-        document.querySelector('#googleCheck').addEventListener('click', function () {
-            var user = firebase.auth().currentUser;
-            if (user) {
-                alert("Jestem zalogowany, hy hy.");
-            } else {
-                alert("Nie jestem zalogowany, wut.");
-            }
-        });
-    </script> -->
+
+document.querySelector('#loginButton').addEventListener('click', function () {
+
+  firebase.auth().signOut().then(function() {
+  // Sign-out successful.
+ 
+}).catch(function(error) {
+  // An error happened.
+});
+          var login = document.getElementById('imejl').value;
+          var pw = document.getElementById('pw').value;
+        firebase.auth().signInWithEmailAndPassword(login, pw).catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  alert(errorMessage);
+  console.log(errorCode);
+  // ...
+});
+        firebase.auth().onAuthStateChanged(function(user) {
+          
+          // setTimeout(function(){
+          //   var user = firebase.auth().currentUser;
+  if (user) {
+    // User is signed in.
+        // alert("witaj dziubasku");
+        // var a = document.getElementById("loginButton");
+        // a.href = "#home";
+    window.location.href = "#home";
+    var user = firebase.auth().currentUser;
+var name, email, photoUrl, uid, emailVerified;
+
+if (user != null) {
+  name = user.displayName;
+  email = user.email;
+  photoUrl = user.photoURL;
+  emailVerified = user.emailVerified;
+  uid = user.uid;  // The user's ID, unique to the Firebase project. Do NOT use
+                   // this value to authenticate with your backend server, if
+                   // you have one. Use User.getToken() instead.
+                   alert(name + email + photoUrl + emailVerified + uid);
+}
+  } else {
+        // alert("spierdalaj dziubasku");
+  }
+
+
+// },3000);
+});
+      });
+
+document.querySelector('#signUpButton').addEventListener('click', function () {
+          var login = document.getElementById('imejl').value;
+          var pw = document.getElementById('pw').value;
+firebase.auth().createUserWithEmailAndPassword(login, pw).catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+    alert(errorMessage);
+  console.log(errorCode);
+  // ...
+});
+var user = firebase.auth().currentUser;
+user.updateProfile({
+  displayName: "Marian",
+  photoURL: "http://printthatthing.xyz/images/chinese-black-dick-lovers-2594.jpg"
+}).then(function() {
+  // Update successful.
+}).catch(function(error) {
+  // An error happened.
+});
+});
+
+
+document.querySelector('#signOut').addEventListener('click', function () {
+firebase.auth().signOut().then(function() {
+  // Sign-out successful.
+  alert("wylogowales sie poprawnie dziubasku");
+}).catch(function(error) {
+  // An error happened.
+});
+});
+        // const hLogInfo = document.querySelector('#logInfo');
+        // document.querySelector('#googleLogIn').addEventListener('click', function () {
+        //     firebase.auth().signInWithPopup(provider).then(function (result) {
+        //         // This gives you a Google Access Token. You can use it to access the Google API.
+        //         var token = result.credential.accessToken;
+        //         // The signed-in user info.
+        //         var user = result.user;
+        //         console.log(user);
+        //         // ...
+        //     }).catch(function (error) {
+        //         // Handle Errors here.
+        //         var errorCode = error.code;
+        //         var errorMessage = error.message;
+        //         // The email of the user's account used.
+        //         var email = error.email;
+        //         // The firebase.auth.AuthCredential type that was used.
+        //         var credential = error.credential;
+        //         console.log(error);
+        //         // ...
+        //     });
+        // });
+        // document.querySelector('#googleLogOut').addEventListener('click', function () {
+        //     firebase.auth().signOut().then(function () {
+        //         // Sign-out successful.
+        //     }).catch(function (error) {
+        //         // An error happened.
+        //     });
+        // });
+        // firebase.auth().onAuthStateChanged(function (user) {
+        //     if (user) {
+        //         hLogInfo.textContent = "Zalogowany";
+        //         console.log(user);
+        //     } else {
+        //         hLogInfo.textContent = "Niezalogowany";
+        //     }
+        // });
+        // document.querySelector('#googleCheck').addEventListener('click', function () {
+        //     var user = firebase.auth().currentUser;
+        //     if (user) {
+        //         alert("Jestem zalogowany, hy hy.");
+        //     } else {
+        //         alert("Nie jestem zalogowany, wut.");
+        //     }
+        // });
+    </script>
 </body>
  
 </html>
