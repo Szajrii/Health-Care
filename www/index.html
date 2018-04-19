@@ -22,6 +22,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
         <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue-light_blue.min.css" />
         <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+        <script src="js/pgb.js"></script>
      
         <link rel="stylesheet" href="/css/swiper.min.css">
         <title>Health Care - Twoja aplikacja medyczna</title>
@@ -33,7 +34,7 @@
 </style>
     </head>
  
-<body>
+<body onload="init()">
   <div data-role="page" class="Home">
      <div role="main" class="ui-content">
         <!-- <div class="main-text-container">
@@ -498,10 +499,7 @@
         const provider = new firebase.auth.GoogleAuthProvider();
         var database = firebase.database();
 
-document.addEventListener("deviceready", onDeviceReady, false);
-function onDeviceReady() {
-    window.open = cordova.InAppBrowser.open;
-}
+
 
 document.querySelector('#loginButton').addEventListener('click', function () {
 

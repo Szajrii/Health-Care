@@ -5,8 +5,9 @@ document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady() {
 	
     console.log(navigator.contacts);
-
+    window.open = cordova.InAppBrowser.open;
  }
+ 
 function deviceInfo() {
 
 	info =  'Hi, I am your smartphone :-)' + '\n' +
