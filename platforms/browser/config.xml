@@ -16,4 +16,10 @@
     <allow-intent href="sms:*" />
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
+    <universal-links>
+        <host name="https://t9x84.app.goo.gl/XktS" scheme="https" />
+        <host name="health-care-71096.firebaseapp.com" scheme="https">
+            <path url="/__/auth/callback" />
+        </host>
+    </universal-links>
 </widget>
