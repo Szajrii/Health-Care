@@ -158,6 +158,10 @@
     <a href="" data-enhance="false" data-role="button" class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect" id="googleLogIn" style="padding: 0px 120px 0px 120px;"> Google </a>
   </div>
 
+  <div style="width: 100%; margin: 20px auto 0px auto; text-align: center;">
+    <a href="" data-enhance="false" data-role="button" class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect" id="googleLogIn" style="padding: 0px 120px 0px 120px;" onclick="innap()"> Innap </a>
+  </div>
+
   </div>
   </div>
     </div>
@@ -653,6 +657,10 @@ status();
               console.log(errorCode);
             });
         });
+
+        function innap(){
+          cordova.InAppBrowser.open('http://apache.org', '_blank', 'location=yes');
+        }
         // document.querySelector('#googleLogOut').addEventListener('click', function () {
         //     firebase.auth().signOut().then(function () {
         //         // Sign-out successful.
