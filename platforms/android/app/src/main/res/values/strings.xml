@@ -3,4 +3,5 @@
     <string name="app_name">Health Care</string>
     <string name="launcher_name">@string/app_name</string>
     <string name="activity_name">@string/launcher_name</string>
+    <string name="google_app_id" templateMergeStrategy="preserve" translatable="false">1:278088023798:android:caa936a157adee52</string>
 </resources>

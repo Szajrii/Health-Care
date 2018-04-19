@@ -21,6 +21,7 @@ package io.cordova.hellocordova;
 
 import android.os.Bundle;
 import org.apache.cordova.*;
+import com.google.firebase.FirebaseApp;
 
 public class MainActivity extends CordovaActivity
 {
@@ -28,6 +29,7 @@ public class MainActivity extends CordovaActivity
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+        FirebaseApp.initializeApp(this);
 
         // enable Cordova apps to be started in the background
         Bundle extras = getIntent().getExtras();
