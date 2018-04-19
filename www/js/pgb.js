@@ -20,9 +20,9 @@ function onDeviceReady() {
   // Handle Errors here.
   var errorCode = error.code;
   var errorMessage = error.message;
-  alert(errorMessag); 
+  alert(errorMessage); 
   console.log(errorCode);
-  console.log(errorMessag);
+  console.log(errorMessage);
 });
  }
  
