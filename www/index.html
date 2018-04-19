@@ -159,7 +159,7 @@
   </div>
 
   <div style="width: 100%; margin: 20px auto 0px auto; text-align: center;">
-    <a href="" data-enhance="false" data-role="button" class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect" id="googleLogIn" style="padding: 0px 120px 0px 120px;" onclick="innap()"> Innap </a>
+    <a href="" data-enhance="false" data-role="button" class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect" id="googleLogIn" style="padding: 0px 120px 0px 120px;" onclick="showHelp('http://apache.org')"> Innap </a>
   </div>
 
   </div>
@@ -658,9 +658,69 @@ status();
             });
         });
 
-        function innap(){
-          cordova.InAppBrowser.open('http://apache.org', '_blank', 'location=yes');
-        }
+     
+
+function showHelp(url) {
+
+    var target = "_blank";
+
+    var options = "location=yes,hidden=yes";
+
+    inAppBrowserRef = cordova.InAppBrowser.open(url, target, options);
+
+    inAppBrowserRef.addEventListener('loadstart', loadStartCallBack);
+
+    inAppBrowserRef.addEventListener('loadstop', loadStopCallBack);
+
+    inAppBrowserRef.addEventListener('loaderror', loadErrorCallBack);
+
+}
+
+      function loadStartCallBack() {
+
+    $('#status-message').text("loading please wait ...");
+
+}
+
+function loadStopCallBack() {
+
+    if (inAppBrowserRef != undefined) {
+
+        inAppBrowserRef.insertCSS({ code: "body{font-size: 25px;" });
+
+        $('#status-message').text("");
+
+        inAppBrowserRef.show();
+    }
+
+}
+
+function loadErrorCallBack(params) {
+
+    $('#status-message').text("");
+
+    var scriptErrorMesssage =
+       "alert('Sorry we cannot open that page. Message from the server is : "
+       + params.message + "');"
+
+    inAppBrowserRef.executeScript({ code: scriptErrorMesssage }, executeScriptCallBack);
+
+    inAppBrowserRef.close();
+
+    inAppBrowserRef = undefined;
+
+}
+
+function executeScriptCallBack(params) {
+
+    if (params[0] == null) {
+
+        alert(params.message);
+           
+    }
+
+}
+  
         // document.querySelector('#googleLogOut').addEventListener('click', function () {
         //     firebase.auth().signOut().then(function () {
         //         // Sign-out successful.
