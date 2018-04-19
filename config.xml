@@ -8,6 +8,7 @@
     <author email="dev@cordova.apache.org" href="http://cordova.io">
         Apache Cordova Team
     </author>
+    <preference name="AndroidLaunchMode" value="singleTask" />
     <content src="index.html" />
     <plugin name="cordova-plugin-whitelist" spec="1" />
     <access origin="*" />
@@ -19,7 +20,7 @@
     <allow-intent href="geo:*" />
     <platform name="android">
         <allow-intent href="market:*" />
-        <preference name="AndroidLaunchMode" value="singleTask" />
+        
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
@@ -29,7 +30,7 @@
     <plugin name="cordova-universal-links-plugin" spec="^1.2.1" />
     <plugin name="cordova-plugin-inappbrowser" spec="^3.0.0" />
     <universal-links>
-        <!-- <host name="https://t9x84.app.goo.gl/XktS" scheme="https" /> -->
+        <host name="https://t9x84.app.goo.gl/XktS" scheme="https" />
         <host name="health-care-71096.firebaseapp.com" scheme="https">
             <path url="/__/auth/callback" />
         </host>
