@@ -7,17 +7,17 @@
     "files": {}
   },
   "installed_plugins": {
-    "cordova-plugin-buildinfo": {
-      "PACKAGE_NAME": "io.cordova.hellocordova"
-    },
-    "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "io.cordova.hellocordova"
-    },
     "cordova-plugin-browsertab": {
-      "PACKAGE_NAME": "io.cordova.hellocordova"
+      "PACKAGE_NAME": "health.care"
+    },
+    "cordova-plugin-buildinfo": {
+      "PACKAGE_NAME": "health.care"
     },
     "cordova-plugin-inappbrowser": {
-      "PACKAGE_NAME": "io.cordova.hellocordova"
+      "PACKAGE_NAME": "health.care"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "health.care"
     },
     "cordova-universal-links-plugin": {
       "PACKAGE_NAME": "health.care"

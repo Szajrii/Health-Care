@@ -34,6 +34,6 @@
         </host>
     </universal-links>
     <plugin name="cordova-plugin-browsertab" spec="^0.2.0" />
-    <engine name="android" spec="^7.0.0" />
     <plugin name="cordova-universal-links-plugin" spec="https://github.com/walteram/cordova-universal-links-plugin" />
+    <engine name="android" spec="^7.0.0" />
 </widget>
