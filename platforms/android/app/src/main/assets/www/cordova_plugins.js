@@ -9,14 +9,6 @@ module.exports = [
     ]
   },
   {
-    "id": "cordova-universal-links-plugin.universalLinks",
-    "file": "plugins/cordova-universal-links-plugin/www/universal_links.js",
-    "pluginId": "cordova-universal-links-plugin",
-    "clobbers": [
-      "universalLinks"
-    ]
-  },
-  {
     "id": "cordova-plugin-browsertab.BrowserTab",
     "file": "plugins/cordova-plugin-browsertab/www/browsertab.js",
     "pluginId": "cordova-plugin-browsertab",
@@ -32,6 +24,14 @@ module.exports = [
       "cordova.InAppBrowser.open",
       "window.open"
     ]
+  },
+  {
+    "id": "cordova-universal-links-plugin.universalLinks",
+    "file": "plugins/cordova-universal-links-plugin/www/universal_links.js",
+    "pluginId": "cordova-universal-links-plugin",
+    "clobbers": [
+      "universalLinks"
+    ]
   }
 ];
 module.exports.metadata = 
@@ -39,9 +39,9 @@ module.exports.metadata =
 {
   "cordova-plugin-buildinfo": "2.0.1",
   "cordova-plugin-whitelist": "1.3.3",
-  "cordova-universal-links-plugin": "1.2.1",
   "cordova-plugin-browsertab": "0.2.0",
-  "cordova-plugin-inappbrowser": "3.0.0"
+  "cordova-plugin-inappbrowser": "3.0.0",
+  "cordova-universal-links-plugin": "1.2.1"
 };
 // BOTTOM OF METADATA
 });

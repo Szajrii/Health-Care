@@ -15,14 +15,6 @@
     "is_top_level": true,
     "variables": {}
   },
-  "cordova-universal-links-plugin": {
-    "source": {
-      "type": "registry",
-      "id": "cordova-universal-links-plugin"
-    },
-    "is_top_level": true,
-    "variables": {}
-  },
   "cordova-plugin-browsertab": {
     "source": {
       "type": "registry",
@@ -43,6 +35,14 @@
     "source": {
       "type": "registry",
       "id": "cordova-plugin-inappbrowser@3.0.0"
+    },
+    "is_top_level": true,
+    "variables": {}
+  },
+  "cordova-universal-links-plugin": {
+    "source": {
+      "type": "registry",
+      "id": "https://github.com/walteram/cordova-universal-links-plugin"
     },
     "is_top_level": true,
     "variables": {}

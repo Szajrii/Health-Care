@@ -7,10 +7,6 @@
         <param name="android-package" value="org.apache.cordova.whitelist.WhitelistPlugin" />
         <param name="onload" value="true" />
     </feature>
-    <feature name="UniversalLinks">
-        <param name="android-package" value="com.nordnetab.cordova.ul.UniversalLinksPlugin" />
-        <param name="onload" value="true" />
-    </feature>
     <feature name="BrowserTab">
         <param name="android-package" value="com.google.cordova.plugin.browsertab.BrowserTab" />
     </feature>
@@ -42,4 +38,8 @@
     <allow-intent href="market:*" />
     <preference name="loglevel" value="DEBUG" />
     <preference name="AndroidLaunchMode" value="singleTask" />
+    <feature name="UniversalLinks">
+        <param name="android-package" value="com.nordnetab.cordova.ul.UniversalLinksPlugin" />
+        <param name="onload" value="true" />
+    </feature>
 </widget>

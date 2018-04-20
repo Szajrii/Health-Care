@@ -16,15 +16,15 @@
         "cordova-plugin-compat": "^1.2.0",
         "cordova-plugin-inappbrowser": "^3.0.0",
         "cordova-plugin-whitelist": "1",
-        "cordova-universal-links-plugin": "^1.2.1"
+        "cordova-universal-links-plugin": "git+https://github.com/walteram/cordova-universal-links-plugin.git"
     },
     "cordova": {
         "plugins": {
             "cordova-plugin-whitelist": {},
             "cordova-plugin-buildinfo": {},
-            "cordova-universal-links-plugin": {},
             "cordova-plugin-browsertab": {},
-            "cordova-plugin-inappbrowser": {}
+            "cordova-plugin-inappbrowser": {},
+            "cordova-universal-links-plugin": {}
         },
         "platforms": [
             "android"

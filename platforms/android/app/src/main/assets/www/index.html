@@ -650,8 +650,22 @@ status();
               // The signed-in user info.
               var user = result.user;
 
-              window.location.href = "#home";
-              // ...
+               setTimeout(function(){
+ firebase.auth().onAuthStateChanged(function(user) {
+          
+          // setTimeout(function(){
+          //   var user = firebase.auth().currentUser;
+         
+
+
+  if (user) {
+    // User is signed in.
+    window.location.href = "#home";
+  } else {
+        
+  }
+});
+         },6000);      // ...
             }).catch(function(error) {
               // Handle Errors here.
               var errorCode = error.code;
@@ -661,7 +675,7 @@ status();
               console.log(errorMessage);
             });
         });
-
+            
      
 
 // function showHelp(url) {
