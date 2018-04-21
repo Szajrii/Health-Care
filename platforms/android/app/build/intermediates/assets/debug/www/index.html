@@ -660,7 +660,7 @@ document.querySelector('#dodajbadania').addEventListener('click', function () {
           var limfocyty = document.getElementById('limfocyty1').value;
           var hemoglobina = document.getElementById('hemoglobina1').value;
           var hematokryt = document.getElementById('hematokryt1').value;
-          var text = "badanienr1";
+          var text  ;
           var today = new Date();
           var dd = today.getDate();
           var mm = today.getMonth()+1; //January is 0!
@@ -674,7 +674,20 @@ document.querySelector('#dodajbadania').addEventListener('click', function () {
           } 
           var today = dd+'/'+mm+'/'+yyyy;
           //var userRef = firebase.database().ref.child('users/' + uid);
-          firebase.database().ref('users/' + uid + '/Badania' + text).set({
+          var licznik;
+          var ref = firebase.database().ref('users/' + uid + '/Badania');
+          ref.once('value', function(snapshot){
+              licznik = snapshot.numChildren();
+            // var licznik2 = Number(licznik);
+               
+               if(licznik == 0){
+                text = "Badanie nr 1";
+               }else {
+                licznik = licznik + 1;
+                text = "Badanie nr " + licznik;
+               }
+
+ firebase.database().ref('users/' + uid + '/Badania/' + text).set({
          
     "Białe krwinki" : bialekrwinki,
     "Czerwone krwinki" : czerwonekrwinki,
@@ -685,7 +698,10 @@ document.querySelector('#dodajbadania').addEventListener('click', function () {
   
 
   });
- 
+
+          });
+         
+ // alert(licznik);
          }else{
           alert("Użytkownik Niezalogowany")
          }
