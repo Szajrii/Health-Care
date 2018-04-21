@@ -25,6 +25,17 @@
         <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
         <script src="cordova.js"></script>
         <script src="js/pgb.js"></script>
+        <script type="text/javascript">
+          
+          firebase.initializeApp({
+            apiKey: "AIzaSyDNJfmduRSncwtKmw3wX69KWz36gNgWj9Y",
+            authDomain: "health-care-71096.firebaseapp.com",
+            databaseURL: "https://health-care-71096.firebaseio.com",
+            projectId: "health-care-71096",
+            storageBucket: "",
+            messagingSenderId: "278088023798"
+        });
+        </script>
      
         <link rel="stylesheet" href="/css/swiper.min.css">
         <title>Health Care - Twoja aplikacja medyczna</title>
@@ -178,7 +189,7 @@
       <div class="secound-page-background">
           <div class="container-top-content"> 
           <div> <img src="img/Wojtek.png" alt="" width="40%" height="auto" style="margin-left: 30%;"></div>
-          <div class="name-user-top">Marcin Wojtas</div>
+          <div class="name-user-top" id="daneosobowe">Marcin Wojtas</div>
           </div>          
       </div>
       <div class="first-box">
@@ -451,37 +462,37 @@
       </div>
       <form action="#" style="text-align: center; padding-top: 20px;">
   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0;">
-    <input class="mdl-textfield__input " type="number" step="0.0001" min="0" id="c" data-role="none" >
+    <input class="mdl-textfield__input " type="number" step="0.0001" min="0" id="bialekrwinki1" data-role="none" >
     <label class="mdl-textfield__label " for="sample3" style="text-transform: none">WBC Białe krwinki</label>
   </div>
 <br>
   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0;">
-    <input class="mdl-textfield__input " type="number" id="b" step="0.0001" min="0" data-role="none" >
+    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0" data-role="none"  id="czerwonekrwinki1">
     <label class="mdl-textfield__label " for="sample3" style="text-transform: none">RBC Czerwone krwinki (erytrocyty)</label>
   </div><br>
 
   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0;">
-    <input class="mdl-textfield__input " type="number" id="a" step="0.0001" min="0" data-role="none" >
+    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0" data-role="none" id="hemoglobina1">
     <label class="mdl-textfield__label " for="sample3" style="text-transform: none">HGB(Hb) Hemoglobina</label>
   </div><br>
 
   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0;">
-    <input class="mdl-textfield__input " type="number" id="z" step="0.0001" min="0" data-role="none" >
+    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0" data-role="none" id="hematokryt1" >
     <label class="mdl-textfield__label " for="sample3" style="text-transform: none">HCT (Hematokryt)</label>
   </div><br>
 
   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0;">
-    <input class="mdl-textfield__input " type="number" id="y" step="0.0001" min="0" data-role="none" >
+    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0" data-role="none" id="limfocyty1">
     <label class="mdl-textfield__label " for="sample3" style="text-transform: none">LYM (limfocyty)</label>
   </div><br>
 
   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0;">
-    <input class="mdl-textfield__input " type="number" id="x" step="0.0001" min="0" data-role="none" >
+    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0" data-role="none" id="monocyty1" >
     <label class="mdl-textfield__label " for="sample3" style="text-transform: none">(MONO) Monocyty</label>
   </div><br>
 
    <div style="text-align: center; margin-top: 50px;">
-<a href="" data-role="button" class="mdl-button mdl-js-button mdl-button--accent" id="" style="padding: 0px 120px 0px 120px;"> Dodaj badanie </a>
+<a href="" data-role="button" class="mdl-button mdl-js-button mdl-button--accent" id="dodajbadania" style="padding: 0px 120px 0px 120px;"> Dodaj badanie </a>
 </div>
 </form>
       <div data-role="footer" data-position="fixed" style="padding: 10px 0 5px 0;">
@@ -499,18 +510,27 @@
 
 <script>
         // Initialize Firebase
-        firebase.initializeApp({
-            apiKey: "AIzaSyDNJfmduRSncwtKmw3wX69KWz36gNgWj9Y",
-            authDomain: "health-care-71096.firebaseapp.com",
-            databaseURL: "https://health-care-71096.firebaseio.com",
-            projectId: "health-care-71096",
-            storageBucket: "",
-            messagingSenderId: "278088023798"
-        });
+        
+
         const provider = new firebase.auth.GoogleAuthProvider();
         var database = firebase.database();
 
 
+// var secondaryAppConfig = {
+//    apiKey: "AIzaSyDNJfmduRSncwtKmw3wX69KWz36gNgWj9Y",
+//             authDomain: "health-care-71096.firebaseapp.com",
+//             databaseURL: "https://health-care-71096.firebaseio.com",
+//             storageBucket: ""
+// };
+
+
+// var secondary = firebase.initializeApp(secondaryAppConfig, "dodawanie badan");
+
+// // Retrieve the database.
+// var secondaryDatabase = secondary.database();
+
+
+// const db = firebase.firestore();
 
 document.querySelector('#loginButton').addEventListener('click', function () {
 
@@ -629,6 +649,50 @@ firebase.auth().signOut().then(function() {
 });
 
 
+
+document.querySelector('#dodajbadania').addEventListener('click', function () {
+ 
+          var user = firebase.auth().currentUser;
+          var uid = user.uid;
+ if(user){
+          var bialekrwinki = document.getElementById('bialekrwinki1').value;
+          var czerwonekrwinki = document.getElementById('czerwonekrwinki1').value;
+          var limfocyty = document.getElementById('limfocyty1').value;
+          var hemoglobina = document.getElementById('hemoglobina1').value;
+          var hematokryt = document.getElementById('hematokryt1').value;
+          var text = "badanienr1";
+          var today = new Date();
+          var dd = today.getDate();
+          var mm = today.getMonth()+1; //January is 0!
+
+          var yyyy = today.getFullYear();
+          if(dd<10){
+              dd='0'+dd;
+          } 
+          if(mm<10){
+              mm='0'+mm;
+          } 
+          var today = dd+'/'+mm+'/'+yyyy;
+          //var userRef = firebase.database().ref.child('users/' + uid);
+          firebase.database().ref('users/' + uid + '/Badania' + text).set({
+         
+    "Białe krwinki" : bialekrwinki,
+    "Czerwone krwinki" : czerwonekrwinki,
+    Limfocyty : limfocyty,
+    Hemoglobina : hemoglobina,
+    Hematokryt : hematokryt,
+    Data : today
+  
+
+  });
+ 
+         }else{
+          alert("Użytkownik Niezalogowany")
+         }
+});
+
+
+
 function status(){
 firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
@@ -642,7 +706,40 @@ firebase.auth().onAuthStateChanged(function(user) {
   }
 });
 }
+
+function daneOsobowe(){
+ 
+          var dane = document.getElementById('daneosobowe');
+          firebase.auth().onAuthStateChanged(function(user) {
+          var user = firebase.auth().currentUser;
+          var uid = user.uid;
+
+          if(user){
+
+
+        var data =   firebase.database().ref('users/' + uid).child("name");
+       data.on('value', function(snapshot){
+            dane.innerHTML = snapshot.val() + " ";
+         });
+
+       var data2 =   firebase.database().ref('users/' + uid).child("secondname");
+       data2.on('value', function(snapshot){
+        var text = document.createTextNode(snapshot.val());
+          dane.appendChild(text);
+         });
+
+    
+        }else {
+}
+        });
+  
+  
+}
+
 status();
+daneOsobowe();
+
+
 
 
         const hLogInfo = document.querySelector('#logInfo');
