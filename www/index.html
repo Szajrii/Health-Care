@@ -57,12 +57,14 @@
  
 <body onload="init()">
 
-
- <!--  <div data-role="page" class="Home"> -->
-  <div  class="Home">
-
-     <div role="main" class="ui-content view view-main">
-      <div data-name="home" class="page">
+  <div data-role="page" class="Home">
+  <!-- <div class="Home"> -->
+    
+<!-- <div role="main" class="ui-content view view-main"> -->
+  <div role="main" class="ui-content">
+    
+     <!--  <div data-name="home" class="page"> -->
+         <div data-name="home">
 
          <div class="page-content">
   		<div style="text-align: center; font-size: 28px; font-weight: 600; padding-top: 30px;color: #1fa4dc; ">Healt<span style="color: #8ed6ce">Care</span></div>
@@ -100,7 +102,9 @@
   </div>
 </div>
 
- 
+
+
+
  
    
   <div style="width: 100%; margin: 50px auto 0px auto; text-align: center;">
@@ -110,11 +114,12 @@
   </div>
  </div>
 </div>
-</div>
+ </div>
 </div>
 
 
-<div data-role="page" id="login" >
+
+<div data-role="page" id="login" data-page ="login" >
  
  
  
@@ -553,6 +558,9 @@
     </div>
 </div>
   </div>
+</div>
+
+
 
 
 <script>
@@ -930,7 +938,7 @@ daneOsobowe();
         // });
     </script>
     <script src="dist/js/framework7.js"></script>
-        <script src="js/my-app.js"></script>
+        <!-- <script src="js/my-app.js"></script> -->
 </body>
  
 </html>

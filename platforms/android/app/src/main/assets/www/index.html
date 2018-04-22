@@ -6,7 +6,8 @@
         
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width,  minimal-ui, viewport-fit=cover">
+         <meta name="apple-mobile-web-app-capable" content="yes">
         <link rel="stylesheet" href="/css/swiper.min.css">
         <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
         <script src="js/jquery-2.1.4.min.js"></script>
@@ -55,14 +56,24 @@
     </head>
  
 <body onload="init()">
-  <div data-role="page" class="Home " id="app">
+
+
+ <!--  <div data-role="page" class="Home"> -->
+  <div  class="Home">
+
      <div role="main" class="ui-content view view-main">
+      <div data-name="home" class="page">
+
+         <div class="page-content">
   		<div style="text-align: center; font-size: 28px; font-weight: 600; padding-top: 30px;color: #1fa4dc; ">Healt<span style="color: #8ed6ce">Care</span></div>
 
-     <div data-pagination='{"el": ".swiper-pagination"}' data-space-between="50" class="swiper-container swiper-init ">
-  <div class="swiper-pagination"></div>
-  <div class="swiper-wrapper" >
-    <div class="swiper-slide">
+
+
+
+     <div data-pagination='{"el": ".swiper-pagination"}' data-space-between="50" class="swiper-container swiper-init demo-swiper">
+        <div class="swiper-pagination"></div>
+        <div class="swiper-wrapper" >
+        <div class="swiper-slide">
 
          <div style="padding-top: 60px;">    
          <img src="img/11.png" alt="" style="display: block; margin-left: auto; margin-right: auto; width: auto;">
@@ -99,6 +110,9 @@
   </div>
  </div>
 </div>
+</div>
+</div>
+
 
 <div data-role="page" id="login" >
  
@@ -150,13 +164,13 @@
   
 
   
-
+</div>
 
   </div>
   </div>
     </div>
   </div>
-</div>
+
 
 <div data-role="page" id="signup">
      <div role="main" class="ui-content secound-page">

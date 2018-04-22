@@ -9,19 +9,20 @@ var app = new Framework7({
   panel: {
     swipe: 'left',
   },
+
+ 
   // Add default routes
-  routes: [
-    {
-      path: '/about/',
-      url: 'about.html',
-    },
-  ],
+
   init: true,
   initOnDeviceReady: true
   // ... other parameters
 });
 
 var mainView = app.views.create('.view-main');
+
+// var mainView = app.addView('.view-main', {
+//     domCache: true //enable inline pages
+// });
 // app.init();
 // var swiper = app.swiper.create('.swiper-container', {
 //     speed: 200,
@@ -35,3 +36,4 @@ var swiper = app.swiper.create('.swiper-container', {
       delay: 4000
     } 
   });
+
