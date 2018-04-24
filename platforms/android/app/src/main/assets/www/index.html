@@ -57,15 +57,17 @@
  
 <body onload="init()">
 
-
- <!--  <div data-role="page" class="Home"> -->
-  <div  class="Home">
-
-     <div role="main" class="ui-content view view-main">
-      <div data-name="home" class="page">
+  <div data-role="page" class="Home">
+  <!-- <div class="Home"> -->
+    
+<!-- <div role="main" class="ui-content view view-main"> -->
+  <div role="main" class="ui-content">
+    
+     <!--  <div data-name="home" class="page"> -->
+         <div data-name="home">
 
          <div class="page-content">
-  		<div style="text-align: center; font-size: 28px; font-weight: 600; padding-top: 30px;color: #1fa4dc; ">Healt<span style="color: #8ed6ce">Care</span></div>
+      <div style="text-align: center; font-size: 28px; font-weight: 600; padding-top: 30px;color: #1fa4dc; ">Healt<span style="color: #8ed6ce">Care</span></div>
 
 
 
@@ -100,28 +102,32 @@
   </div>
 </div>
 
- 
+
+
+
  
    
   <div style="width: 100%; margin: 50px auto 0px auto; text-align: center;">
     <a href="#login" data-role="none" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="color: white; width: 70%"> Login </a>
 
-    <a href="#signup" data-role="none" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" style="margin-top: 15px; background-color: #8ed6ce; color: white;  width: 70%;"> Create Account </a>
+    <a href="#signup" data-role="none" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" style="margin-top: 15px; background-color: #8ed6ce; color: white;  width: 70%;"> Create Account </a><br>
+
   </div>
  </div>
 </div>
-</div>
+ </div>
 </div>
 
 
-<div data-role="page" id="login" >
+
+<div data-role="page" id="login" data-page ="login" >
  
  
  
-    <div role="main" style="">
+    <div role="main" class="ui-content" style="">
 
  <div style="background-color: white; padding-bottom: 50px; border-bottom: 1px solid #dedede" >
- 	<div style="text-align: center; font-size: 28px; font-weight: 600; padding-top: 30px;color: #1fa4dc; ">LOGIN</div>
+  <div style="text-align: center; font-size: 28px; font-weight: 600; padding-top: 30px;color: #1fa4dc; ">LOGIN</div>
   <div style="padding-top: 70px;">
 <img src="img/22.png" alt="" style="display: block; margin-left: auto; margin-right: auto; width: 50%;">
 </div>
@@ -140,13 +146,13 @@
 
 
    <div style="width: 100%; margin: 20px auto 0px auto; text-align: center;">
-   	<div>
+    <div>
     <a href="" data-enhance="false" data-role="button" class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect" id="loginButton" style="width: 70%;"> LOGIN </a>
     <div style="width: 100%; margin: 20px auto 0px auto; text-align: center;">
-    <a href="" data-enhance="false" data-role="none" class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect" id="googleLogIn" style="width: 70%; background-color: #EA4335; color: white; text-shadow: none;"><i class="fab fa-google-plus-g" style="text-shadow: none;"></i></a>
+    <a href="" data-enhance="false" data-role="none" class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect" id="googleLogIn" style="width: 70%; background-color: #EA4335; color: white; text-shadow: none;"><i class="fab fa-google-plus-g" style="text-shadow: none; padding-top: 10px;"></i></a>
      </div>
      <div style="width: 100%; margin: 20px auto 0px auto; text-align: center;">
-    <a href="" data-enhance="false" data-role="none" class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect" id="googleLogIn1" style="width: 70%; background-color: #3b5998"> <i class="fab fa-facebook-square"  style="text-shadow: none; color: white;"></i></a>
+    <a href="" data-enhance="false" data-role="none" class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect" id="googleLogIn1" style="width: 70%; background-color: #3b5998"> <i class="fab fa-facebook-square"  style="text-shadow: none; color: white; padding-top: 10px;"></i></a>
 </div>
  
 
@@ -384,34 +390,18 @@
 -->
 <div class="header-element">
   <ul class="menu-container">
-          <li class="menu-element menu-element2"><p onclick="costam()">Ostatnie</p></li>
-          <li class="menu-element menu-element2"><p>Wszystkie</p></li>
-          <li class="menu-element menu-element2"><p>Prawidłowe</p></li>
-          <li class="menu-element menu-element2"><p>Nieprawidłowe</p></li>
+          <li class="menu-element menu-element2"><span onclick="costam()" style="font-weight: 600">Ostatnie</span></li>
+          <li class="menu-element menu-element2"><span>Wszystkie</span></li>
+          <li class="menu-element menu-element2"><span>Prawidłowe</span></li>
+          <li class="menu-element menu-element2"><span>Nieprawidłowe</span></li>
           
         </ul>
 
 </div>
 
-      <div class="first-box" id="rest-box">
-        <div class="rest-box-content">
-          <img src="img/icons/blood-green.png" alt="">
-        </div>
-        
-        <div class="container-element-box">
-          <div style="color: #3A4759; text-transform: none;">Badanie krwi</div> 
-          <span class="value-element-mark">wynik:
-           <span style="color:green;">prawidłowy</span>
-         </span>
-        </div>
+<div style="width: 80%; height: 1px; background-color: #CCCCCC; margin: 0 auto;"></div>
 
-       <div class="value-element-inner">
-        <div style="color: #E36E7B;">2018 Kwiecień 24
-         
-        </div>
-         <a href=""><span color ="blue" class="ahrefDecoration">Zobacz szczegóły</span></a>
-       </div>
-      </div>     
+      
  
 
 
@@ -428,10 +418,10 @@
         </div>
 
       <div class="value-element-inner">
-        <div style="color: #E36E7B;">2018 Kwiecień 03
+        <div style="color: #A6B1C0; text-transform: none; font-weight: 400; font-size: 11px;" id="asd">2018 Kwiecień 03
          
         </div>
-         <a href=""><span color ="blue" class="ahrefDecoration" >Zobacz szczegóły</span></a>
+         <a href=""><span color ="blue" class="ahrefDecoration" >zobacz szczegóły</span></a>
        </div>
       </div>       
  
@@ -450,10 +440,10 @@
         </div>
 
       <div class="value-element-inner">
-        <div style="color: #E36E7B;">2018 Luty 14
+        <div style="color: #A6B1C0; text-transform: none; font-weight: 400; font-size: 11px;">2018 Luty 14
          
         </div>
-         <a href=""><span color ="blue" class="ahrefDecoration">Zobacz szczegóły</span></a>
+         <a href=""><span color ="blue" class="ahrefDecoration">zobacz szczegóły</span></a>
        </div>
       </div>        
   
@@ -471,16 +461,18 @@
         </div>
 
       <div class="value-element-inner">
-        <div style="color: #E36E7B;">2017 Wrzesień 13
+        <div style="color: #A6B1C0; text-transform: none; font-weight: 400; font-size: 11px;">2017 Wrzesień 13
          
         </div>
-         <a href=""><span color ="blue" class="ahrefDecoration">Zobacz szczegóły</span></a>
+         <a href=""><span color ="blue" class="ahrefDecoration">zobacz szczegóły</span></a>
        </div>
       </div>      
- 
+      <div id="wyswietlanie">cos tam </div>
  <div class="container-buttons" id="add-button">  
  
  <a href="#dodajbadanie" class="ui-btn  button-home-primary" id="add-href" >Dodaj badanie</a>
+ <br>
+     <a href="" data-role="none" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" style="margin-top: 15px; background-color: #8ed6ce; color: white;  width: 70%;" onclick="pokazBadanie()"> Create Account </a>
 </div>
     </div>
  </div>
@@ -553,6 +545,9 @@
     </div>
 </div>
   </div>
+</div>
+
+
 
 
 <script>
@@ -708,9 +703,24 @@ document.querySelector('#dodajbadania').addEventListener('click', function () {
           var hemoglobina = document.getElementById('hemoglobina1').value;
           var hematokryt = document.getElementById('hematokryt1').value;
           var text  ;
+          var wynik;
           var today = new Date();
           var dd = today.getDate();
           var mm = today.getMonth()+1; //January is 0!
+
+          if( 
+
+            bialekrwinki < 4.1 || bialekrwinki > 11 ||
+            czerwonekrwinki < 4.1 || czerwonekrwinki > 11 ||
+            limfocyty < 4.1 || limfocyty > 11 ||
+            hemoglobina < 4.1 || hemoglobina > 11 ||
+            hematokryt < 4.1 || hematokryt > 11 
+
+            ){
+              wynik = "Nieprawidłowy"
+          }else{
+            wynik = "Prawidłowy"
+          }
 
           var yyyy = today.getFullYear();
           if(dd<10){
@@ -741,7 +751,8 @@ document.querySelector('#dodajbadania').addEventListener('click', function () {
     Limfocyty : limfocyty,
     Hemoglobina : hemoglobina,
     Hematokryt : hematokryt,
-    Data : today
+    Data : today,
+    Wynik: wynik
   
 
   });
@@ -842,7 +853,187 @@ daneOsobowe();
             });
         });
             
+     function pokazBadanie() {
+  var i = 1;
+  var j = 1;   
+  var g = 1;
+  
+          
+
+firebase.auth().onAuthStateChanged(function(user) {
+          var user = firebase.auth().currentUser;
+          var uid = user.uid;
+          var licznik;
+    if(user){
+      
+// function licznik (snapshot){
+//   var licznik;
+//   licznik = snapshot.numChildren();
+//   return licznik;
+// }
+
+var ref = firebase.database().ref('users/' + uid + '/Badania');
+          ref.once('value', function(snapshot){
+             licznik = snapshot.numChildren();
+          
+
+while(i <= licznik){
+
+  
+
+$( "#wyswietlanie" ).append( ' <div class="first-box" id="rest-box"> \
+        <div class="rest-box-content"> \
+          <img src="img/icons/blood-green.png" alt="" id="c"> \
+        </div> \
+        \
+        <div class="container-element-box">  \
+          <div style="color: #3A4759; text-transform: none;">Badanie krwi</div>  \
+          <span class="value-element-mark">wynik: \
+           <span style="color:green;" id="b">prawidłowy</span> \
+         </span> \
+        </div> \
+\
+      <div class="value-element-inner"> \
+        <div style="color: #A6B1C0; text-transform: none; font-weight: 400; font-size: 11px;" id ="asdd">2018 Luty 14 \
+          \
+        </div> \
+         <a href=""><span color ="blue" class="ahrefDecoration">zobacz szczegóły</span></a> \
+       </div> \
+      </div> ');
+
+
+                 var x = document.getElementById('asdd');
+            x.setAttribute("id", i);
+var badanie = "Badanie nr " + i;
+
+        firebase.database().ref('users/' + uid + '/Badania/' + badanie).child("Data").once('value').then(function(snapshot){
+         var y = document.getElementById(j);
+            data = snapshot.val();
+           y.innerHTML = snapshot.val();
+     alert(data);
+            // y.innerHTML = data ;
+           j = j + 1 ;
+             });
+
+  var z = document.getElementById('b');
+  var c = document.getElementById('c');
+  
+            z.setAttribute("id", "wynik " + i);
+            c.setAttribute("id", "kolor " + i);
+
+     firebase.database().ref('users/' + uid + '/Badania/' + badanie).child("Wynik").once('value').then(function(snapshot){
+         var r = document.getElementById("wynik " + g);
+         var t = document.getElementById("kolor " + g);
+           var kolor = snapshot.val();
+           if(kolor == "Prawidłowy"){
+            r.style.color = "green";
+            t.src = "img/icons/blood-green.png"
+           }else{
+            r.style.color = "red";
+            t.src = "img/icons/blood-red.png"
+           }
+           r.innerHTML = snapshot.val();
      
+            // y.innerHTML = data ;
+           g = g + 1 ;
+             });
+
+ i = i + 1;
+}
+// for(var a = 1; a <7; a++){
+//   var badanie = "Badanie nr " + a;
+//    var ref = firebase.database().ref('users/' + uid + '/Badania/' + badanie);
+//    ref.on('value',function(badaniaSnapshot){
+
+
+//     badaniaSnapshot.forEach(function(snapshot){
+  
+//      var obj = snapshot.Data;
+    
+    
+//      console.log(obj);
+    
+//              });
+//             });
+ // }
+
+ });
+}
+else{
+
+}
+  
+  });   
+
+     //      firebase.database().ref('users/' + uid + '/Badania/' + badanie).child("Data").once('value').then(function(snapshot){;
+     //     var y = document.getElementById(j);
+     //        data = snapshot.val();
+     //       y.innerHTML = snapshot.val();
+     // alert(data);
+     //        // y.innerHTML = data ;
+     //       j = j + 1 ;
+     //         });
+
+       
+           
+          
+
+
+
+// for (var i = 1; i < 7; i++) {
+
+//              firebase.database().ref('users/' + uid + '/Badania/' + badanie).child("Data").once('value').then(function(snapshot){
+//          var y = document.getElementById(j);
+//             data = snapshot.val();
+//            y.innerHTML = snapshot.val();
+//      alert(data);
+//             // y.innerHTML = data ;
+//            j = j + 1 ;
+//              });
+//            }
+        } 
+
+pokazBadanie();
+           
+     
+
+     // function pokazBadanie (){
+     //  $( "#wyswietlanie" ).append("<p>czekoladka</p>");
+     // }
+
+// pokazBadanie();
+function pokaz (){
+  var user = firebase.auth().currentUser;
+          var uid = user.uid;
+          var i = 1;
+          var j = 1;
+          while(i<7){
+// for (var i = 1; i < 7; i++) {
+
+
+
+     
+   var badanie = "Badanie nr " + i;
+          alert(badanie);
+          alert(user);
+          
+var data;
+
+
+          firebase.database().ref('users/' + uid + '/Badania/' + badanie).child("Data").once('value').then(function(snapshot){
+         var y = document.getElementById(j);
+            data = snapshot.val();
+           y.innerHTML = snapshot.val();
+     alert(data);
+            // y.innerHTML = data ;
+           j = j + 1 ;
+             });
+          
+           
+          i = i + 1 ;
+        }
+
+}
 
 // function showHelp(url) {
 
@@ -930,7 +1121,7 @@ daneOsobowe();
         // });
     </script>
     <script src="dist/js/framework7.js"></script>
-        <script src="js/my-app.js"></script>
+        <!-- <script src="js/my-app.js"></script> -->
 </body>
  
 </html>

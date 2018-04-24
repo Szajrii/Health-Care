@@ -364,14 +364,23 @@ text-transform: none;
 
  .header-element {
   margin-bottom: 5%;
-  margin-top: 5%;
+  margin-top: 10%;
  }
 
  .menu-element2{
-  font-size: 13px;
-  font-weight: bold;
+  font-size: 12px;
+  font-weight: 300;
+  padding: 0px 0.6em
  }
 
  .chuj{
   background-color: transparent !important; border: 0;
+ }
+
+ .ahrefDecoration{
+  text-decoration: none;
+  color: #47A0B5;
+  font-size: 11px;
+  text-transform: none;
+  font-weight: 400;
  }
