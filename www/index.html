@@ -214,12 +214,12 @@
 <div style=" text-align: left; margin-top: 20px;">
   <div style="text-transform: none; color: rgba(0,0,0,.26); font-size: 16px; font-size: 400;">Sex</div>
 <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1" style="margin-bottom: 15px; margin-top: 15px;">
-  <input type="radio" id="option-1" class="mdl-radio__button" name="options" value="1" checked data-role="none">
+  <input type="radio" id="option-1" class="mdl-radio__button" name="options" value="Kobieta" checked data-role="none">
   <span class="mdl-radio__label" style="text-transform: none">Kobieta</span>
 </label>
 
 <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
-  <input type="radio" id="option-2" class="mdl-radio__button" name="options" value="2" data-role="none">
+  <input type="radio" id="option-2" class="mdl-radio__button" name="options" value="Mężczyzna" data-role="none">
   <span class="mdl-radio__label" style="text-transform: none" >Mężczyzna</span>
 </label>
 </div>
@@ -241,7 +241,7 @@
       <div style="padding-bottom: 80px;">
       <div class="secound-page-background">
           <div class="container-top-content"> 
-          <div> <img src="img/Wojtek.png" alt="" width="40%" height="auto" style="margin-left: 30%;"></div>
+          <div> <img src="" alt="" width="40%" height="auto" style="margin-left: 30%;" id="zdjecieprofilowe"></div>
           <div class="name-user-top" id="daneosobowe">Marcin Wojtas</div>
           </div>          
       </div>
@@ -390,8 +390,8 @@
 -->
 <div class="header-element">
   <ul class="menu-container">
-          <li class="menu-element menu-element2"><span  style="font-weight: 600">Ostatnie</span></li>
-          <li class="menu-element menu-element2"><span id="wszystkiebadania">Wszystkie</span></li>
+          
+          <li class="menu-element menu-element2"><span id="wszystkiebadania" style="font-weight: 600;">Wszystkie</span></li>
           <li class="menu-element menu-element2"><span  id="prawidłowebadania">Prawidłowe</span></li>
           <li class="menu-element menu-element2"><span id="nieprawidłowebadania">Nieprawidłowe</span></li>
           
@@ -470,6 +470,104 @@
     <input class="mdl-textfield__input " type="number"  step="0.0001" min="0" data-role="none" id="monocyty1" >
     <label class="mdl-textfield__label " for="sample3" style="text-transform: none">(MONO) Monocyty</label>
   </div><br>
+
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0;">
+    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0" data-role="none"  id="mcv1">
+    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">MCV</label>
+  </div>
+ <br>
+  
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0;">
+    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0" data-role="none"  id="mch1">
+    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">MCH </label>
+  </div>
+ <br>
+  
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0;">
+    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0" data-role="none"  id="mchc1">
+    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">MCHC</label>
+  </div>
+ <br>
+  
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0;">
+    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0" data-role="none"  id="plytkikrwi1">
+    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">PLT (płytki krwi) </label>
+  </div>
+ <br>
+  
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0;">
+    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0" data-role="none"  id="ob1">
+    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">OB</label>
+  </div>
+ <br>
+  
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0;">
+    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0" data-role="none"  id="glukoza1">
+    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">Glukoza</label>
+  </div>
+ <br>
+  
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0;">
+    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0" data-role="none"  id="cholesterol1">
+    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">Cholesterol całkowity</label>
+  </div>
+ <br>
+  
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0;">
+    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0" data-role="none"  id="tsh1">
+    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">TSH</label>
+  </div>
+ <br>
+  
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0;">
+    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0" data-role="none"  id="alat1">
+    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">ALAT</label>
+  </div>
+ <br>
+  
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0;">
+    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0" data-role="none"  id="aspat1">
+    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">AspAT</label>
+  </div>
+ <br>
+  
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0;">
+    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0" data-role="none"  id="potas1">
+    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">Potas</label>
+  </div>
+ <br>
+ 
+   
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0;">
+    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0" data-role="none"  id="sod1">
+    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">Sód</label>
+  </div>
+ <br>
+   
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0;">
+    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0" data-role="none"  id="magnez1">
+    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">Magnez</label>
+  </div>
+ <br>
+   
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0;">
+    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0" data-role="none"  id="wapn1">
+    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">Wapń</label>
+  </div>
+ <br>
+   
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0;">
+    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0" data-role="none"  id="zelazo1">
+    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">Żelazo</label>
+  </div>
+ <br>
+ 
+   
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0;">
+    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0" data-role="none"  id="witaminab1">
+    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">Witamina B12</label>
+  </div>
+ <br>
 
    <div style="text-align: center; margin-top: 50px;">
 <a href="" data-role="button" class="mdl-button mdl-js-button mdl-button--accent" id="dodajbadania" style="padding: 0px 120px 0px 120px;"> Dodaj badanie </a>
@@ -563,6 +661,8 @@ document.querySelector('#signUpButton').addEventListener('click', function () {
           var pw = document.getElementById('pw2').value;
           var imie = document.getElementById('imie').value;
           var nazwisko = document.getElementById('nazwisko').value;
+          var radio1 = document.getElementById('option-1');
+          var radio2 = document.getElementById('option-2');
            // var sex = document.getElementById('nazwisko').value;
 firebase.auth().createUserWithEmailAndPassword(login, pw).catch(function(error) {
   // Handle Errors here.
@@ -590,13 +690,18 @@ firebase.auth().createUserWithEmailAndPassword(login, pw).catch(function(error) 
   if (user) {
     // User is signed in.
       
-
+if(radio1.checked){
+ plec = document.getElementById('option-1').value;
+}else{
+  plec = document.getElementById('option-2').value;
+}
 var user = firebase.auth().currentUser;
  var uid = user.uid;
          firebase.database().ref('users/' + uid).set({
     email : login,
     name : imie,
-    secondname: nazwisko
+    secondname: nazwisko,
+    płeć: plec
     
    
   });
@@ -640,9 +745,26 @@ document.querySelector('#dodajbadania').addEventListener('click', function () {
  if(user){
           var bialekrwinki = document.getElementById('bialekrwinki1').value;
           var czerwonekrwinki = document.getElementById('czerwonekrwinki1').value;
-          var limfocyty = document.getElementById('limfocyty1').value;
           var hemoglobina = document.getElementById('hemoglobina1').value;
           var hematokryt = document.getElementById('hematokryt1').value;
+          var limfocyty = document.getElementById('limfocyty1').value;
+          var monocyty = document.getElementById('monocyty1').value;
+          var mcv = document.getElementById('mcv1').value;
+          var mch = document.getElementById('mch1').value;
+          var mchc = document.getElementById('mchc1').value;
+          var plytkikrwi = document.getElementById('plytkikrwi1').value;
+          var ob = document.getElementById('ob1').value;
+          var glukoza = document.getElementById('glukoza1').value;
+          var cholesterol = document.getElementById('cholesterol1').value;
+          var tsh = document.getElementById('tsh1').value;
+          var alat = document.getElementById('alat1').value;
+          var aspat = document.getElementById('aspat1').value;
+          var potas = document.getElementById('potas1').value;
+          var sod = document.getElementById('sod1').value;
+          var magnez = document.getElementById('magnez1').value;
+          var wapn = document.getElementById('wapn1').value;
+          var zelazo = document.getElementById('zelazo1').value;
+          var witaminab = document.getElementById('witaminab1').value;
           var text  ;
           var wynik;
           var today = new Date();
@@ -652,10 +774,27 @@ document.querySelector('#dodajbadania').addEventListener('click', function () {
           if( 
 
             bialekrwinki < 4.1 || bialekrwinki > 11 ||
-            czerwonekrwinki < 4.1 || czerwonekrwinki > 11 ||
-            limfocyty < 4.1 || limfocyty > 11 ||
-            hemoglobina < 4.1 || hemoglobina > 11 ||
-            hematokryt < 4.1 || hematokryt > 11 
+            czerwonekrwinki < 4.5 || czerwonekrwinki > 6.5 ||
+            hemoglobina < 13.5 || hemoglobina > 18 ||
+            hematokryt < 40 || hematokryt > 51 ||
+            limfocyty < 20 || limfocyty > 45 ||
+            monocyty  < 0.3 || monocyty > 0.8 ||
+            mcv  < 80 || mcv > 97 ||
+            mch < 26 || mch > 32 ||
+            mchc < 31 || mchc > 36 ||
+            plytkikrwi < 140 || plytkikrwi > 400 ||
+            ob < 3 || ob > 8 ||
+            glukoza < 70 || glukoza > 99 ||
+            cholesterol < 170 || cholesterol > 199 ||
+            tsh < 0.32 || tsh > 5.0 ||
+            alat < 5 || alat > 40 ||
+            aspat < 8 || aspat > 45 ||
+            potas < 3.5 || potas > 5.5 ||
+            sod < 135 || sod > 145 ||
+            magnez < 0.65 || magnez > 1.2 ||
+            wapn < 2.25 || wapn > 2.75 ||
+            zelazo < 50 || zelazo > 158 ||
+            witaminab < 148 || witaminab > 740 
 
             ){
               wynik = "Nieprawidłowy"
@@ -689,9 +828,26 @@ document.querySelector('#dodajbadania').addEventListener('click', function () {
          
     "Białe krwinki" : bialekrwinki,
     "Czerwone krwinki" : czerwonekrwinki,
-    Limfocyty : limfocyty,
-    Hemoglobina : hemoglobina,
-    Hematokryt : hematokryt,
+    "Limfocyty" : limfocyty,
+    "Hemoglobina" : hemoglobina,
+    "Hematokryt" : hematokryt,
+    "Monocyty" : monocyty,
+    "MCV" : mcv,
+    "MCH" : mch,
+    "MCHC" : mchc,
+    "Płytki krwi" : plytkikrwi,
+    "OB" : ob,
+    "Glukoza" : glukoza,
+    "Cholesterol" : cholesterol,
+    "TSH" : tsh,
+    "ALAT" : alat,
+    "AspAT" : aspat,
+    "Potas" : potas,
+    "Sód" : sod,
+    "Magnez" : magnez,
+    "Wapń" : wapn,
+    "Żelazo" : zelazo,
+    "Witamina B12" : witaminab,
     Data : today,
     Wynik: wynik
   
@@ -741,6 +897,17 @@ function daneOsobowe(){
        data2.on('value', function(snapshot){
         var text = document.createTextNode(snapshot.val());
           dane.appendChild(text);
+         });
+
+        var data3 =   firebase.database().ref('users/' + uid).child("płeć");
+       data3.on('value', function(snapshot){
+        var plecstatus = snapshot.val();
+       var zdjecie = document.getElementById('zdjecieprofilowe');
+          if(plecstatus == "Kobieta"){
+              zdjecie.src = "img/female.png";
+          }else {
+            zdjecie.src = "img/male.png";
+          }
          });
 
     
@@ -997,15 +1164,24 @@ pokazBadanie();
 
     $(document).ready(function(){
     $("#prawidłowebadania").click(function(){
+        $("#prawidłowebadania").css("font-weight", 600);
+        $("#nieprawidłowebadania").css("font-weight", 300);
+        $("#wszystkiebadania").css("font-weight", 300);
         $(".Nieprawidłowa").hide();
         $(".Prawidłowa").show();
     });
     $("#nieprawidłowebadania").click(function(){
+        $("#prawidłowebadania").css("font-weight", 300);
+        $("#nieprawidłowebadania").css("font-weight",600);
+        $("#wszystkiebadania").css("font-weight", 300);
         $(".Prawidłowa").hide();
         $(".Nieprawidłowa").show();
     });
 
     $("#wszystkiebadania").click(function(){
+        $("#prawidłowebadania").css("font-weight", 300);
+        $("#nieprawidłowebadania").css("font-weight", 300);
+        $("#wszystkiebadania").css("font-weight", 600);
         $(".Prawidłowa").show();
         $(".Nieprawidłowa").show();
     });
