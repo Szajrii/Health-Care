@@ -233,7 +233,7 @@
 
 
 
-<div data-role="page" id="home">
+<div data-role="page" id="home" >
  
  
  
@@ -242,13 +242,13 @@
       <div class="secound-page-background">
           <div class="container-top-content"> 
           <div> <img src="" alt="" width="40%" height="auto" style="margin-left: 30%;" id="zdjecieprofilowe"></div>
-          <div class="name-user-top" id="daneosobowe">Marcin Wojtas</div>
+          <div class="name-user-top" id="daneosobowe"></div>
           </div>          
       </div>
       <div class="first-box">
         
         <div class="first-box-content">
-          <div class="first-box-date">24 kwiecień</div>
+          <div class="first-box-date" id="dataostatniegobadania">24 kwiecień</div>
           <div class="first-box-comment">Twoje ostatnie badanie</div>
         </div>
 
@@ -258,90 +258,7 @@
       </div> 
 
        <div id="homewyswietlanie"> </div>
-      <div class="first-box" id="rest-box">
-        <div class="rest-box-content">
-          <div class="circle"  style="">G</div>
-        </div>
-        
-        <div class="container-element-box">
-          <div style="color: #3A4759;">Glukoza</div> 
-          <span class="value-element-mark">wartość:
-           <span style="color:#E36E7B">powyżej normy</span>
-         </span>
-        </div>
-
-       <div class="value-element-inner">
-        <div style="color: #E36E7B;">115,00 
-          <span style="font-size: 10px; color: #47A0B5">(+12,00)</span>
-        </div>
-         <span class="element-date">Kwi. 24</span>
-       </div>
-      </div>     
- 
-
-
-      <div class="first-box" id="rest-box">
-        <div class="rest-box-content">
-          <div class="circle"  style="">G</div>
-        </div>
-        
-        <div class="container-element-box">
-          <div style="color: #3A4759;">Glukoza</div> 
-          <span class="value-element-mark">wartość:
-           <span style="color:#E36E7B">powyżej normy</span>
-         </span>
-        </div>
-
-       <div class="value-element-inner">
-        <div style="color: #E36E7B;">115,00 
-          <span style="font-size: 10px; color: #47A0B5">(+12,00)</span>
-        </div>
-         <span class="element-date">Kwi. 24</span>
-       </div>
-      </div>     
- 
- 
-
-      <div class="first-box" id="rest-box">
-        <div class="rest-box-content">
-          <div class="circle"  style="">G</div>
-        </div>
-        
-        <div class="container-element-box">
-          <div style="color: #3A4759;">Glukoza</div> 
-          <span class="value-element-mark">wartość:
-           <span style="color:#E36E7B">powyżej normy</span>
-         </span>
-        </div>
-
-       <div class="value-element-inner">
-        <div style="color: #E36E7B;">115,00 
-          <span style="font-size: 10px; color: #47A0B5">(+12,00)</span>
-        </div>
-         <span class="element-date">Kwi. 24</span>
-       </div>
-      </div>     
-  
- 
-      <div class="first-box" id="rest-box">
-        <div class="rest-box-content">
-          <div class="circle"  style="">G</div>
-        </div>
-        
-        <div class="container-element-box">
-          <div style="color: #3A4759;">Glukoza</div> 
-          <span class="value-element-mark">wartość:
-           <span style="color:#E36E7B">powyżej normy</span>
-         </span>
-        </div>
-
-       <div class="value-element-inner">
-        <div style="color: #E36E7B;">115,00 
-          <span style="font-size: 10px; color: #47A0B5">(+12,00)</span>
-        </div>
-         <span class="element-date">Kwi. 24</span>
-       </div>
-      </div>     
+   
  
 
  
@@ -412,8 +329,7 @@
  <div class="container-buttons" id="add-button">  
  
  <a href="#dodajbadanie" class="ui-btn  button-home-primary" id="add-href" >Dodaj badanie</a>
- <br>
-     <a href="" data-role="none" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" style="margin-top: 15px; background-color: #8ed6ce; color: white;  width: 70%;" onclick="pokazBadanie()"> Create Account </a>
+ 
 </div>
     </div>
  </div>
@@ -596,7 +512,6 @@
         const provider = new firebase.auth.GoogleAuthProvider();
         var database = firebase.database();
 
-
 // var secondaryAppConfig = {
 //    apiKey: "AIzaSyDNJfmduRSncwtKmw3wX69KWz36gNgWj9Y",
 //             authDomain: "health-care-71096.firebaseapp.com",
@@ -643,6 +558,7 @@ document.querySelector('#loginButton').addEventListener('click', function () {
     window.location.href = "#home";
     var user = firebase.auth().currentUser;
 var name, email, photoUrl, uid, emailVerified;
+self.location.reload();
 
 
   } else {
@@ -862,6 +778,8 @@ document.querySelector('#dodajbadania').addEventListener('click', function () {
          }else{
           alert("Użytkownik Niezalogowany")
          }
+         window.location.href = "#home";
+         self.location.reload();
 });
 
 
@@ -1180,6 +1098,7 @@ console.log(addZeroes(5));
           var rozneodnormy = [];
           var przekroczonawartosc = [];
           var obliczenia ;
+          var data;
           var bialekrwinki ;
           var czerwonekrwinki ;
           var hemoglobina ;
@@ -1598,11 +1517,19 @@ console.log(addZeroes(5));
             }else{}
 
             // licznik = negatywne.length;
+
+
+            var ref2 = firebase.database().ref('users/' + uid + '/Badania/' + tablica[tablica.length - 1]).child("Data");
+          ref2.on('value', function(snapshot4){
+
+              data = snapshot4.val();
+          });
             
+console.log(licznik);
 
-            for(var i=1; i < licznik; i ++){
+            for(var i=1; i <= 4; i ++){
 
-
+var random = Math.floor((Math.random() * licznik) + 1);
 
 $( "#homewyswietlanie" ).append( '  <div class="first-box" id="rest-box"> \
         <div class="rest-box-content"> \
@@ -1620,7 +1547,7 @@ $( "#homewyswietlanie" ).append( '  <div class="first-box" id="rest-box"> \
         <div style="color: #E36E7B;" ><span id="wartoscwskaznika">115,00</span>  \
           <span style="font-size: 10px; color: #47A0B5" id="przekroczonawartosc">(+12,00)</span> \
         </div> \
-         <span class="element-date">Kwi. 24</span> \
+         <span class="element-date" id="databadania">Kwi. 24</span> \
        </div> \
       </div>   ');
 
@@ -1629,16 +1556,22 @@ $( "#homewyswietlanie" ).append( '  <div class="first-box" id="rest-box"> \
                       var idnorma = document.getElementById('rozneodnormy')
                       var idznak = document.getElementById('znakwskaznika');
                       var idprzekroczonawartosc = document.getElementById('przekroczonawartosc')
+                      var iddatabadania = document.getElementById('databadania');
+                      var idostatniegobadania = document.getElementById('dataostatniegobadania');
+                      var splitdata = data.split(" ");
                       id.setAttribute('id', "rodzaj" + i); 
-                      id.innerHTML = negatywne[i-1];
+                      id.innerHTML = negatywne[random];
                       idwartosc.setAttribute('id', 'wartoscwskaznika ' + i);
-                      idwartosc.innerHTML = twojewartosci[i-1];
+                      idwartosc.innerHTML = twojewartosci[random];
                       idnorma.setAttribute('id', 'rozneodnormy ' + i);
-                      idnorma.innerHTML = rozneodnormy[i-1];
+                      idnorma.innerHTML = rozneodnormy[random];
                       idznak.setAttribute('id', 'znakwskaznika ' + i);
-                      idznak.innerHTML = negatywne[i-1].charAt(0);
+                      idznak.innerHTML = negatywne[random].charAt(0);
                       idprzekroczonawartosc.setAttribute('id', 'przekroczonawartosc ' + i);
-                      idprzekroczonawartosc.innerHTML = przekroczonawartosc[i-1];
+                      idprzekroczonawartosc.innerHTML = przekroczonawartosc[random];
+                      iddatabadania.setAttribute('id', "databadania " + i);
+                      iddatabadania.innerHTML = data;
+                      idostatniegobadania.innerHTML = splitdata[0]  + " " + splitdata[1] ;
                       
 
             }
@@ -1666,6 +1599,47 @@ $( "#homewyswietlanie" ).append( '  <div class="first-box" id="rest-box"> \
      }
 
      homePage();
+// var xhttp = new XMLHttpRequest();
+// xhttp.onreadystatechange = function() {
+//     if (this.readyState == 4 && this.status == 200) {
+//        // Typical action to be performed when the document is ready:
+//        document.getElementById("dataostatniegobadania").innerHTML = xhttp.responseText;
+//     }
+// };
+// xhttp.open("GET", "https://health-care-71096.firebaseio.com/users/wwToFRQwtLMQPoDDcsluiJ6GZyY2/Badania/1525078442491/Data.json", true);
+// xhttp.send();
+
+//      function getData() {
+//   var xhttp = new XMLHttpRequest();
+//   var targetUrl = "https://health-care-71096.firebaseio.com/users.json";
+  
+//   xhttp.onreadystatechange = function() {
+//     if (this.readyState == 4 && this.status == 200) {
+//       console.log(xhttp.responseText);
+      
+//     }else {
+//       console.log(xhttp.responseText);
+//   }
+  
+//   xhttp.open("GET", targetUrl, true);
+//   xhttp.send();
+// }
+// }
+// getData();
+//       function rvOffices() {
+//   $.ajax({
+//     url: 'https://health-care-71096.firebaseio.com/users.json',
+//     type: 'GET',
+//     dataType: 'text',
+//     success: function(data) {
+//       var json_result = JSON.parse(data);
+//       console.log(json_result);
+     
+//     }
+//   });
+// }
+// rvOffices();
+
 
     // function wyswietlPrawidlowe () {
       

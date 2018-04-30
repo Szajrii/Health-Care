@@ -214,12 +214,12 @@
 <div style=" text-align: left; margin-top: 20px;">
   <div style="text-transform: none; color: rgba(0,0,0,.26); font-size: 16px; font-size: 400;">Sex</div>
 <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1" style="margin-bottom: 15px; margin-top: 15px;">
-  <input type="radio" id="option-1" class="mdl-radio__button" name="options" value="1" checked data-role="none">
+  <input type="radio" id="option-1" class="mdl-radio__button" name="options" value="Kobieta" checked data-role="none">
   <span class="mdl-radio__label" style="text-transform: none">Kobieta</span>
 </label>
 
 <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
-  <input type="radio" id="option-2" class="mdl-radio__button" name="options" value="2" data-role="none">
+  <input type="radio" id="option-2" class="mdl-radio__button" name="options" value="Mężczyzna" data-role="none">
   <span class="mdl-radio__label" style="text-transform: none" >Mężczyzna</span>
 </label>
 </div>
@@ -241,7 +241,7 @@
       <div style="padding-bottom: 80px;">
       <div class="secound-page-background">
           <div class="container-top-content"> 
-          <div> <img src="img/Wojtek.png" alt="" width="40%" height="auto" style="margin-left: 30%;"></div>
+          <div> <img src="" alt="" width="40%" height="auto" style="margin-left: 30%;" id="zdjecieprofilowe"></div>
           <div class="name-user-top" id="daneosobowe">Marcin Wojtas</div>
           </div>          
       </div>
@@ -257,7 +257,7 @@
         </div> 
       </div> 
 
-
+       <div id="homewyswietlanie"> </div>
       <div class="first-box" id="rest-box">
         <div class="rest-box-content">
           <div class="circle"  style="">G</div>
@@ -390,10 +390,10 @@
 -->
 <div class="header-element">
   <ul class="menu-container">
-          <li class="menu-element menu-element2"><span onclick="costam()" style="font-weight: 600">Ostatnie</span></li>
-          <li class="menu-element menu-element2"><span>Wszystkie</span></li>
-          <li class="menu-element menu-element2"><span>Prawidłowe</span></li>
-          <li class="menu-element menu-element2"><span>Nieprawidłowe</span></li>
+          
+          <li class="menu-element menu-element2"><span id="wszystkiebadania" style="font-weight: 600;">Wszystkie</span></li>
+          <li class="menu-element menu-element2"><span  id="prawidłowebadania">Prawidłowe</span></li>
+          <li class="menu-element menu-element2"><span id="nieprawidłowebadania">Nieprawidłowe</span></li>
           
         </ul>
 
@@ -402,72 +402,13 @@
 <div style="width: 80%; height: 1px; background-color: #CCCCCC; margin: 0 auto;"></div>
 
       
- 
-
-
-      <div class="first-box" id="rest-box">
-        <div class="rest-box-content">
-          <img src="img/icons/blood-red.png" alt="">
-        </div>
+     
+      <div id="wyswietlanie">
         
-        <div class="container-element-box">
-          <div style="color: #3A4759; text-transform: none;">Badanie krwi</div> 
-          <span class="value-element-mark">wynik:
-           <span style="color:#E36E7B">nieprawidłowy</span>
-         </span>
-        </div>
 
-      <div class="value-element-inner">
-        <div style="color: #A6B1C0; text-transform: none; font-weight: 400; font-size: 11px;" id="asd">2018 Kwiecień 03
-         
-        </div>
-         <a href=""><span color ="blue" class="ahrefDecoration" >zobacz szczegóły</span></a>
-       </div>
-      </div>       
- 
- 
+      </div>
 
-      <div class="first-box" id="rest-box">
-        <div class="rest-box-content">
-          <img src="img/icons/blood-green.png" alt="">
-        </div>
-        
-        <div class="container-element-box">
-          <div style="color: #3A4759; text-transform: none;">Badanie krwi</div> 
-          <span class="value-element-mark">wynik:
-           <span style="color:green;">prawidłowy</span>
-         </span>
-        </div>
 
-      <div class="value-element-inner">
-        <div style="color: #A6B1C0; text-transform: none; font-weight: 400; font-size: 11px;">2018 Luty 14
-         
-        </div>
-         <a href=""><span color ="blue" class="ahrefDecoration">zobacz szczegóły</span></a>
-       </div>
-      </div>        
-  
- 
-      <div class="first-box" id="rest-box">
-        <div class="rest-box-content">
-          <img src="img/icons/blood-red.png" alt="">
-        </div>
-        
-        <div class="container-element-box">
-          <div style="color: #3A4759; text-transform: none;">Badanie krwi</div> 
-          <span class="value-element-mark">wynik:
-           <span style="color:#E36E7B">nieprawidłowy</span>
-         </span>
-        </div>
-
-      <div class="value-element-inner">
-        <div style="color: #A6B1C0; text-transform: none; font-weight: 400; font-size: 11px;">2017 Wrzesień 13
-         
-        </div>
-         <a href=""><span color ="blue" class="ahrefDecoration">zobacz szczegóły</span></a>
-       </div>
-      </div>      
-      <div id="wyswietlanie">cos tam </div>
  <div class="container-buttons" id="add-button">  
  
  <a href="#dodajbadanie" class="ui-btn  button-home-primary" id="add-href" >Dodaj badanie</a>
@@ -529,6 +470,104 @@
     <input class="mdl-textfield__input " type="number"  step="0.0001" min="0" data-role="none" id="monocyty1" >
     <label class="mdl-textfield__label " for="sample3" style="text-transform: none">(MONO) Monocyty</label>
   </div><br>
+
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0;">
+    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0" data-role="none"  id="mcv1">
+    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">MCV</label>
+  </div>
+ <br>
+  
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0;">
+    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0" data-role="none"  id="mch1">
+    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">MCH </label>
+  </div>
+ <br>
+  
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0;">
+    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0" data-role="none"  id="mchc1">
+    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">MCHC</label>
+  </div>
+ <br>
+  
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0;">
+    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0" data-role="none"  id="plytkikrwi1">
+    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">PLT (płytki krwi) </label>
+  </div>
+ <br>
+  
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0;">
+    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0" data-role="none"  id="ob1">
+    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">OB</label>
+  </div>
+ <br>
+  
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0;">
+    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0" data-role="none"  id="glukoza1">
+    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">Glukoza</label>
+  </div>
+ <br>
+  
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0;">
+    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0" data-role="none"  id="cholesterol1">
+    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">Cholesterol całkowity</label>
+  </div>
+ <br>
+  
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0;">
+    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0" data-role="none"  id="tsh1">
+    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">TSH</label>
+  </div>
+ <br>
+  
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0;">
+    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0" data-role="none"  id="alat1">
+    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">ALAT</label>
+  </div>
+ <br>
+  
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0;">
+    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0" data-role="none"  id="aspat1">
+    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">AspAT</label>
+  </div>
+ <br>
+  
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0;">
+    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0" data-role="none"  id="potas1">
+    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">Potas</label>
+  </div>
+ <br>
+ 
+   
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0;">
+    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0" data-role="none"  id="sod1">
+    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">Sód</label>
+  </div>
+ <br>
+   
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0;">
+    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0" data-role="none"  id="magnez1">
+    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">Magnez</label>
+  </div>
+ <br>
+   
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0;">
+    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0" data-role="none"  id="wapn1">
+    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">Wapń</label>
+  </div>
+ <br>
+   
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0;">
+    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0" data-role="none"  id="zelazo1">
+    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">Żelazo</label>
+  </div>
+ <br>
+ 
+   
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0;">
+    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0" data-role="none"  id="witaminab1">
+    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">Witamina B12</label>
+  </div>
+ <br>
 
    <div style="text-align: center; margin-top: 50px;">
 <a href="" data-role="button" class="mdl-button mdl-js-button mdl-button--accent" id="dodajbadania" style="padding: 0px 120px 0px 120px;"> Dodaj badanie </a>
@@ -622,6 +661,8 @@ document.querySelector('#signUpButton').addEventListener('click', function () {
           var pw = document.getElementById('pw2').value;
           var imie = document.getElementById('imie').value;
           var nazwisko = document.getElementById('nazwisko').value;
+          var radio1 = document.getElementById('option-1');
+          var radio2 = document.getElementById('option-2');
            // var sex = document.getElementById('nazwisko').value;
 firebase.auth().createUserWithEmailAndPassword(login, pw).catch(function(error) {
   // Handle Errors here.
@@ -649,13 +690,18 @@ firebase.auth().createUserWithEmailAndPassword(login, pw).catch(function(error) 
   if (user) {
     // User is signed in.
       
-
+if(radio1.checked){
+ plec = document.getElementById('option-1').value;
+}else{
+  plec = document.getElementById('option-2').value;
+}
 var user = firebase.auth().currentUser;
  var uid = user.uid;
          firebase.database().ref('users/' + uid).set({
     email : login,
     name : imie,
-    secondname: nazwisko
+    secondname: nazwisko,
+    płeć: plec
     
    
   });
@@ -699,22 +745,59 @@ document.querySelector('#dodajbadania').addEventListener('click', function () {
  if(user){
           var bialekrwinki = document.getElementById('bialekrwinki1').value;
           var czerwonekrwinki = document.getElementById('czerwonekrwinki1').value;
-          var limfocyty = document.getElementById('limfocyty1').value;
           var hemoglobina = document.getElementById('hemoglobina1').value;
           var hematokryt = document.getElementById('hematokryt1').value;
-          var text  ;
+          var limfocyty = document.getElementById('limfocyty1').value;
+          var monocyty = document.getElementById('monocyty1').value;
+          var mcv = document.getElementById('mcv1').value;
+          var mch = document.getElementById('mch1').value;
+          var mchc = document.getElementById('mchc1').value;
+          var plytkikrwi = document.getElementById('plytkikrwi1').value;
+          var ob = document.getElementById('ob1').value;
+          var glukoza = document.getElementById('glukoza1').value;
+          var cholesterol = document.getElementById('cholesterol1').value;
+          var tsh = document.getElementById('tsh1').value;
+          var alat = document.getElementById('alat1').value;
+          var aspat = document.getElementById('aspat1').value;
+          var potas = document.getElementById('potas1').value;
+          var sod = document.getElementById('sod1').value;
+          var magnez = document.getElementById('magnez1').value;
+          var wapn = document.getElementById('wapn1').value;
+          var zelazo = document.getElementById('zelazo1').value;
+          var witaminab = document.getElementById('witaminab1').value;
+          var msec = new Date();
+          var text;
+          var text2 = msec.getTime();
           var wynik;
           var today = new Date();
           var dd = today.getDate();
-          var mm = today.getMonth()+1; //January is 0!
+          var mm = today.getMonth(); //January is 0!
+          var mm2 = ["Styczeń", "Luty", "Marzec", "Kwiecień", "Maj", "Czerwiec", "Lipiec", "Sierpień", "Wrzesień", "Październik", "Listopad", "Grudzień"];
 
           if( 
 
             bialekrwinki < 4.1 || bialekrwinki > 11 ||
-            czerwonekrwinki < 4.1 || czerwonekrwinki > 11 ||
-            limfocyty < 4.1 || limfocyty > 11 ||
-            hemoglobina < 4.1 || hemoglobina > 11 ||
-            hematokryt < 4.1 || hematokryt > 11 
+            czerwonekrwinki < 4.5 || czerwonekrwinki > 6.5 ||
+            hemoglobina < 13.5 || hemoglobina > 18 ||
+            hematokryt < 40 || hematokryt > 51 ||
+            limfocyty < 20 || limfocyty > 45 ||
+            monocyty  < 0.3 || monocyty > 0.8 ||
+            mcv  < 80 || mcv > 97 ||
+            mch < 26 || mch > 32 ||
+            mchc < 31 || mchc > 36 ||
+            plytkikrwi < 140 || plytkikrwi > 400 ||
+            ob < 3 || ob > 8 ||
+            glukoza < 70 || glukoza > 99 ||
+            cholesterol < 170 || cholesterol > 199 ||
+            tsh < 0.32 || tsh > 5.0 ||
+            alat < 5 || alat > 40 ||
+            aspat < 8 || aspat > 45 ||
+            potas < 3.5 || potas > 5.5 ||
+            sod < 135 || sod > 145 ||
+            magnez < 0.65 || magnez > 1.2 ||
+            wapn < 2.25 || wapn > 2.75 ||
+            zelazo < 50 || zelazo > 158 ||
+            witaminab < 148 || witaminab > 740 
 
             ){
               wynik = "Nieprawidłowy"
@@ -726,10 +809,8 @@ document.querySelector('#dodajbadania').addEventListener('click', function () {
           if(dd<10){
               dd='0'+dd;
           } 
-          if(mm<10){
-              mm='0'+mm;
-          } 
-          var today = dd+'/'+mm+'/'+yyyy;
+         
+          var today = dd+' '+mm2[mm]+' '+yyyy;
           //var userRef = firebase.database().ref.child('users/' + uid);
           var licznik;
           var ref = firebase.database().ref('users/' + uid + '/Badania');
@@ -737,22 +818,40 @@ document.querySelector('#dodajbadania').addEventListener('click', function () {
               licznik = snapshot.numChildren();
             // var licznik2 = Number(licznik);
                
-               if(licznik == 0){
-                text = "Badanie nr 1";
-               }else {
-                licznik = licznik + 1;
-                text = "Badanie nr " + licznik;
-               }
+               // if(licznik == 0){
+               //  text = "Badanie nr 1";
+               // }else {
+               //  licznik = licznik + 1;
+               //  text = "Badanie nr " + licznik;
+               // }
 
- firebase.database().ref('users/' + uid + '/Badania/' + text).set({
+ firebase.database().ref('users/' + uid + '/Badania/' + text2).set({
          
-    "Białe krwinki" : bialekrwinki,
-    "Czerwone krwinki" : czerwonekrwinki,
-    Limfocyty : limfocyty,
-    Hemoglobina : hemoglobina,
-    Hematokryt : hematokryt,
-    Data : today,
-    Wynik: wynik
+    "Białe_krwinki" : bialekrwinki,
+    "Czerwone_krwinki" : czerwonekrwinki,
+    "Limfocyty" : limfocyty,
+    "Hemoglobina" : hemoglobina,
+    "Hematokryt" : hematokryt,
+    "Monocyty" : monocyty,
+    "MCV" : mcv,
+    "MCH" : mch,
+    "MCHC" : mchc,
+    "Płytki_krwi" : plytkikrwi,
+    "OB" : ob,
+    "Glukoza" : glukoza,
+    "Cholesterol" : cholesterol,
+    "TSH" : tsh,
+    "ALAT" : alat,
+    "AspAT" : aspat,
+    "Potas" : potas,
+    "Sód" : sod,
+    "Magnez" : magnez,
+    "Wapń" : wapn,
+    "Żelazo" : zelazo,
+    "Witamina_B12" : witaminab,
+     Data : today,
+     Wynik: wynik,
+    // "Data msec": text2
   
 
   });
@@ -763,6 +862,8 @@ document.querySelector('#dodajbadania').addEventListener('click', function () {
          }else{
           alert("Użytkownik Niezalogowany")
          }
+         window.location.href = "#badania";
+         location.reload();
 });
 
 
@@ -800,6 +901,17 @@ function daneOsobowe(){
        data2.on('value', function(snapshot){
         var text = document.createTextNode(snapshot.val());
           dane.appendChild(text);
+         });
+
+        var data3 =   firebase.database().ref('users/' + uid).child("płeć");
+       data3.on('value', function(snapshot){
+        var plecstatus = snapshot.val();
+       var zdjecie = document.getElementById('zdjecieprofilowe');
+          if(plecstatus == "Kobieta"){
+              zdjecie.src = "img/female.png";
+          }else {
+            zdjecie.src = "img/male.png";
+          }
          });
 
     
@@ -881,7 +993,7 @@ while(i <= licznik){
 
   
 
-$( "#wyswietlanie" ).append( ' <div class="first-box" id="rest-box"> \
+ $( "#wyswietlanie" ).append( ' <div id="sort"> <div class="first-box" id="rest-box"> \
         <div class="rest-box-content"> \
           <img src="img/icons/blood-green.png" alt="" id="c"> \
         </div> \
@@ -899,63 +1011,112 @@ $( "#wyswietlanie" ).append( ' <div class="first-box" id="rest-box"> \
         </div> \
          <a href=""><span color ="blue" class="ahrefDecoration">zobacz szczegóły</span></a> \
        </div> \
-      </div> ');
+      </div> </div>');
 
 
                  var x = document.getElementById('asdd');
-            x.setAttribute("id", i);
-var badanie = "Badanie nr " + i;
+            x.setAttribute("id", "data " + i);
 
-        firebase.database().ref('users/' + uid + '/Badania/' + badanie).child("Data").once('value').then(function(snapshot){
-         var y = document.getElementById(j);
-            data = snapshot.val();
-           y.innerHTML = snapshot.val();
-     alert(data);
-            // y.innerHTML = data ;
-           j = j + 1 ;
-             });
+            var sort = document.getElementById('sort');
+            sort.setAttribute("id", "sort " + i);
 
-  var z = document.getElementById('b');
-  var c = document.getElementById('c');
+
+     //    firebase.database().ref('users/' + uid + '/Badania/' + badanie).child("Data").once('value').then(function(snapshot){
+     //     var y = document.getElementById(j);
+     //        data = snapshot.val();
+     //       y.innerHTML = snapshot.val();
+     // alert(data);
+     //        // y.innerHTML = data ;
+     //       j = j + 1 ;
+     //         });
+
+            var wynikbadania = document.getElementById('b');
+            var kolor = document.getElementById('c');
   
-            z.setAttribute("id", "wynik " + i);
-            c.setAttribute("id", "kolor " + i);
+            wynikbadania.setAttribute("id", "wynik " + i);
+            kolor.setAttribute("id", "kolor " + i);
 
-     firebase.database().ref('users/' + uid + '/Badania/' + badanie).child("Wynik").once('value').then(function(snapshot){
-         var r = document.getElementById("wynik " + g);
-         var t = document.getElementById("kolor " + g);
-           var kolor = snapshot.val();
-           if(kolor == "Prawidłowy"){
-            r.style.color = "green";
-            t.src = "img/icons/blood-green.png"
-           }else{
-            r.style.color = "red";
-            t.src = "img/icons/blood-red.png"
-           }
-           r.innerHTML = snapshot.val();
+     // firebase.database().ref('users/' + uid + '/Badania/' + badanie).child("Wynik").once('value').then(function(snapshot){
+     //     var r = document.getElementById("wynik " + g);
+     //     var t = document.getElementById("kolor " + g);
+     //       var kolor = snapshot.val();
+     //       if(kolor == "Prawidłowy"){
+     //        r.style.color = "green";
+     //        t.src = "img/icons/blood-green.png"
+     //       }else{
+     //        r.style.color = "red";
+     //        t.src = "img/icons/blood-red.png"
+     //       }
+     //       r.innerHTML = snapshot.val();
      
-            // y.innerHTML = data ;
-           g = g + 1 ;
-             });
+     //        // y.innerHTML = data ;
+     //       g = g + 1 ;
+     //         });
 
  i = i + 1;
 }
 // for(var a = 1; a <7; a++){
-//   var badanie = "Badanie nr " + a;
-//    var ref = firebase.database().ref('users/' + uid + '/Badania/' + badanie);
-//    ref.on('value',function(badaniaSnapshot){
-
-
-//     badaniaSnapshot.forEach(function(snapshot){
+  // var badanie = "Badanie nr " + a;
+  var j = 1;
+  var g = 1;
   
-//      var obj = snapshot.Data;
-    
-    
-//      console.log(obj);
-    
-//              });
-//             });
- // }
+   var ref = firebase.database().ref('users/' + uid + '/Badania/').orderByKey();
+   ref.on('value',function(badaniaSnapshot){
+
+
+
+    badaniaSnapshot.forEach(function(snapshot){
+      var key = snapshot.key;
+     
+
+
+
+   var ref2 = firebase.database().ref('users/' + uid + '/Badania/' + key).child("Data");
+   ref2.on('value',function(snapshot2){
+
+        // snapshot2.forEach(function(childSnapshot2){
+
+
+    var obj = snapshot2.val();
+    console.log(obj);
+
+var y = document.getElementById('data ' + j);
+            
+           y.innerHTML = obj;
+ 
+    j = j + 1;
+ 
+      });
+
+
+    var ref3 = firebase.database().ref('users/' + uid + '/Badania/' + key).child("Wynik");
+     ref3.on('value', function(snapshot3){
+
+        var wynikbadania1 = snapshot3.val();
+
+           var wynik = document.getElementById("wynik " + g);
+           var kolor = document.getElementById("kolor " + g);
+           var sort = document.getElementById("sort " + g);
+           var wynikbadania1  = snapshot3.val();
+           wynik.innerHTML = wynikbadania1;
+           if(wynikbadania1 == "Prawidłowy"){
+            wynik.style.color = "green";
+            kolor.src = "img/icons/blood-green.png"
+            sort.classList.add("Prawidłowa");
+           }else{
+            wynik.style.color = "red";
+            kolor.src = "img/icons/blood-red.png"
+            sort.classList.add("Nieprawidłowa");
+           }
+
+
+           g = g + 1;
+     });
+             });
+            });
+
+
+ 
 
  });
 }
@@ -994,131 +1155,554 @@ else{
         } 
 
 pokazBadanie();
-           
-     
+           function addZeroes( num ) {
+            var tostring = num.toString();
+    var value = Number(tostring);
+    var res = tostring.split(".");
+    if(res.length < 10 || (res[1].length < 3)) {
+        value = value.toFixed(2);
+    }else{
 
-     // function pokazBadanie (){
-     //  $( "#wyswietlanie" ).append("<p>czekoladka</p>");
-     // }
-
-// pokazBadanie();
-function pokaz (){
-  var user = firebase.auth().currentUser;
-          var uid = user.uid;
-          var i = 1;
-          var j = 1;
-          while(i<7){
-// for (var i = 1; i < 7; i++) {
-
-
-
-     
-   var badanie = "Badanie nr " + i;
-          alert(badanie);
-          alert(user);
-          
-var data;
-
-
-          firebase.database().ref('users/' + uid + '/Badania/' + badanie).child("Data").once('value').then(function(snapshot){
-         var y = document.getElementById(j);
-            data = snapshot.val();
-           y.innerHTML = snapshot.val();
-     alert(data);
-            // y.innerHTML = data ;
-           j = j + 1 ;
-             });
-          
-           
-          i = i + 1 ;
-        }
-
+    }
+    return value
 }
+console.log(addZeroes(5));
 
-// function showHelp(url) {
+     function homePage () {
+        firebase.auth().onAuthStateChanged(function(user) {
+          var user = firebase.auth().currentUser;
+          var uid = user.uid;
+          var licznik = 0;
+          var tablica = [];
+          var tabindex = 0;
+          var tablica2 = [];
+          var tabindex2 = 0 ;
+          var negatywne = [];
+          var twojewartosci = [];
+          var rozneodnormy = [];
+          var przekroczonawartosc = [];
+          var obliczenia ;
+          var bialekrwinki ;
+          var czerwonekrwinki ;
+          var hemoglobina ;
+          var hematokryt ;
+          var limfocyty ;
+          var monocyty ;
+          var mcv ;
+          var mch ;
+          var mchc ;
+          var plytkikrwi ;
+          var ob ;
+          var glukoza ;
+          var cholesterol ;
+          var tsh ;
+          var alat ;
+          var aspat ;
+          var potas ;
+          var sod ;
+          var magnez ;
+          var wapn ;
+          var zelazo ;
+          var witaminab ;
+    if(user){
 
-//     var target = "_blank";
+      var ref = firebase.database().ref('users/' + uid + '/Badania/').orderByKey();
+   ref.on('value',function(badaniaSnapshot){
 
-//     var options = "location=yes,hidden=yes";
 
-//     inAppBrowserRef = cordova.InAppBrowser.open(url, target, options);
 
-//     inAppBrowserRef.addEventListener('loadstart', loadStartCallBack);
+    badaniaSnapshot.forEach(function(snapshot){
+      var key = snapshot.key;
+      tablica[tabindex] = key;
+      console.log(tablica[tabindex]);
+        tabindex = tabindex + 1;
+        console.log(tablica.length);
+});
 
-//     inAppBrowserRef.addEventListener('loadstop', loadStopCallBack);
+         var ref2 = firebase.database().ref('users/' + uid + '/Badania/' + tablica[tablica.length - 1]);
+          ref2.on('value', function(snapshot2){
+            var key2 = snapshot2.val();
+            
+            bialekrwinki = key2.Białe_krwinki;
+            czerwonekrwinki = key2.Czerwone_krwinki;
+            hemoglobina = key2.Hemoglobina;
+            hematokryt = key2.Hematokryt;
+            limfocyty = key2.Limfocyty ;
+            monocyty = key2.Monocyty ;
+            mcv = key2.MCV;
+            mch = key2.MCH;
+            mchc = key2.MCHC;
+            plytkikrwi = key2.Płytki_krwi;
+            ob = key2.OB;
+            glukoza = key2.Glukoza;
+            cholesterol = key2.Cholesterol ;
+            tsh = key2.TSH ;
+            alat = key2.ALAT;
+            aspat = key2.AspAT;
+            potas = key2.Potas ;
+            sod = key2.Sód ;
+            magnez = key2.Magnez ;
+            wapn = key2.Wapń;
+            zelazo = key2.Żelazo;
+            witaminab = key2.Witamina_B12 ;
 
-//     inAppBrowserRef.addEventListener('loaderror', loadErrorCallBack);
+            if( bialekrwinki < 4.1  ){
+              licznik = licznik + 1;
+              negatywne[0] = "Białe krwinki";
+              twojewartosci[0] = addZeroes(bialekrwinki);
+              rozneodnormy[0] = "Poniżej normy";
+              obliczenia = 4.1 - bialekrwinki;
+              przekroczonawartosc[0] = "(- " + addZeroes(obliczenia) + ")";
+            }if(bialekrwinki > 11){
+              licznik = licznik + 1;
+              negatywne[0] = "Białe krwinki";
+              twojewartosci[0] = addZeroes(bialekrwinki);
+              rozneodnormy[0] = "Powyżej normy";
+              obliczenia =  bialekrwinki - 11;
+              przekroczonawartosc[0] = "(+ " + addZeroes(obliczenia) + ")";
+            }else{}
 
-// }
+            if(czerwonekrwinki < 4.5 ){
+              licznik = licznik + 1;
+              negatywne.push("Czerwone krwinki");
+              twojewartosci.push(addZeroes(czerwonekrwinki));
+              rozneodnormy.push("Poniżej normy");
+              obliczenia = 4.5 - czerwonekrwinki;
+              przekroczonawartosc.push("(- " + addZeroes(obliczenia) + ")");
+            }if(czerwonekrwinki > 6.5){
+              licznik = licznik + 1;
+              negatywne.push("Czerwone krwinki");
+              twojewartosci.push(addZeroes(czerwonekrwinki));
+              rozneodnormy.push("Powyżej normy");
+              obliczenia =  czerwonekrwinki - 6.5;
+              przekroczonawartosc.push("(+ " + addZeroes(obliczenia) + ")")
+            }else{}
+        
+             if( hemoglobina < 13.5){
+              licznik = licznik + 1;
+              negatywne.push("Hemoglobina");
+              twojewartosci.push(addZeroes(hemoglobina));
+              rozneodnormy.push("Poniżej normy");
+              obliczenia = 13.5 - hemoglobina;
+              przekroczonawartosc.push("(- " + addZeroes(obliczenia) + ")");
+            }if( hemoglobina > 18){
+              licznik = licznik + 1;
+              negatywne.push("Hemoglobina");
+              twojewartosci.push(addZeroes(hemoglobina));
+              rozneodnormy.push("Powyżej normy");
+              obliczenia =  hemoglobina - 18;
+              przekroczonawartosc.push("(+ " + addZeroes(obliczenia) + ")");
+            }else{}
 
-//       function loadStartCallBack() {
+              if( hematokryt < 40 ){
+              licznik = licznik + 1;
+              negatywne.push("Hematokryt");
+              twojewartosci.push(addZeroes(hematokryt));
+              rozneodnormy.push("Poniżej normy");
+              obliczenia = 40 - hematokryt;
+              przekroczonawartosc.push("(- " + addZeroes(obliczenia) + ")");
+            }if( hematokryt > 51){
+              licznik = licznik + 1;
+              negatywne.push("Hematokryt");
+              twojewartosci.push(addZeroes(hematokryt));
+              rozneodnormy.push("Powyżej normy");
+              obliczenia = hematokryt - 51;
+              przekroczonawartosc.push("(+ " + addZeroes(obliczenia) + ")");
+            }else{}
 
-//     $('#status-message').text("loading please wait ...");
+               if(limfocyty < 20 ){
+              licznik = licznik + 1;
+              negatywne.push("Limfocyty");
+              twojewartosci.push(addZeroes(limfocyty));
+              rozneodnormy.push("Poniżej normy");
+              obliczenia = 20 - limfocyty;
+              przekroczonawartosc.push("(- " + addZeroes(obliczenia) + ")");
+            }if(limfocyty > 45){
+              licznik = licznik + 1;
+              negatywne.push("Limfocyty");
+              twojewartosci.push(addZeroes(limfocyty));
+              rozneodnormy.push("Powyżej normy");
+              obliczenia = limfocyty - 45;
+              przekroczonawartosc.push("(+ " + addZeroes(obliczenia) + ")");
+            }else{}
 
-// }
+             if( monocyty  < 0.3 ){
+              licznik = licznik + 1;
+              negatywne.push("Monocyty");
+              twojewartosci.push(addZeroes(monocyty));
+              rozneodnormy.push("Poniżej normy");
+              obliczenia = 0.3 - monocyty;
+              przekroczonawartosc.push("(- " + addZeroes(obliczenia) + ")");
+            }if( monocyty > 0.8){
+              licznik = licznik + 1;
+              negatywne.push("Monocyty");
+              twojewartosci.push(addZeroes(monocyty));
+              rozneodnormy.push("Powyżej normy");
+              obliczenia = monocyty - 0.8;
+              przekroczonawartosc.push("(+ " + addZeroes(obliczenia) + ")");
+            }else{}
 
-// function loadStopCallBack() {
+              if( mcv  < 80 ){
+              licznik = licznik + 1;
+              negatywne.push("MCV");
+              twojewartosci.push(addZeroes(mcv));
+              rozneodnormy.push("Poniżej normy");
+              obliczenia = 80 - mcv;
+              przekroczonawartosc.push("(- " + addZeroes(obliczenia) + ")");
+            }if( mcv > 97){
+              licznik = licznik + 1;
+              negatywne.push("MCV");
+              twojewartosci.push(addZeroes(mcv));
+              rozneodnormy.push("Powyżej normy");
+              obliczenia = mcv - 97;
+              przekroczonawartosc.push("(+ " + addZeroes(obliczenia) + ")");
+            }else{}
 
-//     if (inAppBrowserRef != undefined) {
 
-//         inAppBrowserRef.insertCSS({ code: "body{font-size: 25px;" });
+             if( mch < 26 ){
+              licznik = licznik + 1;
+              negatywne.push("MCH");
+              twojewartosci.push(addZeroes(mch));
+              rozneodnormy.push("Poniżej normy");
+              obliczenia = 26 - mch;
+              przekroczonawartosc.push("(- " + addZeroes(obliczenia) + ")");
+            }if( mch > 32){
+              licznik = licznik + 1;
+              negatywne.push("MCH");
+              twojewartosci.push(addZeroes(mch));
+              rozneodnormy.push("Powyżej normy");
+              obliczenia = mch - 32;
+              przekroczonawartosc.push("(+ " + addZeroes(obliczenia) + ")");
+            }else{}
 
-//         $('#status-message').text("");
+               if(mchc < 31 ){
+              licznik = licznik + 1;
+              negatywne.push("MCHC");
+              twojewartosci.push(addZeroes(mchc));
+              rozneodnormy.push("Poniżej normy");
+              obliczenia = 31 - mchc;
+              przekroczonawartosc.push("(- " + addZeroes(obliczenia) + ")");
+            }if( mchc > 36){
+              licznik = licznik + 1;
+              negatywne.push("MCHC");
+              twojewartosci.push(addZeroes(mchc));
+              rozneodnormy.push("Powyżej normy");
+              obliczenia = mchc - 36;
+              przekroczonawartosc.push("(+ " + addZeroes(obliczenia) + ")");
+            }else{}
 
-//         inAppBrowserRef.show();
-//     }
+            if( plytkikrwi < 140){
+              licznik = licznik + 1;
+              negatywne.push("Płytki krwi");
+              twojewartosci.push(addZeroes(plytkikrwi));
+              rozneodnormy.push("Poniżej normy");
+              obliczenia = 140 - plytkikrwi;
+              przekroczonawartosc.push("(- " + addZeroes(obliczenia) + ")");
+            }if( plytkikrwi > 400){
+              licznik = licznik + 1;
+              negatywne.push("Płytki krwi");
+              twojewartosci.push(addZeroes(plytkikrwi));
+              rozneodnormy.push("Powyżej normy");
+              obliczenia = plytkikrwi - 400;
+              przekroczonawartosc.push("(+ " + addZeroes(obliczenia) + ")");
+            }else{}
+          
+            if( ob < 3){
+              licznik = licznik + 1;
+              negatywne.push("OB");
+              twojewartosci.push(addZeroes(ob));
+              rozneodnormy.push("Poniżej normy");
+              obliczenia = 3 - ob;
+              przekroczonawartosc.push("(- " + addZeroes(obliczenia) + ")");
+            }if( ob > 8){
+              licznik = licznik + 1;
+              negatywne.push("OB");
+              twojewartosci.push(addZeroes(ob));
+              rozneodnormy.push("Powyżej normy");
+              obliczenia = ob - 8;
+              przekroczonawartosc.push("(+ " + addZeroes(obliczenia) + ")");
+            }else{}
 
-// }
+            if( glukoza < 70){
+              licznik = licznik + 1;
+              negatywne.push("Glukoza");
+              twojewartosci.push(addZeroes(glukoza));
+              rozneodnormy.push("Poniżej normy");
+              obliczenia = 70 - glukoza;
+              przekroczonawartosc.push("(- " + addZeroes(obliczenia) + ")");
+            }if( glukoza > 99){
+              licznik = licznik + 1;
+              negatywne.push("Glukoza");
+              twojewartosci.push(addZeroes(glukoza));
+              rozneodnormy.push("Powyżej normy");
+              obliczenia = glukoza - 99;
+              przekroczonawartosc.push("(+ " + addZeroes(obliczenia) + ")");
+            }else{}
 
-// function loadErrorCallBack(params) {
+              if( cholesterol < 170){
+              licznik = licznik + 1;
+              negatywne.push("Cholesterol");
+              twojewartosci.push(addZeroes(cholesterol));
+              rozneodnormy.push("Poniżej normy");
+              obliczenia = 170 - cholesterol;
+              przekroczonawartosc.push("(- " + addZeroes(obliczenia) + ")");
+            }if( cholesterol > 199){
+              licznik = licznik + 1;
+              negatywne.push("Cholesterol");
+              twojewartosci.push(addZeroes(cholesterol));
+              rozneodnormy.push("Powyżej normy");
+              obliczenia = cholesterol - 199;
+              przekroczonawartosc.push("(+ " + addZeroes(obliczenia) + ")");
+            }else{}
 
-//     $('#status-message').text("");
+            if( tsh < 0.32){
+              licznik = licznik + 1;
+              negatywne.push("TSH");
+              twojewartosci.push(addZeroes(tsh));
+              rozneodnormy.push("Poniżej normy");
+              obliczenia = 0.32 - tsh;
+              przekroczonawartosc.push("(- " + addZeroes(obliczenia) + ")");
+            }if( tsh > 5.0){
+              licznik = licznik + 1;
+              negatywne.push("TSH");
+              twojewartosci.push(addZeroes(tsh));
+              rozneodnormy.push("Powyżej normy");
+              obliczenia = tsh - 5;
+              przekroczonawartosc.push("(+ " + addZeroes(obliczenia) + ")");
+            }else{}
 
-//     var scriptErrorMesssage =
-//        "alert('Sorry we cannot open that page. Message from the server is : "
-//        + params.message + "');"
+            if( alat < 5){
+              licznik = licznik + 1;
+              negatywne.push("ALAT");
+              twojewartosci.push(addZeroes(alat));
+              rozneodnormy.push("Poniżej normy");
+              obliczenia = 5 - alat;
+              przekroczonawartosc.push("(- " + addZeroes(obliczenia) + ")");
+            }if( alat > 40){
+              licznik = licznik + 1;
+              negatywne.push("ALAT");
+              twojewartosci.push(addZeroes(alat));
+              rozneodnormy.push("Powyżej normy");
+              obliczenia = alat - 40;
+              przekroczonawartosc.push("(+ " + addZeroes(obliczenia) + ")");
+            }else{}
 
-//     inAppBrowserRef.executeScript({ code: scriptErrorMesssage }, executeScriptCallBack);
+            if( aspat < 8){
+              licznik = licznik + 1;
+              negatywne.push("AspAT");
+              twojewartosci.push(addZeroes(aspat));
+              rozneodnormy.push("Poniżej normy");
+              obliczenia = 8 - aspat;
+              przekroczonawartosc.push("(- " + addZeroes(obliczenia) + ")");
+            }if( aspat > 45){
+              licznik = licznik + 1;
+              negatywne.push("AspAT");
+              twojewartosci.push(addZeroes(aspat));
+              rozneodnormy.push("Powyżej normy");
+              obliczenia =  aspat - 45;
+              przekroczonawartosc.push("(+ " + addZeroes(obliczenia) + ")");
+            }else{}
 
-//     inAppBrowserRef.close();
+            if( potas < 3.5 ){
+              licznik = licznik + 1;
+              negatywne.push("Potas");
+              twojewartosci.push(addZeroes(potas));
+              rozneodnormy.push("Poniżej normy");
+              obliczenia = 3.5 - potas;
+              przekroczonawartosc.push("(- " + addZeroes(obliczenia) + ")");
+            }if( potas > 5.5){
+              licznik = licznik + 1;
+              negatywne.push("Potas");
+              twojewartosci.push(addZeroes(potas));
+              rozneodnormy.push("Powyżej normy");
+              obliczenia = potas - 5.5;
+              przekroczonawartosc.push("(+ " + addZeroes(obliczenia) + ")");
+            }else{}
 
-//     inAppBrowserRef = undefined;
+            if( sod < 135 ){
+              licznik = licznik + 1;
+              negatywne.push("Sód");
+              twojewartosci.push(addZeroes(sod));
+              rozneodnormy.push("Poniżej normy");
+              obliczenia = 135 - sod;
+              przekroczonawartosc.push("(- " + addZeroes(obliczenia) + ")");
+            }if( sod > 145){
+              licznik = licznik + 1;
+              negatywne.push("Sód");
+              twojewartosci.push(addZeroes(sod));
+              rozneodnormy.push("Powyżej normy");
+              obliczenia =  sod - 145 ;
+              przekroczonawartosc.push("(+ " + addZeroes(obliczenia) + ")");
+            }else{}
 
-// }
+              if( magnez < 0.65 ){
+              licznik = licznik + 1;
+              negatywne.push("Magnez");
+              twojewartosci.push(addZeroes(magnez));
+              rozneodnormy.push("Poniżej normy");
+              obliczenia = 0.65 - magnez;
+              przekroczonawartosc.push("(- " + addZeroes(obliczenia) + ")");
+            }if( magnez > 1.2){
+              licznik = licznik + 1;
+              negatywne.push("Magnez");
+              twojewartosci.push(addZeroes(magnez));
+              rozneodnormy.push("Powyżej normy");
+              obliczenia =  magnez - 1.2;
+              przekroczonawartosc.push("(+ " + addZeroes(obliczenia) + ")");
+            }else{}
 
-// function executeScriptCallBack(params) {
+             if( wapn < 2.25 ){
+              licznik = licznik + 1;
+              negatywne.push("Wapń");
+              twojewartosci.push(addZeroes(wapn));
+              rozneodnormy.push("Poniżej normy");
+              obliczenia = 2.25 - wapn;
+              przekroczonawartosc.push("(- " + addZeroes(obliczenia) + ")");
+            }if( wapn > 2.75){
+              licznik = licznik + 1;
+              negatywne.push("Wapń");
+              twojewartosci.push(addZeroes(wapn));
+              rozneodnormy.push("Powyżej normy");
+              obliczenia =  wapn - 2.75;
+              przekroczonawartosc.push("(+ " + addZeroes(obliczenia) + ")");
+            }else{}
+             
+            if( zelazo < 50 ){
+              licznik = licznik + 1;
+              negatywne.push("Żelazo");
+              twojewartosci.push(addZeroes(zelazo));
+              rozneodnormy.push("Poniżej normy");
+              obliczenia = 50 - zelazo;
+              przekroczonawartosc.push("(- " + addZeroes(obliczenia) + ")");
+            }if( zelazo > 158){
+              licznik = licznik + 1;
+              negatywne.push("Żelazo");
+              twojewartosci.push(addZeroes(zelazo));
+              rozneodnormy.push("Powyżej normy");
+              obliczenia =  zelazo - 158;
+              przekroczonawartosc.push("(+ " + addZeroes(obliczenia) + ")");
+            }else{}
 
-//     if (params[0] == null) {
+            if( witaminab < 148 ){
+              licznik = licznik + 1;
+              negatywne.push("Witamina B12");
+              twojewartosci.push(addZeroes(witaminab));
+              rozneodnormy.push("Poniżej normy");
+              obliczenia = 148 - witaminab;
+              przekroczonawartosc.push("(- " + addZeroes(obliczenia) + ")");
+            }if( witaminab > 740){
+              licznik = licznik + 1;
+              negatywne.push("Witamina B12");
+              twojewartosci.push(addZeroes(witaminab));
+              rozneodnormy.push("Powyżej normy");
+              obliczenia = witaminab - 740;
+              przekroczonawartosc.push("(+ " + addZeroes(obliczenia) + ")");
+            }else{}
 
-//         alert(params.message);
-           
-//     }
+            // licznik = negatywne.length;
+            
+console.log(licznik);
+            for(var i=1; i < licznik; i ++){
 
-// }
+
+
+$( "#homewyswietlanie" ).append( '  <div class="first-box" id="rest-box"> \
+        <div class="rest-box-content"> \
+          <div class="circle"  style="" id="znakwskaznika">G</div> \
+        </div> \
+         \
+        <div class="container-element-box"> \
+          <div style="color: #3A4759;" id="rodzaj">Glukoza</div>  \
+          <span class="value-element-mark">wartość: \
+           <span style="color:#E36E7B" id="rozneodnormy">powyżej normy</span> \
+         </span> \
+        </div> \
+ \
+       <div class="value-element-inner"> \
+        <div style="color: #E36E7B;" ><span id="wartoscwskaznika">115,00</span>  \
+          <span style="font-size: 10px; color: #47A0B5" id="przekroczonawartosc">(+12,00)</span> \
+        </div> \
+         <span class="element-date">Kwi. 24</span> \
+       </div> \
+      </div>   ');
+
+                      var id = document.getElementById('rodzaj');
+                      var idwartosc = document.getElementById('wartoscwskaznika');
+                      var idnorma = document.getElementById('rozneodnormy')
+                      var idznak = document.getElementById('znakwskaznika');
+                      var idprzekroczonawartosc = document.getElementById('przekroczonawartosc')
+                      id.setAttribute('id', "rodzaj" + i); 
+                      id.innerHTML = negatywne[i-1];
+                      idwartosc.setAttribute('id', 'wartoscwskaznika ' + i);
+                      idwartosc.innerHTML = twojewartosci[i-1];
+                      idnorma.setAttribute('id', 'rozneodnormy ' + i);
+                      idnorma.innerHTML = rozneodnormy[i-1];
+                      idznak.setAttribute('id', 'znakwskaznika ' + i);
+                      idznak.innerHTML = negatywne[i-1].charAt(0);
+                      idprzekroczonawartosc.setAttribute('id', 'przekroczonawartosc ' + i);
+                      idprzekroczonawartosc.innerHTML = przekroczonawartosc[i-1];
+                      
+
+            }
+
+            for(var j=1; j <=licznik; j = j + 2){
+
+              var idznak = document.getElementById('znakwskaznika ' + j);
+              idznak.style.backgroundColor = "#4298b7";
+            }
+        }); 
+     });
   
-        // document.querySelector('#googleLogOut').addEventListener('click', function () {
-        //     firebase.auth().signOut().then(function () {
-        //         // Sign-out successful.
-        //     }).catch(function (error) {
-        //         // An error happened.
-        //     });
-        // });
-        // firebase.auth().onAuthStateChanged(function (user) {
-        //     if (user) {
-        //         hLogInfo.textContent = "Zalogowany";
-        //         console.log(user);
-        //     } else {
-        //         hLogInfo.textContent = "Niezalogowany";
-        //     }
-        // });
-        // document.querySelector('#googleCheck').addEventListener('click', function () {
-        //     var user = firebase.auth().currentUser;
-        //     if (user) {
-        //         alert("Jestem zalogowany, hy hy.");
-        //     } else {
-        //         alert("Nie jestem zalogowany, wut.");
-        //     }
-        // });
+
+
+
+    }else{
+
+    }
+
+        });
+
+
+
+
+     }
+
+     homePage();
+
+    // function wyswietlPrawidlowe () {
+      
+    //   $('.Nierawidłowa').hide();
+    //   $('.Prawidłowa').show();
+      
+    // }
+
+
+    $(document).ready(function(){
+    $("#prawidłowebadania").click(function(){
+        $("#prawidłowebadania").css("font-weight", 600);
+        $("#nieprawidłowebadania").css("font-weight", 300);
+        $("#wszystkiebadania").css("font-weight", 300);
+        $(".Nieprawidłowa").hide();
+        $(".Prawidłowa").show();
+    });
+    $("#nieprawidłowebadania").click(function(){
+        $("#prawidłowebadania").css("font-weight", 300);
+        $("#nieprawidłowebadania").css("font-weight",600);
+        $("#wszystkiebadania").css("font-weight", 300);
+        $(".Prawidłowa").hide();
+        $(".Nieprawidłowa").show();
+    });
+
+    $("#wszystkiebadania").click(function(){
+        $("#prawidłowebadania").css("font-weight", 300);
+        $("#nieprawidłowebadania").css("font-weight", 300);
+        $("#wszystkiebadania").css("font-weight", 600);
+        $(".Prawidłowa").show();
+        $(".Nieprawidłowa").show();
+    });
+
+});
+
     </script>
     <script src="dist/js/framework7.js"></script>
         <!-- <script src="js/my-app.js"></script> -->
