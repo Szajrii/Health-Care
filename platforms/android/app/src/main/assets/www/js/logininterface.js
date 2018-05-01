@@ -1,3 +1,7 @@
+const provider = new firebase.auth.GoogleAuthProvider();
+        var database = firebase.database();
+
+
 document.querySelector('#loginButton').addEventListener('click', function () {
 
   firebase.auth().signOut().then(function() {

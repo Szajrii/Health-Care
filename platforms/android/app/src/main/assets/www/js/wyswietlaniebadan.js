@@ -1,3 +1,5 @@
+
+
  function pokazBadanie() {
   var i = 1;
   var j = 1;   
