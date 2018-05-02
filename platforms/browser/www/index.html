@@ -499,63 +499,135 @@
           <tr>
 
             <td style="width: 50%; border: 1px solid #eaeaea; border-bottom: 0px; border-left: 0px">
-              <p class="text_table_bold">Prawidłowe <br><span style="font-weight: 400; color: #B2B2B2; font-size: 12px;">wskaźników</span></p>
+              <p class="text_table_bold">Prawidłowe 
+                <br>
+                <span style="font-weight: 400; color: #B2B2B2; font-size: 12px;">wskaźników</span>
+              </p>
             </td>
             
             <td style="width: 50%; border: 1px solid #eaeaea; border-bottom: 0px; border-left: 0px; border-right: 0px;">
-              <p class="text_table_bold">Nieprawidłowe <br><span style="font-weight: 400; color: #B2B2B2; font-size: 12px;">wskaźników</span></p>
+              <p class="text_table_bold">Nieprawidłowe
+                <br>
+                <span style="font-weight: 400; color: #B2B2B2; font-size: 12px;">wskaźników</span>
+              </p>
             </td>
 
           </tr>
 
           <tr style="text-align: center;">
-            <td style=" width: 50%; border: 1px solid #eaeaea; border-top: 0px; border-left: 0px;"><div class="conteiner_number_table" id="correctValue"> 12 </div></td>
-            <td style=" width: 50%; border: 1px solid #eaeaea; border-top: 0px; border-left: 0px; border-right: 0px;"><div class="conteiner_number_table" style="background-color: #D4505E" id="IncorrectValue"> 12 </div></td>
+            <td style=" width: 50%; border: 1px solid #eaeaea; border-top: 0px; border-left: 0px;">
+              <div class="conteiner_number_table" id="correctValue"> 12 </div>
+            </td>
+            <td style=" width: 50%; border: 1px solid #eaeaea; border-top: 0px; border-left: 0px; border-right: 0px;">
+              <div class="conteiner_number_table" style="background-color: #D4505E" id="IncorrectValue"> 12 </div>
+            </td>
           </tr>
         </table>
       </div>
-      <div style="width: 100%; background-color: #eaeaea; height: 40px; "><p style="line-height: 40px; padding-left: 20px; color: #AAAAAA">Szczegóły badania</p></div>
+      <div class="container_szczegoly">
+        <p class="container_szczegoly_inner">Szczegóły badania</p>
+      </div>
         
-      <div style="width: 100%; border-left: 6px solid #E36E7B;">
-          <div style="padding-left: 40px; padding-top: 15px; padding-bottom: 15px; padding-right: 40px;">
+
+
+      <div class="container_badanie_bad_above">
+          <div class="badania_all_inner">
             <div style="line-height: 100%;">
-              <span style="color: #E36E7B; font-size: 22px; font-weight: 300;">WBC Białe krwinki</span><br><br>
-              <span style="font-size: 12px; text-transform: none; color: #656565; ">wartość ponad normą</span><br>
-              <span style="font-size: 12px; font-weight: 600; color: #E36E7B; ">144,00</span>
-              <span style="font-size: 12px;  color: #E36E7B;">(+12,00)</span><br> <br>
-              <span style="text-transform: none; font-weight: 900;"> W Twoim organizmie toczy się infekcja/ stan zapalny, zbadaj się dokładnie.</span>
+              
+              <span class="badania_bad_above_wskaznik">
+                WBC Białe krwinki
+              </span>
+              <br><br>
+              
+              <span class="badania_all_wartosc_value_text">
+                wartość ponad normą
+              </span>
+              <br>
+
+              <span class="badania_bad_above_value">
+                144,00
+              </span>
+
+              <span class="badania_bad_above_value_sec">
+                (+12,00)
+              </span>
+              <br><br>
+
+              <span class="badania_all_note">
+                W Twoim organizmie toczy się infekcja/ stan zapalny, zbadaj się dokładnie.
+              </span>
+
+            </div>
+          </div>
+      </div>
+
+      <div name="Separator" style=" background-color: #eaeaea; width: 100%; height: 4px; "></div>
+
+      <div class="container_badanie_bad_above" id="badania_bad_below_border">
+          <div class="badania_all_inner">
+            <div style="line-height: 100%;">
+              
+              <span class="badania_bad_above_wskaznik" id="badania_bad_below">
+                HGB(Hb) Hemoglobina
+              </span>
+              <br><br>
+              
+              <span class="badania_all_wartosc_value_text">
+                wartość poniżej normą
+              </span>
+              <br>
+
+              <span class="badania_bad_above_value" id="badania_bad_below">
+                144,00
+              </span>
+
+              <span class="badania_bad_above_value_sec" id="badania_bad_below">
+                (-12,00)
+              </span>
+              <br><br>
+
+              <span class="badania_all_note">
+                Możliwe, że masz anemię. Uzupełnij niedobór żelaza, witaminy B12 lub kwasu foliowego.
+              </span>
+
+            </div>
+          </div>
+      </div>
+
+      <div name="Separator" style=" background-color: #eaeaea; width: 100%; height: 4px; "></div>
+
+      <div class="container_badanie_bad_above" id="badania_good_border">
+          <div class="badania_all_inner">
+            <div style="line-height: 100%;">
+              
+              <span class="badania_bad_above_wskaznik" id="badania_good">
+                Glukoza
+              </span>
+              <br><br>
+              
+              <span class="badania_all_wartosc_value_text">
+                wartość w normie
+              </span>
+              <br>
+
+              <span class="badania_bad_above_value" id="badania_good">
+                144,00
+              </span>
+
+              <br><br>
+
+              <span class="badania_all_note">
+                Twoje wyniki są w normie. Trzymaj tak dalej!
+              </span>
+
             </div>
           </div>
       </div>
       
-      <div style=" background-color: #eaeaea; width: 100%; height: 4px; "></div>
+      <div name="Separator" style=" background-color: #eaeaea; width: 100%; height: 4px; "></div>
 
-      <div style="width: 100%; border-left: 6px solid #47A0B5;">
-          <div style="padding-left: 40px; padding-top: 15px; padding-bottom: 15px; padding-right: 40px;">
-            <div style="line-height: 100%;">
-              <span style="color: #47A0B5; font-size: 22px; font-weight: 300;">HGB(Hb) Hemoglobina</span><br><br>
-              <span style="font-size: 12px; text-transform: none; color: #656565; ">wartość poniżej normy</span><br>
-              <span style="font-size: 12px; font-weight: 600; color: #47A0B5; ">144,00</span>
-              <span style="font-size: 12px;  color: #47A0B5;">(+12,00)</span><br> <br>
-              <span style="text-transform: none; font-weight: 900;"> Możliwe, że masz anemię. Uzupełnij niedobór żelaza, witaminy B12 lub kwasu foliowego.</span>
-            </div>
-          </div>
-      </div>
 
-      <div style=" background-color: #eaeaea; width: 100%; height: 4px; "></div>
-
-      <div style="width: 100%; border-left: 6px solid #14B908;">
-          <div style="padding-left: 40px; padding-top: 15px; padding-bottom: 15px; padding-right: 40px;">
-            <div style="line-height: 100%;">
-              <span style="color: #14B908; font-size: 22px; font-weight: 300;">Glukoza</span><br><br>
-              <span style="font-size: 12px; text-transform: none; color: #656565; ">wartość w normie</span><br>
-              <span style="font-size: 12px; font-weight: 600; color: #14B908; ">144,00</span><br><br>
-              <span style="text-transform: none; font-weight: 900;">Twoje wyniki są w normie. Trzymaj tak dalej!</span>
-            </div>
-          </div>
-      </div>
-
-      <div style=" background-color: #eaeaea; width: 100%; height: 4px; "></div>
+      
 
 
     </div>

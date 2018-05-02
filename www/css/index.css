@@ -450,3 +450,72 @@ table {
   font-weight: 500;
   margin-bottom: 20px;
 }
+
+.container_szczegoly{
+  width: 100%;
+  background-color: #eaeaea;
+  height: 40px;
+}
+
+.container_szczegoly_inner{
+  line-height: 40px;
+  padding-left: 20px;
+  color: #AAAAAA;
+}
+
+.container_badanie_bad_above{
+  width: 100%;
+  border-left: 6px solid #E36E7B;
+}
+
+.badania_all_inner{
+  padding-left: 40px;
+  padding-top: 15px; 
+  padding-bottom: 15px;
+  padding-right: 40px;
+}
+
+.badania_bad_above_wskaznik{
+  color: #E36E7B;
+   font-size: 22px;
+  font-weight: 300;
+}
+
+.badania_all_wartosc_value_text{
+  font-size: 12px;
+  text-transform: none;
+  color: #656565; 
+}
+
+.badania_bad_above_value{
+  font-size: 12px;
+  font-weight: 600;
+  color: #E36E7B;
+}
+
+.badania_bad_above_value_sec{
+  font-size: 12px; 
+  color: #E36E7B;
+}
+
+.badania_all_note{
+  text-transform: none;
+  font-weight: 900;
+}
+
+#badania_bad_below{
+  color: #47A0B5;
+}
+
+#badania_bad_below_border{
+  border-left: 6px solid #47A0B5;
+}
+
+#badania_good{
+  color: #14B908;
+}
+
+#badania_good_border{
+  border-left: 6px solid #14B908;
+}
+
