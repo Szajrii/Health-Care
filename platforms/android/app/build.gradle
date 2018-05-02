@@ -30,6 +30,7 @@ buildscript {
 
     dependencies {
         classpath 'com.android.tools.build:gradle:3.0.0'
+        implementation 'com.facebook.android:facebook-android-sdk:[4,5)'
     }
 }
 
