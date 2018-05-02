@@ -30,7 +30,7 @@ buildscript {
 
     dependencies {
         classpath 'com.android.tools.build:gradle:3.0.0'
-        implementation 'com.facebook.android:facebook-android-sdk:[4,5)'
+        
     }
 }
 
@@ -262,8 +262,10 @@ dependencies {
     implementation fileTree(dir: 'libs', include: '*.jar')
     // SUB-PROJECT DEPENDENCIES START
     implementation(project(path: ":CordovaLib"))
+    compile "com.google.firebase:firebase-auth:15.0.0"
     compile "com.android.support:customtabs:23.3.0"
     // SUB-PROJECT DEPENDENCIES END
+    implementation "com.facebook.android:facebook-android-sdk:[4,5)"
 }
 
 def promptForReleaseKeyPassword() {
