@@ -269,9 +269,11 @@ text-transform: none;
   font-size: 28px;
   text-transform: none !important;
   font-weight: 500;
+  padding-top: 10px;
 }
  
 .first-box-comment{
+  padding-top: 10px;
   font-size: 10px;
   color: #A6B1C0;
  
@@ -336,7 +338,7 @@ text-transform: none;
 .element-date{
   font-size: 11px; 
   text-transform: none;
-  color: #A6B1C0
+  color: #A6B1C0;
 } 
 
 .menu-container{
@@ -370,7 +372,7 @@ text-transform: none;
  .menu-element2{
   font-size: 12px;
   font-weight: 300;
-  padding: 0px 0.6em
+  padding: 0px 0.6em;
  }
 
  .chuj{
@@ -384,3 +386,67 @@ text-transform: none;
   text-transform: none;
   font-weight: 400;
  }
+
+ .float{
+  position:fixed;
+  width:45px;
+  height:45px;
+  bottom:90px;
+  right:30px;
+  background-color: rgb(66, 152, 183);
+  opacity: 0.8;
+  color:#FFF;
+  border-radius:50px;
+  text-align:center;
+  box-shadow: 2px 2px 3px #999;
+}
+
+.my-float{
+  margin-top:16px;
+  opacity: 1.0 !important;
+  color: white;
+}
+
+.ocena_badania{
+  text-align: center;
+  padding-top: 20px;
+}
+
+.ocena_badania_text{
+  padding-bottom: 15px;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: none;
+
+}
+
+table {
+    border-collapse: collapse;
+}
+
+.text_table_bold{
+  padding: 20px 0 0px 20px; 
+  font-weight: 600; 
+  font-weight: 14px; 
+  text-transform: none;
+  line-height: 100%;
+}
+
+.td_up{
+  width: 50%; 
+  border: 1px solid #eaeaea; 
+  border-bottom: 0px; 
+  border-left: 0px;
+}
+
+.conteiner_number_table{
+  width: 80%;
+  background-color: #A0EE87;
+  border-radius: 50px;
+  margin: 0 auto;
+  font-size: 24px;
+  color: white;
+  padding: 10px 0px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}

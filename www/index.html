@@ -286,37 +286,22 @@
       <div style="padding-bottom: 80px;">
       <div class="secound-page-background">
          <div style=" display: inline-block; width: 25%; height: 10%; "><a href="#home"><i class="fas fa-angle-left" style="padding-left: 40px; padding-top: 20px;font-size: 24px; color: white;"></i></a></div
-          ><div style=" display: inline-block;width: 50%; height: 10%; margin: 0 auto; text-align: center; padding-bottom: 20px; font-size: 24px; text-transform: none; color:white; ">Moje badanie</div
-            >
-
-         <!-- 
-        <div> <i class="fas fa-angle-left" style="font-size: 24px; color: white; float: left; padding-left: 0px; margin-top: 20px;"></i></div> 
-          <div class="container-top-content"> 
-            
-          <div style="text-align: center; margin-left:0%; width: 100%;"> 
-
-          <div class="" style=" text-align: center; color: white; font-size: 22px; font-weight: 400; text-transform: none;">Moje Badania</div>
-          </div>
-          </div>           -->
+          ><div style=" display: inline-block;width: 50%; height: 10%; margin: 0 auto; text-align: center; padding-bottom: 20px; font-size: 24px; text-transform: none; color:white; ">Moje badanie</div>
       </div>
     
-<!--
 
- tutaj mysle ze beda zwykle <p> i sie funckjami w js to obsluzy, dodaj sobie podkreslenie i ogolnie popraw se te czcionki elo XD 
-
--->
 <div class="header-element">
   <ul class="menu-container">
           
-          <li class="menu-element menu-element2"><span id="wszystkiebadania" style="font-weight: 600;">Wszystkie</span></li>
-          <li class="menu-element menu-element2"><span  id="prawidłowebadania">Prawidłowe</span></li>
-          <li class="menu-element menu-element2"><span id="nieprawidłowebadania">Nieprawidłowe</span></li>
+          <li class="menu-element menu-element2"><span id="wszystkiebadania" style="background-color: #E9E9E9; border-radius: 50px; padding: 5px 10px; color:black; font-weight: 600;">Wszystkie</span></li>
+          <li class="menu-element menu-element2"><span  id="prawidłowebadania" style="background-color: transparent; border-radius: 50px; padding: 5px 10px; color:black; ">Prawidłowe</span></li>
+          <li class="menu-element menu-element2"><span id="nieprawidłowebadania" style="background-color: transparent; border-radius: 50px; padding: 5px 10px; color:black; ">Nieprawidłowe</span></li>
           
         </ul>
 
 </div>
 
-<div style="width: 80%; height: 1px; background-color: #CCCCCC; margin: 0 auto;"></div>
+<div style="width: 60%; height: 0.8px; background-color: #CCCCCC; margin: 0 auto;"></div>
 
       
      
@@ -325,12 +310,9 @@
 
       </div>
 
-
- <div class="container-buttons" id="add-button">  
- 
- <a href="#dodajbadanie" class="ui-btn  button-home-primary" id="add-href" >Dodaj badanie</a>
- 
-</div>
+<a href="#dodajbadanie" class="float">
+<i class="fa fa-plus my-float"></i>
+</a>
     </div>
  </div>
   
@@ -353,7 +335,7 @@
     <div role="main" class="ui-content secound-page">
       <div style="padding-bottom: 80px;">
       <div class="secound-page-background">
-         <div style=" display: inline-block; width: 25%; height: 10%; "><a href="#home"><i class="fas fa-angle-left" style="padding-left: 40px; padding-top: 20px;font-size: 24px; color: white;"></i></a></div
+         <div style=" display: inline-block; width: 25%; height: 10%; "><a href="#badania"><i class="fas fa-angle-left" style="padding-left: 40px; padding-top: 20px;font-size: 24px; color: white;"></i></a></div
           ><div style=" display: inline-block;width: 50%; height: 10%; margin: 0 auto; text-align: center; padding-bottom: 20px; font-size: 24px; text-transform: none; color:white; ">Nowe badanie</div>
       </div>
       <form action="#" style="text-align: center; padding-top: 20px;">
@@ -486,18 +468,9 @@
  <br>
 
    <div style="text-align: center; margin-top: 50px;">
-<a href="" data-role="button" class="mdl-button mdl-js-button mdl-button--accent" id="dodajbadania" style="padding: 0px 120px 0px 120px;"> Dodaj badanie </a>
+<a href="" data-role="none" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" id="dodajbadania" style="margin-top: 0px; background-color: #8ed6ce; color: white;  width: 70%; font-weight: 400;"> Dodaj badanie </a>
 </div>
 </form>
-      <div data-role="footer" data-position="fixed" style="padding: 10px 0 5px 0;">
-        <ul class="menu-container">
-          <li class="menu-element"><a href="#home" style="text-decoration: none; font-weight: 300; color: #333 "><img src="img/icons/home.png" alt=""><div>Home</div></a></li>
-          <li class="menu-element"><img src="img/icons/badania-active.png" alt=""><div>Badania</div></li>
-          <li class="menu-element"><img src="img/icons/planer.png" alt=""><div>Planer</div></li>
-          <li class="menu-element"><img src="img/icons/dziennik.png" alt=""><div>Dziennik</div></li>
-          <li class="menu-element"><img src="img/icons/profil.png" alt=""><div>Profil</div></li>
-        </ul>
-    </div>
 </div>
   </div>
 </div>
@@ -509,46 +482,80 @@
     <div role="main" class="ui-content secound-page" >
       <div style="padding-bottom: 80px;">
       <div class="secound-page-background">
-         <div style=" display: inline-block; width: 25%; height: 10%; "><a href="#home"><i class="fas fa-angle-left" style="padding-left: 40px; padding-top: 20px;font-size: 24px; color: white;"></i></a></div
-          ><div style=" display: inline-block;width: 50%; height: 10%; margin: 0 auto; text-align: center; padding-bottom: 20px; font-size: 24px; text-transform: none; color:white; ">Moje badanie</div
-            >
-
-         <!-- 
-        <div> <i class="fas fa-angle-left" style="font-size: 24px; color: white; float: left; padding-left: 0px; margin-top: 20px;"></i></div> 
-          <div class="container-top-content"> 
-            
-          <div style="text-align: center; margin-left:0%; width: 100%;"> 
-
-          <div class="" style=" text-align: center; color: white; font-size: 22px; font-weight: 400; text-transform: none;">Moje Badania</div>
-          </div>
-          </div>           -->
+         <div style=" display: inline-block; width: 25%; height: 10%; "><a href="#badania"><i class="fas fa-angle-left" style="padding-left: 40px; padding-top: 20px;font-size: 24px; color: white;"></i></a></div
+          ><div style=" display: inline-block;width: 50%; height: 10%; margin: 0 auto; text-align: center; padding-bottom: 20px; font-size: 24px; text-transform: none; color:white; ">Moje badanie</div>
       </div>
     
-<!--
-
- tutaj mysle ze beda zwykle <p> i sie funckjami w js to obsluzy, dodaj sobie podkreslenie i ogolnie popraw se te czcionki elo XD 
-
--->
-<div class="header-element">
-  <ul class="menu-container">
-          
-          <li class="menu-element menu-element2"><span id="wszystkiebadania" style="font-weight: 600;">Wszystkie</span></li>
-          <li class="menu-element menu-element2"><span  id="prawidłowebadania">Prawidłowe</span></li>
-          <li class="menu-element menu-element2"><span id="nieprawidłowebadania">Nieprawidłowe</span></li>
-          
-        </ul>
-
-</div>
-
-<div style="width: 80%; height: 1px; background-color: #CCCCCC; margin: 0 auto;"></div>
-
       
      
-      <div id="wyswietlanie">
-        
-        <p id="testbadanie">Badanie</p>
+      <div id="wyswietlanie" class="ocena_badania">
+        <div class="ocena_badania_text">Ogólna ocena badania</div>        
+        <img src="img/dobrze.png" id="testbadanie"></img>        
       </div>
 
+      <div style="margin-top: 20px;">
+        <table width="100%" >
+
+          <tr>
+
+            <td style="width: 50%; border: 1px solid #eaeaea; border-bottom: 0px; border-left: 0px">
+              <p class="text_table_bold">Prawidłowe <br><span style="font-weight: 400; color: #B2B2B2; font-size: 12px;">wskaźników</span></p>
+            </td>
+            
+            <td style="width: 50%; border: 1px solid #eaeaea; border-bottom: 0px; border-left: 0px; border-right: 0px;">
+              <p class="text_table_bold">Nieprawidłowe <br><span style="font-weight: 400; color: #B2B2B2; font-size: 12px;">wskaźników</span></p>
+            </td>
+
+          </tr>
+
+          <tr style="text-align: center;">
+            <td style=" width: 50%; border: 1px solid #eaeaea; border-top: 0px; border-left: 0px;"><div class="conteiner_number_table" id="correctValue"> 12 </div></td>
+            <td style=" width: 50%; border: 1px solid #eaeaea; border-top: 0px; border-left: 0px; border-right: 0px;"><div class="conteiner_number_table" style="background-color: #D4505E" id="IncorrectValue"> 12 </div></td>
+          </tr>
+        </table>
+      </div>
+      <div style="width: 100%; background-color: #eaeaea; height: 40px; "><p style="line-height: 40px; padding-left: 20px; color: #AAAAAA">Szczegóły badania</p></div>
+        
+      <div style="width: 100%; border-left: 6px solid #E36E7B;">
+          <div style="padding-left: 40px; padding-top: 15px; padding-bottom: 15px; padding-right: 40px;">
+            <div style="line-height: 100%;">
+              <span style="color: #E36E7B; font-size: 22px; font-weight: 300;">WBC Białe krwinki</span><br><br>
+              <span style="font-size: 12px; text-transform: none; color: #656565; ">wartość ponad normą</span><br>
+              <span style="font-size: 12px; font-weight: 600; color: #E36E7B; ">144,00</span>
+              <span style="font-size: 12px;  color: #E36E7B;">(+12,00)</span><br> <br>
+              <span style="text-transform: none; font-weight: 900;"> W Twoim organizmie toczy się infekcja/ stan zapalny, zbadaj się dokładnie.</span>
+            </div>
+          </div>
+      </div>
+      
+      <div style=" background-color: #eaeaea; width: 100%; height: 4px; "></div>
+
+      <div style="width: 100%; border-left: 6px solid #47A0B5;">
+          <div style="padding-left: 40px; padding-top: 15px; padding-bottom: 15px; padding-right: 40px;">
+            <div style="line-height: 100%;">
+              <span style="color: #47A0B5; font-size: 22px; font-weight: 300;">HGB(Hb) Hemoglobina</span><br><br>
+              <span style="font-size: 12px; text-transform: none; color: #656565; ">wartość poniżej normy</span><br>
+              <span style="font-size: 12px; font-weight: 600; color: #47A0B5; ">144,00</span>
+              <span style="font-size: 12px;  color: #47A0B5;">(+12,00)</span><br> <br>
+              <span style="text-transform: none; font-weight: 900;"> Możliwe, że masz anemię. Uzupełnij niedobór żelaza, witaminy B12 lub kwasu foliowego.</span>
+            </div>
+          </div>
+      </div>
+
+      <div style=" background-color: #eaeaea; width: 100%; height: 4px; "></div>
+
+      <div style="width: 100%; border-left: 6px solid #14B908;">
+          <div style="padding-left: 40px; padding-top: 15px; padding-bottom: 15px; padding-right: 40px;">
+            <div style="line-height: 100%;">
+              <span style="color: #14B908; font-size: 22px; font-weight: 300;">Glukoza</span><br><br>
+              <span style="font-size: 12px; text-transform: none; color: #656565; ">wartość w normie</span><br>
+              <span style="font-size: 12px; font-weight: 600; color: #14B908; ">144,00</span><br><br>
+              <span style="text-transform: none; font-weight: 900;">Twoje wyniki są w normie. Trzymaj tak dalej!</span>
+            </div>
+          </div>
+      </div>
+
+      <div style=" background-color: #eaeaea; width: 100%; height: 4px; "></div>
 
 
     </div>
@@ -2091,15 +2098,21 @@ var ahrefid;
             // licznik = negatywne.length;
 
             prawidłowe = 22 - negatywne.length;
-            if(prawidłowe > 12){
+
+            var correct = document.getElementById('correctValue');
+            var no_correct = document.getElementById('IncorrectValue');
+            correct.innerHTML = prawidłowe;
+            no_correct.innerHTML = 22 - prawidłowe;
+
+            if(prawidłowe >= 18){
               var el = document.getElementById('testbadanie');
-              el.innerHTML = "prawidłowe";
-            }else if(prawidłowe < 10){
+              el.src = "img/dobrze.png";
+            }else if(prawidłowe < 18 && prawidłowe > 12){
               var el = document.getElementById('testbadanie');
-              el.innerHTML = "slabe";
-            }else{
+              el.src = "img/srednio.png";
+            }else if(prawidłowe <= 12){
               var el = document.getElementById('testbadanie');
-              el.innerHTML = "srednio";
+              el.src = "img/slabo.png";
             }
             var ref2 = firebase.database().ref('users/' + uid + '/Badania/' + tablica[tablica.length - 1]).child("Data");
           ref2.on('value', function(snapshot4){
@@ -2255,24 +2268,24 @@ console.log(licznik);
 
     $(document).ready(function(){
     $("#prawidłowebadania").click(function(){
-        $("#prawidłowebadania").css("font-weight", 600);
-        $("#nieprawidłowebadania").css("font-weight", 300);
-        $("#wszystkiebadania").css("font-weight", 300);
+        $("#prawidłowebadania").css({"background-color": '#E9E9E9', "font-weight": '600'});
+        $("#nieprawidłowebadania").css({"background-color": 'transparent', "font-weight": '300'});
+        $("#wszystkiebadania").css({"background-color": 'transparent', "font-weight": '300'});
         $(".Nieprawidłowa").hide();
         $(".Prawidłowa").show();
     });
     $("#nieprawidłowebadania").click(function(){
-        $("#prawidłowebadania").css("font-weight", 300);
-        $("#nieprawidłowebadania").css("font-weight",600);
-        $("#wszystkiebadania").css("font-weight", 300);
+        $("#prawidłowebadania").css({"background-color": 'transparent', "font-weight": '300'});
+        $("#nieprawidłowebadania").css({"background-color": '#E9E9E9', "font-weight": '600'});
+        $("#wszystkiebadania").css({"background-color": 'transparent', "font-weight": '300'});
         $(".Prawidłowa").hide();
         $(".Nieprawidłowa").show();
     });
 
     $("#wszystkiebadania").click(function(){
-        $("#prawidłowebadania").css("font-weight", 300);
-        $("#nieprawidłowebadania").css("font-weight", 300);
-        $("#wszystkiebadania").css("font-weight", 600);
+        $("#prawidłowebadania").css({"background-color": 'transparent', "font-weight": '300'});
+        $("#nieprawidłowebadania").css({"background-color": 'transparent', "font-weight": '300'});
+        $("#wszystkiebadania").css({"background-color": '#E9E9E9', "font-weight": '600'});
         $(".Prawidłowa").show();
         $(".Nieprawidłowa").show();
     });
