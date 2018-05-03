@@ -472,12 +472,12 @@ table {
   padding-left: 40px;
   padding-top: 15px; 
   padding-bottom: 15px;
-  padding-right: 40px;
+  padding-right: 20px;
 }
 
 .badania_bad_above_wskaznik{
   color: #E36E7B;
-   font-size: 22px;
+   font-size: 20px;
   font-weight: 300;
 }
 
@@ -500,22 +500,32 @@ table {
 
 .badania_all_note{
   text-transform: none;
-  font-weight: 900;
+  font-weight: 600;
 }
 
-#badania_bad_below{
+.badania_bad_below{
   color: #47A0B5;
 }
 
-#badania_bad_below_border{
+.badania_bad_below_border{
   border-left: 6px solid #47A0B5;
 }
 
-#badania_good{
+.badania_good{
   color: #14B908;
 }
 
-#badania_good_border{
+.badania_good_border{
   border-left: 6px solid #14B908;
 }
 
+label {
+  border:none !important; 
+  background-color: transparent !important;
+}
+
+.checkbox{
+  display: inline-block;
+  background-color: transparent;
+  border: 0px;
+}
