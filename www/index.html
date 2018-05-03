@@ -1755,12 +1755,24 @@ console.log(addZeroes(5));
               data = snapshot4.val();
           });
             
-console.log(licznik);
-
+// console.log(licznik);
+var liczby = [];
+for (var j = 1; j <= licznik; j++){
+      liczby.push(j);
+}
+console.log(liczby);
             for(var i=1; i <= 4; i ++){
-
-var random = Math.floor((Math.random() * licznik) + 1);
-
+if(negatywne.length != 0){
+var random = Math.floor(Math.random() * licznik); 
+var podstaw = liczby[random];
+liczby.splice(random,1);
+console.log(liczby);
+console.log("wybrana liczba to: " + podstaw);
+console.log("Twoja losowa liczba to: " + random);
+console.log("Licznik wynosi: " + licznik);
+licznik--;
+// console.log("DLugosc tablicy negatywne to:" + negatywne.length);
+}else{}
 $( "#homewyswietlanie" ).append( '  <div class="first-box" id="rest-box"> \
         <div class="rest-box-content"> \
           <div class="circle"  style="" id="znakwskaznika">G</div> \
@@ -1790,15 +1802,15 @@ $( "#homewyswietlanie" ).append( '  <div class="first-box" id="rest-box"> \
                       var idostatniegobadania = document.getElementById('dataostatniegobadania');
                       var splitdata = data.split(" ");
                       id.setAttribute('id', "rodzaj" + i); 
-                      id.innerHTML = negatywne[random];
+                      id.innerHTML = negatywne[podstaw - 1];
                       idwartosc.setAttribute('id', 'wartoscwskaznika ' + i);
-                      idwartosc.innerHTML = twojewartosci[random];
+                      idwartosc.innerHTML = twojewartosci[podstaw - 1];
                       idnorma.setAttribute('id', 'rozneodnormy ' + i);
-                      idnorma.innerHTML = rozneodnormy[random];
+                      idnorma.innerHTML = rozneodnormy[podstaw - 1];
                       idznak.setAttribute('id', 'znakwskaznika ' + i);
-                      idznak.innerHTML = negatywne[random].charAt(0);
+                      idznak.innerHTML = negatywne[podstaw - 1].charAt(0);
                       idprzekroczonawartosc.setAttribute('id', 'przekroczonawartosc ' + i);
-                      idprzekroczonawartosc.innerHTML = przekroczonawartosc[random];
+                      idprzekroczonawartosc.innerHTML = przekroczonawartosc[podstaw - 1];
                       iddatabadania.setAttribute('id', "databadania " + i);
                       iddatabadania.innerHTML = data;
                       idostatniegobadania.innerHTML = splitdata[0]  + " " + splitdata[1] ;
@@ -1829,549 +1841,19 @@ $( "#homewyswietlanie" ).append( '  <div class="first-box" id="rest-box"> \
      }
 var ahrefid;
 
-//       function szczegolyPage (clicked_id) {
-//         firebase.auth().onAuthStateChanged(function(user) {
-//           var id = clicked_id;
-//           var numberPattern = /\d+/g;
 
-//           var id2 = id.match(numberPattern);
-//           var user = firebase.auth().currentUser;
-//           var uid = user.uid;
-//           var licznik = 0;
-//           var licznik_abov = 0;
-//           var licznik_below = 0;
-//           var tablica = [];
-//           var tabindex = 0;
-//           var tablica2 = [];
-//           var tabindex2 = 0 ;
-//           var negatywne = [];
-//           var pozytywy = [];
-//           var twojewartosci = [];
-//           var rozneodnormy = [];
-//           var przekroczonawartosc = [];
-//           var prawidłowe = 0;
-//           var pobrandeid = ahrefid;
-//           var obliczenia ;
-//           var data;
-//           var bialekrwinki ;
-//           var czerwonekrwinki ;
-//           var hemoglobina ;
-//           var hematokryt ;
-//           var limfocyty ;
-//           var monocyty ;
-//           var mcv ;
-//           var mch ;
-//           var mchc ;
-//           var plytkikrwi ;
-//           var ob ;
-//           var glukoza ;
-//           var cholesterol ;
-//           var tsh ;
-//           var alat ;
-//           var aspat ;
-//           var potas ;
-//           var sod ;
-//           var magnez ;
-//           var wapn ;
-//           var zelazo ;
-//           var witaminab ;
-//     if(user){
+function readTextFile(file, callback) {
+    var rawFile = new XMLHttpRequest();
+    rawFile.overrideMimeType("application/json");
+    rawFile.open("GET", file, true);
+    rawFile.onreadystatechange = function() {
+        if (rawFile.readyState === 4 && rawFile.status == "200") {
+            callback(rawFile.responseText);
+        }
+    }
+    rawFile.send(null);
+}
 
-//       var ref = firebase.database().ref('users/' + uid + '/Badania/').orderByKey();
-//    ref.on('value',function(badaniaSnapshot){
-
-
-
-//     badaniaSnapshot.forEach(function(snapshot){
-//       var key = snapshot.key;
-//       tablica[tabindex] = key;
-//       console.log(tablica[tabindex]);
-//         tabindex = tabindex + 1;
-//         console.log(tablica.length);
-// });
-
-//          var ref2 = firebase.database().ref('users/' + uid + '/Badania/' + tablica[id2 - 1]);
-//           ref2.on('value', function(snapshot2){
-//             var key2 = snapshot2.val();
-            
-//             bialekrwinki = key2.Białe_krwinki;
-//             czerwonekrwinki = key2.Czerwone_krwinki;
-//             hemoglobina = key2.Hemoglobina;
-//             hematokryt = key2.Hematokryt;
-//             limfocyty = key2.Limfocyty ;
-//             monocyty = key2.Monocyty ;
-//             mcv = key2.MCV;
-//             mch = key2.MCH;
-//             mchc = key2.MCHC;
-//             plytkikrwi = key2.Płytki_krwi;
-//             ob = key2.OB;
-//             glukoza = key2.Glukoza;
-//             cholesterol = key2.Cholesterol ;
-//             tsh = key2.TSH ;
-//             alat = key2.ALAT;
-//             aspat = key2.AspAT;
-//             potas = key2.Potas ;
-//             sod = key2.Sód ;
-//             magnez = key2.Magnez ;
-//             wapn = key2.Wapń;
-//             zelazo = key2.Żelazo;
-//             witaminab = key2.Witamina_B12 ;
-
-//             if( bialekrwinki < 4.1  ){
-//               licznik = licznik + 1;
-//               negatywne[0] = "Białe krwinki";
-//               twojewartosci[0] = addZeroes(bialekrwinki);
-//               rozneodnormy[0] = "Poniżej normy";
-//               obliczenia = 4.1 - bialekrwinki;
-//               przekroczonawartosc[0] = "(- " + addZeroes(obliczenia) + ")";
-//             }if(bialekrwinki > 11){
-//               licznik = licznik + 1;
-//               negatywne[0] = "Białe krwinki";
-//               twojewartosci[0] = addZeroes(bialekrwinki);
-//               rozneodnormy[0] = "Powyżej normy";
-//               obliczenia =  bialekrwinki - 11;
-//               przekroczonawartosc[0] = "(+ " + addZeroes(obliczenia) + ")";
-//             }else{}
-
-//             if(czerwonekrwinki < 4.5 ){
-//               licznik = licznik + 1;
-//               negatywne.push("Czerwone krwinki");
-//               twojewartosci.push(addZeroes(czerwonekrwinki));
-//               rozneodnormy.push("Poniżej normy");
-//               obliczenia = 4.5 - czerwonekrwinki;
-//               przekroczonawartosc.push("(- " + addZeroes(obliczenia) + ")");
-//             }if(czerwonekrwinki > 6.5){
-//               licznik = licznik + 1;
-//               negatywne.push("Czerwone krwinki");
-//               twojewartosci.push(addZeroes(czerwonekrwinki));
-//               rozneodnormy.push("Powyżej normy");
-//               obliczenia =  czerwonekrwinki - 6.5;
-//               przekroczonawartosc.push("(+ " + addZeroes(obliczenia) + ")")
-//             }else{}
-        
-//              if( hemoglobina < 13.5){
-//               licznik = licznik + 1;
-//               negatywne.push("Hemoglobina");
-//               twojewartosci.push(addZeroes(hemoglobina));
-//               rozneodnormy.push("Poniżej normy");
-//               obliczenia = 13.5 - hemoglobina;
-//               przekroczonawartosc.push("(- " + addZeroes(obliczenia) + ")");
-//             }if( hemoglobina > 18){
-//               licznik = licznik + 1;
-//               negatywne.push("Hemoglobina");
-//               twojewartosci.push(addZeroes(hemoglobina));
-//               rozneodnormy.push("Powyżej normy");
-//               obliczenia =  hemoglobina - 18;
-//               przekroczonawartosc.push("(+ " + addZeroes(obliczenia) + ")");
-//             }else{}
-
-//               if( hematokryt < 40 ){
-//               licznik = licznik + 1;
-//               negatywne.push("Hematokryt");
-//               twojewartosci.push(addZeroes(hematokryt));
-//               rozneodnormy.push("Poniżej normy");
-//               obliczenia = 40 - hematokryt;
-//               przekroczonawartosc.push("(- " + addZeroes(obliczenia) + ")");
-//             }if( hematokryt > 51){
-//               licznik = licznik + 1;
-//               negatywne.push("Hematokryt");
-//               twojewartosci.push(addZeroes(hematokryt));
-//               rozneodnormy.push("Powyżej normy");
-//               obliczenia = hematokryt - 51;
-//               przekroczonawartosc.push("(+ " + addZeroes(obliczenia) + ")");
-//             }else{}
-
-//                if(limfocyty < 20 ){
-//               licznik = licznik + 1;
-//               negatywne.push("Limfocyty");
-//               twojewartosci.push(addZeroes(limfocyty));
-//               rozneodnormy.push("Poniżej normy");
-//               obliczenia = 20 - limfocyty;
-//               przekroczonawartosc.push("(- " + addZeroes(obliczenia) + ")");
-//             }if(limfocyty > 45){
-//               licznik = licznik + 1;
-//               negatywne.push("Limfocyty");
-//               twojewartosci.push(addZeroes(limfocyty));
-//               rozneodnormy.push("Powyżej normy");
-//               obliczenia = limfocyty - 45;
-//               przekroczonawartosc.push("(+ " + addZeroes(obliczenia) + ")");
-//             }else{}
-
-//              if( monocyty  < 0.3 ){
-//               licznik = licznik + 1;
-//               negatywne.push("Monocyty");
-//               twojewartosci.push(addZeroes(monocyty));
-//               rozneodnormy.push("Poniżej normy");
-//               obliczenia = 0.3 - monocyty;
-//               przekroczonawartosc.push("(- " + addZeroes(obliczenia) + ")");
-//             }if( monocyty > 0.8){
-//               licznik = licznik + 1;
-//               negatywne.push("Monocyty");
-//               twojewartosci.push(addZeroes(monocyty));
-//               rozneodnormy.push("Powyżej normy");
-//               obliczenia = monocyty - 0.8;
-//               przekroczonawartosc.push("(+ " + addZeroes(obliczenia) + ")");
-//             }else{}
-
-//               if( mcv  < 80 ){
-//               licznik = licznik + 1;
-//               negatywne.push("MCV");
-//               twojewartosci.push(addZeroes(mcv));
-//               rozneodnormy.push("Poniżej normy");
-//               obliczenia = 80 - mcv;
-//               przekroczonawartosc.push("(- " + addZeroes(obliczenia) + ")");
-//             }if( mcv > 97){
-//               licznik = licznik + 1;
-//               negatywne.push("MCV");
-//               twojewartosci.push(addZeroes(mcv));
-//               rozneodnormy.push("Powyżej normy");
-//               obliczenia = mcv - 97;
-//               przekroczonawartosc.push("(+ " + addZeroes(obliczenia) + ")");
-//             }else{}
-
-
-//              if( mch < 26 ){
-//               licznik = licznik + 1;
-//               negatywne.push("MCH");
-//               twojewartosci.push(addZeroes(mch));
-//               rozneodnormy.push("Poniżej normy");
-//               obliczenia = 26 - mch;
-//               przekroczonawartosc.push("(- " + addZeroes(obliczenia) + ")");
-//             }if( mch > 32){
-//               licznik = licznik + 1;
-//               negatywne.push("MCH");
-//               twojewartosci.push(addZeroes(mch));
-//               rozneodnormy.push("Powyżej normy");
-//               obliczenia = mch - 32;
-//               przekroczonawartosc.push("(+ " + addZeroes(obliczenia) + ")");
-//             }else{}
-
-//                if(mchc < 31 ){
-//               licznik = licznik + 1;
-//               negatywne.push("MCHC");
-//               twojewartosci.push(addZeroes(mchc));
-//               rozneodnormy.push("Poniżej normy");
-//               obliczenia = 31 - mchc;
-//               przekroczonawartosc.push("(- " + addZeroes(obliczenia) + ")");
-//             }if( mchc > 36){
-//               licznik = licznik + 1;
-//               negatywne.push("MCHC");
-//               twojewartosci.push(addZeroes(mchc));
-//               rozneodnormy.push("Powyżej normy");
-//               obliczenia = mchc - 36;
-//               przekroczonawartosc.push("(+ " + addZeroes(obliczenia) + ")");
-//             }else{}
-
-//             if( plytkikrwi < 140){
-//               licznik = licznik + 1;
-//               negatywne.push("Płytki krwi");
-//               twojewartosci.push(addZeroes(plytkikrwi));
-//               rozneodnormy.push("Poniżej normy");
-//               obliczenia = 140 - plytkikrwi;
-//               przekroczonawartosc.push("(- " + addZeroes(obliczenia) + ")");
-//             }if( plytkikrwi > 400){
-//               licznik = licznik + 1;
-//               negatywne.push("Płytki krwi");
-//               twojewartosci.push(addZeroes(plytkikrwi));
-//               rozneodnormy.push("Powyżej normy");
-//               obliczenia = plytkikrwi - 400;
-//               przekroczonawartosc.push("(+ " + addZeroes(obliczenia) + ")");
-//             }else{}
-          
-//             if( ob < 3){
-//               licznik = licznik + 1;
-//               negatywne.push("OB");
-//               twojewartosci.push(addZeroes(ob));
-//               rozneodnormy.push("Poniżej normy");
-//               obliczenia = 3 - ob;
-//               przekroczonawartosc.push("(- " + addZeroes(obliczenia) + ")");
-//             }if( ob > 8){
-//               licznik = licznik + 1;
-//               negatywne.push("OB");
-//               twojewartosci.push(addZeroes(ob));
-//               rozneodnormy.push("Powyżej normy");
-//               obliczenia = ob - 8;
-//               przekroczonawartosc.push("(+ " + addZeroes(obliczenia) + ")");
-//             }else{}
-
-//             if( glukoza < 70){
-//               licznik = licznik + 1;
-//               negatywne.push("Glukoza");
-//               twojewartosci.push(addZeroes(glukoza));
-//               rozneodnormy.push("Poniżej normy");
-//               obliczenia = 70 - glukoza;
-//               przekroczonawartosc.push("(- " + addZeroes(obliczenia) + ")");
-//             }if( glukoza > 99){
-//               licznik = licznik + 1;
-//               negatywne.push("Glukoza");
-//               twojewartosci.push(addZeroes(glukoza));
-//               rozneodnormy.push("Powyżej normy");
-//               obliczenia = glukoza - 99;
-//               przekroczonawartosc.push("(+ " + addZeroes(obliczenia) + ")");
-//             }else{}
-
-//               if( cholesterol < 170){
-//               licznik = licznik + 1;
-//               negatywne.push("Cholesterol");
-//               twojewartosci.push(addZeroes(cholesterol));
-//               rozneodnormy.push("Poniżej normy");
-//               obliczenia = 170 - cholesterol;
-//               przekroczonawartosc.push("(- " + addZeroes(obliczenia) + ")");
-//             }if( cholesterol > 199){
-//               licznik = licznik + 1;
-//               negatywne.push("Cholesterol");
-//               twojewartosci.push(addZeroes(cholesterol));
-//               rozneodnormy.push("Powyżej normy");
-//               obliczenia = cholesterol - 199;
-//               przekroczonawartosc.push("(+ " + addZeroes(obliczenia) + ")");
-//             }else{}
-
-//             if( tsh < 0.32){
-//               licznik = licznik + 1;
-//               negatywne.push("TSH");
-//               twojewartosci.push(addZeroes(tsh));
-//               rozneodnormy.push("Poniżej normy");
-//               obliczenia = 0.32 - tsh;
-//               przekroczonawartosc.push("(- " + addZeroes(obliczenia) + ")");
-//             }if( tsh > 5.0){
-//               licznik = licznik + 1;
-//               negatywne.push("TSH");
-//               twojewartosci.push(addZeroes(tsh));
-//               rozneodnormy.push("Powyżej normy");
-//               obliczenia = tsh - 5;
-//               przekroczonawartosc.push("(+ " + addZeroes(obliczenia) + ")");
-//             }else{}
-
-//             if( alat < 5){
-//               licznik = licznik + 1;
-//               negatywne.push("ALAT");
-//               twojewartosci.push(addZeroes(alat));
-//               rozneodnormy.push("Poniżej normy");
-//               obliczenia = 5 - alat;
-//               przekroczonawartosc.push("(- " + addZeroes(obliczenia) + ")");
-//             }if( alat > 40){
-//               licznik = licznik + 1;
-//               negatywne.push("ALAT");
-//               twojewartosci.push(addZeroes(alat));
-//               rozneodnormy.push("Powyżej normy");
-//               obliczenia = alat - 40;
-//               przekroczonawartosc.push("(+ " + addZeroes(obliczenia) + ")");
-//             }else{}
-
-//             if( aspat < 8){
-//               licznik = licznik + 1;
-//               negatywne.push("AspAT");
-//               twojewartosci.push(addZeroes(aspat));
-//               rozneodnormy.push("Poniżej normy");
-//               obliczenia = 8 - aspat;
-//               przekroczonawartosc.push("(- " + addZeroes(obliczenia) + ")");
-//             }if( aspat > 45){
-//               licznik = licznik + 1;
-//               negatywne.push("AspAT");
-//               twojewartosci.push(addZeroes(aspat));
-//               rozneodnormy.push("Powyżej normy");
-//               obliczenia =  aspat - 45;
-//               przekroczonawartosc.push("(+ " + addZeroes(obliczenia) + ")");
-//             }else{}
-
-//             if( potas < 3.5 ){
-//               licznik = licznik + 1;
-//               negatywne.push("Potas");
-//               twojewartosci.push(addZeroes(potas));
-//               rozneodnormy.push("Poniżej normy");
-//               obliczenia = 3.5 - potas;
-//               przekroczonawartosc.push("(- " + addZeroes(obliczenia) + ")");
-//             }if( potas > 5.5){
-//               licznik = licznik + 1;
-//               negatywne.push("Potas");
-//               twojewartosci.push(addZeroes(potas));
-//               rozneodnormy.push("Powyżej normy");
-//               obliczenia = potas - 5.5;
-//               przekroczonawartosc.push("(+ " + addZeroes(obliczenia) + ")");
-//             }else{}
-
-//             if( sod < 135 ){
-//               licznik = licznik + 1;
-//               negatywne.push("Sód");
-//               twojewartosci.push(addZeroes(sod));
-//               rozneodnormy.push("Poniżej normy");
-//               obliczenia = 135 - sod;
-//               przekroczonawartosc.push("(- " + addZeroes(obliczenia) + ")");
-//             }if( sod > 145){
-//               licznik = licznik + 1;
-//               negatywne.push("Sód");
-//               twojewartosci.push(addZeroes(sod));
-//               rozneodnormy.push("Powyżej normy");
-//               obliczenia =  sod - 145 ;
-//               przekroczonawartosc.push("(+ " + addZeroes(obliczenia) + ")");
-//             }else{}
-
-//               if( magnez < 0.65 ){
-//               licznik = licznik + 1;
-//               negatywne.push("Magnez");
-//               twojewartosci.push(addZeroes(magnez));
-//               rozneodnormy.push("Poniżej normy");
-//               obliczenia = 0.65 - magnez;
-//               przekroczonawartosc.push("(- " + addZeroes(obliczenia) + ")");
-//             }if( magnez > 1.2){
-//               licznik = licznik + 1;
-//               negatywne.push("Magnez");
-//               twojewartosci.push(addZeroes(magnez));
-//               rozneodnormy.push("Powyżej normy");
-//               obliczenia =  magnez - 1.2;
-//               przekroczonawartosc.push("(+ " + addZeroes(obliczenia) + ")");
-//             }else{}
-
-//              if( wapn < 2.25 ){
-//               licznik = licznik + 1;
-//               negatywne.push("Wapń");
-//               twojewartosci.push(addZeroes(wapn));
-//               rozneodnormy.push("Poniżej normy");
-//               obliczenia = 2.25 - wapn;
-//               przekroczonawartosc.push("(- " + addZeroes(obliczenia) + ")");
-//             }if( wapn > 2.75){
-//               licznik = licznik + 1;
-//               negatywne.push("Wapń");
-//               twojewartosci.push(addZeroes(wapn));
-//               rozneodnormy.push("Powyżej normy");
-//               obliczenia =  wapn - 2.75;
-//               przekroczonawartosc.push("(+ " + addZeroes(obliczenia) + ")");
-//             }else{}
-             
-//             if( zelazo < 50 ){
-//               licznik = licznik + 1;
-//               negatywne.push("Żelazo");
-//               twojewartosci.push(addZeroes(zelazo));
-//               rozneodnormy.push("Poniżej normy");
-//               obliczenia = 50 - zelazo;
-//               przekroczonawartosc.push("(- " + addZeroes(obliczenia) + ")");
-//             }if( zelazo > 158){
-//               licznik = licznik + 1;
-//               negatywne.push("Żelazo");
-//               twojewartosci.push(addZeroes(zelazo));
-//               rozneodnormy.push("Powyżej normy");
-//               obliczenia =  zelazo - 158;
-//               przekroczonawartosc.push("(+ " + addZeroes(obliczenia) + ")");
-//             }else{}
-
-//             if( witaminab < 148 ){
-//               licznik = licznik + 1;
-//               negatywne.push("Witamina B12");
-//               twojewartosci.push(addZeroes(witaminab));
-//               rozneodnormy.push("Poniżej normy");
-//               obliczenia = 148 - witaminab;
-//               przekroczonawartosc.push("(- " + addZeroes(obliczenia) + ")");
-//             }if( witaminab > 740){
-//               licznik = licznik + 1;
-//               negatywne.push("Witamina B12");
-//               twojewartosci.push(addZeroes(witaminab));
-//               rozneodnormy.push("Powyżej normy");
-//               obliczenia = witaminab - 740;
-//               przekroczonawartosc.push("(+ " + addZeroes(obliczenia) + ")");
-//             }else{}
-
-//             // licznik = negatywne.length;
-
-//             prawidłowe = 22 - negatywne.length;
-
-//             var correct = document.getElementById('correctValue');
-//             var no_correct = document.getElementById('IncorrectValue');
-//             correct.innerHTML = prawidłowe;
-//             no_correct.innerHTML = 22 - prawidłowe;
-
-//             if(prawidłowe >= 18){
-//               var el = document.getElementById('testbadanie');
-//               el.src = "img/dobrze.png";
-//             }else if(prawidłowe < 18 && prawidłowe > 12){
-//               var el = document.getElementById('testbadanie');
-//               el.src = "img/srednio.png";
-//             }else if(prawidłowe <= 12){
-//               var el = document.getElementById('testbadanie');
-//               el.src = "img/slabo.png";
-//             }
-
-//             var ref2 = firebase.database().ref('users/' + uid + '/Badania/' + tablica[id2 - 1]).child("Data");
-//           ref2.on('value', function(snapshot4){
-
-//               data = snapshot4.val();
-//               var datachange = document.getElementById('data_change');
-//               datachange.innerHTML = data;
-//           });
-            
-// console.log(licznik);
-
-// //             for(var i=1; i <= 4; i ++){
-
-// // var random = Math.floor((Math.random() * licznik) + 1);
-
-// // $( "#homewyswietlanie" ).append( '  <div class="first-box" id="rest-box"> \
-// //         <div class="rest-box-content"> \
-// //           <div class="circle"  style="" id="znakwskaznika">G</div> \
-// //         </div> \
-// //          \
-// //         <div class="container-element-box"> \
-// //           <div style="color: #3A4759;" id="rodzaj">Glukoza</div>  \
-// //           <span class="value-element-mark">wartość: \
-// //            <span style="color:#E36E7B" id="rozneodnormy">powyżej normy</span> \
-// //          </span> \
-// //         </div> \
-// //  \
-// //        <div class="value-element-inner"> \
-// //         <div style="color: #E36E7B;" ><span id="wartoscwskaznika">115,00</span>  \
-// //           <span style="font-size: 10px; color: #47A0B5" id="przekroczonawartosc">(+12,00)</span> \
-// //         </div> \
-// //          <span class="element-date" id="databadania">Kwi. 24</span> \
-// //        </div> \
-// //       </div>   ');
-
-// //                       var id = document.getElementById('rodzaj');
-// //                       var idwartosc = document.getElementById('wartoscwskaznika');
-// //                       var idnorma = document.getElementById('rozneodnormy')
-// //                       var idznak = document.getElementById('znakwskaznika');
-// //                       var idprzekroczonawartosc = document.getElementById('przekroczonawartosc')
-// //                       var iddatabadania = document.getElementById('databadania');
-// //                       var idostatniegobadania = document.getElementById('dataostatniegobadania');
-// //                       var splitdata = data.split(" ");
-// //                       id.setAttribute('id', "rodzaj" + i); 
-// //                       id.innerHTML = negatywne[random];
-// //                       idwartosc.setAttribute('id', 'wartoscwskaznika ' + i);
-// //                       idwartosc.innerHTML = twojewartosci[random];
-// //                       idnorma.setAttribute('id', 'rozneodnormy ' + i);
-// //                       idnorma.innerHTML = rozneodnormy[random];
-// //                       idznak.setAttribute('id', 'znakwskaznika ' + i);
-// //                       idznak.innerHTML = negatywne[random].charAt(0);
-// //                       idprzekroczonawartosc.setAttribute('id', 'przekroczonawartosc ' + i);
-// //                       idprzekroczonawartosc.innerHTML = przekroczonawartosc[random];
-// //                       iddatabadania.setAttribute('id', "databadania " + i);
-// //                       iddatabadania.innerHTML = data;
-// //                       idostatniegobadania.innerHTML = splitdata[0]  + " " + splitdata[1] ;
-                      
-
-// //             }
-
-// //             for(var j=1; j <=licznik; j = j + 2){
-
-// //               var idznak = document.getElementById('znakwskaznika ' + j);
-// //               idznak.style.backgroundColor = "#4298b7";
-// //             }
-
-
-//         }); 
-//      });
-  
-
-
-
-//     }else{
-
-//     }
-
-//         });
-
-
-
-
-//      }
 
  function szczegolyPage (clicked_id) {
         firebase.auth().onAuthStateChanged(function(user) {
@@ -2397,6 +1879,10 @@ var ahrefid;
           var nazwy = ["Białe krwinki", "Czerwone krwinki", "Hemoglobina", "Hematokryt", "Limfocyty", "Monocyty", "MCV", "MCH",
                       "MCHC", "Płytki krwi", "OB", "Glukoza", "Cholesterol", "TSH", "ALAT", "AspAT", "Potas",
                       "Sód", "Magnez", "Wapń", "Żelazo", "Witamina B12"];
+           var nazwy2 = ["Bialekrwinki", "Czerwonekrwinki", "Hemoglobina", "Hematokryt", "Limfocyty", "Monocyty", "MCV", "MCH",
+                      "MCHC", "Plytkikrwi", "OB", "Glukoza", "Cholesterol", "TSH", "ALAT", "AspAT", "Potas",
+                      "Sod", "Magnez", "Wapn", "Zelazo", "WitaminaB12"];           
+
           var twojewartosci = [];
           var rozneodnormy = [];
           
@@ -2459,7 +1945,7 @@ var ahrefid;
           <div class="badania_all_inner"> \
             <div style="line-height: 100%;"> \
               \
-              <span class="badania_bad_above_wskaznik" > \
+              <span class="badania_bad_above_wskaznik" id="nazwawskaznika"> \
                 WBC Białe krwinki \
               </span> \
               <br><br> \
@@ -2469,16 +1955,16 @@ var ahrefid;
               </span> \
               <br> \
  \
-              <span class="badania_bad_above_value"> \
+              <span class="badania_bad_above_value" id="wartoscszczegoly"> \
                 144,00 \
               </span> \
  \
-              <span class="badania_bad_above_value_sec"> \
+              <span class="badania_bad_above_value_sec" id="wartoscroznaodnormy"> \
                 (+12,00) \
               </span> \
               <br><br> \
  \
-              <span class="badania_all_note"> \
+              <span class="badania_all_note" id="wskazowki"> \
                 W Twoim organizmie toczy się infekcja/ stan zapalny, zbadaj się dokładnie. \
               </span> \
  \
@@ -2487,10 +1973,30 @@ var ahrefid;
       </div> \
  \
       <div name="Separator" style=" background-color: #eaeaea; width: 100%; height: 4px; " class="separator"></div>');
-
-            // var nazwawskaznika = document.getElementsByName('nazwawskaznika');
-            // nazwawskaznika.name = 'nazwawskaznika ' + i;
-            // nazwawskaznika.innerHTML = nazwy[i - 1];
+$(document).ready(function(){ 
+            var nazwawskaznika = document.getElementById('nazwawskaznika');
+            var wartoscszczegoly = document.getElementById('wartoscszczegoly');
+            var wartoscroznaodnormy = document.getElementById('wartoscroznaodnormy');
+            var wskazowki = document.getElementById('wskazowki');
+            nazwawskaznika.setAttribute('id', 'nazwawskaznika ' + i);
+            nazwawskaznika.innerHTML = nazwy[i - 1];
+            wartoscszczegoly.setAttribute('id', 'wartoscszczegoly ' + i);
+            wartoscszczegoly.innerHTML = addZeroes(wartosc[i - 1]);
+            obliczenia = wartosc[i - 1] - gornyzakres[i - 1];
+            wartoscroznaodnormy.setAttribute('id', 'wartoscroznaodnormy ' + i);
+            wartoscroznaodnormy.innerHTML = "(+ " + addZeroes(obliczenia) + ")";
+            wskazowki.setAttribute('id', 'wskazowki ' + i);
+            var xhttp = new XMLHttpRequest();
+            var file = "https://health-care-71096.firebaseio.com/Komunikaty/" + nazwy2[i - 1]+ "/Powyzej.json";
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                   // Typical action to be performed when the document is ready:
+                   wskazowki.innerHTML = xhttp.responseText.replace(/['"]+/g, '');
+                }
+            };
+            xhttp.open("GET", file, true);
+            xhttp.send();
+          });
 
                   }else if(wartosc[i - 1] < dolnyzakres[i - 1]){
               licznik++;
@@ -2499,7 +2005,7 @@ var ahrefid;
           <div class="badania_all_inner">  \
             <div style="line-height: 100%;"> \
                \
-              <span class="badania_bad_above_wskaznik badania_bad_below" id="" > \
+              <span class="badania_bad_above_wskaznik badania_bad_below" id="nazwawskaznika" > \
                 HGB(Hb) Hemoglobina \
               </span> \
               <br><br> \
@@ -2509,16 +2015,16 @@ var ahrefid;
               </span> \
               <br> \
  \
-              <span class="badania_bad_above_value badania_bad_below" id=""> \
+              <span class="badania_bad_above_value badania_bad_below" id="wartoscszczegoly"> \
                 144,00 \
               </span> \
  \
-              <span class="badania_bad_above_value_sec badania_bad_below" id=""> \
+              <span class="badania_bad_above_value_sec badania_bad_below" id="wartoscroznaodnormy"> \
                 (-12,00) \
               </span> \
               <br><br> \
  \
-              <span class="badania_all_note"> \
+              <span class="badania_all_note" id="wskazowki"> \
                 Możliwe, że masz anemię. Uzupełnij niedobór żelaza, witaminy B12 lub kwasu foliowego. \
               </span> \
  \
@@ -2528,9 +2034,40 @@ var ahrefid;
  \
       <div name="Separator" style=" background-color: #eaeaea; width: 100%; height: 4px; " class="separator"></div>');
 
-            // var nazwawskaznika = document.getElementsByName('nazwawskaznika');
-            // nazwawskaznika.name = 'nazwawskaznika ' + i;
-            // nazwawskaznika.innerHTML = nazwy[i - 1];
+            $(document).ready(function(){ 
+            var nazwawskaznika = document.getElementById('nazwawskaznika');
+            var wartoscszczegoly = document.getElementById('wartoscszczegoly');
+            var wartoscroznaodnormy = document.getElementById('wartoscroznaodnormy');
+            var wskazowki = document.getElementById('wskazowki');
+            nazwawskaznika.setAttribute('id', 'nazwawskaznika ' + i);
+            nazwawskaznika.innerHTML = nazwy[i - 1];
+            wartoscszczegoly.setAttribute('id', 'wartoscszczegoly ' + i);
+            wartoscszczegoly.innerHTML = addZeroes(wartosc[i - 1]);
+            obliczenia = dolnyzakres[i - 1] - wartosc[i - 1] ;
+            wartoscroznaodnormy.setAttribute('id', 'wartoscroznaodnormy ' + i);
+            wartoscroznaodnormy.innerHTML = "(- " + addZeroes(obliczenia) + ")"
+            wskazowki.setAttribute('id','wskazowki ' + i);
+            // var JSON = readTextFile("komunikaty.json", function(text){
+            //             var data = JSON.parse(text);
+            //             console.log(data);
+            //             return data
+            //             });
+            // $.getJSON( "https://health-care-71096.firebaseio.com/Komunikaty/MCV/Powyżej", function( json ) {
+            // var tekst =  json.MCV.powyżej; 
+            // wskazowki.innerHTML = tekst; 
+            //  });
+            var xhttp = new XMLHttpRequest();
+            var file = "https://health-care-71096.firebaseio.com/Komunikaty/" + nazwy2[i - 1]+ "/Ponizej.json";
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                   // Typical action to be performed when the document is ready:
+                   wskazowki.innerHTML = xhttp.responseText.replace(/['"]+/g, '');
+                }
+            };
+            xhttp.open("GET", file, true);
+            xhttp.send();
+                       
+          });
 
             }else if(wartosc[i - 1] > dolnyzakres[i - 1] && wartosc[i - 1] < gornyzakres[i-1]){
               
@@ -2538,7 +2075,7 @@ var ahrefid;
           <div class="badania_all_inner">\
             <div style="line-height: 100%;">\
               \
-              <span class="badania_bad_above_wskaznik badania_good" id="" >\
+              <span class="badania_bad_above_wskaznik badania_good" id="nazwawskaznika" >\
                 Glukoza\
               </span>\
               <br><br>\
@@ -2548,7 +2085,7 @@ var ahrefid;
               </span>\
               <br>\
 \
-              <span class="badania_bad_above_value badania_good" id="">\
+              <span class="badania_bad_above_value badania_good" id="wartoscszczegoly">\
                 144,00\
               </span>\
 \
@@ -2564,12 +2101,17 @@ var ahrefid;
       \
       <div name="Separator" style=" background-color: #eaeaea; width: 100%; height: 4px; " class="separator"></div>');
               
-            // var nazwawskaznika = document.getElementsByName('nazwawskaznika');
-            // nazwawskaznika.name = 'nazwawskaznika ' + i;
-            // nazwawskaznika.innerHTML = nazwy[i - 1];
-            // }
-            }
+            $(document).ready(function(){ 
+            var nazwawskaznika = document.getElementById('nazwawskaznika');
+            var wartoscszczegoly = document.getElementById('wartoscszczegoly');
+            nazwawskaznika.setAttribute('id', 'nazwawskaznika ' + i);
+            nazwawskaznika.innerHTML = nazwy[i - 1];
+            wartoscszczegoly.setAttribute('id', 'wartoscszczegoly ' + i);
+            wartoscszczegoly.innerHTML = addZeroes(wartosc[i - 1]);
+          });
+
           }
+        }
             // licznik = negatywne.length;
 
             prawidłowe = 22 - licznik;

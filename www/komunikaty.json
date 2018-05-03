@@ -1,0 +1,134 @@
+{
+"Bialekrwinki":{
+  
+  "Ponizej" : "Najprawdopodobniej masz chorobę szpiku kostnego lub wirusową.",
+  "Powyzej" : "W Twoim organizmie toczy się infekcja lub stan zapalny. Zalecamy przeprowadzenie dokładnych badań."
+},
+
+"Czerwonekrwinki":{
+ 
+  "Ponizej" : "Możliwe, że masz anemię. Uzupełnij niedobór żelaza, witaminy B12 lub kwasu foliowego.",
+  "Powyzej" : "Możliwe, że masz wadę serca lub przewlekłą chorobę płuc. Udaj się do lekarza w celu dokonania większej ilości badań." 
+},
+
+"Hemoglobina":{
+ 
+  "Ponizej" : "Możliwe, że masz anemię. Uzupełnij niedobór żelaza, witaminy B12 lub kwasu foliowego.",
+  "Powyzej" : "Masz odwodniony organizm! Uzupełnij elektrolity i pij dużo wody." 
+},
+
+"Hematokryt":{
+ 
+  "Ponizej" : "Możliwe, że masz anemię. Uzupełnij niedobór żelaza, witaminy B12 lub kwasu foliowego.",
+  "Powyzej" : "Wysoki poziom Hematokrytu może świadczyć o chorobie serca, a często też o postępującym raku nerek. Udaj się jak najprędzej do lekarza" 
+},
+
+"Limfocyty":{
+ 
+  "Ponizej" : "Masz osłabiony układ odpornościowy zjedz miód manuka, łososia lub udaj się do lekarza w celu dokonania większej ilości badań.",
+  "Powyzej" : "Możliwe, że masz infekcję w organizmie. Udaj się do lekarza w celu dokonania większej ilości badań." 
+},
+
+"Monocyty":{
+ 
+  "Ponizej" : "Masz osłabiony układ odpornościowy zjedz miód manuka, łososia lub udaj się do lekarza w celu dokonania większej ilości badań.",
+  "Powyzej" : "Możliwe, że masz zakażenie bakteryjne lub wirusowe. Udaj się do lekarza w celu dokonania większej ilości badań." 
+},
+
+"MCV":{
+ 
+  "Ponizej" : "Możliwe, że masz niedobór żelaza. Zjedz pomidor, suszone morele lub buraki.",
+  "Powyzej" : "Możliwe, że masz anemię. Uzupełnij niedobór żelaza, witaminy B12 lub kwasu foliowego." 
+},
+
+"MCH":{
+ 
+  "Ponizej" : "Możliwe, że masz anemię. Zjedz pomidor, suszone morele lub buraki.",
+  "Powyzej" : "Podwyższona wartość MCH świadczy najczęściej o .." 
+},
+
+"MCHC":{
+ 
+  "Ponizej" : "Możliwe, że masz anemię. Zjedz pomidor, suszone morele lub buraki.",
+  "Powyzej" : "Masz odwodniony organizm. Uzupełnij ilość przyjmowanych płynów." 
+},
+
+
+"Plytkikrwi":{
+ 
+  "Ponizej" : "Zjedz rybę, jajka lub wędliny.",
+  "Powyzej" : "Uzupełnij elektrolity. Zjedz pomidor, suszone morele lub buraki." 
+},
+
+"OB":{
+ 
+  "Ponizej" : "Możliwe, że masz niedokrwistość, zaburzenie funkcjonowania układu krążenia lub alergię. Udaj się do lekarza w celu dokonania większej ilości badań.",
+  "Powyzej" : "Możliwe, że masz chorobę nerek, gruźlicę lub chorobę autoimmunologiczną. Udaj się do lekarza w celu dokonania większej ilości badań." 
+},
+
+"Glukoza":{
+ 
+  "Ponizej" : "Masz za niski cukier, pozwól sobie na coś słodkiego ",
+  "Powyzej" : "Wykonuj minimum 30min dziennie wysiłku fizycznego." 
+},
+
+"Cholesterol":{
+ 
+  "Ponizej" : "Możliwe, że masz nadczynność tarczycy. Udaj się do lekarza w celu dokonania większej ilości badań.",
+  "Powyzej" : "Unikaj tłustych potraw pochodzenia zwierzęcego, palenia tytoniu oraz zwiększ Twój dzienny wysiłek fizyczny." 
+},
+
+"TSH":{
+ 
+  "Ponizej" : "Możliwe, że masz nadczynność tarczycy. Udaj się do lekarza w celu dokonania większej ilości badań.",
+  "Powyzej" : "Możliwe, że masz niedoczynność tarczyce lub gruczolak przysadki mózgowej. Udaj się do lekarza w celu dokonania większej ilości badań." 
+},
+
+"ALAT":{
+ 
+  "Ponizej" : "Alat za mały ...",
+  "Powyzej" : "Możliwe, że masz zapalenie wątroby. Udaj się do lekarza w celu dokonania większej ilości badań." 
+},
+
+"AspAT":{
+ 
+  "Ponizej" : "Masz poważne zaburzenia metaboliczne. Udaj się do lekarza w celu  dokonania większej ilości badań.",
+  "Powyzej" : "Masz problem z efektywnością pracy wątroby. Udaj się do lekarza w celu dokonania większej ilości badań." 
+},
+
+"Potas":{
+ 
+  "Ponizej" : "Zjedz pomidor, banan lub suszone owoce.",
+  "Powyzej" : "Ogranicz spożywanie ziemniaków, bananów oraz owoców cytrusowych." 
+},
+
+"Sod":{
+ 
+  "Ponizej" : "Zjedz żółty ser, rybę lub wędliny.",
+  "Powyzej" : "Ogranicz produkty z dużą ilością soli oraz zacznij przyjmować co najmniej  2,5l płynów dziennie." 
+},
+
+"Magnez":{
+ 
+  "Ponizej" : "Zjedz szpinak, pestki z dyni lub orzechy brazylijskie.",
+  "Powyzej" : "Masz niedociśnienie. Udaj się do lekarza w celu dokonania większej ilości badań." 
+},
+
+"Wapn":{
+ 
+  "Ponizej" : "Zjedz ser, jogurt naturalny lub migdały.",
+  "Powyzej" : "Możliwe, że masz hiperkalcemię. Udaj się do lekarza w celu dokonania  większej ilości badań." 
+},
+
+"Zelazo":{
+ 
+  "Ponizej" : "Zjedz pomidor, suszone morele lub buraki.",
+  "Powyzej" : "Możliwe, że masz wirusowe zapalenie wątroby. Udaj się do lekarza w celu dokonania większej ilości badań." 
+},
+
+"WitaminaB12":{
+ 
+  "Ponizej" : "Zjedz jajka, rybę lub napij się mleka.",
+  "Powyzej" : "Obniż spożywanie jajek, ryb lub mleka. Nadmiar witaminy może powodować objawy uczuleniowe." 
+}
+}
