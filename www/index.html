@@ -152,7 +152,7 @@
     <a href="" data-enhance="false" data-role="none" class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect" id="googleLogIn" style="width: 70%; background-color: #EA4335; color: white; text-shadow: none;"><i class="fab fa-google-plus-g" style="text-shadow: none; padding-top: 10px;"></i></a>
      </div>
      <div style="width: 100%; margin: 20px auto 0px auto; text-align: center;">
-    <a href="" data-enhance="false" data-role="none" class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect" id="googleLogIn1" style="width: 70%; background-color: #3b5998"> <i class="fab fa-facebook-square"  style="text-shadow: none; color: white; padding-top: 10px;"></i></a>
+    <a href="" data-enhance="false" data-role="none" class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect" id="FacebookLogIn"style="width: 70%; background-color: #3b5998"> <i class="fab fa-facebook-square"  style="text-shadow: none; color: white; padding-top: 10px;"></i></a>
 </div>
  
 
@@ -1007,7 +1007,36 @@ daneOsobowe();
               console.log(errorMessage);
             });
         });
-            
+
+        //FACEBOOK LOGIN
+
+        var providerFb = new firebase.auth.FacebookAuthProvider();
+
+        const hLogInfoFb = document.querySelector('#logInfo');
+        document.querySelector('#FacebookLogIn').addEventListener('click', function ()
+        {
+        firebase.auth().signInWithRedirect(providerFb);
+
+                firebase.auth().getRedirectResult().then(function(result) {
+          if (result.credential) {
+            // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+            var token = result.credential.accessToken;
+            // ...
+          }
+          // The signed-in user info.
+          var user = result.user;
+        }).catch(function(error) {
+          // Handle Errors here.
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          // The email of the user's account used.
+          var email = error.email;
+          // The firebase.auth.AuthCredential type that was used.
+          var credential = error.credential;
+          // ...
+        });
+      });
+
      function pokazBadanie() {
   var i = 1;
   var j = 1;   
