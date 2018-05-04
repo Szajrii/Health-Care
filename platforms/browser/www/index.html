@@ -31,6 +31,7 @@
         <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
         <script src="cordova.js"></script>
         <script src="js/pgb.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
         
         
         <script type="text/javascript">
@@ -645,11 +646,11 @@
 </div>
 
 
-<div data-role="page" id="dziennik">
+<div data-role="page" id="dziennik" data-transition="slidefade">
  
  
  
-  <div role="main" class="ui-content secound-page" >
+  <div role="content" class="ui-content secound-page" >
     <div style="padding-bottom: 80px;">
       <div class="secound-page-background">
         <div style=" display: inline-block; width: 25%; height: 10%; "><a href="#badania"><i class="fas fa-angle-left" style="padding-left: 40px; padding-top: 20px;font-size: 24px; color: white;"></i></a></div
@@ -658,85 +659,62 @@
       
       <div>
 
-          <div style="text-align: center; text-transform: none; font-size: 16px; color: #787878; padding-top: 40px; padding-bottom: 20px;">
-            Twoje pomiary ciśnienia
+          <div style="text-align: center; text-transform: none; font-size: 16px; color: #787878; padding-top: 20px; padding-bottom: 20px;">
+            <div style="border-radius: 50px; color: black; font-weight: 600; background-color: #E9E9E9; padding: 5px 20px; width: 50%; margin: 0 auto;">Twoje pomiary ciśnienia</div>
           </div>
 
-          <div style="margin: 0 auto;">
-            <img src="img/test.png" alt="" style="display: block; margin-left: auto; margin-right: auto; width: 90%;">
+          <div style="margin: 0 auto;" id="listitem">
+            <!-- <img src="img/test.png" alt="" style="display: block; margin-left: auto; margin-right: auto; width: 90%;"> -->
+            <canvas id="line-chart" width="800" height="450"></canvas>
+          </div>
+
+          <div style="margin: 0 auto; text-align: center; margin-top: 10px;">
+            <span class="dot" style="height: 10px; width: 10px; background-color: #479DB2; border-radius: 50%; display: inline-block;"></span>
+            <span class="dot" style="height: 10px; width: 10px; background-color: #bbb; border-radius: 50%; display: inline-block;"></span>
           </div>
       
       </div>
 
-      <div style="background-color: #F8F8F8; padding-top: 40px;">
-        <div class="row" style="margin: 0 auto; padding: 20px 0;">
-          <div style="display: inline-block; width: 46%; margin-left: 3%; margin-right: 1%">
-            <div style="width: 100%; background-color: white; border-radius: 10px; box-shadow: 0px 14px 100px -23px rgba(0,0,0,0.2);">
-              <div class="row" style="padding-top: 20px;">
-
-                <div style="display: inline-block; padding-left: 20px;">
-                  <div style="font-size: 16px; font-weight: 600; color: #4592A8;">mmHG</div>
-
-                  <div style="margin-top: 30px; padding-left: 10px;">
-                    <img src="img/icons/heartpulse.png" alt="">
-                  </div>
-
-                  <div style="margin-top: 15px; padding-left: 10px;">
-                    <span style="font-size: 30px; font-weight: 900; color: #2A2A2A">80</span><span style="font-size: 19px; font-weight: 600; color: #9B9B9B ">/120</span>
-                    <div style="text-transform: uppercase; font-size: 10px;">ciśnienie krwi</div>
-
-                    <div style="font-size: 14px; color: #4592A8; margin-top: 30px; margin-bottom: 10px; font-weight: 600;">
-                      22/07, 14:30
-                    </div>
-                    <div style="height: 1px; width: 80%; background-color: #9B9B9B; margin-bottom: 30px;">                      
-                    </div>
-                  </div>
-
-
-
-                </div>
-
-                <div style="display: inline-block; padding-right: 20px;">
-                  <img src="img/icons/add.png" alt="">
-                </div>
-              </div>
+      <div style=" margin-top: 10px; padding-bottom: 10px;">
+        <form action="#">
+          
+          <div class="row" style="width: 100%; margin: 10px auto 0px auto;  ">
+            
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="background-color: transparent !important; border: 0; display: inline-block; width: 43%; display: inline-block; margin-left: 5%; margin-right: 1%">
+              <input class="mdl-textfield__input" type="text" id="cisnienieskurczowe" data-role="none">
+              <label class="mdl-textfield__label" for="sample3" style="font-size: 14px; text-transform: none">Ciśn. skurczowego</label>
             </div>
+
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="background-color: transparent !important; border: 0; display: inline-block; width: 43%; display: inline-block; margin-left: 1%; margin-right: 5%;">
+              <input class="mdl-textfield__input" type="text" id="cisnienierozkurczowe" data-role="none">
+              <label class="mdl-textfield__label" for="sample3" style="font-size: 14px; text-transform: none; text-align: right;">Ciśn. rozkurczowe</label>
+            </div>          
           </div>
-
-          <div style="display: inline-block; width: 46%; margin-left: 1%; margin-right: 3%">
-            <div style="width: 100%; background-color: white; border-radius: 10px; box-shadow: 0px 14px 100px -23px rgba(0,0,0,0.2);">
-              <div class="row" style="padding-top: 20px;">
-
-                <div style="display: inline-block; padding-left: 20px;">
-                  <div style="font-size: 16px; font-weight: 600; color: #4592A8;">mgdL</div>
-
-                  <div style="margin-top: 30px; padding-left: 10px;">
-                    <img src="img/icons/glukoza.png" alt="">
-                  </div>
-
-                  <div style="margin-top: 15px; padding-left: 10px;">
-                    <span style="font-size: 30px; font-weight: 900; color: #2A2A2A">70</span>
-                    <div style="text-transform: uppercase; font-size: 10px;">pomiar cukru</div>
-
-                    <div style="font-size: 14px; color: #4592A8; margin-top: 30px; margin-bottom: 10px; font-weight: 600;">
-                      22/07, 14:30
-                    </div>
-                    <div style="height: 1px; width: 80%; background-color: #9B9B9B; margin-bottom: 30px;">                      
-                    </div>
-                  </div>
+          
+          <div style="text-align: center;">
+<a href="" data-role="none" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" id="cisnieniedodawanie" style="margin-top: 0px; background-color: #8ed6ce; color: white;  width: 50%; font-weight: 400;"> Dodaj badanie </a>
+</div>
+        </form>
 
 
-
-                </div>
-
-                <div style="display: inline-block; padding-right: 20px;">
-                  <img src="img/icons/add.png" alt="">
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
+
+      <div style="width: 100%; margin-top: 20px;">
+      <table class="mdl-data-table mdl-js-data-table" width="100%">
+  <thead>
+    <tr style="background-color: #E0F1F1; opacity: 0.8; ">
+      <th class="mdl-data-table__cell--non-numeric" style="color: #67C9C9;">Data</th>     
+      <th class="mdl-data-table__cell--numeric" style="color: #67C9C9;">Wynik</th>
+  
+     
+    </tr>
+  </thead>
+  <tbody id="cisnienietabela">
+
+  </tbody>
+</table>
+
+</div>
 
     </div>
   </div>
@@ -750,11 +728,104 @@
           <li class="menu-element"><img src="img/icons/dziennik-active.png" alt=""><div style="font-weight: 600;">Dziennik</div></a></li>
         </ul>
     </div>
+
+</div>
+
+
+<div data-role="page" id="dziennik1" data-transition="slidefade">
+ 
+ 
+ 
+  <div role="content" class="ui-content secound-page" >
+    <div style="padding-bottom: 80px;">
+    <div class="secound-page-background">
+        <div style=" display: inline-block; width: 25%; height: 10%; "><a href="#badania"><i class="fas fa-angle-left" style="padding-left: 40px; padding-top: 20px;font-size: 24px; color: white;"></i></a></div
+         ><div style=" display: inline-block;width: 50%; height: 10%; margin: 0 auto; text-align: center; padding-bottom: 20px; font-size: 24px; text-transform: none; color:white; "><span id="data_change">Mój Dziennik</span></div>
+      </div>
+      
+      <div>
+
+          <div style="text-align: center; text-transform: none; font-size: 16px; color: #787878; padding-top: 20px; padding-bottom: 20px;">
+            <div style="border-radius: 50px; color: black; font-weight: 600; background-color: #E9E9E9; padding: 5px 20px; width: 50%; margin: 0 auto;">Twoje pomiary glukozy</div>
+          </div>
+
+          <div style="margin: 0 auto;" id="listitem1">
+          <canvas id="line-chart1" width="800" height="450"></canvas>
+          </div>
+
+          <div style="margin: 0 auto; text-align: center; margin-top: 10px;">
+            <span class="dot" style="height: 10px; width: 10px; background-color: #bbb; border-radius: 50%; display: inline-block;"></span>
+            <span class="dot" style="height: 10px; width: 10px; background-color: #479DB2; border-radius: 50%; display: inline-block;"></span>
+          </div>
+      
+      </div>
+
+      <div style=" margin-top: 10px; padding-bottom: 10px;">
+        <form action="#">
+          
+                 
+           
+
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="background-color: transparent !important; border: 0; display: inline-block; width: 80%; display: inline-block; margin-left: 10%; margin-right: 10%%;">
+              <input class="mdl-textfield__input" type="text" id="wartoscglukozy" data-role="none">
+              <label class="mdl-textfield__label" for="sample3" style="font-size: 14px; text-transform: none; text-align: center;">Wartość glukozy</label>
+            </div>          
+         
+          
+          <div style="text-align: center;">
+<a href="#dziennik1" data-role="none" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" id="glukozadodawanie" style="margin-top: 0px; background-color: #8ed6ce; color: white;  width: 50%; font-weight: 400;"> Dodaj badanie </a>
+</div>
+        </form>
+
+
+      </div>
+
+
+<div style="width: 100%; margin-top: 20px;">
+      <table class="mdl-data-table mdl-js-data-table" width="100%">
+  <thead>
+    <tr style="background-color: #E0F1F1; opacity: 0.8; ">
+      <th class="mdl-data-table__cell--non-numeric" style="color: #67C9C9;">Data</th>     
+      <th class="mdl-data-table__cell--numeric" style="color: #67C9C9;">Wynik</th>
+  
+     
+    </tr>
+  </thead>
+  <tbody id="glukozatabela">
+
+  </tbody>
+</table>
+
+</div>
+      
+  </div>
+  
+ </div>
+    <div data-role="footer" data-position="fixed" style="padding: 10px 0 5px 0;">
+        <ul class="menu-container">
+          <li class="menu-element"><a href="#home" style="text-decoration: none; font-weight: 300; color: #333"><img src="img/icons/home.png" alt=""><div>Home</div></a></li>
+          <li class="menu-element"><a href="#badania" style="text-decoration: none; font-weight: 300; color: #333"><img src="img/icons/badania.png" alt=""><div>Badania</div></a></li>
+          <li class="menu-element"><a href="#planer" style="text-decoration: none; font-weight: 300; color: #333 "><img src="img/icons/planer.png" alt=""><div>Planer</div></a></li>
+          <li class="menu-element"><img src="img/icons/dziennik-active.png" alt=""><div style="font-weight: 600;">Dziennik</div></a></li>
+        </ul>
+    </div>
+
 </div>
 
 
 
+
+
+
 <script>
+
+  $("#listitem").swipeleft(function() {
+    $.mobile.changePage("#dziennik1");
+});
+
+  $("#listitem1").swiperight(function() {
+    $.mobile.changePage("#dziennik");
+});
         // Initialize Firebase
         
 const provider = new firebase.auth.GoogleAuthProvider();
@@ -2346,6 +2417,325 @@ console.log(licznik);
     });
 
 });
+
+    document.querySelector('#glukozadodawanie').addEventListener('click', function () {
+          var user = firebase.auth().currentUser;
+          var uid = user.uid;
+ if(user){
+          var today = new Date();          
+          var msec = today.getTime();     
+          var dd = today.getDate();
+          var mm = today.getMonth();
+          var mm3 = today.getMonth();
+          var hh = today.getHours();
+          var minutes = today.getMinutes() 
+          var yyyy = today.getFullYear();
+          if(dd<10){
+              dd='0'+dd;
+          } 
+
+          if(minutes<10){
+              minutes='0'+minutes;
+          } 
+
+          if(mm3<10){
+              mm3='0'+mm3;
+          } 
+          var mm2 = ["Styczeń", "Luty", "Marzec", "Kwiecień", "Maj", "Czerwiec", "Lipiec", "Sierpień", "Wrzesień", "Październik", "Listopad", "Grudzień"];
+          var glukoza = document.getElementById('wartoscglukozy').value;
+
+
+           firebase.database().ref('users/' + uid + '/Pomiary/Glukoza/' + msec).set({
+              Dzien: dd,
+              Miesiac: mm2[mm],
+              Miesiac2: mm3,
+              Rok: yyyy,
+              Minuta: minutes,
+              Godzina: hh,
+              Wartosc: glukoza
+           });
+           self.location.reload();
+}else{
+
+}
+    });
+
+
+
+ document.querySelector('#cisnieniedodawanie').addEventListener('click', function () {
+          var user = firebase.auth().currentUser;
+          var uid = user.uid;
+ if(user){
+          var today = new Date();          
+          var msec = today.getTime();     
+          var dd = today.getDate();
+          var mm = today.getMonth();
+          var mm3 = today.getMonth();
+          var hh = today.getHours();
+          var minutes = today.getMinutes() 
+          var yyyy = today.getFullYear();
+          if(dd<10){
+              dd='0'+dd;
+          } 
+
+          if(minutes<10){
+              minutes='0'+minutes;
+          } 
+
+          if(mm3<10){
+              mm3='0'+mm3;
+          } 
+          var mm2 = ["Styczeń", "Luty", "Marzec", "Kwiecień", "Maj", "Czerwiec", "Lipiec", "Sierpień", "Wrzesień", "Październik", "Listopad", "Grudzień"];
+          var cisnienieskurczowe = document.getElementById('cisnienieskurczowe').value;
+          var cisnienierozkurczowe = document.getElementById('cisnienierozkurczowe').value;
+
+
+           firebase.database().ref('users/' + uid + '/Pomiary/Cisnienie/' + msec).set({
+              Dzien: dd,
+              Miesiac: mm2[mm],
+              Miesiac2: mm3,
+              Rok: yyyy,
+              Minuta: minutes,
+              Godzina: hh,
+              Wartoscskurczowe: cisnienieskurczowe,
+              Wartoscrozkurczowe: cisnienierozkurczowe
+           });
+           self.location.reload();
+}else{
+
+}
+    });
+
+
+var labelsCisnienie = [];
+var dataSkurczowe = [];
+var dataRozkurczowe = [];
+var cukier = [];
+var labelCukier = [];
+$(document).ready(function(){
+firebase.auth().onAuthStateChanged(function(user) {
+  if(user){
+    var user = firebase.auth().currentUser;
+          var uid = user.uid;
+
+
+  
+  var tablica = [];
+  var tabindex = 0;
+
+var ref = firebase.database().ref('users/' + uid + '/Pomiary/Cisnienie/').orderByKey();
+   ref.on('value',function(pomiarySnapshot){
+
+       pomiarySnapshot.forEach(function(snapshot){
+      var key = snapshot.key;
+      tablica[tabindex] = key;
+      console.log(tablica[tabindex]);
+        tabindex = tabindex + 1;
+        console.log(tablica.length);
+
+
+});
+       var licznik = tablica.length;
+       var licznik2 = tablica.length + 1;
+      
+       for(var i = 1; i <=6; i++){
+var ref2 = firebase.database().ref('users/' + uid + '/Pomiary/Cisnienie/' + tablica[licznik - 1]);
+          ref2.on('value', function(snapshot2){
+            var key2 = snapshot2.val();
+            var data = key2.Dzien + "." + key2.Miesiac2;
+            var skurczowevalue = key2.Wartoscskurczowe;
+            var rozkurczowevalue = key2.Wartoscrozkurczowe;
+            labelsCisnienie.push(data);
+            dataSkurczowe.push(skurczowevalue);
+            dataRozkurczowe.push(rozkurczowevalue);
+              });
+
+        
+          licznik--;
+          }
+
+
+while(licznik2 > 0){
+          var ref3 = firebase.database().ref('users/' + uid + '/Pomiary/Cisnienie/' + tablica[licznik2 - 1]);
+          ref3.on('value', function(snapshot3){
+            var key3 = snapshot3.val();
+            var data2 = key3.Dzien + " " + key3.Miesiac + ", " + key3.Godzina + ":" + key3.Minuta;
+            var skurczowevalue2 = key3.Wartoscskurczowe;
+            var rozkurczowevalue2 = key3.Wartoscrozkurczowe;
+            
+            
+if(licznik2 % 2 != 0){
+            $('#cisnienietabela').append('<tr>      <td class="mdl-data-table__cell--non-numeric" id="cisnieniedata">27 kwiecien, 14:50</td>      <td class="" id="cisnieniewartosc">180/60</td>     </tr>');
+             }
+             else{
+              $('#cisnienietabela').append('<tr style="background-color: #f4f4f4">      <td class="mdl-data-table__cell--non-numeric" id="cisnieniedata">27 kwiecien, 14:50</td>      <td class="" id="cisnieniewartosc">180/60</td>     </tr>');
+             }
+             
+             
+            $(document).ready(function(){
+             var cisnieniedata = document.getElementById('cisnieniedata');
+             var cisnieniewartosc = document.getElementById('cisnieniewartosc');
+             cisnieniedata.setAttribute('id', 'cisnieniedata ' + licznik2);
+             cisnieniedata.innerHTML = data2;
+             cisnieniewartosc.setAttribute('id', 'cisnieniewartosc ' + licznik2);
+             cisnieniewartosc.innerHTML = skurczowevalue2 + "/" + rozkurczowevalue2;
+           });
+              });
+          licznik2--;
+          }
+
+var ctx = document.getElementById("line-chart");
+var myChart = new Chart(ctx,{
+  type: 'line',
+  data: {
+    
+    datasets: [{ 
+        data: dataSkurczowe,
+        label: "ciśn. skurczowe",
+        borderColor: "#67C9C9",
+        backgroundColor: 'rgba(165, 223, 223, 0.3)',
+        fill: true
+      }, { 
+        data: dataRozkurczowe,
+        label: "ciśn. rozkurczowe",
+        borderColor: "#FF6E8C",
+        backgroundColor: 'rgba(255, 110, 140, 0.3)',
+        fill: true
+      }
+    ]
+  },
+  options: {
+    legend: {
+      position: 'bottom'
+    },
+    scales: {
+            xAxes: [{
+                type: 'category',
+                labels: labelsCisnienie,
+            }]
+        },
+    title: {
+      display: false,
+      
+    }
+  }
+});
+
+});
+}else{
+
+}
+
+});
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  
+
+firebase.auth().onAuthStateChanged(function(user) {
+  if(user){
+    var user = firebase.auth().currentUser;
+          var uid = user.uid;
+
+// var labelCukier = ['22.07', '22.07', '23.07', '24.07', '25.07', '26.07'];
+// var cukier = [120,140,125,130,160,115];
+  
+  var tablica = [];
+  var tabindex = 0;
+
+
+ var ref = firebase.database().ref('users/' + uid + '/Pomiary/Glukoza/').orderByKey();
+   ref.on('value',function(pomiarySnapshot){
+
+       pomiarySnapshot.forEach(function(snapshot){
+      var key = snapshot.key;
+      tablica[tabindex] = key;
+      console.log(tablica[tabindex]);
+        tabindex = tabindex + 1;
+        console.log(tablica.length);
+
+
+});
+       var licznik = tablica.length;
+       var licznik2 = tablica.length + 1;
+       
+       for(var i = 1; i <=6; i++){
+var ref2 = firebase.database().ref('users/' + uid + '/Pomiary/Glukoza/' + tablica[licznik - 1]);
+          ref2.on('value', function(snapshot2){
+            var key2 = snapshot2.val();
+            var data = key2.Dzien + "." + key2.Miesiac2;
+            var glukozavalue = key2.Wartosc;
+            labelCukier.push(data);
+            cukier.push(glukozavalue);
+            
+              });
+          licznik--;
+          }
+while(licznik2 > 0){
+          var ref3 = firebase.database().ref('users/' + uid + '/Pomiary/Glukoza/' + tablica[licznik2 - 1]);
+          ref3.on('value', function(snapshot3){
+            var key3 = snapshot3.val();
+            var data2 = key3.Dzien + " " + key3.Miesiac + ", " + key3.Godzina + ":" + key3.Minuta;
+            var glukozavalue2 = key3.Wartosc;
+            
+            
+if(licznik2 % 2 != 0){
+            $('#glukozatabela').append('<tr>   <td class="mdl-data-table__cell--non-numeric" id="glukozadata">27 kwiecien, 14:50</td>  <td class="" id="glukozawartosc">180</td>    </tr>');
+             }
+             else{
+              $('#glukozatabela').append('<tr style="background-color: #f4f4f4">   <td class="mdl-data-table__cell--non-numeric" id="glukozadata">27 kwiecien, 14:50</td>  <td class="" id="glukozawartosc">180</td>    </tr>');
+             }
+             
+            $(document).ready(function(){
+             var glukozadata = document.getElementById('glukozadata');
+             var glukozawartosc = document.getElementById('glukozawartosc');
+             glukozadata.setAttribute('id', 'glukozadata ' + licznik2);
+             glukozadata.innerHTML = data2;
+             glukozawartosc.setAttribute('id', 'glukozawartosc ' + licznik2);
+             glukozawartosc.innerHTML = glukozavalue2;
+           });
+              });
+          licznik2--;
+          }
+
+var ctx = document.getElementById("line-chart1");
+var myChart1 = new Chart(ctx,{
+  type: 'line',
+  data: {
+    
+    datasets: [{ 
+        data: cukier,
+        label: "Poziom glukozy we krwi",
+        borderColor: "#FFA31A",
+        backgroundColor: 'rgba(255, 163, 26, 0.3)',
+        fill: true
+      }
+    ]
+  },
+  options: {
+    legend: {
+      position: 'bottom'
+    },
+    scales: {
+            xAxes: [{
+                type: 'category',
+                labels: labelCukier,
+            }]
+        },
+    title: {
+      display: false,
+      
+    }
+  }
+});
+
+});
+}else{
+
+}
+
+});
+});
+</script>
 
     </script>
     <script src="dist/js/framework7.js"></script>

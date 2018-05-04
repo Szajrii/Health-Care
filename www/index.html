@@ -681,18 +681,18 @@
           <div class="row" style="width: 100%; margin: 10px auto 0px auto;  ">
             
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="background-color: transparent !important; border: 0; display: inline-block; width: 43%; display: inline-block; margin-left: 5%; margin-right: 1%">
-              <input class="mdl-textfield__input" type="text" id="sample3" data-role="none">
+              <input class="mdl-textfield__input" type="text" id="cisnienieskurczowe" data-role="none">
               <label class="mdl-textfield__label" for="sample3" style="font-size: 14px; text-transform: none">Ciśn. skurczowego</label>
             </div>
 
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="background-color: transparent !important; border: 0; display: inline-block; width: 43%; display: inline-block; margin-left: 1%; margin-right: 5%;">
-              <input class="mdl-textfield__input" type="text" id="sample3" data-role="none">
+              <input class="mdl-textfield__input" type="text" id="cisnienierozkurczowe" data-role="none">
               <label class="mdl-textfield__label" for="sample3" style="font-size: 14px; text-transform: none; text-align: right;">Ciśn. rozkurczowe</label>
             </div>          
           </div>
           
           <div style="text-align: center;">
-<a href="" data-role="none" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" id="" style="margin-top: 0px; background-color: #8ed6ce; color: white;  width: 50%; font-weight: 400;"> Dodaj badanie </a>
+<a href="" data-role="none" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" id="cisnieniedodawanie" style="margin-top: 0px; background-color: #8ed6ce; color: white;  width: 50%; font-weight: 400;"> Dodaj badanie </a>
 </div>
         </form>
 
@@ -709,27 +709,7 @@
      
     </tr>
   </thead>
-  <tbody>
-
-    <tr>
-      <td class="mdl-data-table__cell--non-numeric">27 kwiecien, 14:50</td>
-      <td class="">180/60</td>      
-    </tr>
-
-    <tr style="background-color: #f4f4f4">
-      <td class="mdl-data-table__cell--non-numeric">27 kwiecien, 14:50</td>
-      <td class="">180/60</td>      
-    </tr>
-
-     <tr>
-      <td class="mdl-data-table__cell--non-numeric">27 kwiecien, 14:50</td>
-      <td class="">180/60</td>      
-    </tr>
-
-     <tr style="background-color: #f4f4f4 ">
-      <td class="mdl-data-table__cell--non-numeric">27 kwiecien, 14:50</td>
-      <td class="">180/60</td>      
-    </tr>
+  <tbody id="cisnienietabela">
 
   </tbody>
 </table>
@@ -787,13 +767,13 @@
            
 
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="background-color: transparent !important; border: 0; display: inline-block; width: 80%; display: inline-block; margin-left: 10%; margin-right: 10%%;">
-              <input class="mdl-textfield__input" type="text" id="sample3" data-role="none">
+              <input class="mdl-textfield__input" type="text" id="wartoscglukozy" data-role="none">
               <label class="mdl-textfield__label" for="sample3" style="font-size: 14px; text-transform: none; text-align: center;">Wartość glukozy</label>
             </div>          
          
           
           <div style="text-align: center;">
-<a href="" data-role="none" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" id="" style="margin-top: 0px; background-color: #8ed6ce; color: white;  width: 50%; font-weight: 400;"> Dodaj badanie </a>
+<a href="#dziennik1" data-role="none" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" id="glukozadodawanie" style="margin-top: 0px; background-color: #8ed6ce; color: white;  width: 50%; font-weight: 400;"> Dodaj badanie </a>
 </div>
         </form>
 
@@ -811,27 +791,7 @@
      
     </tr>
   </thead>
-  <tbody>
-
-    <tr>
-      <td class="mdl-data-table__cell--non-numeric">27 kwiecien, 14:50</td>
-      <td class="">180</td>      
-    </tr>
-
-    <tr style="background-color: #f4f4f4">
-      <td class="mdl-data-table__cell--non-numeric">27 kwiecien, 14:50</td>
-      <td class="">180</td>      
-    </tr>
-
-     <tr>
-      <td class="mdl-data-table__cell--non-numeric">27 kwiecien, 14:50</td>
-      <td class="">180</td>      
-    </tr>
-
-     <tr style="background-color: #f4f4f4 ">
-      <td class="mdl-data-table__cell--non-numeric">27 kwiecien, 14:50</td>
-      <td class="">180</td>      
-    </tr>
+  <tbody id="glukozatabela">
 
   </tbody>
 </table>
@@ -2458,11 +2418,171 @@ console.log(licznik);
 
 });
 
+    document.querySelector('#glukozadodawanie').addEventListener('click', function () {
+          var user = firebase.auth().currentUser;
+          var uid = user.uid;
+ if(user){
+          var today = new Date();          
+          var msec = today.getTime();     
+          var dd = today.getDate();
+          var mm = today.getMonth();
+          var mm3 = today.getMonth();
+          var hh = today.getHours();
+          var minutes = today.getMinutes() 
+          var yyyy = today.getFullYear();
+          if(dd<10){
+              dd='0'+dd;
+          } 
 
-var labelsCisnienie = ['22.07', '22.07', '23.07', '24.07', '25.07', '26.07'];
-var dataSkurczowe = [120,140,125,130,160,115];
-var dataRozkurczowe = [90,80,110,100,110,65];
+          if(minutes<10){
+              minutes='0'+minutes;
+          } 
 
+          if(mm3<10){
+              mm3='0'+mm3;
+          } 
+          var mm2 = ["Styczeń", "Luty", "Marzec", "Kwiecień", "Maj", "Czerwiec", "Lipiec", "Sierpień", "Wrzesień", "Październik", "Listopad", "Grudzień"];
+          var glukoza = document.getElementById('wartoscglukozy').value;
+
+
+           firebase.database().ref('users/' + uid + '/Pomiary/Glukoza/' + msec).set({
+              Dzien: dd,
+              Miesiac: mm2[mm],
+              Miesiac2: mm3,
+              Rok: yyyy,
+              Minuta: minutes,
+              Godzina: hh,
+              Wartosc: glukoza
+           });
+           self.location.reload();
+}else{
+
+}
+    });
+
+
+
+ document.querySelector('#cisnieniedodawanie').addEventListener('click', function () {
+          var user = firebase.auth().currentUser;
+          var uid = user.uid;
+ if(user){
+          var today = new Date();          
+          var msec = today.getTime();     
+          var dd = today.getDate();
+          var mm = today.getMonth();
+          var mm3 = today.getMonth();
+          var hh = today.getHours();
+          var minutes = today.getMinutes() 
+          var yyyy = today.getFullYear();
+          if(dd<10){
+              dd='0'+dd;
+          } 
+
+          if(minutes<10){
+              minutes='0'+minutes;
+          } 
+
+          if(mm3<10){
+              mm3='0'+mm3;
+          } 
+          var mm2 = ["Styczeń", "Luty", "Marzec", "Kwiecień", "Maj", "Czerwiec", "Lipiec", "Sierpień", "Wrzesień", "Październik", "Listopad", "Grudzień"];
+          var cisnienieskurczowe = document.getElementById('cisnienieskurczowe').value;
+          var cisnienierozkurczowe = document.getElementById('cisnienierozkurczowe').value;
+
+
+           firebase.database().ref('users/' + uid + '/Pomiary/Cisnienie/' + msec).set({
+              Dzien: dd,
+              Miesiac: mm2[mm],
+              Miesiac2: mm3,
+              Rok: yyyy,
+              Minuta: minutes,
+              Godzina: hh,
+              Wartoscskurczowe: cisnienieskurczowe,
+              Wartoscrozkurczowe: cisnienierozkurczowe
+           });
+           self.location.reload();
+}else{
+
+}
+    });
+
+
+var labelsCisnienie = [];
+var dataSkurczowe = [];
+var dataRozkurczowe = [];
+var cukier = [];
+var labelCukier = [];
+$(document).ready(function(){
+firebase.auth().onAuthStateChanged(function(user) {
+  if(user){
+    var user = firebase.auth().currentUser;
+          var uid = user.uid;
+
+
+  
+  var tablica = [];
+  var tabindex = 0;
+
+var ref = firebase.database().ref('users/' + uid + '/Pomiary/Cisnienie/').orderByKey();
+   ref.on('value',function(pomiarySnapshot){
+
+       pomiarySnapshot.forEach(function(snapshot){
+      var key = snapshot.key;
+      tablica[tabindex] = key;
+      console.log(tablica[tabindex]);
+        tabindex = tabindex + 1;
+        console.log(tablica.length);
+
+
+});
+       var licznik = tablica.length;
+       var licznik2 = tablica.length + 1;
+      
+       for(var i = 1; i <=6; i++){
+var ref2 = firebase.database().ref('users/' + uid + '/Pomiary/Cisnienie/' + tablica[licznik - 1]);
+          ref2.on('value', function(snapshot2){
+            var key2 = snapshot2.val();
+            var data = key2.Dzien + "." + key2.Miesiac2;
+            var skurczowevalue = key2.Wartoscskurczowe;
+            var rozkurczowevalue = key2.Wartoscrozkurczowe;
+            labelsCisnienie.push(data);
+            dataSkurczowe.push(skurczowevalue);
+            dataRozkurczowe.push(rozkurczowevalue);
+              });
+
+        
+          licznik--;
+          }
+
+
+while(licznik2 > 0){
+          var ref3 = firebase.database().ref('users/' + uid + '/Pomiary/Cisnienie/' + tablica[licznik2 - 1]);
+          ref3.on('value', function(snapshot3){
+            var key3 = snapshot3.val();
+            var data2 = key3.Dzien + " " + key3.Miesiac + ", " + key3.Godzina + ":" + key3.Minuta;
+            var skurczowevalue2 = key3.Wartoscskurczowe;
+            var rozkurczowevalue2 = key3.Wartoscrozkurczowe;
+            
+            
+if(licznik2 % 2 != 0){
+            $('#cisnienietabela').append('<tr>      <td class="mdl-data-table__cell--non-numeric" id="cisnieniedata">27 kwiecien, 14:50</td>      <td class="" id="cisnieniewartosc">180/60</td>     </tr>');
+             }
+             else{
+              $('#cisnienietabela').append('<tr style="background-color: #f4f4f4">      <td class="mdl-data-table__cell--non-numeric" id="cisnieniedata">27 kwiecien, 14:50</td>      <td class="" id="cisnieniewartosc">180/60</td>     </tr>');
+             }
+             
+             
+            $(document).ready(function(){
+             var cisnieniedata = document.getElementById('cisnieniedata');
+             var cisnieniewartosc = document.getElementById('cisnieniewartosc');
+             cisnieniedata.setAttribute('id', 'cisnieniedata ' + licznik2);
+             cisnieniedata.innerHTML = data2;
+             cisnieniewartosc.setAttribute('id', 'cisnieniewartosc ' + licznik2);
+             cisnieniewartosc.innerHTML = skurczowevalue2 + "/" + rozkurczowevalue2;
+           });
+              });
+          licznik2--;
+          }
 
 var ctx = document.getElementById("line-chart");
 var myChart = new Chart(ctx,{
@@ -2501,12 +2621,81 @@ var myChart = new Chart(ctx,{
   }
 });
 
+});
+}else{
+
+}
+
+});
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  
+
+firebase.auth().onAuthStateChanged(function(user) {
+  if(user){
+    var user = firebase.auth().currentUser;
+          var uid = user.uid;
+
+// var labelCukier = ['22.07', '22.07', '23.07', '24.07', '25.07', '26.07'];
+// var cukier = [120,140,125,130,160,115];
+  
+  var tablica = [];
+  var tabindex = 0;
 
 
-var labelCukier = ['22.07', '22.07', '23.07', '24.07', '25.07', '26.07'];
-var cukier = [120,140,125,130,160,115];
+ var ref = firebase.database().ref('users/' + uid + '/Pomiary/Glukoza/').orderByKey();
+   ref.on('value',function(pomiarySnapshot){
+
+       pomiarySnapshot.forEach(function(snapshot){
+      var key = snapshot.key;
+      tablica[tabindex] = key;
+      console.log(tablica[tabindex]);
+        tabindex = tabindex + 1;
+        console.log(tablica.length);
 
 
+});
+       var licznik = tablica.length;
+       var licznik2 = tablica.length + 1;
+       
+       for(var i = 1; i <=6; i++){
+var ref2 = firebase.database().ref('users/' + uid + '/Pomiary/Glukoza/' + tablica[licznik - 1]);
+          ref2.on('value', function(snapshot2){
+            var key2 = snapshot2.val();
+            var data = key2.Dzien + "." + key2.Miesiac2;
+            var glukozavalue = key2.Wartosc;
+            labelCukier.push(data);
+            cukier.push(glukozavalue);
+            
+              });
+          licznik--;
+          }
+while(licznik2 > 0){
+          var ref3 = firebase.database().ref('users/' + uid + '/Pomiary/Glukoza/' + tablica[licznik2 - 1]);
+          ref3.on('value', function(snapshot3){
+            var key3 = snapshot3.val();
+            var data2 = key3.Dzien + " " + key3.Miesiac + ", " + key3.Godzina + ":" + key3.Minuta;
+            var glukozavalue2 = key3.Wartosc;
+            
+            
+if(licznik2 % 2 != 0){
+            $('#glukozatabela').append('<tr>   <td class="mdl-data-table__cell--non-numeric" id="glukozadata">27 kwiecien, 14:50</td>  <td class="" id="glukozawartosc">180</td>    </tr>');
+             }
+             else{
+              $('#glukozatabela').append('<tr style="background-color: #f4f4f4">   <td class="mdl-data-table__cell--non-numeric" id="glukozadata">27 kwiecien, 14:50</td>  <td class="" id="glukozawartosc">180</td>    </tr>');
+             }
+             
+            $(document).ready(function(){
+             var glukozadata = document.getElementById('glukozadata');
+             var glukozawartosc = document.getElementById('glukozawartosc');
+             glukozadata.setAttribute('id', 'glukozadata ' + licznik2);
+             glukozadata.innerHTML = data2;
+             glukozawartosc.setAttribute('id', 'glukozawartosc ' + licznik2);
+             glukozawartosc.innerHTML = glukozavalue2;
+           });
+              });
+          licznik2--;
+          }
 
 var ctx = document.getElementById("line-chart1");
 var myChart1 = new Chart(ctx,{
@@ -2539,7 +2728,13 @@ var myChart1 = new Chart(ctx,{
   }
 });
 
+});
+}else{
 
+}
+
+});
+});
 </script>
 
     </script>
