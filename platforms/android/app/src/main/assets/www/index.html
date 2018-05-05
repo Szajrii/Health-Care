@@ -32,6 +32,7 @@
         <script src="cordova.js"></script>
         <script src="js/pgb.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+         <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.7/jquery.validate.min.js"></script>
         
         
         <script type="text/javascript">
@@ -676,24 +677,26 @@
       </div>
 
       <div style=" margin-top: 10px; padding-bottom: 10px;">
-        <form action="#">
+
+        <form>
           
           <div class="row" style="width: 100%; margin: 10px auto 0px auto;  ">
             
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="background-color: transparent !important; border: 0; display: inline-block; width: 43%; display: inline-block; margin-left: 5%; margin-right: 1%">
-              <input class="mdl-textfield__input" type="text" id="cisnienieskurczowe" data-role="none">
-              <label class="mdl-textfield__label" for="sample3" style="font-size: 14px; text-transform: none">Ciśn. skurczowego</label>
+              <input class="mdl-textfield__input required" type="number" id="cisnienieskurczowe" data-role="none">
+              <label class="mdl-textfield__label" for="sample3" style="font-size: 14px; text-transform: none">Ciśn. skurczowego <span id="label-error0" style="color: red; opacity: 0.6; font-size: 8px;"></span></label>
             </div>
 
             <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="background-color: transparent !important; border: 0; display: inline-block; width: 43%; display: inline-block; margin-left: 1%; margin-right: 5%;">
-              <input class="mdl-textfield__input" type="text" id="cisnienierozkurczowe" data-role="none">
-              <label class="mdl-textfield__label" for="sample3" style="font-size: 14px; text-transform: none; text-align: right;">Ciśn. rozkurczowe</label>
+              <input class="mdl-textfield__input required" type="number" id="cisnienierozkurczowe" data-role="none">
+              <label class="mdl-textfield__label" for="sample3" style="font-size: 14px; text-transform: none; text-align: right;">Ciśn. rozkurczowe <span id="label-error1" style="color: red; opacity: 0.6; font-size: 8px;"></span></label>
             </div>          
           </div>
           
+          
           <div style="text-align: center;">
-<a href="" data-role="none" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" id="cisnieniedodawanie" style="margin-top: 0px; background-color: #8ed6ce; color: white;  width: 50%; font-weight: 400;"> Dodaj badanie </a>
-</div>
+            <a href="#dziennik"  data-role="none" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" id="cisnieniedodawanie" style="margin-top: 0px; background-color: #8ed6ce; color: white;  width: 50%; font-weight: 400;"> Dodaj badanie </a>
+          </div>
         </form>
 
 
@@ -761,21 +764,29 @@
       </div>
 
       <div style=" margin-top: 10px; padding-bottom: 10px;">
-        <form action="#">
+        
+        <form >
           
                  
            
 
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="background-color: transparent !important; border: 0; display: inline-block; width: 80%; display: inline-block; margin-left: 10%; margin-right: 10%%;">
-              <input class="mdl-textfield__input" type="text" id="wartoscglukozy" data-role="none">
-              <label class="mdl-textfield__label" for="sample3" style="font-size: 14px; text-transform: none; text-align: center;">Wartość glukozy</label>
-            </div>          
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="background-color: transparent !important; border: 0; display: inline-block; width: 80%; display: inline-block; margin-left: 10%; margin-right: 10%;">
+              <input class="mdl-textfield__input required " type="number" id="wartoscglukozy" data-role="none" >
+              <label class="mdl-textfield__label" for="sample3" style="font-size: 14px; text-transform: none; text-align: center;">Wartość glukozy <span id="label-error2" style="color: red; opacity: 0.6; font-size: 8px;"></span></label>
+            </div> 
+
+                     
          
           
           <div style="text-align: center;">
-<a href="#dziennik1" data-role="none" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" id="glukozadodawanie" style="margin-top: 0px; background-color: #8ed6ce; color: white;  width: 50%; font-weight: 400;"> Dodaj badanie </a>
-</div>
+            <a href="#dziennik1"  data-role="none" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" id="glukozadodawanie" style="margin-top: 0px; background-color: #8ed6ce; color: white;  width: 50%; font-weight: 400;"> Dodaj badanie </a>
+          </div>
+
         </form>
+
+
+
+        
 
 
       </div>
@@ -818,6 +829,29 @@
 
 
 <script>
+
+//   $( "#frmLogin" ).validate({
+
+
+//     errorPlacement: function (error, element) {
+//        document.getElementsByClassName("label-error").innerHTML = "Pole wymagane";
+//     },
+
+//     submitHandler: function( form ) {
+//     }
+// });
+
+//   $( "#frmLogin1" ).validate({
+
+
+//     errorPlacement: function (error, element) {
+//        document.getElementsByClassName("label-error").innerHTML = "Pole wymagane";
+//     },
+
+//     submitHandler: function( form ) {
+//     }
+// });
+
 
   $("#listitem").swipeleft(function() {
     $.mobile.changePage("#dziennik1");
@@ -2445,6 +2479,13 @@ console.log(licznik);
           var glukoza = document.getElementById('wartoscglukozy').value;
 
 
+
+          if (glukoza == "") {
+            document.getElementById("label-error2").innerHTML = "Pole wymagane";
+
+          }
+          else{
+
            firebase.database().ref('users/' + uid + '/Pomiary/Glukoza/' + msec).set({
               Dzien: dd,
               Miesiac: mm2[mm],
@@ -2455,6 +2496,9 @@ console.log(licznik);
               Wartosc: glukoza
            });
            self.location.reload();
+
+           }
+
 }else{
 
 }
@@ -2489,6 +2533,12 @@ console.log(licznik);
           var cisnienieskurczowe = document.getElementById('cisnienieskurczowe').value;
           var cisnienierozkurczowe = document.getElementById('cisnienierozkurczowe').value;
 
+          if (cisnienieskurczowe == "" || cisnienierozkurczowe == "" ) {
+             document.getElementById("label-error0").innerHTML = "Pole wymagane";
+             document.getElementById("label-error1").innerHTML = "Pole wymagane";
+
+          }
+          else{
 
            firebase.database().ref('users/' + uid + '/Pomiary/Cisnienie/' + msec).set({
               Dzien: dd,
@@ -2500,7 +2550,9 @@ console.log(licznik);
               Wartoscskurczowe: cisnienieskurczowe,
               Wartoscrozkurczowe: cisnienierozkurczowe
            });
-           self.location.reload();
+            self.location.reload();
+          
+         }
 }else{
 
 }
