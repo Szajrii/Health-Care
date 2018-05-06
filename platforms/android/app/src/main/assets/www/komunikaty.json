@@ -1,134 +1,178 @@
 {
 "Bialekrwinki":{
   
-  "Ponizej" : "Wygląda na to, że cierpisz na chorobę wirusową. Owoce takie jak figi, melony, pomarańcze lub truskawki oraz warzywa, takie jak dynia, marchew, brokuły, szparagi, kalafior, buraki i szpinak  – są znane z tego, że naturalnie zwiększają liczbę białych krwinek - dodaj je do swojej diety.",
-  "Powyzej" : "Wygląda na to, że Twoim organiźmie toczy się infekcja lub stan zapalny. Preparaty z kwasem acetylosalicylowym czy ibuprofenem hamują proces zapalny, pamiętaj tylko by nie stosować ich na czczo."
+  "Ponizej" : "Wygląda na to, że cierpisz na chorobę wirusową.",
+  "Powyzej" : "Wygląda na to, że Twoim organiźmie toczy się infekcja lub stan zapalny.",
+  "NotePowyzej" : "Preparaty z kwasem acetylosalicylowym czy ibuprofenem hamują proces zapalny, pamiętaj tylko by nie stosować ich na czczo.",
+  "NotePonizej" : "Owoce takie jak figi, melony, pomarańcze lub truskawki oraz warzywa, takie jak dynia, marchew, brokuły, szparagi, kalafior, buraki i szpinak  – są znane z tego, że naturalnie zwiększają liczbę białych krwinek - dodaj je do swojej diety."
 },
 
 "Czerwonekrwinki":{
  
-  "Ponizej" : "Wygląda na to, że masz anemię. Uzupełnij niedobór żelaza, witaminy B12 oraz kwasu foliowego.",
-  "Powyzej" : "Wygląda na to, że cierpisz na nadkrwistość. Udaj się do lekarza w celu wykonania dokładnych badań." 
+  "Ponizej" : "Wygląda na to, że masz anemię.",
+  "Powyzej" : "Wygląda na to, że cierpisz na nadkrwistość.", 
+  "NotePowyzej" : "Udaj się do lekarza w celu wykonania dokładnych badań.",
+  "NotePonizej" : "Uzupełnij niedobór żelaza, witaminy B12 oraz kwasu foliowego."
 },
 
 "Hemoglobina":{
  
-  "Ponizej" : "Wygląda na to, że masz anemię. Uzupełnij niedobór żelaza, witaminy B12 oraz kwasu foliowego.",
-  "Powyzej" : "Wygląda na to, że cierpisz na hemoglobinemie. Ogranicz spożywanie mięsa oraz pij conajmniej 2,5l wody dziennie." 
+  "Ponizej" : "Wygląda na to, że masz anemię.",
+  "Powyzej" : "Wygląda na to, że cierpisz na hemoglobinemie.",
+  "NotePowyzej" : "Ogranicz spożywanie mięsa oraz pij conajmniej 2,5l wody dziennie.",
+  "NotePonizej" : "Uzupełnij niedobór żelaza, witaminy B12 oraz kwasu foliowego."
 },
 
 "Hematokryt":{
  
-  "Ponizej" : "Wygląda na to, że cierpisz na niedokrwistością związaną z niedoborem żelaza. Uzupełnij witaminy,  niedobór żelaza, a także pij conajmniej 2,5l wody dziennie.",
-  "Powyzej" : "Wygląda na to, że  w Twoim organizmie jest zwiększona liczba krwinek czerwonych. Pij conajmniej 2,5l wody dziennie." 
+  "Ponizej" : "Wygląda na to, że cierpisz na niedokrwistością związaną z niedoborem żelaza.",
+  "Powyzej" : "Wygląda na to, że  w Twoim organizmie jest zwiększona liczba krwinek czerwonych.",
+  "NotePowyzej" : "Pij conajmniej 2,5l wody dziennie.",
+  "NotePonizej" : "Uzupełnij witaminy,  niedobór żelaza, a także pij conajmniej 2,5l wody dziennie." 
 },
 
 "Limfocyty":{
  
-  "Ponizej" : "Wygląda na to, żę cierpisz na Limfopenie. Udaj się do lekarze w celu zdiagnozowania przyczyny obniżenia poziomy limfocytów.",
-  "Powyzej" : "Wygląda na to, że Twoim organiźmie toczy się infekcja lub stan zapalny. Preparaty z kwasem acetylosalicylowym czy ibuprofenem hamują proces zapalny, pamiętaj tylko by nie stosować ich na czczo." 
+  "Ponizej" : "Wygląda na to, żę cierpisz na Limfopenie.",
+  "Powyzej" : "Wygląda na to, że Twoim organiźmie toczy się infekcja lub stan zapalny.",
+  "NotePowyzej" : "Preparaty z kwasem acetylosalicylowym czy ibuprofenem hamują proces zapalny, pamiętaj tylko by nie stosować ich na czczo.",
+  "NotePonizej" : "Udaj się do lekarze w celu zdiagnozowania przyczyny obniżenia poziomy limfocytów."
 },
 
 "Monocyty":{
  
-  "Ponizej" : "Wygląda na to, że masz osłabiony układ odpornościowy. Wprowadź do swojej diety owoce, warzywa oraz jogurty z żywymi kulturami bakterii. Zadbaj o aktywność fizyczną oraz prawidłowy sen.",
-  "Powyzej" : "Wygląda na to, że cierpisz na monocytoze. Aby dokładnie zdiagnozować przyczynę monocytozy konieczna jest wizyta u lekarza." 
+  "Ponizej" : "Wygląda na to, że masz osłabiony układ odpornościowy.",
+  "Powyzej" : "Wygląda na to, że cierpisz na monocytoze.",
+  "NotePowyzej" : "Aby dokładnie zdiagnozować przyczynę monocytozy konieczna jest wizyta u lekarza.",
+  "NotePonizej" : "Wprowadź do swojej diety owoce, warzywa oraz jogurty z żywymi kulturami bakterii. Zadbaj o aktywność fizyczną oraz prawidłowy sen."
 },
 
 "MCV":{
  
-  "Ponizej" : "Wygląda na to, że cierpisz na niedokrwistością związaną z niedoborem żelaza. Uzupełnij witaminy,  niedobór żelaza, a także pij conajmniej 2,5l wody dziennie.",
-  "Powyzej" : "Wygląda na to, że cierpisz na nadkrwistość. Udaj się do lekarza w celu wykonania dokładnych badań." 
+  "Ponizej" : "Wygląda na to, że cierpisz na niedokrwistością związaną z niedoborem żelaza.",
+  "Powyzej" : "Wygląda na to, że cierpisz na nadkrwistość.",
+  "NotePowyzej" : "Udaj się do lekarza w celu wykonania dokładnych badań.",
+  "NotePonizej" : "Uzupełnij witaminy,  niedobór żelaza, a także pij conajmniej 2,5l wody dziennie."
 },
 
 "MCH":{
  
-  "Ponizej" : "Wygląda na to, że cierpisz na niedokrwistością związaną z niedoborem żelaza. Uzupełnij witaminy,  niedobór żelaza, a także pij conajmniej 2,5l wody dziennie.",
-  "Powyzej" : "Zawartość hemoglobiny w krwince czerwonej jest podwyższona. Pij conajmniej 2,5l wody dziennie." 
+  "Ponizej" : "Wygląda na to, że cierpisz na niedokrwistością związaną z niedoborem żelaza.",
+  "Powyzej" : "Zawartość hemoglobiny w krwince czerwonej jest podwyższona. ",
+  "NotePowyzej" : "Pij conajmniej 2,5l wody dziennie.",
+  "NotePonizej" : "Uzupełnij witaminy,  niedobór żelaza, a także pij conajmniej 2,5l wody dziennie."
 },
 
 "MCHC":{
  
-  "Ponizej" : "Wygląda na to, że cierpisz na niedokrwistością związaną z niedoborem żelaza. Uzupełnij witaminy,  niedobór żelaza, a także pij conajmniej 2,5l wody dziennie.",
-  "Powyzej" : "Stężenie hemoglobiny w krwince czerwonej jest podwyższone. Pij conajmniej 2,5l wody dziennie." 
+  "Ponizej" : "Wygląda na to, że cierpisz na niedokrwistością związaną z niedoborem żelaza.",
+  "Powyzej" : "Stężenie hemoglobiny w krwince czerwonej jest podwyższone.",
+  "NotePowyzej" : "Pij conajmniej 2,5l wody dziennie.",
+  "NotePonizej" : "Uzupełnij witaminy,  niedobór żelaza, a także pij conajmniej 2,5l wody dziennie."
 },
 
 
 "Plytkikrwi":{
  
-  "Ponizej" : "Wygląda na to, że cierpisz na małopłytkowość. Ogranicz spożywanie alkoholu oraz napojów gazowanych.",
-  "Powyzej" : "Wygląda na to, że cierpisz na nadpłytkowość. Wskazane jest przyjmowanie aspiryny (kwasu acetylosalicylowego) w dawce 75-100 mg/dobę, jeśli nie występują przeciwwskazania do jej zażywania. " 
+  "Ponizej" : "Wygląda na to, że cierpisz na małopłytkowość.",
+  "Powyzej" : "Wygląda na to, że cierpisz na nadpłytkowość.",
+  "NotePowyzej" : "Wskazane jest przyjmowanie aspiryny (kwasu acetylosalicylowego) w dawce 75-100 mg/dobę, jeśli nie występują przeciwwskazania do jej zażywania.",
+  "NotePonizej" : "Ogranicz spożywanie alkoholu oraz napojów gazowanych."
 },
 
 "OB":{
  
-  "Ponizej" : "Możliwe, że masz niedokrwistość, zaburzenie funkcjonowania układu krążenia lub alergię. Uzupełnij niedobór żelaza, witaminy B12 oraz kwasu foliowego.",
-  "Powyzej" : "Wysokie OB może być objawem stanu zapalnego toczącego się w organizmie. Preparaty z kwasem acetylosalicylowym czy ibuprofenem hamują proces zapalny, pamiętaj tylko by nie stosować ich na czczo." 
+  "Ponizej" : "Możliwe, że masz niedokrwistość, zaburzenie funkcjonowania układu krążenia lub alergię.",
+  "Powyzej" : "Wysokie OB może być objawem stanu zapalnego toczącego się w organizmie.",
+  "NotePowyzej" : "Preparaty z kwasem acetylosalicylowym czy ibuprofenem hamują proces zapalny, pamiętaj tylko by nie stosować ich na czczo.",
+  "NotePonizej" : "Uzupełnij niedobór żelaza, witaminy B12 oraz kwasu foliowego."
 },
 
 "Glukoza":{
  
-  "Ponizej" : "Masz zbyt niski cukier. Uzupełnij węglowodany w diecie. Zjedz żytnie pieczywo, płatki owsiane, groch lub soczewicę.",
-  "Powyzej" : "Masz zbyt wysoki poziom glukozy we krwi. Spożywaj produkty o niskim indeksem glikemicznym np. cukinię, marchew lub pieczarki." 
+  "Ponizej" : "Masz zbyt niski cukier. Uzupełnij węglowodany w diecie.",
+  "Powyzej" : "Masz zbyt wysoki poziom glukozy we krwi.",
+  "NotePowyzej" : "Spożywaj produkty o niskim indeksem glikemicznym np. cukinię, marchew lub pieczarki.",
+  "NotePonizej" : "Zjedz żytnie pieczywo, płatki owsiane, groch lub soczewicę." 
 },
 
 "Cholesterol":{
  
-  "Ponizej" : "Masz zbyt niski poziom cholesterolu, który może prowadzić do nadczynności tarczycy lub różnego rodzaju infekcji. Udaj się do lekarza w celu dokonania większej ilości badań.",
-  "Powyzej" : "Masz zbyt wysoki poziom cholesterolu który może prowadzić do cukrzycy, niewydolności nerek lub niedoczynność tarczycy. Unikaj tłustych potraw pochodzenia zwierzęcego, palenia tytoniu oraz postaraj się zwiększyć Twój codzienny wysiłek fizyczny." 
+  "Ponizej" : "Masz zbyt niski poziom cholesterolu, który może prowadzić do nadczynności tarczycy lub różnego rodzaju infekcji.",
+  "Powyzej" : "Masz zbyt wysoki poziom cholesterolu który może prowadzić do cukrzycy, niewydolności nerek lub niedoczynność tarczycy.",
+  "NotePowyzej" : "Unikaj tłustych potraw pochodzenia zwierzęcego, palenia tytoniu oraz postaraj się zwiększyć Twój codzienny wysiłek fizyczny.",
+  "NotePonizej" : "Udaj się do lekarza w celu dokonania większej ilości badań." 
 },
 
 "TSH":{
  
-  "Ponizej" : "Masz zbyt niski poziom TSH. Możliwe, że masz nadczynność tarczycy. Udaj się do lekarza w celu dokonania większej ilości badań. Zwiększ ilość białka w diecie oraz przyjmowanie witamin A, B oraz C.",
-  "Powyzej" : "Możliwe, że masz niedoczynność tarczyce lub gruczolak przysadki mózgowej. Udaj się do lekarza w celu dokonania większej ilości badań. Przyjmuj produkty bogate w jód- borówki, jogurt naturalny, sól himalajska, fasolka szparagowa lub ziemniaki." 
+  "Ponizej" : "Masz zbyt niski poziom TSH. Możliwe, że masz nadczynność tarczycy. Udaj się do lekarza w celu dokonania większej ilości badań.",
+  "Powyzej" : "Możliwe, że masz niedoczynność tarczyce lub gruczolak przysadki mózgowej. Udaj się do lekarza w celu dokonania większej ilości badań.",
+  "NotePowyzej" : "Przyjmuj produkty bogate w jód- borówki, jogurt naturalny, sól himalajska, fasolka szparagowa lub ziemniaki.",
+  "NotePonizej" : "Zwiększ ilość białka w diecie oraz przyjmowanie witamin A, B oraz C." 
 },
 
 "ALAT":{
  
-  "Ponizej" : "Zbyt niski poziom ALAT wiąże się z problemami wątrobowymi. Udaj się do lekarza w celu dokonania większej ilości badań.",
-  "Powyzej" : "Możliwe, że masz zapalenie wątroby. Udaj się do lekarza w celu dokonania większej ilości badań. Udaj się do lekarza w celu dokonania większej ilości badań." 
+  "Ponizej" : "Zbyt niski poziom ALAT wiąże się z problemami wątrobowymi.",
+  "Powyzej" : "Możliwe, że masz zapalenie wątroby. Udaj się do lekarza w celu dokonania większej ilości badań.",
+  "NotePowyzej" : "Udaj się do lekarza w celu dokonania większej ilości badań.",
+  "NotePonizej" : "Udaj się do lekarza w celu dokonania większej ilości badań."
 },
 
 "AspAT":{
  
-  "Ponizej" : "Zbyt niski poziom AspAT wiąże się z zaburzeniami metabolicznymi. Udaj się do lekarza w celu dokonania większej ilości badań.",
-  "Powyzej" : "Zbyt wysoki poziom wiąże się z efektywnością pracy wątroby. Udaj się do lekarza w celu dokonania większej ilości badań." 
+  "Ponizej" : "Zbyt niski poziom AspAT wiąże się z zaburzeniami metabolicznymi.",
+  "Powyzej" : "Zbyt wysoki poziom wiąże się z efektywnością pracy wątroby.",
+  "NotePowyzej" : "Udaj się do lekarza w celu dokonania większej ilości badań.",
+  "NotePonizej" : "Udaj się do lekarza w celu dokonania większej ilości badań."
 },
 
 "Potas":{
  
-  "Ponizej" : "Masz zdecydowanie zbyt niski poziom potasu w organizmie. Zjedz pomidor, banan lub suszone owoce.",
-  "Powyzej" : "Nadmiar potasu może powodować wrzody żołądka, hiperinsulinizm oraz krwotoki. Ogranicz spożywanie ziemniaków, bananów oraz owoców cytrusowych." 
+  "Ponizej" : "Masz zdecydowanie zbyt niski poziom potasu w organizmie. ",
+  "Powyzej" : "Nadmiar potasu może powodować wrzody żołądka, hiperinsulinizm oraz krwotoki.",
+  "NotePowyzej" : "Ogranicz spożywanie ziemniaków, bananów oraz owoców cytrusowych.",
+  "NotePonizej" : "Zjedz pomidor, banan lub suszone owoce."
 },
 
 "Sod":{
  
-  "Ponizej" : "Masz niedobór sodu. Zjedz żółty ser, rybę lub wędliny.",
-  "Powyzej" : "Nadmiar sodu może powodować objawy związane z odwodnieniem organizmu. Ogranicz produkty z dużą ilością soli oraz zacznij przyjmować co najmniej 2,5l płynów dziennie." 
+  "Ponizej" : "Masz niedobór sodu.",
+  "Powyzej" : "Nadmiar sodu może powodować objawy związane z odwodnieniem organizmu.",
+  "NotePowyzej" : "Ogranicz produkty z dużą ilością soli oraz zacznij przyjmować co najmniej 2,5l płynów dziennie.",
+  "NotePonizej" : "Zjedz żółty ser, rybę lub wędliny." 
 },
 
 "Magnez":{
  
-  "Ponizej" : "Zbyt niski poziom magnezu powodowany jest przez stres, choroby nerek lub wyczerpanie organizmu. Zjedz szpinak, pestki z dyni, gorzką czekoladę lub orzechy brazylijskie.",
-  "Powyzej" : "Zbyt wysoki poziom magnezu objawia się zawrotami głowy, osłabieniem lub niedociśnieniem. Udaj się do lekarza w celu dokonania większej ilości badań. Odstaw produkty bogate w magnez." 
+  "Ponizej" : "Zbyt niski poziom magnezu powodowany jest przez stres, choroby nerek lub wyczerpanie organizmu.",
+  "Powyzej" : "Zbyt wysoki poziom magnezu objawia się zawrotami głowy, osłabieniem lub niedociśnieniem.",
+  "NotePowyzej" : "Udaj się do lekarza w celu dokonania większej ilości badań. Odstaw produkty bogate w magnez.",
+  "NotePonizej" : "Zjedz szpinak, pestki z dyni, gorzką czekoladę lub orzechy brazylijskie."
 },
 
 "Wapn":{
  
-  "Ponizej" : "Masz niedobór wapnia w organizmie. Zjedz ser, jogurt naturalny lub migdały.",
-  "Powyzej" : "Zbyt wysoki poziom wapnia w organizmie zwykle objawia się hiperkalcemią. Udaj się do lekarza w celu dokonania większej ilości badań." 
+  "Ponizej" : "Masz niedobór wapnia w organizmie.",
+  "Powyzej" : "Zbyt wysoki poziom wapnia w organizmie zwykle objawia się hiperkalcemią.",
+  "NotePowyzej" : "Udaj się do lekarza w celu dokonania większej ilości badań.",
+  "NotePonizej" : "Zjedz ser, jogurt naturalny lub migdały." 
 },
 
 "Zelazo":{
  
-  "Ponizej" : "Zbyt niski poziom żelaza we krwi objawia się anemią. Zjedz pomidor, suszone morele lub buraki.",
-  "Powyzej" : "Możliwe, że masz wirusowe zapalenie wątroby. Udaj się do lekarza w celu dokonania większej ilości badań." 
+  "Ponizej" : "Zbyt niski poziom żelaza we krwi objawia się anemią.",
+  "Powyzej" : "Możliwe, że masz wirusowe zapalenie wątroby.",
+  "NotePowyzej" : "Udaj się do lekarza w celu wykonania dokładnych badań.",
+  "NotePonizej" : "Zjedz pomidor, suszone morele lub buraki."
 },
 
 "WitaminaB12":{
  
-  "Ponizej" : "Masz zbyt niski poziom witaminy B12 w organizmie co może powodować zmęczenie, nadmierną nerwowość, problemy z pamięcią czy depresję. Zjedz jajka, rybę lub napij się mleka.",
-  "Powyzej" : "Masz zbyt wysoki poziom witaminy B12 w organizmie co może powodować objawy uczuleniowe. Unikaj spożywanie jajek, ryb lub mleka. " 
+  "Ponizej" : "Masz zbyt niski poziom witaminy B12 w organizmie co może powodować zmęczenie, nadmierną nerwowość, problemy z pamięcią czy depresję. ",
+  "Powyzej" : "Masz zbyt wysoki poziom witaminy B12 w organizmie co może powodować objawy uczuleniowe.",
+  "NotePowyzej" : "Unikaj spożywanie jajek, ryb lub mleka.",
+  "NotePonizej" : "Zjedz jajka, rybę lub napij się mleka."
 }
 }

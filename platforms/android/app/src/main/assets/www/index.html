@@ -1033,9 +1033,13 @@ document.querySelector('#dodajbadania').addEventListener('click', function () {
           var dd = today.getDate();
           var mm = today.getMonth(); //January is 0!
           var mm2 = ["Styczeń", "Luty", "Marzec", "Kwiecień", "Maj", "Czerwiec", "Lipiec", "Sierpień", "Wrzesień", "Październik", "Listopad", "Grudzień"];
-          var gornyzakres = [11,6.5,18,51,45,0.4,97,32,36,400,8,99,199,5,40,45,5.5,145,1.2,2.75,158,740];
+          var gornyzakres = [11,6.5,18,51,45,0.4,97,32,36,400,20,99,199,5,40,45,5.5,145,1.2,2.75,158,740];
           var dolnyzakres = [4.1,4.5,13.5,40,20,0.1,80,26,31,140,3,70,170,0.32,5,8,3.5,135,0.65,2.25,50,148];
-          for(var i = 1; i <= 22; i++){
+          var gornyzakreskobiety = [11,5.6,15.5,47,45,0.4,97,32,36,400,30,99,199,5,40,35,5.5,145,1.2,2.75,145,740];
+          var dolnyzakreskobiety = [4.1,3.9,11.5,37,20,0.1,80,26,31,140,6,70,170,0.32,5,7,3.5,135,0.65,2.25,37,148];
+        
+          if(plecstatus == "Mężczyzna"){
+         for(var i = 1; i <= 22; i++){
             if(wartosc[i - 1] != 0){
           if(   wartosc[i - 1] > gornyzakres[i - 1] ){
               liczniknieprawidlowe++;
@@ -1048,6 +1052,22 @@ document.querySelector('#dodajbadania').addEventListener('click', function () {
           }
         }
         }
+      }else{
+
+        for(var i = 1; i <= 22; i++){
+            if(wartosc[i - 1] != 0){
+          if(   wartosc[i - 1] > gornyzakreskobiety[i - 1] ){
+              liczniknieprawidlowe++;
+              licznikwszystkie++;
+          }else if(wartosc[i - 1] < dolnyzakreskobiety[i - 1]){
+            liczniknieprawidlowe++;
+            licznikwszystkie++;
+          }else{
+            licznikwszystkie++;
+          }
+        }
+        }
+      }
         prawidłowe = licznikwszystkie - liczniknieprawidlowe;
         obliczenia = prawidłowe / licznikwszystkie ;
         console.log("wszystko to:  " + licznikwszystkie);
@@ -1136,6 +1156,8 @@ firebase.auth().onAuthStateChanged(function(user) {
 });
 }
 
+var plecstatus;
+
 function daneOsobowe(){
  
           var dane = document.getElementById('daneosobowe');
@@ -1159,7 +1181,7 @@ function daneOsobowe(){
 
         var data3 =   firebase.database().ref('users/' + uid).child("płeć");
        data3.on('value', function(snapshot){
-        var plecstatus = snapshot.val();
+         plecstatus = snapshot.val();
        var zdjecie = document.getElementById('zdjecieprofilowe');
           if(plecstatus == "Kobieta"){
               zdjecie.src = "img/female.png";
@@ -1441,6 +1463,7 @@ console.log(addZeroes(5));
           var wartosc = [];
           var obliczenia ;
           var data;
+          var data2;
           var bialekrwinki ;
           var czerwonekrwinki ;
           var hemoglobina ;
@@ -1463,8 +1486,10 @@ console.log(addZeroes(5));
           var wapn ;
           var zelazo ;
           var witaminab ;
-          var gornyzakres = [11,6.5,18,51,45,0.4,97,32,36,400,8,99,199,5,40,45,5.5,145,1.2,2.75,158,740];
+          var gornyzakres = [11,6.5,18,51,45,0.4,97,32,36,400,20,99,199,5,40,45,5.5,145,1.2,2.75,158,740];
           var dolnyzakres = [4.1,4.5,13.5,40,20,0.1,80,26,31,140,3,70,170,0.32,5,8,3.5,135,0.65,2.25,50,148];
+          var gornyzakreskobiety = [11,5.6,15.5,47,45,0.4,97,32,36,400,30,99,199,5,40,35,5.5,145,1.2,2.75,145,740];
+          var dolnyzakreskobiety = [4.1,3.9,11.5,37,20,0.1,80,26,31,140,6,70,170,0.32,5,7,3.5,135,0.65,2.25,37,148];
           var nazwy = ["Białe krwinki", "Czerwone krwinki", "Hemoglobina", "Hematokryt", "Limfocyty", "Monocyty", "MCV", "MCH",
                       "MCHC", "Płytki krwi", "OB", "Glukoza", "Cholesterol", "TSH", "ALAT", "AspAT", "Potas",
                       "Sód", "Magnez", "Wapń", "Żelazo", "Witamina B12"];
@@ -1528,7 +1553,7 @@ console.log(addZeroes(5));
 
          
             // licznik = negatywne.length;
-
+if(plecstatus == "Mężczyzna"){
  for(var i = 1; i<=22; i++){
   if(wartosc[i - 1] != 0){
   if(wartosc[i - 1] < dolnyzakres[i - 1]){
@@ -1552,15 +1577,45 @@ console.log(addZeroes(5));
 }
 
  }
+}else{
+
+for(var i = 1; i<=22; i++){
+  if(wartosc[i - 1] != 0){
+  if(wartosc[i - 1] < dolnyzakreskobiety[i - 1]){
+    negatywne.push(nazwy[i - 1]);
+    twojewartosci.push(addZeroes(wartosc[i - 1]));
+    rozneodnormy.push("Poniżej normy");
+    obliczenia = dolnyzakreskobiety[i - 1] - wartosc[i- 1];
+    przekroczonawartosc.push("(- " + addZeroes(obliczenia) + ")");
+    licznik++;
+  }else if(wartosc[i - 1] > gornyzakreskobiety[i - 1]){
+    negatywne.push(nazwy[i - 1]);
+    twojewartosci.push(addZeroes(wartosc[i - 1]));
+    rozneodnormy.push("Powyżej normy");
+    obliczenia =  wartosc[i- 1] - gornyzakreskobiety[i - 1];
+    przekroczonawartosc.push("(+ " + addZeroes(obliczenia) + ")");
+    licznik++;
+
+  }
+}else{
+
+}
+
+ }
+}
 
  var licznikpomocniczy = licznik;
  if(licznikpomocniczy > 4){
   licznikpomocniczy = 4;
- }
+ }else {}
             var ref2 = firebase.database().ref('users/' + uid + '/Badania/' + tablica[tablica.length - 1]).child("Data");
           ref2.on('value', function(snapshot4){
 
               data = snapshot4.val();
+              var splitdata = data.split(" ");
+              var idostatniegobadania = document.getElementById('dataostatniegobadania');
+              idostatniegobadania.innerHTML = splitdata[0]  + " " + splitdata[1] ;
+
           });
             
 // console.log(licznik);
@@ -1607,8 +1662,8 @@ $( "#homewyswietlanie" ).append( '  <div class="first-box" id="rest-box"> \
                       var idznak = document.getElementById('znakwskaznika');
                       var idprzekroczonawartosc = document.getElementById('przekroczonawartosc')
                       var iddatabadania = document.getElementById('databadania');
-                      var idostatniegobadania = document.getElementById('dataostatniegobadania');
-                      var splitdata = data.split(" ");
+                      
+                      
                       id.setAttribute('id', "rodzaj" + i); 
                       id.innerHTML = negatywne[podstaw - 1];
                       idwartosc.setAttribute('id', 'wartoscwskaznika ' + i);
@@ -1621,7 +1676,7 @@ $( "#homewyswietlanie" ).append( '  <div class="first-box" id="rest-box"> \
                       idprzekroczonawartosc.innerHTML = przekroczonawartosc[podstaw - 1];
                       iddatabadania.setAttribute('id', "databadania " + i);
                       iddatabadania.innerHTML = data;
-                      idostatniegobadania.innerHTML = splitdata[0]  + " " + splitdata[1] ;
+                      
 
                       
 
@@ -1683,8 +1738,11 @@ function readTextFile(file, callback) {
           var tabindex2 = 0 ;
           var negatywne = [];
           var pozytywy = [];
-          var gornyzakres = [11,6.5,18,51,45,0.4,97,32,36,400,8,99,199,5,40,45,5.5,145,1.2,2.75,158,740];
+          
+          var gornyzakres = [11,6.5,18,51,45,0.4,97,32,36,400,20,99,199,5,40,45,5.5,145,1.2,2.75,158,740];
           var dolnyzakres = [4.1,4.5,13.5,40,20,0.1,80,26,31,140,3,70,170,0.32,5,8,3.5,135,0.65,2.25,50,148];
+          var gornyzakreskobiety = [11,5.6,15.5,47,45,0.4,97,32,36,400,30,99,199,5,40,35,5.5,145,1.2,2.75,145,740];
+          var dolnyzakreskobiety = [4.1,3.9,11.5,37,20,0.1,80,26,31,140,6,70,170,0.32,5,7,3.5,135,0.65,2.25,37,148];
           var nazwy = ["Białe krwinki", "Czerwone krwinki", "Hemoglobina", "Hematokryt", "Limfocyty", "Monocyty", "MCV", "MCH",
                       "MCHC", "Płytki krwi", "OB", "Glukoza", "Cholesterol", "TSH", "ALAT", "AspAT", "Potas",
                       "Sód", "Magnez", "Wapń", "Żelazo", "Witamina B12"];
@@ -1747,6 +1805,8 @@ function readTextFile(file, callback) {
             wartosc[21] = key2.Witamina_B12 ;
             console.log('dolny zakres wynos ' + dolnyzakres.length);
             console.log('gorny zakres wynos ' + gornyzakres.length);
+
+            if(plecstatus == "Mężczyzna"){
           for(var i = 1; i<=22; i++){
             if(wartosc[i - 1] != 0){
             if(wartosc[i - 1] > gornyzakres[i - 1]){
@@ -1778,6 +1838,8 @@ function readTextFile(file, callback) {
               <span class="badania_all_note" id="wskazowki"> \
                 W Twoim organizmie toczy się infekcja/ stan zapalny, zbadaj się dokładnie. \
               </span> \
+\
+              <div class="box">             <div class ="content-box">               <div class="ikona"><img src="http://via.placeholder.com/50x50" alt=""></div>                <div class="line">&nbsp;</div>                  <div class="tekst" id="notepowyzej">Owoce takie jak figi, melony, pomarańcze lub truskawki oraz warzywa, takie jak dynia, marchew, brokuły, szparagi, kalafior, buraki i szpinak  – są znane z tego, że naturalnie zwiększają liczbę białych krwinek - dodaj je do swojej diety.</div>                </div>              </div>\
  \
             </div> \
           </div> \
@@ -1789,6 +1851,7 @@ $(document).ready(function(){
             var wartoscszczegoly = document.getElementById('wartoscszczegoly');
             var wartoscroznaodnormy = document.getElementById('wartoscroznaodnormy');
             var wskazowki = document.getElementById('wskazowki');
+            var notepowyzej = document.getElementById('notepowyzej');
             nazwawskaznika.setAttribute('id', 'nazwawskaznika ' + i);
             nazwawskaznika.innerHTML = nazwy[i - 1];
             wartoscszczegoly.setAttribute('id', 'wartoscszczegoly ' + i);
@@ -1797,6 +1860,7 @@ $(document).ready(function(){
             wartoscroznaodnormy.setAttribute('id', 'wartoscroznaodnormy ' + i);
             wartoscroznaodnormy.innerHTML = "(+ " + addZeroes(obliczenia) + ")";
             wskazowki.setAttribute('id', 'wskazowki ' + i);
+            notepowyzej.setAttribute('id', 'notepowyzej ' + i);
             var xhttp = new XMLHttpRequest();
             var file = "https://health-care-71096.firebaseio.com/Komunikaty/" + nazwy2[i - 1]+ "/Powyzej.json";
             xhttp.onreadystatechange = function() {
@@ -1807,6 +1871,17 @@ $(document).ready(function(){
             };
             xhttp.open("GET", file, true);
             xhttp.send();
+
+            var xhttp2 = new XMLHttpRequest();
+            var file2 = "https://health-care-71096.firebaseio.com/Komunikaty/" + nazwy2[i - 1]+ "/NotePowyzej.json";
+            xhttp2.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                   // Typical action to be performed when the document is ready:
+                   notepowyzej.innerHTML = xhttp2.responseText.replace(/['"]+/g, '');
+                }
+            };
+            xhttp2.open("GET", file2, true);
+            xhttp2.send();
           });
 
                   }else if(wartosc[i - 1] < dolnyzakres[i - 1]){
@@ -1839,6 +1914,8 @@ $(document).ready(function(){
               <span class="badania_all_note" id="wskazowki"> \
                 Możliwe, że masz anemię. Uzupełnij niedobór żelaza, witaminy B12 lub kwasu foliowego. \
               </span> \
+\
+              <div class="box">              <div class ="content-box">                 <div class="ikona"><img src="http://via.placeholder.com/50x50" alt=""></div>                <div class="line">&nbsp;</div>                 <div class="tekst" id="noteponizej">Owoce takie jak figi, melony, pomarańcze lub truskawki oraz warzywa, takie jak dynia, marchew, brokuły, szparagi, kalafior, buraki i szpinak  – są znane z tego, że naturalnie zwiększają liczbę białych krwinek - dodaj je do swojej diety.</div>              </div>            </div>\
  \
             </div> \
           </div> \
@@ -1851,6 +1928,7 @@ $(document).ready(function(){
             var wartoscszczegoly = document.getElementById('wartoscszczegoly');
             var wartoscroznaodnormy = document.getElementById('wartoscroznaodnormy');
             var wskazowki = document.getElementById('wskazowki');
+            var noteponizej = document.getElementById('noteponizej');
             nazwawskaznika.setAttribute('id', 'nazwawskaznika ' + i);
             nazwawskaznika.innerHTML = nazwy[i - 1];
             wartoscszczegoly.setAttribute('id', 'wartoscszczegoly ' + i);
@@ -1859,6 +1937,7 @@ $(document).ready(function(){
             wartoscroznaodnormy.setAttribute('id', 'wartoscroznaodnormy ' + i);
             wartoscroznaodnormy.innerHTML = "(- " + addZeroes(obliczenia) + ")"
             wskazowki.setAttribute('id','wskazowki ' + i);
+            noteponizej.setAttribute('id', 'noteponizej ' + i);
             // var JSON = readTextFile("komunikaty.json", function(text){
             //             var data = JSON.parse(text);
             //             console.log(data);
@@ -1878,6 +1957,17 @@ $(document).ready(function(){
             };
             xhttp.open("GET", file, true);
             xhttp.send();
+
+            var xhttp2 = new XMLHttpRequest();
+            var file2 = "https://health-care-71096.firebaseio.com/Komunikaty/" + nazwy2[i - 1]+ "/NotePonizej.json";
+            xhttp2.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                   // Typical action to be performed when the document is ready:
+                   noteponizej.innerHTML = xhttp2.responseText.replace(/['"]+/g, '');
+                }
+            };
+            xhttp2.open("GET", file2, true);
+            xhttp2.send();
                        
           });
 
@@ -1924,6 +2014,223 @@ $(document).ready(function(){
               }
           }
         }
+      }else{
+
+        for(var i = 1; i<=22; i++){
+            if(wartosc[i - 1] != 0){
+            if(wartosc[i - 1] > gornyzakreskobiety[i - 1]){
+              licznik++;
+              
+            $('#szczegolybadaniamain').append('     <div class="container_badanie_bad_above"> \
+          <div class="badania_all_inner"> \
+            <div style="line-height: 100%;"> \
+              \
+              <span class="badania_bad_above_wskaznik" id="nazwawskaznika"> \
+                WBC Białe krwinki \
+              </span> \
+              <br><br> \
+               \
+              <span class="badania_all_wartosc_value_text"> \
+                wartość ponad normą \
+              </span> \
+              <br> \
+ \
+              <span class="badania_bad_above_value" id="wartoscszczegoly"> \
+                144,00 \
+              </span> \
+ \
+              <span class="badania_bad_above_value_sec" id="wartoscroznaodnormy"> \
+                (+12,00) \
+              </span> \
+              <br><br> \
+ \
+              <span class="badania_all_note" id="wskazowki"> \
+                W Twoim organizmie toczy się infekcja/ stan zapalny, zbadaj się dokładnie. \
+              </span> \
+\
+              <div class="box">             <div class ="content-box">               <div class="ikona"><img src="http://via.placeholder.com/50x50" alt=""></div>                <div class="line">&nbsp;</div>                  <div class="tekst" id="notepowyzej">Owoce takie jak figi, melony, pomarańcze lub truskawki oraz warzywa, takie jak dynia, marchew, brokuły, szparagi, kalafior, buraki i szpinak  – są znane z tego, że naturalnie zwiększają liczbę białych krwinek - dodaj je do swojej diety.</div>                </div>              </div>\
+ \
+            </div> \
+          </div> \
+      </div> \
+ \
+      <div name="Separator" style=" background-color: #eaeaea; width: 100%; height: 4px; " class="separator"></div>');
+$(document).ready(function(){ 
+            var nazwawskaznika = document.getElementById('nazwawskaznika');
+            var wartoscszczegoly = document.getElementById('wartoscszczegoly');
+            var wartoscroznaodnormy = document.getElementById('wartoscroznaodnormy');
+            var wskazowki = document.getElementById('wskazowki');
+            var notepowyzej = document.getElementById('notepowyzej');
+            nazwawskaznika.setAttribute('id', 'nazwawskaznika ' + i);
+            nazwawskaznika.innerHTML = nazwy[i - 1];
+            wartoscszczegoly.setAttribute('id', 'wartoscszczegoly ' + i);
+            wartoscszczegoly.innerHTML = addZeroes(wartosc[i - 1]);
+            obliczenia = wartosc[i - 1] - gornyzakreskobiety[i - 1];
+            wartoscroznaodnormy.setAttribute('id', 'wartoscroznaodnormy ' + i);
+            wartoscroznaodnormy.innerHTML = "(+ " + addZeroes(obliczenia) + ")";
+            wskazowki.setAttribute('id', 'wskazowki ' + i);
+            notepowyzej.setAttribute('id', 'notepowyzej ' + i);
+            var xhttp = new XMLHttpRequest();
+            var file = "https://health-care-71096.firebaseio.com/Komunikaty/" + nazwy2[i - 1]+ "/Powyzej.json";
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                   // Typical action to be performed when the document is ready:
+                   wskazowki.innerHTML = xhttp.responseText.replace(/['"]+/g, '');
+                }
+            };
+
+            xhttp.open("GET", file, true);
+            xhttp.send();
+
+            var xhttp2 = new XMLHttpRequest();
+            var file2 = "https://health-care-71096.firebaseio.com/Komunikaty/" + nazwy2[i - 1]+ "/NotePowyzej.json";
+            xhttp2.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                   // Typical action to be performed when the document is ready:
+                   notepowyzej.innerHTML = xhttp2.responseText.replace(/['"]+/g, '');
+                }
+            };
+            xhttp2.open("GET", file2, true);
+            xhttp2.send();
+
+           
+            
+          });
+
+                  }else if(wartosc[i - 1] < dolnyzakreskobiety[i - 1]){
+              licznik++;
+              
+
+               $('#szczegolybadaniamain').append('    <div class="container_badanie_bad_above badania_bad_below_border" id=""> \
+          <div class="badania_all_inner">  \
+            <div style="line-height: 100%;"> \
+               \
+              <span class="badania_bad_above_wskaznik badania_bad_below" id="nazwawskaznika" > \
+                HGB(Hb) Hemoglobina \
+              </span> \
+              <br><br> \
+               \
+              <span class="badania_all_wartosc_value_text"> \
+                wartość poniżej normą \
+              </span> \
+              <br> \
+ \
+              <span class="badania_bad_above_value badania_bad_below" id="wartoscszczegoly"> \
+                144,00 \
+              </span> \
+ \
+              <span class="badania_bad_above_value_sec badania_bad_below" id="wartoscroznaodnormy"> \
+                (-12,00) \
+              </span> \
+              <br><br> \
+ \
+              <span class="badania_all_note" id="wskazowki"> \
+                Możliwe, że masz anemię. Uzupełnij niedobór żelaza, witaminy B12 lub kwasu foliowego. \
+              </span> \
+\
+              <div class="box">              <div class ="content-box">                 <div class="ikona"><img src="http://via.placeholder.com/50x50" alt=""></div>                <div class="line">&nbsp;</div>                 <div class="tekst" id="noteponizej">Owoce takie jak figi, melony, pomarańcze lub truskawki oraz warzywa, takie jak dynia, marchew, brokuły, szparagi, kalafior, buraki i szpinak  – są znane z tego, że naturalnie zwiększają liczbę białych krwinek - dodaj je do swojej diety.</div>              </div>            </div>\
+ \
+            </div> \
+          </div> \
+      </div> \
+ \
+      <div name="Separator" style=" background-color: #eaeaea; width: 100%; height: 4px; " class="separator"></div>');
+
+            $(document).ready(function(){ 
+            var nazwawskaznika = document.getElementById('nazwawskaznika');
+            var wartoscszczegoly = document.getElementById('wartoscszczegoly');
+            var wartoscroznaodnormy = document.getElementById('wartoscroznaodnormy');
+            var wskazowki = document.getElementById('wskazowki');
+            var noteponizej = document.getElementById('noteponizej');
+            nazwawskaznika.setAttribute('id', 'nazwawskaznika ' + i);
+            nazwawskaznika.innerHTML = nazwy[i - 1];
+            wartoscszczegoly.setAttribute('id', 'wartoscszczegoly ' + i);
+            wartoscszczegoly.innerHTML = addZeroes(wartosc[i - 1]);
+            obliczenia = dolnyzakreskobiety[i - 1] - wartosc[i - 1] ;
+            wartoscroznaodnormy.setAttribute('id', 'wartoscroznaodnormy ' + i);
+            wartoscroznaodnormy.innerHTML = "(- " + addZeroes(obliczenia) + ")"
+            wskazowki.setAttribute('id','wskazowki ' + i);
+            noteponizej.setAttribute('id','noteponizej ' + i);
+            // var JSON = readTextFile("komunikaty.json", function(text){
+            //             var data = JSON.parse(text);
+            //             console.log(data);
+            //             return data
+            //             });
+            // $.getJSON( "https://health-care-71096.firebaseio.com/Komunikaty/MCV/Powyżej", function( json ) {
+            // var tekst =  json.MCV.powyżej; 
+            // wskazowki.innerHTML = tekst; 
+            //  });
+            var xhttp = new XMLHttpRequest();
+            var file = "https://health-care-71096.firebaseio.com/Komunikaty/" + nazwy2[i - 1]+ "/Ponizej.json";
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                   // Typical action to be performed when the document is ready:
+                   wskazowki.innerHTML = xhttp.responseText.replace(/['"]+/g, '');
+                }
+            };
+            xhttp.open("GET", file, true);
+            xhttp.send();
+
+             
+            var xhttp2 = new XMLHttpRequest();
+            var file2 = "https://health-care-71096.firebaseio.com/Komunikaty/" + nazwy2[i - 1]+ "/NotePonizej.json";
+            xhttp2.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                   // Typical action to be performed when the document is ready:
+                   noteponizej.innerHTML = xhttp2.responseText.replace(/['"]+/g, '');
+                }
+            };
+            xhttp2.open("GET", file2, true);
+            xhttp2.send();
+                       
+          });
+
+            }else if(wartosc[i - 1] >= dolnyzakreskobiety[i - 1] && wartosc[i - 1] <= gornyzakreskobiety[i-1]){
+              licznik_prawidlowe++;
+              $('#szczegolybadaniamain').append('<div class="container_badanie_bad_above badania_good_border" id=""> \
+          <div class="badania_all_inner">\
+            <div style="line-height: 100%;">\
+              \
+              <span class="badania_bad_above_wskaznik badania_good" id="nazwawskaznika" >\
+                Glukoza\
+              </span>\
+              <br><br>\
+              \
+              <span class="badania_all_wartosc_value_text">\
+                wartość w normie\
+              </span>\
+              <br>\
+\
+              <span class="badania_bad_above_value badania_good" id="wartoscszczegoly">\
+                144,00\
+              </span>\
+\
+              <br><br>\
+\
+              <span class="badania_all_note">\
+                Twoje wyniki są w normie. Trzymaj tak dalej!\
+              </span>\
+\
+            </div>\
+          </div>\
+      </div>\
+      \
+      <div name="Separator" style=" background-color: #eaeaea; width: 100%; height: 4px; " class="separator"></div>');
+              
+            $(document).ready(function(){ 
+            var nazwawskaznika = document.getElementById('nazwawskaznika');
+            var wartoscszczegoly = document.getElementById('wartoscszczegoly');
+            nazwawskaznika.setAttribute('id', 'nazwawskaznika ' + i);
+            nazwawskaznika.innerHTML = nazwy[i - 1];
+            wartoscszczegoly.setAttribute('id', 'wartoscszczegoly ' + i);
+            wartoscszczegoly.innerHTML = addZeroes(wartosc[i - 1]);
+          });
+              }
+          }
+        }
+
+      }
+
             // licznik = negatywne.length;
 
             prawidłowe = licznik_prawidlowe;
@@ -2017,7 +2324,7 @@ console.log(licznik);
   
 
 
-
+console.log("Twoja plec robaczku4324 to: " +  plecstatus);
     }else{
 
     }
