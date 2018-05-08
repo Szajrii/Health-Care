@@ -1,0 +1,415 @@
+body{
+  font-family: 'Roboto', sans-serif;
+}
+
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #F8F8F8;
+/*   color: white;*/
+   text-align: center;
+   height: auto;
+   border-top: 1px solid #D1D1D1;
+   transition: bottom 0.3s;
+}
+
+.secound-page-background{
+  background-image: url('../img/bg_2.png');
+  width: 100%;
+  margin:0;
+  padding: 0;
+     background-size: 100% auto;
+     background-repeat: no-repeat;
+}
+ 
+.container-top-content{
+padding: 20px 0 40px 0;
+}
+ 
+.name-user-top{
+text-align: center;
+color: white;
+font-size: 22px;
+text-transform: none;
+}
+ 
+.first-box{
+  width: 80%;
+  height: 75px;
+  background-color: white;
+  position: none;
+  border-radius: 20px;
+  margin-left: 10%; 
+  margin-top: -30px;
+  box-shadow: 0px 5px 12px 0px  rgb(0, 0, 0, 0.05);
+}
+.first-box-content{
+  top: 50%;
+  text-align: center; 
+  position: relative;  
+  float: left;   
+  left: 50%;  
+  transform: translate(-50%, -50%);
+  display: inline-block;
+ 
+}
+ 
+.first-box-date{
+  color: #47A0B5;
+  font-size: 28px;
+  text-transform: none !important;
+  font-weight: 500;
+ 
+}
+ 
+.first-box-comment{
+  
+  font-size: 10px;
+  color: #A6B1C0;
+ 
+}
+#rest-box{
+  height: 60px;
+  margin-top:30px;
+  position: relative;
+}
+
+.icon {
+  padding-right: 0.7em;
+  float: right;
+  padding-top: 22px;
+  font-size: 32px;
+  color: #E36E7B;
+}
+
+.circle {
+  position: relative;
+  width: 40px;
+  height: 40px;
+   display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 50%;
+  background: #E36E7B;
+  color: white;
+  font-size: 18px;
+  font-weight: 300;
+}
+ 
+.rest-box-content{
+  top: 54%;
+  text-align: center; 
+  position: relative;  
+  float: left;   
+  left: 10%;  
+  transform: translate(-50%, -50%);
+  display: inline-block;
+ 
+}
+
+.container-element-box{
+  position: absolute;
+  margin-left: 20%;
+  padding-top: 14px;
+}
+
+.value-element-mark{
+  font-size: 10px;
+  text-transform: none;
+}
+
+.value-element-inner{
+  float:right; 
+  text-align: right; 
+  padding-top: 15px; 
+  margin-right: 5%;
+}
+ 
+.element-date{
+  font-size: 11px; 
+  text-transform: none;
+  color: #A6B1C0;
+} 
+
+.menu-container{
+  list-style-type: none;
+  margin: 0;
+  padding:0px;
+  font-weight: 300;
+  text-transform: none;
+  font-size: 12px;
+  text-align: center;
+}
+
+li a:active {
+  background-color: #EFEFEF;
+}
+
+
+ .menu-element2{
+  font-size: 12px;
+  font-weight: 300;
+  padding: 0px 0.6em;
+ }
+
+ .menu-element{
+  display: inline-block;
+  padding: 0px 1em
+}
+
+ .header-element {
+  margin-bottom: 5%;
+  margin-top: 10%;
+ }
+
+  .float{
+  position:fixed;
+  width:45px;
+  height:45px;
+  bottom:90px;
+  right:30px;
+  background-color: rgb(66, 152, 183);
+  opacity: 0.8;
+  color:#FFF;
+  border-radius:50px;
+  text-align:center;
+  box-shadow: 2px 2px 3px #999;
+}
+
+.my-float{
+  margin-top:16px;
+  opacity: 1.0 !important;
+  color: white;
+}
+
+ .ahrefDecoration{
+  text-decoration: none;
+  color: #47A0B5;
+  font-size: 11px;
+  text-transform: none;
+  font-weight: 400;
+ }
+
+ .ocena_badania{
+  text-align: center;
+  padding-top: 20px;
+}
+
+.ocena_badania_text{
+  padding-bottom: 15px;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: none;
+
+}
+
+table {
+    border-collapse: collapse;
+}
+
+.text_table_bold{
+  padding: 20px 0 0px 20px; 
+  font-weight: 600; 
+  font-weight: 14px; 
+  text-transform: none;
+  line-height: 100%;
+}
+
+.td_up{
+  width: 50%; 
+  border: 1px solid #eaeaea; 
+  border-bottom: 0px; 
+  border-left: 0px;
+}
+
+.conteiner_number_table{
+  width: 80%;
+  background-color: #A0EE87;
+  border-radius: 50px;
+  margin: 0 auto;
+  font-size: 24px;
+  color: white;
+  padding: 10px 0px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.container_szczegoly{
+  width: 100%;
+  background-color: #eaeaea;
+  height: 40px;
+}
+
+.container_szczegoly_inner{
+  line-height: 40px;
+  padding-left: 20px;
+  color: #AAAAAA;
+}
+
+.container_badanie_bad_above{
+  border-left: 6px solid #E36E7B;
+}
+
+.badania_all_inner{
+  padding-left: 40px;
+  padding-top: 15px; 
+  padding-bottom: 15px;
+  padding-right: 20px;
+}
+
+.badania_bad_above_wskaznik{
+  color: #E36E7B;
+   font-size: 20px;
+  font-weight: 300;
+}
+
+.badania_all_wartosc_value_text{
+  font-size: 12px;
+  text-transform: none;
+  color: #656565; 
+}
+
+.badania_bad_above_value{
+  font-size: 12px;
+  font-weight: 600;
+  color: #E36E7B;
+}
+
+.badania_bad_above_value_sec{
+  font-size: 12px; 
+  color: #E36E7B;
+}
+
+.badania_all_note{
+  text-transform: none;
+  font-weight: 600;
+}
+
+.badania_bad_below{
+  color: #47A0B5;
+}
+
+.badania_bad_below_border{
+  border-left: 6px solid #47A0B5;
+}
+
+.badania_good{
+  color: #14B908;
+}
+
+.badania_good_border{
+  border-left: 6px solid #14B908;
+}
+
+label {
+  border:none !important; 
+  background-color: transparent !important;
+}
+
+.checkbox{
+  display: inline-block;
+  background-color: transparent;
+  border: 0px;
+}
+
+.box{
+  border-radius: 10px;
+  background-color: white;
+  width: 95%;
+  box-shadow: 0px 4px 16px -2px rgba(0,0,0,0.17);
+  margin-top: 10px;
+
+}
+
+
+.tekst{  
+  line-height: 100%;
+  text-transform: none;
+  width: 70%;
+  font-size: 12px;
+}
+
+.content-box{
+  padding: 10px 20px;   
+   display: inline-flex;
+  align-items: center;
+}
+
+.line{
+  background-color: #707070;
+  opacity: 0.20;
+  height: 50px;
+  width: 0.5px;
+ 
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 150px;
+  height: 150px;
+  margin: -45px 0 0 -45px;
+  
+  width: 120px;
+  height: 120px;
+  
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from { bottom:-100px; opacity:0 } 
+  to { bottom:0px; opacity:1 }
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}
+
+#myDiv {
+  display: none;
+/*  text-align: center;*/
+}
+
+#loader1{
+  display: none;
+  margin-left: auto;
+  margin-right: auto;
+  position: absolute;
+  padding-top:40%;
+  text-align: center;
+}
+
+#myDiv1{
+  padding-bottom: 10px;
+  display: block;
+
+}
+
+#Siema{
+ background-color: transparent;
+}

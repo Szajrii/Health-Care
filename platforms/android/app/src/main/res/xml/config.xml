@@ -17,13 +17,13 @@
         <param name="android-package" value="com.nordnetab.cordova.ul.UniversalLinksPlugin" />
         <param name="onload" value="true" />
     </feature>
-    <name>Health Care</name>
+    <name>Health Care12</name>
     <icon src="www/img/ikona.png" />
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+       Test apk
     </description>
     <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+        TEAM KEBAB
     </author>
     <content src="index.html" />
     <access origin="*" />
