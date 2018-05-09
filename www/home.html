@@ -130,11 +130,12 @@ function myFunction() {
 }
 
 document.querySelector('#signOut').addEventListener('click', function () {
+    window.location = "page2.html";
 firebase.auth().signOut().then(function() {
   // Sign-out successful.
-  alert("wylogowales sie poprawnie dziubasku");
 
-  window.location.href = "page2.html";
+
+
 }).catch(function(error) {
   // An error happened.
 });
@@ -179,7 +180,7 @@ function checkIfGoogle(){
   });
   }
 }else{
- 
+    window.location.href = "page2.html";
 }
 });
 }  
@@ -238,7 +239,7 @@ function daneOsobowe(){
           }
                 }
         else {
-         
+             window.location.href = "page2.html";
 }
         });
  
@@ -378,7 +379,7 @@ if(plecstatus == "Mężczyzna"){
 
   }
 }else{
-
+  
 }
 
  }
