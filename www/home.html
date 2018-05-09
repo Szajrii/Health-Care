@@ -39,8 +39,45 @@
 	     <div uk-spinner="ratio: 3" id="loader"></div>
  
 <div style="padding-bottom: 50px; display:none;" id="myDiv" class="animate-bottom">
+  <nav class="uk-navbar-container "  style="position: absolute; width: 100%; background-color: transparent; color: white;">
+    <div class="uk-navbar" style="margin: 15px;">
+
+        <ul class="uk-navbar-nav">
+            <li>
+                <a href="#offcanvas-slide" uk-icon="icon: table; ratio: 1.2" uk-toggle style="color:white;"></a>
+                <!-- <div class="uk-navbar-dropdown">
+                    <ul class="uk-nav uk-navbar-dropdown-nav">
+                        <li><a href="" id="signOut">Wyloguj</a></li>
+                        <li><a href="#">Zobacz twórców</a></li>
+                        <li><a href="#">Oceń aplikację</a></li>
+                    </ul>
+                </div> -->
+            </li>
+        </ul>
+
+    </div>
+</nav>
+
+<div id="offcanvas-slide" uk-offcanvas>
+    <div class="uk-offcanvas-bar">
+
+        <ul class="uk-nav uk-nav-default">
+           <button class="uk-offcanvas-close" type="button" uk-close></button>
+            <li style="font-size: 16px; font-weight: 600;"><a href="" id="signOut"><span uk-icon="icon:  sign-out"></span> Wyloguj</a></li>
+            <li class="uk-nav-header">Profil</li>
+            <li><a href="#">Zobacz profil</a></li>
+            <li><a href="#">Zaktualizuj profil</a></li>
+            <li class="uk-nav-divider"></li>
+            <li><a href="#">Oceń aplikację</a></li>
+        </ul>
+
+    </div>
+</div>
+
+
 <div class="secound-page-background" >
-    <div class="container-top-content"> 
+    <div class="container-top-content">
+      <!-- <div style="position: absolute; top: 20px; left: 30px; color: white;"><span uk-icon="sign-out"></span></div>  -->
       <div> <img src="img/male.png" alt="" width="40%" height="auto" style="margin-left: 30%;" id="zdjecieprofilowe"></div>
       <div class="name-user-top" id="daneosobowe"></div>
     </div>          
@@ -54,7 +91,7 @@
   </div>
 
   <div class="icon">
-    <a id="ostatniebadanie" onclick="sendID(this.id)"> <i  class="fas fa-angle-right"></i></a>
+    <a id="ostatniebadanie" onclick="sendID(this.id)"> <span uk-icon="icon:  chevron-right; ratio: 1.75" style="color: #E36E7B;"></span></a>
   </div> 
 
 </div> 
@@ -88,12 +125,23 @@ function myFunction() {
     myVar = setTimeout(showPage, 1000);
 }
 
+document.querySelector('#signOut').addEventListener('click', function () {
+firebase.auth().signOut().then(function() {
+  // Sign-out successful.
+  alert("wylogowales sie poprawnie dziubasku");
+
+  window.location.href = "page2.html";
+}).catch(function(error) {
+  // An error happened.
+});
+});
+
 function showPage() {
   document.getElementById("loader").style.display = "none";
   document.getElementById("myDiv").style.display = "block";
 }
 
-  var prevScrollpos = window.pageYOffset;
+var prevScrollpos = window.pageYOffset;
 window.onscroll = function() {
 var currentScrollPos = window.pageYOffset;
   if (prevScrollpos > currentScrollPos) {
@@ -107,24 +155,28 @@ var currentScrollPos = window.pageYOffset;
 
 
 const provider = new firebase.auth.GoogleAuthProvider();
-        var database = firebase.database();
+var database = firebase.database();
         
     
 
 function daneOsobowe(){
  
-          var dane = document.getElementById('daneosobowe');
-          firebase.auth().onAuthStateChanged(function(user) {
-          var user = firebase.auth().currentUser;
-          var uid = user.uid;
+  var dane = document.getElementById('daneosobowe');
+  firebase.auth().onAuthStateChanged(function(user) {
+    var user = firebase.auth().currentUser;
+    var uid = user.uid; 
 
-          if(user){
+    user.providerData.forEach(function(providerData) {
+      console.log("Signed in with "+providerData.providerId);
+    });
+          
+    console.log(uid);
+    if(user){
 
-
-        var data =   firebase.database().ref('users/' + uid).child("name");
+       var data =   firebase.database().ref('users/' + uid).child("name");
        data.on('value', function(snapshot){
             dane.innerHTML = snapshot.val() + " ";
-         });
+       });
 
        var data2 =   firebase.database().ref('users/' + uid).child("secondname");
        data2.on('value', function(snapshot){

@@ -45,245 +45,206 @@
  
 <div style="" id="myDiv1">
 
-      <div class="secound-page-background">
-         <div style=" display: inline-block; width: 25%; height: 10%; "><a href="#badania"><i class="fas fa-angle-left" style="padding-left: 40px; padding-top: 20px;font-size: 24px; color: white;"></i></a></div
-          ><div style=" display: inline-block;width: 50%; height: 10%; margin: 0 auto; text-align: center; padding-bottom: 20px; font-size: 24px; text-transform: none; color:white; ">Nowe badanie</div>
-      </div>
+      <nav class="uk-navbar-container " uk-navbar="mode: click" style="box-shadow: 0px 9px 24px -5px rgba(0,0,0,0.28); background-color: #259BF3;">
+    
 
-      <div style="text-align: center; padding-top: 20px;">
-  
-   <div class="checkbox" style="">
-    <label>
-      <input type="checkbox" value="" id="checkbox 1" onclick="checkboxes(this.id)" checked></label>
-  </div>
+        <ul class="uk-navbar-nav" style="width: 100%; padding: 10px 0;">
+            <li style="width: 10%">
+                <a href="badania.html" style="display: block; height: auto;"><span class="uk-icon-link" uk-icon="icon: arrow-left; ratio: 1.75" style="padding-left: 15px; color: white;"></span></a>
+            </li>
+            <li style="width: 80%; text-align: center; font-size: 22px; color: white; font-weight: 500"> Dodaj badanie </li>
+        </ul>
 
-  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0; display: inline-block; width: 70%;">
-    <input class="mdl-textfield__input " type="number" step="0.0001" min="0" id="bialekrwinki1" >
-    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">WBC Białe krwinki</label>
-  </div>
+    
+</nav>
+
+     
   
   
-
-<br>
-  
-  <div class="checkbox" style="">
-    <label>
-      <input type="checkbox" value="" id="checkbox 2" onclick="checkboxes(this.id)" checked></label>
-  </div>
-
-  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0; display: inline-block; width: 70%;">
-    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0"  id="czerwonekrwinki1">
-    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">RBC Czerwone krwinki (erytrocyty)</label>
-  </div><br>
-
-  <div class="checkbox" style="">
-    <label>
-      <input type="checkbox" value="" id="checkbox 3" onclick="checkboxes(this.id)" checked></label>
-  </div>
-
-  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0; display: inline-block; width: 70%;">
-    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0" id="hemoglobina1">
-    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">HGB(Hb) Hemoglobina</label>
-  </div><br>
-
-  <div class="checkbox" style="">
-    <label>
-      <input type="checkbox" value="" id="checkbox 4" onclick="checkboxes(this.id)" checked></label>
-  </div>
-
-  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0; display: inline-block; width: 70%;">
-    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0" id="hematokryt1" >
-    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">HCT (Hematokryt)</label>
-  </div><br>
-
-  <div class="checkbox" style="">
-    <label>
-      <input type="checkbox" value="" id="checkbox 5" onclick="checkboxes(this.id)" checked></label>
-  </div>
-
-  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0; display: inline-block; width: 70%;">
-    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0" id="limfocyty1">
-    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">LYM (limfocyty)</label>
-  </div><br>
-
-  <div class="checkbox" style="">
-    <label>
-      <input type="checkbox" value="" id="checkbox 6" onclick="checkboxes(this.id)" checked></label>
-  </div>
-
-  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0; display: inline-block; width: 70%;">
-    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0" id="monocyty1" >
-    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">(MONO) Monocyty</label>
-  </div><br>
-
-  <div class="checkbox" style="" >
-    <label>
-      <input type="checkbox" value="" id="checkbox 7" onclick="checkboxes(this.id)" checked></label>
-  </div>
-
-  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0; display: inline-block; width: 70%;">
-    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0"  id="mcv1">
-    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">MCV</label>
-  </div><br>
-
-  <div class="checkbox" style="">
-    <label>
-      <input type="checkbox" value="" id="checkbox 8" onclick="checkboxes(this.id)" checked></label>
-  </div>
-  
-    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0; display: inline-block; width: 70%;">
-    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0"  id="mch1">
-    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">MCH </label>
-  </div><br>
-
-  <div class="checkbox" style="">
-    <label>
-      <input type="checkbox" value="" id="checkbox 9" onclick="checkboxes(this.id)" checked></label>
-  </div>
-  
-    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0; display: inline-block; width: 70%;">
-    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0"  id="mchc1">
-    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">MCHC</label>
-  </div><br>
-
-  <div class="checkbox" style="">
-    <label>
-      <input type="checkbox" value="" id="checkbox 10" onclick="checkboxes(this.id)" checked></label>
-  </div>
-  
-    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0; display: inline-block; width: 70%;">
-    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0"  id="plytkikrwi1">
-    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">PLT (płytki krwi) </label>
-  </div><br>
-
-  <div class="checkbox" style="">
-    <label>
-      <input type="checkbox" value="" id="checkbox 11" onclick="checkboxes(this.id)" checked></label>
-  </div>
-  
-    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0; display: inline-block; width: 70%;">
-    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0"  id="ob1">
-    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">OB</label>
-  </div><br>
-
-  <div class="checkbox" style="">
-    <label>
-      <input type="checkbox" value="" id="checkbox 12" onclick="checkboxes(this.id)" checked></label>
-  </div>
-  
-    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0; display: inline-block; width: 70%;">
-    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0"  id="glukoza1">
-    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">Glukoza</label>
-  </div><br>
-
-  <div class="checkbox" style="">
-    <label>
-      <input type="checkbox" value="" id="checkbox 13" onclick="checkboxes(this.id)" checked></label>
-  </div>
-  
-    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0; display: inline-block; width: 70%;">
-    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0"  id="cholesterol1">
-    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">Cholesterol całkowity</label>
-  </div><br>
-
-  <div class="checkbox" style="">
-    <label>
-      <input type="checkbox" value="" id="checkbox 14" onclick="checkboxes(this.id)" checked></label>
-  </div>
-  
-    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0; display: inline-block; width: 70%;">
-    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0"  id="tsh1">
-    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">TSH</label>
-  </div><br>
-
-  <div class="checkbox" style="">
-    <label>
-      <input type="checkbox" value="" id="checkbox 15" onclick="checkboxes(this.id)" checked></label>
-  </div>
-  
-    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0; display: inline-block; width: 70%;">
-    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0"  id="alat1">
-    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">ALAT</label>
-  </div><br>
-
-  <div class="checkbox" style="">
-    <label>
-      <input type="checkbox" value="" id="checkbox 16" onclick="checkboxes(this.id)" checked ></label>
-  </div>
-  
-    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0; display: inline-block; width: 70%;">
-    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0"  id="aspat1">
-    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">AspAT</label>
-  </div><br>
-
-  <div class="checkbox" style="">
-    <label>
-      <input type="checkbox" value="" id="checkbox 17" onclick="checkboxes(this.id)" checked></label>
-  </div>
-  
-    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0; display: inline-block; width: 70%;">
-    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0"  id="potas1">
-    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">Potas</label>
-  </div><br>
-
-  <div class="checkbox" style="">
-    <label>
-      <input type="checkbox" value="" id="checkbox 18" onclick="checkboxes(this.id)" checked></label>
-  </div>
- 
-   
-    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0; display: inline-block; width: 70%;">
-    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0"  id="sod1">
-    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">Sód</label>
-  </div><br>
-
-  <div class="checkbox" style="">
-    <label>
-      <input type="checkbox" value="" id="checkbox 19" onclick="checkboxes(this.id)" checked></label>
-  </div>
-   
-    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0; display: inline-block; width: 70%;">
-    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0"  id="magnez1">
-    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">Magnez</label>
-  </div><br>
-
-  <div class="checkbox" style="">
-    <label>
-      <input type="checkbox" value="" id="checkbox 20" onclick="checkboxes(this.id)" checked></label>
-  </div>
-   
-    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0; display: inline-block; width: 70%;">
-    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0"  id="wapn1">
-    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">Wapń</label>
-  </div><br>
-
-  <div class="checkbox" style="">
-    <label>
-      <input type="checkbox" value="" id="checkbox 21" onclick="checkboxes(this.id)" checked></label>
-  </div>
-   
-    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0; display: inline-block; width: 70%;">
-    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0"  id="zelazo1">
-    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">Żelazo</label>
-  </div><br>
-
-  <div class="checkbox" style="">
-    <label>
-      <input type="checkbox" value="" id="checkbox 22" onclick="checkboxes(this.id)" checked></label>
-  </div>
- 
-   
-    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0; display: inline-block; width: 70%;">
-    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0"  id="witaminab1">
-    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">Witamina B12</label>
-  </div>
- <br>
-
-
-   <div style="text-align: center; margin-top: 50px;">
-<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" id="dodajbadania" style="margin-top: 0px; background-color: #8ed6ce; color: white;  width: 70%; font-weight: 400;"> Dodaj badanie </button>
-
+  <div class="uk-card uk-card-default uk-card-body uk-card-small" style="margin: 20px 20px; text-align: center;">  
+    <div class="uk-text-meta" style="margin: 0px 20px;">  Dodając badanie upewnij się, że wpisujesz prawidłowe wartości...</div>
 </div>
+
+ <div style="text-align: center; padding-top: 20px;">
+<div class="checkbox" style="">
+   <label>
+   <input class="uk-checkbox" type="checkbox" value="" id="checkbox 1" onclick="checkboxes(this.id)" checked></label>
+</div>
+<div style="display: inline-block; width: 70%; margin-left: 20px;">
+   <input class="uk-input uk-form-small" type="number" step="0.0001" min="0" id="bialekrwinki1" placeholder="WBC Białe Krwinki" >
+</div>
+<br>
+<div class="checkbox" style="margin-top: 20px;">
+   <label>
+   <input class="uk-checkbox" type="checkbox" value="" id="checkbox 2" onclick="checkboxes(this.id)" checked></label>
+</div>
+<div style="display: inline-block; width: 70%; margin-left: 20px;">
+   <input class="uk-input uk-form-small" type="number"  step="0.0001" min="0"  id="czerwonekrwinki1" placeholder="RBC Czerwone krwinki (erytrocyty)">
+</div>
+<br>
+<div class="checkbox" style="margin-top: 20px;">
+   <label>
+   <input class="uk-checkbox" type="checkbox" value="" id="checkbox 3" onclick="checkboxes(this.id)" checked></label>
+</div>
+<div style="margin-left:20px; display: inline-block; width: 70%;">
+   <input class="uk-input uk-form-small" type="number"  step="0.0001" min="0" id="hemoglobina1" placeholder="HGB(Hb) Hemoglobina">
+</div>
+<br>
+<div class="checkbox" style="margin-top: 20px;">
+   <label>
+   <input class="uk-checkbox" type="checkbox" value="" id="checkbox 4" onclick="checkboxes(this.id)" checked></label>
+</div>
+<div style="margin-left:20px; display: inline-block; width: 70%;">
+   <input class="uk-input uk-form-small" type="number"  step="0.0001" min="0" id="hematokryt1" placeholder="HCT (Hematokryt)" >
+</div>
+<br>
+<div class="checkbox" style="margin-top: 20px;">
+   <label>
+   <input class="uk-checkbox" type="checkbox" value="" id="checkbox 5" onclick="checkboxes(this.id)" checked></label>
+</div>
+<div style="margin-left:20px; display: inline-block; width: 70%;">
+   <input class="uk-input uk-form-small" type="number"  step="0.0001" min="0" id="limfocyty1" placeholder="LYM (limfocyty)">
+</div>
+<br>
+<div class="checkbox" style="margin-top: 20px;">
+   <label>
+   <input class="uk-checkbox" type="checkbox" value="" id="checkbox 6" onclick="checkboxes(this.id)" checked></label>
+</div>
+<div style="margin-left:20px; display: inline-block; width: 70%;">
+   <input class="uk-input uk-form-small" type="number"  step="0.0001" min="0" id="monocyty1" placeholder="(MONO) Monocyty">
+</div>
+<br>
+<div class="checkbox" style="margin-top: 20px;" >
+   <label>
+   <input class="uk-checkbox" type="checkbox" value="" id="checkbox 7" onclick="checkboxes(this.id)" checked></label>
+</div>
+<div style="margin-left:20px; display: inline-block; width: 70%;">
+   <input class="uk-input uk-form-small" type="number"  step="0.0001" min="0"  id="mcv1" placeholder="MCV">
+</div>
+<br>
+<div class="checkbox" style="margin-top: 20px;">
+   <label>
+   <input class="uk-checkbox" type="checkbox" value="" id="checkbox 8" onclick="checkboxes(this.id)" checked></label>
+</div>
+<div style="margin-left:20px; display: inline-block; width: 70%;">
+   <input class="uk-input uk-form-small" type="number"  step="0.0001" min="0"  id="mch1" placeholder="MCH">
+</div>
+<br>
+<div class="checkbox" style="margin-top: 20px;">
+   <label>
+   <input class="uk-checkbox" type="checkbox" value="" id="checkbox 9" onclick="checkboxes(this.id)" checked></label>
+</div>
+<div style="margin-left:20px; display: inline-block; width: 70%;">
+   <input class="uk-input uk-form-small" type="number"  step="0.0001" min="0"  id="mchc1" placeholder="MCHC">
+</div>
+<br>
+<div class="checkbox" style="margin-top: 20px;">
+   <label>
+   <input class="uk-checkbox" type="checkbox" value="" id="checkbox 10" onclick="checkboxes(this.id)" checked></label>
+</div>
+<div style="margin-left:20px; display: inline-block; width: 70%;">
+   <input class="uk-input uk-form-small" type="number"  step="0.0001" min="0"  id="plytkikrwi1" placeholder="PLT (płytki krwi) ">
+</div>
+<br>
+<div class="checkbox" style="margin-top: 20px;">
+   <label>
+   <input class="uk-checkbox" type="checkbox" value="" id="checkbox 11" onclick="checkboxes(this.id)" checked></label>
+</div>
+<div style="margin-left:20px; display: inline-block; width: 70%;">
+   <input class="uk-input uk-form-small" type="number"  step="0.0001" min="0"  id="ob1" placeholder="OB">
+</div>
+<br>
+<div class="checkbox" style="margin-top: 20px;">
+   <label>
+   <input class="uk-checkbox" type="checkbox" value="" id="checkbox 12" onclick="checkboxes(this.id)" checked></label>
+</div>
+<div style="margin-left:20px; display: inline-block; width: 70%;">
+   <input class="uk-input uk-form-small" type="number"  step="0.0001" min="0"  id="glukoza1" placeholder="Glukoza">
+</div>
+<br>
+<div class="checkbox" style="margin-top: 20px;">
+   <label>
+   <input class="uk-checkbox" type="checkbox" value="" id="checkbox 13" onclick="checkboxes(this.id)" checked></label>
+</div>
+<div style="margin-left:20px; display: inline-block; width: 70%;">
+   <input class="uk-input uk-form-small" type="number"  step="0.0001" min="0"  id="cholesterol1" placeholder="Cholesterol całkowity">
+</div>
+<br>
+<div class="checkbox" style="margin-top: 20px;">
+   <label>
+   <input class="uk-checkbox" type="checkbox" value="" id="checkbox 14" onclick="checkboxes(this.id)" checked></label>
+</div>
+<div style="margin-left:20px; display: inline-block; width: 70%;">
+   <input class="uk-input uk-form-small" type="number"  step="0.0001" min="0"  id="tsh1" placeholder="TSH">
+</div>
+<br>
+<div class="checkbox" style="margin-top: 20px;">
+   <label>
+   <input class="uk-checkbox" type="checkbox" value="" id="checkbox 15" onclick="checkboxes(this.id)" checked></label>
+</div>
+<div style="margin-left:20px; display: inline-block; width: 70%;">
+   <input class="uk-input uk-form-small" type="number"  step="0.0001" min="0"  id="alat1" placeholder="ALAT">
+</div>
+<br>
+<div class="checkbox" style="margin-top: 20px;">
+   <label>
+   <input class="uk-checkbox" type="checkbox" value="" id="checkbox 16" onclick="checkboxes(this.id)" checked ></label>
+</div>
+<div style="margin-left:20px; display: inline-block; width: 70%;">
+   <input class="uk-input uk-form-small" type="number"  step="0.0001" min="0"  id="aspat1" placeholder="AspAT">
+</div>
+<br>
+<div class="checkbox" style="margin-top: 20px;">
+   <label>
+   <input class="uk-checkbox" type="checkbox" value="" id="checkbox 17" onclick="checkboxes(this.id)" checked></label>
+</div>
+<div style="margin-left:20px; display: inline-block; width: 70%;">
+   <input class="uk-input uk-form-small" type="number"  step="0.0001" min="0"  id="potas1" placeholder="Potas">
+</div>
+<br>
+<div class="checkbox" style="margin-top: 20px;">
+   <label>
+   <input class="uk-checkbox" type="checkbox" value="" id="checkbox 18" onclick="checkboxes(this.id)" checked></label>
+</div>
+<div style="margin-left:20px; display: inline-block; width: 70%;">
+   <input class="uk-input uk-form-small" type="number"  step="0.0001" min="0"  id="sod1" placeholder="Sód">
+</div>
+<br>
+<div class="checkbox" style="margin-top: 20px;">
+   <label>
+   <input class="uk-checkbox" type="checkbox" value="" id="checkbox 19" onclick="checkboxes(this.id)" checked></label>
+</div>
+<div style="margin-left:20px; display: inline-block; width: 70%;">
+   <input class="uk-input uk-form-small" type="number"  step="0.0001" min="0"  id="magnez1" placeholder="Magnez">
+</div>
+<br>
+<div class="checkbox" style="margin-top: 20px;">
+   <label>
+   <input class="uk-checkbox" type="checkbox" value="" id="checkbox 20" onclick="checkboxes(this.id)" checked></label>
+</div>
+<div style="margin-left:20px; display: inline-block; width: 70%;">
+   <input class="uk-input uk-form-small" type="number"  step="0.0001" min="0"  id="wapn1" placeholder="Wapń">
+</div>
+<br>
+<div class="checkbox" style="margin-top: 20px;">
+   <label>
+   <input class="uk-checkbox" type="checkbox" value="" id="checkbox 21" onclick="checkboxes(this.id)" checked></label>
+</div>
+<div style="margin-left:20px; display: inline-block; width: 70%;">
+   <input class="uk-input uk-form-small" type="number"  step="0.0001" min="0"  id="zelazo1" placeholder="Żelazo">
+</div>
+<br>
+<div class="checkbox" style="margin-top: 20px;">
+   <label>
+   <input class="uk-checkbox" type="checkbox" value="" id="checkbox 22" onclick="checkboxes(this.id)" checked></label>
+</div>
+<div style="margin-left:20px; display: inline-block; width: 70%;">
+   <input class="uk-input uk-form-small" type="number"  step="0.0001" min="0"  id="witaminab1" placeholder="Witamina B12">
+</div>
+<br>
+
+<button class="uk-button uk-button-primary uk-width-1-2" id="dodajbadania" style="margin: 40px auto;">Dodaj badanie</button>
+
 
 </div>
       
