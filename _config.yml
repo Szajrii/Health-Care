@@ -1,4 +1,4 @@
 # SITE CONFIGURATION
 baseurl: "/"
 url: "https://szajrii.github.io/Health-Care/"
-theme: jekyll-theme-minimal
+theme: jekyll-theme-cayman
