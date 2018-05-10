@@ -1,0 +1,403 @@
+
+<html>
+    <head>
+        <title>Title</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<script src="js/pgb.js"></script>
+		<script src="cordova.js"></script>
+		<!-- UIkit CSS -->
+		<link rel="stylesheet" href="css/uikit.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;subset=latin-ext" rel="stylesheet">
+
+		<!-- UIkit JS -->
+     <script src="js/jquery-2.1.4.min.js"></script>
+		<script src="js/uikit.min.js"></script>
+		<script src="js/uikit-icons.min.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-auth.js"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+    	<script type="text/javascript">
+          
+          firebase.initializeApp({
+            apiKey: "AIzaSyDNJfmduRSncwtKmw3wX69KWz36gNgWj9Y",
+            authDomain: "health-care-71096.firebaseapp.com",
+            databaseURL: "https://health-care-71096.firebaseio.com",
+            projectId: "health-care-71096",
+            storageBucket: "",
+            messagingSenderId: "278088023798"
+        });
+        </script>
+
+
+	</head>
+	<body onload="myFunction()" style="margin:0;">
+     
+       <div uk-spinner="ratio: 3" id="loader"></div>
+ 
+<div style="padding-bottom: 50px; display:none;" id="myDiv" class="animate-bottom">
+<nav class="uk-navbar-container " uk-navbar="mode: click" style="box-shadow: 0px 9px 24px -5px rgba(0,0,0,0.28); background-color: #259BF3;">
+    
+
+        <ul class="uk-navbar-nav" style="width: 100%; padding: 10px 0;">
+            <li style="width: 10%"></li>
+            <li style="width: 80%; text-align: center; font-size: 22px; color: white; font-weight: 500">Mój planner</li>
+        </ul>
+
+    
+</nav>
+ 
+
+<div class="uk-alert-primary uk-flex  uk-flex-center" uk-alert>
+    <a class="uk-alert-close" uk-close></a>
+    <p style="font-size: 12px;">Badania okresowe dostarczają lekarzowi wielu informacji, które służą sprawdzeniu czy nie rozwijają się jakieś choroby lub nie pojawiły się ich pierwsze niepokojące objawy</p>
+</div>
+
+<div class="uk-card uk-card-default uk-card-body uk-width-1-2@m typewriter" style="margin: 20px 5%; width: 90%; text-align: center;">
+  <div style="font-size: 20px; font-weight: 600;"> Witaj Monika! </div>
+    <hr class="uk-divider-small">
+    <div>
+      <img src="img/male-planer.png" alt="">
+    </div>
+
+    <p style="font-size: 12px;">Poniżej znajduję się spersonalizowana specjalnie dla Ciebie listabadań profilaktycznych, uwzględniając przy tym wiek jak i płeć! </p>
+
+    <a href="#target1" class="uk-button uk-button-default uk-width-1-1" type="button" uk-toggle="target: .toggle" style="font-size: 13px; text-transform: none;" uk-scroll>Zobacz liste</a>
+</div>
+
+<!-- <ul uk-accordion="collapsible: false">
+    <li>
+        <a class="uk-accordion-title" href="#">Lipidogram</a>
+        <div class="uk-accordion-content">
+            <p>Raz na pięć lat</p>
+            <p>Badanie określające poziom cholesterolu cholesterolu całkowitego, frakcji HDL i LDL oraz trójglicerydów we krwi.</p>
+        </div>
+    </li>
+    <li>
+        <a class="uk-accordion-title" href="#">USG jąder</a>
+        <div class="uk-accordion-content">
+          <p>Raz na 3 lata</p>
+            <p>USG jąder jest badaniem obrazującym to, w jakim stanie aktualnie znajdują się nie tylko jądra, ale również moszna i najądrza. Pozwala na zdiagnozowanie nowotworów, guzków czy torbieli.</p>
+        </div>
+    </li>
+    <li>
+        <a class="uk-accordion-title" href="#">Kontrola stomatologiczna i czyszczenie zębów z osadu</a>
+        <div class="uk-accordion-content">
+            <p>Raz na pół roku</p>
+            <p>Celem czyszczenia zębów z osadu jest usunięcie niezmineralizowanych jeszcze osadów, które nieusunięte przekształciłyby się w płytkę nazębną.</p>
+        </div>
+    </li>
+</ul> -->
+<div style="margin: 20px 5%; width: 90%;" class="toggle" id="target1" hidden>
+<dl class="uk-description-list uk-description-list-divider" id="planer-lista" >
+    <dt>
+      <div class="tittle-dt">Lipidogram</div>
+      <div><span class="uk-label uk-label-danger">Raz na pół roku</span></div>
+    </dt>
+    <dd class="content-dd">Badanie określające poziom cholesterolu cholesterolu całkowitego, frakcji HDL i LDL oraz trójglicerydów we krwi.</dd>
+    <dt>
+      <div class="tittle-dt">USG jąder</div>
+      <div><span class="uk-label uk-label-danger">Raz na 3 lata</span></div>
+    </dt>
+    <dd class="content-dd">USG jąder jest badaniem obrazującym to, w jakim stanie aktualnie znajdują się nie tylko jądra, ale również moszna i najądrza. Pozwala na zdiagnozowanie nowotworów, guzków czy torbieli.</dd>
+    <dt>
+      <div class="tittle-dt">Kontrola stomatologiczna i czyszczenie zębów z osadu</div>
+      <div><span class="uk-label uk-label-danger">Raz na rok</span></div>
+    </dt>
+    <dd class="content-dd">Celem czyszczenia zębów z osadu jest usunięcie niezmineralizowanych jeszcze osadów, które nieusunięte przekształciłyby się w płytkę nazębną.</dd>
+</dl>
+
+</div>
+
+
+
+<div class="footer" id="navbar" style="">
+  <nav class="uk-navbar-container" uk-navbar style="">
+    <div class="uk-navbar-center">
+
+        <ul class="uk-navbar-nav" style="" >
+            <li><a href="home.html" style="text-transform: none; padding: 0 20px;"> <div style="display: block;"><img src="img/menu/home.png" alt=""><br>Home</div></a></li>
+            <li><a href="badania.html" style="text-transform: none; padding: 0 20px;"><div style="display: block;"><img src="img/menu/badania.png" alt=""><br>Badania</div></a></li>
+            <li><a href="dziennik.html" style="text-transform: none; padding: 0 20px;"><div style="display: block;"><img src="img/menu/dziennik.png" alt=""><br>Dziennik</div></a></li>
+            <li class="uk-active"><a href="" style="text-transform: none; padding: 0 20px;"><div style="display: block;"><img src="img/menu/planer-active.png" alt=""><br>Planer</div></a></li>
+        </ul>
+
+    </div>
+</nav>
+</div>
+
+</div>
+
+
+<script>
+
+
+  var myVar;
+  var plecstatus;
+  var wiek;
+
+  const provider = new firebase.auth.GoogleAuthProvider();
+        var database = firebase.database();
+        
+
+     
+
+function myFunction() {
+    myVar = setTimeout(showPage, 1000);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+}
+
+function planerDisplay(){
+  var licznik;
+  var wiekpomocniczy;
+  var licznikpomocniczy = 1;
+  var tablica = [];
+
+      firebase.auth().onAuthStateChanged(function(user) {
+          var user = firebase.auth().currentUser;
+          var uid = user.uid;
+
+          if(user){
+  var data3 =   firebase.database().ref('users/' + uid).child("płeć");
+           data3.on('value', function(snapshot){
+           plecstatus = snapshot.val();
+
+
+   var data4 =   firebase.database().ref('users/' + uid).child("wiek");
+          data4.on('value', function(snapshot){
+          wiek = snapshot.val();
+
+if(plecstatus == "Mężczyzna"){
+              switch(true){
+  case (wiek >= 20 || wiek < 29):
+    licznik = 8;
+    wiekpomocniczy = 20;
+    break;
+  case (wiek >= 30 || wiek < 39):
+    licznik = 10;
+    wiekpomocniczy = 30;
+    break;
+  case (wiek >= 40 || wiek < 49):
+    licznik = 13;
+    wiekpomocniczy = 40;
+    break;
+  case (wiek >= 50):
+    licznik = 13;
+    wiekpomocniczy = 50;
+    
+}
+} else if(plecstatus == "Kobieta"){
+             switch(true){
+  case (wiek >= 20 || wiek < 29):
+    licznik = 7;
+    wiekpomocniczy = 20;
+    break;
+  case (wiek >= 30 || wiek < 39):
+    licznik = 8;
+    wiekpomocniczy = 30;
+    break;
+  case (wiek >= 40 || wiek < 49):
+    licznik = 10;
+    wiekpomocniczy = 40;
+    break;
+  case (wiek >= 50):
+    licznik = 10;
+    wiekpomocniczy = 50;
+    
+}
+}
+
+for(var i = 1; i <= licznik; i++){
+$( "#planer-lista" ).append('<dt> \
+      <div class="tittle-dt" id="planername">Lipidogram</div> \
+      <div><span class="uk-label uk-label-danger" id="planertime">Raz na pół roku</span></div> \
+    </dt> \
+    <dd class="content-dd" id="planeropis">Badanie określające poziom cholesterolu cholesterolu całkowitego, frakcji HDL i LDL oraz trójglicerydów we krwi.</dd>');
+     }
+
+    
+
+
+if(plecstatus == "Mężczyzna"){
+  for(var i = 1; i <= licznik; i++){
+    $(document).ready(function(){
+     var planername = document.getElementById('planername');
+     planername.setAttribute('id', 'planername ' + i);
+     var planertime = document.getElementById('planertime');
+     planertime.setAttribute('id', 'planertime ' + i);
+     var planeropis = document.getElementById('planeropis');
+     planeropis.setAttribute('id', 'planeropis ' + i);
+
+    var file = "https://health-care-71096.firebaseio.com/Profilaktyka/Mezczyzna/" + wiekpomocniczy + "/Badanie" + i +  "/Name.json";
+    
+     var xhttp = new XMLHttpRequest();
+           
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                   // Typical action to be performed when the document is ready:
+                    
+                  
+                   planername.innerHTML = xhttp.responseText.replace(/['"]+/g, '');
+                
+                }
+            };
+            xhttp.open("GET", file, true);
+            xhttp.send();
+
+
+            var file2 = "https://health-care-71096.firebaseio.com/Profilaktyka/Mezczyzna/" + wiekpomocniczy + "/Badanie" + i +  "/Czas.json";
+    
+           var xhttp2 = new XMLHttpRequest();
+           
+            xhttp2.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                   // Typical action to be performed when the document is ready:
+                    
+                  
+                   planertime.innerHTML = xhttp2.responseText.replace(/['"]+/g, '');
+                
+                }
+            };
+            xhttp2.open("GET", file2, true);
+            xhttp2.send();
+
+
+            var file3 = "https://health-care-71096.firebaseio.com/Profilaktyka/Mezczyzna/" + wiekpomocniczy + "/Badanie" + i +  "/Opis.json";
+    
+             var xhttp3 = new XMLHttpRequest();
+           
+            xhttp3.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                   // Typical action to be performed when the document is ready:
+                    
+                  
+                   planeropis.innerHTML = xhttp3.responseText.replace(/['"]+/g, '');
+                
+                }
+            };
+            xhttp3.open("GET", file3, true);
+            xhttp3.send();
+        }); 
+
+
+  }
+
+} else if(plecstatus == "Kobieta"){
+
+   for(var i = 1; i <= licznik; i++){
+    $(document).ready(function(){
+     var planername = document.getElementById('planername');
+     planername.setAttribute('id', 'planername ' + i);
+     var planertime = document.getElementById('planertime');
+     planertime.setAttribute('id', 'planertime ' + i);
+     var planeropis = document.getElementById('planeropis');
+     planeropis.setAttribute('id', 'planeropis ' + i);
+
+    var file = "https://health-care-71096.firebaseio.com/Profilaktyka/Kobieta/" + wiekpomocniczy + "/Badanie" + i +  "/Name.json";
+    
+     var xhttp = new XMLHttpRequest();
+           
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                   // Typical action to be performed when the document is ready:
+                    
+                  
+                   planername.innerHTML = xhttp.responseText.replace(/['"]+/g, '');
+                
+                }
+            };
+            xhttp.open("GET", file, true);
+            xhttp.send();
+
+
+            var file2 = "https://health-care-71096.firebaseio.com/Profilaktyka/Kobieta/" + wiekpomocniczy + "/Badanie" + i +  "/Czas.json";
+    
+           var xhttp2 = new XMLHttpRequest();
+           
+            xhttp2.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                   // Typical action to be performed when the document is ready:
+                    
+                  
+                   planertime.innerHTML = xhttp2.responseText.replace(/['"]+/g, '');
+                
+                }
+            };
+            xhttp2.open("GET", file2, true);
+            xhttp2.send();
+
+
+            var file3 = "https://health-care-71096.firebaseio.com/Profilaktyka/Kobieta/" + wiekpomocniczy + "/Badanie" + i +  "/Opis.json";
+    
+             var xhttp3 = new XMLHttpRequest();
+           
+            xhttp3.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                   // Typical action to be performed when the document is ready:
+                    
+                  
+                   planeropis.innerHTML = xhttp3.responseText.replace(/['"]+/g, '');
+                
+                }
+            };
+            xhttp3.open("GET", file3, true);
+            xhttp3.send();
+        }); 
+
+
+  }
+
+}
+   
+   
+          
+
+});
+});  
+           }else{
+
+     }
+     });
+
+
+
+
+}
+
+planerDisplay();
+
+  var prevScrollpos = window.pageYOffset;
+
+
+window.onscroll = function() {
+var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("navbar").style.bottom = "0";
+
+
+  } else {
+    document.getElementById("navbar").style.bottom = "-81px";
+  }
+  prevScrollpos = currentScrollPos;
+}
+
+
+
+
+
+
+
+</script>	
+    
+			
+		</div>
+	</body>
+</html>
+
