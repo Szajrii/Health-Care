@@ -57,15 +57,15 @@
 </div>
 
 <div class="uk-card uk-card-default uk-card-body uk-width-1-2@m typewriter" style="margin: 20px 5%; width: 90%; text-align: center;">
-  <div style="font-size: 20px; font-weight: 600;"> Witaj Monika! </div>
+  <div style="font-size: 20px; font-weight: 600;" id="planerdisplayname"> Witaj Monika! </div>
     <hr class="uk-divider-small">
     <div>
-      <img src="img/male-planer.png" alt="">
+      <img src="img/male-planer.png" alt="" id="planerimg">
     </div>
 
     <p style="font-size: 12px;">Poniżej znajduję się spersonalizowana specjalnie dla Ciebie listabadań profilaktycznych, uwzględniając przy tym wiek jak i płeć! </p>
 
-    <a href="#target1" class="uk-button uk-button-default uk-width-1-1" type="button" uk-toggle="target: .toggle" style="font-size: 13px; text-transform: none;" uk-scroll>Zobacz liste</a>
+    <a href="#target1" class="uk-button uk-button-default uk-width-1-1" type="button" uk-toggle="target: .toggle" style="font-size: 13px; text-transform: none;" uk-scroll id="tooglebutton">Zobacz liste</a>
 </div>
 
 <!-- <ul uk-accordion="collapsible: false">
@@ -159,16 +159,29 @@ function planerDisplay(){
   var wiekpomocniczy;
   var licznikpomocniczy = 1;
   var tablica = [];
+  var name;
 
       firebase.auth().onAuthStateChanged(function(user) {
           var user = firebase.auth().currentUser;
           var uid = user.uid;
 
           if(user){
+             var data2 =   firebase.database().ref('users/' + uid).child("name");
+           data2.on('value', function(snapshot){
+           name = snapshot.val();
+           var planerdisplayname  = document.getElementById('planerdisplayname');
+           planerdisplayname.innerHTML = "Witaj " + name + "!";
+});
   var data3 =   firebase.database().ref('users/' + uid).child("płeć");
            data3.on('value', function(snapshot){
            plecstatus = snapshot.val();
+var zdjecie  = document.getElementById('planerimg') 
+             if(plecstatus == "Kobieta"){
 
+              zdjecie.src = "img/female-planer.png";
+          }else {
+            zdjecie.src = "img/male-planer.png";
+          }
 
    var data4 =   firebase.database().ref('users/' + uid).child("wiek");
           data4.on('value', function(snapshot){
@@ -370,6 +383,16 @@ if(plecstatus == "Mężczyzna"){
 
 
 }
+
+document.querySelector('#tooglebutton ').addEventListener('click', function () {
+    var toogle = document.getElementById('tooglebutton');
+    var text = toogle.innerHTML;
+    if(text == "Zobacz liste"){
+      toogle.innerHTML = "Schowaj liste";
+    }else if(text == "Schowaj liste"){
+        toogle.innerHTML  = "Zobacz liste";
+    }
+  });
 
 planerDisplay();
 
