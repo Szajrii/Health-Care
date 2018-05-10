@@ -44,73 +44,78 @@
 
         <ul class="uk-navbar-nav" style="width: 100%; padding: 10px 0;">
             <li style="width: 10%"></li>
-            <li style="width: 80%; text-align: center; font-size: 22px; color: white; font-weight: 500">Mój planner</li>
+            <li style="width: 80%; text-align: center; font-size: 22px; color: white; font-weight: 500">Edytuj Profil</li>
         </ul>
 
     
 </nav>
  
 
-<div class="uk-alert-primary uk-flex  uk-flex-center" uk-alert>
-    <a class="uk-alert-close" uk-close></a>
-    <p style="font-size: 12px;">Badania okresowe dostarczają lekarzowi wielu informacji, które służą sprawdzeniu czy nie rozwijają się jakieś choroby lub nie pojawiły się ich pierwsze niepokojące objawy</p>
-</div>
-
-<div class="uk-card uk-card-default uk-card-body uk-width-1-2@m typewriter" style="margin: 20px 5%; width: 90%; text-align: center;">
-  <div style="font-size: 20px; font-weight: 600;"> Witaj Monika! </div>
-    <hr class="uk-divider-small">
-    <div>
-      <img src="img/male-planer.png" alt="">
+<div class="uk-text-center uk-text-uppercase" style="color: white;margin-top: 20px;">
+  <div class="uk-flex uk-flex-center">
+    <div class="uk-width-1-1 uk-padding-small" style="background: #FF724A; margin-left: 10px;">
+       <div style="font-size: 20px; font-weight: 700">Marianna</div>
+       <div style="font-size: 11px; font-weight: 500 ">imię</div>
     </div>
+    <div class="uk-width-1-1 uk-margin-left uk-padding-small" style="background: #515E68; margin-right: 10px;">
+       <div style="font-size: 20px; font-weight: 700">Lipska</div>
+       <div style="font-size: 11px; font-weight: 500 ">nazwisko</div>
+    </div>
+  </div>
 
-    <p style="font-size: 12px;">Poniżej znajduję się spersonalizowana specjalnie dla Ciebie listabadań profilaktycznych, uwzględniając przy tym wiek jak i płeć! </p>
-
-    <a href="#target1" class="uk-button uk-button-default uk-width-1-1" type="button" uk-toggle="target: .toggle" style="font-size: 13px; text-transform: none;" uk-scroll>Zobacz liste</a>
+  <div class="uk-flex uk-flex-center uk-margin-top">
+    <div class="uk-width-1-1 uk-padding-small" style="background: #02BFC1; margin-left: 10px;">
+       <div style="font-size: 20px; font-weight: 700">Kobieta</div>
+       <div style="font-size: 11px; font-weight: 500 ">płeć</div>
+    </div>
+    <div class="uk-width-1-1 uk-margin-left uk-padding-small" style="background: #1C98D2; margin-right: 10px;">
+       <div style="font-size: 20px; font-weight: 700">20 lat</div>
+       <div style="font-size: 11px; font-weight: 500 ">wiek</div>
+    </div>
+  </div>
 </div>
 
-<!-- <ul uk-accordion="collapsible: false">
-    <li>
-        <a class="uk-accordion-title" href="#">Lipidogram</a>
-        <div class="uk-accordion-content">
-            <p>Raz na pięć lat</p>
-            <p>Badanie określające poziom cholesterolu cholesterolu całkowitego, frakcji HDL i LDL oraz trójglicerydów we krwi.</p>
-        </div>
-    </li>
-    <li>
-        <a class="uk-accordion-title" href="#">USG jąder</a>
-        <div class="uk-accordion-content">
-          <p>Raz na 3 lata</p>
-            <p>USG jąder jest badaniem obrazującym to, w jakim stanie aktualnie znajdują się nie tylko jądra, ale również moszna i najądrza. Pozwala na zdiagnozowanie nowotworów, guzków czy torbieli.</p>
-        </div>
-    </li>
-    <li>
-        <a class="uk-accordion-title" href="#">Kontrola stomatologiczna i czyszczenie zębów z osadu</a>
-        <div class="uk-accordion-content">
-            <p>Raz na pół roku</p>
-            <p>Celem czyszczenia zębów z osadu jest usunięcie niezmineralizowanych jeszcze osadów, które nieusunięte przekształciłyby się w płytkę nazębną.</p>
-        </div>
-    </li>
-</ul> -->
-<div style="margin: 20px 5%; width: 90%;" class="toggle" id="target1" hidden>
-<dl class="uk-description-list uk-description-list-divider" id="planer-lista" >
-    <dt>
-      <div class="tittle-dt">Lipidogram</div>
-      <div><span class="uk-label uk-label-danger">Raz na pół roku</span></div>
-    </dt>
-    <dd class="content-dd">Badanie określające poziom cholesterolu cholesterolu całkowitego, frakcji HDL i LDL oraz trójglicerydów we krwi.</dd>
-    <dt>
-      <div class="tittle-dt">USG jąder</div>
-      <div><span class="uk-label uk-label-danger">Raz na 3 lata</span></div>
-    </dt>
-    <dd class="content-dd">USG jąder jest badaniem obrazującym to, w jakim stanie aktualnie znajdują się nie tylko jądra, ale również moszna i najądrza. Pozwala na zdiagnozowanie nowotworów, guzków czy torbieli.</dd>
-    <dt>
-      <div class="tittle-dt">Kontrola stomatologiczna i czyszczenie zębów z osadu</div>
-      <div><span class="uk-label uk-label-danger">Raz na rok</span></div>
-    </dt>
-    <dd class="content-dd">Celem czyszczenia zębów z osadu jest usunięcie niezmineralizowanych jeszcze osadów, które nieusunięte przekształciłyby się w płytkę nazębną.</dd>
-</dl>
-
+<div style="margin-top: 30px;">
+  <ul class="uk-flex-center" uk-tab>
+    <li class="uk-active"><a href="">Zaktualizuj profil</a></li>
+  </ul>
 </div>
+
+<div>
+  <div class="uk-flex uk-flex-center" >
+    <div style="margin-left: 10px; margin-right: 5px;">
+      <div style="font-size: 11px">Imię</div>
+      <input class="uk-input uk-width-1-1" type="text" placeholder="Marianna">
+    </div>
+      <div style="margin-right: 10px; margin-left: 5px">
+        <div style="font-size: 11px">Nazwisko</div>
+        <input class="uk-input uk-width-1-1" type="text" placeholder="Lipska">
+    </div>
+      </div>
+</div>
+
+<div style="margin-top: 20px;">
+  <div class="uk-flex uk-flex-center" >
+    <div style="margin-left: 10px; margin-right: 5px;" class="uk-width-1-1">
+      <div style="font-size: 11px">Płeć</div>
+      <select class="uk-select" type="text" placeholder="Marianna">
+        <option value="1">Mężczyzna</option>
+        <option value="2">Kobieta</option>
+      </select>
+    </div>
+      <div style="margin-right: 10px; margin-left: 5px">
+        <div style="font-size: 11px">Wiek</div>
+        <input class="uk-input uk-width-1-1" type="text" placeholder="Wpisz wiek">
+    </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 20px;">
+      <a class="uk-button uk-button-default" href="updated-profil.html"  style="border-color: #E36E7B; text-transform: uppercase; color: #E36E7B; font-size: 12px;">Zaktualizuj profil</a>
+    </div>
+</div>
+
+
+
 
 
 

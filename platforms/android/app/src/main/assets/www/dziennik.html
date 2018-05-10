@@ -285,9 +285,12 @@ document.querySelector('#glukozadodawanie').addEventListener('click', function (
               minutes='0'+minutes;
           } 
 
-          if(mm3<10){
+         if(mm3<10){
+              mm3+=1;
               mm3='0'+mm3;
-          } 
+          }else if(mm3 >= 10){
+            mm3+=1;
+          }
           var mm2 = ["Styczeń", "Luty", "Marzec", "Kwiecień", "Maj", "Czerwiec", "Lipiec", "Sierpień", "Wrzesień", "Październik", "Listopad", "Grudzień"];
           var glukoza = document.getElementById('wartoscglukozy').value;
 
@@ -338,8 +341,11 @@ document.querySelector('#cisnieniedodawanie').addEventListener('click', function
           } 
 
           if(mm3<10){
+              mm3+=1;
               mm3='0'+mm3;
-          } 
+          }else if(mm3 >= 10){
+            mm3+=1;
+          }
           var mm2 = ["Styczeń", "Luty", "Marzec", "Kwiecień", "Maj", "Czerwiec", "Lipiec", "Sierpień", "Wrzesień", "Październik", "Listopad", "Grudzień"];
           var cisnienieskurczowe = document.getElementById('cisnienieskurczowe').value;
           var cisnienierozkurczowe = document.getElementById('cisnienierozkurczowe').value;
