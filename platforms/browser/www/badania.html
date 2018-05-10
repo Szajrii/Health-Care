@@ -39,11 +39,17 @@
        <div uk-spinner="ratio: 3" id="loader"></div>
  
 <div style="padding-bottom: 50px; display:none;" id="myDiv" class="animate-bottom">
-<div class="secound-page-background">
-         <div style=" display: inline-block; width: 25%; height: 10%; "><a href="#home"><i class="fas fa-angle-left" style="padding-left: 40px; padding-top: 20px;font-size: 24px; color: white;"></i></a></div
-          ><div style=" display: inline-block;width: 50%; height: 10%; margin: 0 auto; text-align: center; padding-bottom: 20px; font-size: 24px; text-transform: none; color:white; ">Moje badanie</div>
-      </div>
+<nav class="uk-navbar-container " uk-navbar="mode: click" style="box-shadow: 0px 9px 24px -5px rgba(0,0,0,0.28); background-color: #259BF3;">
     
+
+        <ul class="uk-navbar-nav" style="width: 100%; padding: 10px 0;">
+            <li style="width: 10%"></li>
+            <li style="width: 80%; text-align: center; font-size: 22px; color: white; font-weight: 500"> Moje badania </li>
+        </ul>
+
+    
+</nav>
+ 
 
 <div class="header-element">
   <ul class="menu-container">
@@ -65,9 +71,9 @@
 
       </div>
 
-<a href="dodajbadanie.html" class="float">
-<i class="fa fa-plus my-float"></i>
-</a>
+<a href="dodajbadanie.html" class="uk-icon-button float" uk-icon="icon: plus; ratio: 1.2" id="AddButton" style="padding: 10px;"></a>
+
+
     </div>
 
 
@@ -108,8 +114,11 @@ window.onscroll = function() {
 var currentScrollPos = window.pageYOffset;
   if (prevScrollpos > currentScrollPos) {
     document.getElementById("navbar").style.bottom = "0";
+    document.getElementById("AddButton").style.bottom ="110px"
+
   } else {
     document.getElementById("navbar").style.bottom = "-81px";
+    document.getElementById("AddButton").style.bottom ="29px"
   }
   prevScrollpos = currentScrollPos;
 }

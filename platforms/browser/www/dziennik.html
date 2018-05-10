@@ -1,0 +1,606 @@
+
+<html>
+    <head>
+        <title>Title</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<script src="js/pgb.js"></script>
+		<script src="cordova.js"></script>
+		<!-- UIkit CSS -->
+		<link rel="stylesheet" href="css/uikit.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;subset=latin-ext" rel="stylesheet">
+
+		<!-- UIkit JS -->
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue-teal.min.css" />
+        <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+     <script src="js/jquery-2.1.4.min.js"></script>
+		<script src="js/uikit.min.js"></script>
+		<script src="js/uikit-icons.min.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-auth.js"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+
+    	<script type="text/javascript">
+          
+          firebase.initializeApp({
+            apiKey: "AIzaSyDNJfmduRSncwtKmw3wX69KWz36gNgWj9Y",
+            authDomain: "health-care-71096.firebaseapp.com",
+            databaseURL: "https://health-care-71096.firebaseio.com",
+            projectId: "health-care-71096",
+            storageBucket: "",
+            messagingSenderId: "278088023798"
+        });
+        </script>
+
+
+	</head>
+	<body onload="myFunction()" style="margin:0;">
+     
+       <div uk-spinner="ratio: 3" id="loader"></div>
+ 
+<div style="padding-bottom: 10px; display:none;" id="myDiv" class="animate-bottom">
+
+<nav class="uk-navbar-container " uk-navbar="mode: click" style="box-shadow: 0px 9px 24px -5px rgba(0,0,0,0.28); background-color: #259BF3;">
+   <ul class="uk-navbar-nav" style="width: 100%; padding: 10px 0;">
+      <li style="width: 10%">
+      </li>
+      <li id="data_change" style="width: 80%; text-align: center; font-size: 22px; color: white; font-weight: 500"> Mój dziennik </li>
+   </ul>
+</nav>
+      <div class="uk-flex uk-flex-center" style="margin-top: 25px; ">
+                          <ul id="switcher" class="uk-dotnav">
+                              <li><a href="#">Item</a></li>
+                              <li><a href="#">Item</a></li>
+                          </ul>
+                      </div>
+
+
+  <ul id="content" class="uk-switcher">
+    <li>
+
+                  <div>
+                     <h4 class="uk-heading-line uk-text-center" style=" font-size: 15px;"><span>Pomiary poziomu glukozy</span></h4>
+                     <div style="margin: 0 auto;" id="listitem">
+                        <canvas id="line-chart1" width="800" height="450"></canvas>
+                     </div>
+                                 
+                  </div>
+                  <div class="uk-card uk-card-default uk-card-small" style="box-shadow: none;">
+                     <div class="uk-card uk-card-default uk-card-body" style="text-align: center;box-shadow: none;padding-top: 0px;padding-bottom: 0px;">
+                        <h3 class="uk-card-title" style="font-size: 16px;">Wprowadź nowe badanie</h3>
+                        <form>
+                           <div class="uk-flex">
+                              
+                                 <input class="uk-input uk-width-1-1" type="number"  step="0.0001" min="0"  id="wartoscglukozy" placeholder="Wynik pomiaru">
+                                 <span id="label-error2" style="color: red; opacity: 0.6; font-size: 10px;"></span>
+                          
+                              
+                           </div>
+                           <div class="uk-flex" style="margin-top: 15px;">
+                              <div>
+                                 <button href="dziennik.html" class="uk-button uk-button-primary uk-width-1-1 " id="glukozadodawanie" style="font-size: 13px; text-transform: none;" >Dodaj badanie</button>
+                              </div>
+                              <div style="margin-left: 24px;">
+                                 <a href="#target" class="uk-button uk-button-default uk-width-1-1  " type="button" uk-toggle="target: .toggle1" style="font-size: 13px; text-transform: none;" uk-scroll>Twoje badania</a>
+                              </div>
+                           </div>
+                        </form>
+                     </div>
+                  </div>
+                  <div class="toggle1" id="target" hidden style="margin-top: 20px;">
+                      <table class="mdl-data-table mdl-js-data-table" width="100%">
+                        <thead>
+                          <tr style="background-color: #E0F1F1; opacity: 0.8; ">
+                            <th class="mdl-data-table__cell--non-numeric" style="color: #67C9C9;">Data</th>     
+                            <th class="mdl-data-table__cell--numeric" style="color: #67C9C9;">Wynik</th>
+                          </tr>
+                        </thead>
+                        
+                        <tbody id="glukozatabela"></tbody>
+                      </table>
+                  </div>
+      </li>
+
+  <li>
+
+                  <div>
+                     <h4 class="uk-heading-line uk-text-center" style="margin-top: 25px; font-size: 15px;"><span>Pomiary ciśnienia tętniczego</span></h4>
+                     <div style="margin: 0 auto;" id="listitem">
+                        <canvas id="line-chart" width="800" height="450"></canvas>
+                     </div>
+                                 
+                  </div>
+                  <div class="uk-card uk-card-default uk-card-small" style="box-shadow: none;">
+                     <div class="uk-card uk-card-default uk-card-body" style="text-align: center;box-shadow: none;padding-top: 0px;padding-bottom: 0px;">
+                        <h3 class="uk-card-title" style="font-size: 16px;">Wprowadź nowe badanie</h3>
+                        <form>
+                           <div class="uk-flex">
+                              <div>
+                                 <input class="uk-input uk-form-small" type="number"  step="0.0001" min="0"  id="cisnienieskurczowe" placeholder="Ciśn. skurczowego">
+                                 <span id="label-error1" style="color: red; opacity: 0.6; font-size: 10px;"></span>
+                              </div>
+                              <div class="uk-margin-left">
+                                 <input class="uk-input uk-form-small" type="number"  step="0.0001" min="0"  id="cisnienierozkurczowe" placeholder="Ciśn. rozkurczowe">
+                                 <span id="label-error1" style="color: red; opacity: 0.6; font-size: 10px;"></span>
+                              </div>
+                           </div>
+                           <div class="uk-flex" style="margin-top: 15px;">
+                              <div>
+                                 <button href="dziennik.html" class="uk-button uk-button-primary uk-width-1-1 " id="cisnieniedodawanie" style="font-size: 13px; text-transform: none;" >Dodaj badanie</button>
+                              </div>
+                              <div style="margin-left: 24px;">
+                                 <a href="#target1" class="uk-button uk-button-default uk-width-1-1  " type="button" uk-toggle="target: .toggle" style="font-size: 13px; text-transform: none;" uk-scroll>Twoje badania</a>
+                              </div>
+                           </div>
+                        </form>
+                     </div>
+                  </div>
+                  <div class="toggle" id="target1" hidden style="margin-top: 20px;">
+                     <table class="mdl-data-table mdl-js-data-table " width="100%">
+                        <thead>
+                           <tr style="background-color: #E0F1F1; opacity: 0.8; ">
+                              <th class="mdl-data-table__cell--non-numeric" style="color: #67C9C9;">Data</th>
+                              <th class="mdl-data-table__cell--numeric" style="color: #67C9C9;">Wynik</th>
+                           </tr>
+                        </thead>
+                        <tbody id="cisnienietabela">
+                        </tbody>
+                     </table>
+                  </div>
+
+  </li>
+</ul>
+
+
+
+<div class="footer" id="navbar" style="">
+  <nav class="uk-navbar-container" uk-navbar style="">
+    <div class="uk-navbar-center">
+
+        <ul class="uk-navbar-nav" style="">
+            <li><a href="home.html" style="text-transform: none; padding: 0 20px;"> <div style="display: block;"><img src="img/menu/home.png" alt=""><br>Home</div></a></li>
+            <li><a href="badania.html" style="text-transform: none; padding: 0 20px;"><div style="display: block;"><img src="img/menu/badania.png" alt=""><br>Badania</div></a></li>
+            <li class="uk-active"><a href="" style="text-transform: none; padding: 0 20px;"><div style="display: block;"><img src="img/menu/dziennik-active.png" alt=""><br>Dziennik</div></a></li>
+            <li><a href="planer.html" style="text-transform: none; padding: 0 20px;"><div style="display: block;"><img src="img/menu/planer.png" alt=""><br>Planer</div></a></li>
+        </ul>
+
+    </div>
+</nav>
+</div>
+
+</div>
+
+
+<script>
+
+var switcher = UIkit.switcher('#switcher', {
+  connect: '#content',
+  animation: 'uk-animation-fade'
+});
+var $toggles = UIkit.util.$$('.switcher-toggle');
+
+UIkit.util.each($toggles, function() {
+  var $toggle = this;  
+  
+  UIkit.util.on($toggle, 'click', function(e) {
+    var dir = UIkit.util.attr($toggle, 'uk-switcher-nav');
+    var $active = UIkit.util.$('#content .uk-active');
+    var index = UIkit.util.index($active);
+    
+    if (dir === 'previous') {
+      switcher.show(index - 1);
+    } else if (dir === 'next') {
+      switcher.show(index + 1);
+    }
+  });
+});
+
+
+  function myFunction() {
+    myVar = setTimeout(showPage, 1000);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+}
+
+
+
+
+
+  var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("navbar").style.bottom = "0";
+  } else {
+    document.getElementById("navbar").style.bottom = "-81px";
+  }
+  prevScrollpos = currentScrollPos;
+}
+
+
+
+
+
+const provider = new firebase.auth.GoogleAuthProvider();
+        var database = firebase.database();
+        var plecstatus;
+
+         firebase.auth().onAuthStateChanged(function(user) {
+          var user = firebase.auth().currentUser;
+          var uid = user.uid;
+
+          if(user){
+  var data3 =   firebase.database().ref('users/' + uid).child("płeć");
+       data3.on('value', function(snapshot){
+         plecstatus = snapshot.val();
+});
+     }else{
+      
+     }
+     }); 
+    
+
+
+
+            
+
+
+    function addZeroes( num ) {
+    var tostring = num.toString();
+    var value = Number(tostring);
+    var res = tostring.split(".");
+    if(res.length < 10 || (res[1].length < 3)) {
+        value = value.toFixed(2);
+    }else{
+
+    }
+    return value
+}
+
+document.querySelector('#glukozadodawanie').addEventListener('click', function () {
+          var user = firebase.auth().currentUser;
+          var uid = user.uid;
+
+ if(user){
+          var today = new Date();          
+          var msec = today.getTime();     
+          var dd = today.getDate();
+          var mm = today.getMonth();
+          var mm3 = today.getMonth();
+          var hh = today.getHours();
+          var minutes = today.getMinutes() 
+          var yyyy = today.getFullYear();
+          if(dd<10){
+              dd='0'+dd;
+          } 
+
+          if(minutes<10){
+              minutes='0'+minutes;
+          } 
+
+          if(mm3<10){
+              mm3='0'+mm3;
+          } 
+          var mm2 = ["Styczeń", "Luty", "Marzec", "Kwiecień", "Maj", "Czerwiec", "Lipiec", "Sierpień", "Wrzesień", "Październik", "Listopad", "Grudzień"];
+          var glukoza = document.getElementById('wartoscglukozy').value;
+
+
+
+          if (glukoza == "") {
+            document.getElementById("label-error2").innerHTML = "Pole wymagane";
+
+          }
+          else{
+
+           firebase.database().ref('users/' + uid + '/Pomiary/Glukoza/' + msec).set({
+              Dzien: dd,
+              Miesiac: mm2[mm],
+              Miesiac2: mm3,
+              Rok: yyyy,
+              Minuta: minutes,
+              Godzina: hh,
+              Wartosc: glukoza
+           });
+           self.location.reload();
+
+           }
+
+}else{
+
+}
+    });
+
+document.querySelector('#cisnieniedodawanie').addEventListener('click', function () {
+          var user = firebase.auth().currentUser;
+          var uid = user.uid;
+ if(user){
+          var today = new Date();          
+          var msec = today.getTime();     
+          var dd = today.getDate();
+          var mm = today.getMonth();
+          var mm3 = today.getMonth();
+          var hh = today.getHours();
+          var minutes = today.getMinutes() 
+          var yyyy = today.getFullYear();
+          if(dd<10){
+              dd='0'+dd;
+          } 
+
+          if(minutes<10){
+              minutes='0'+minutes;
+          } 
+
+          if(mm3<10){
+              mm3='0'+mm3;
+          } 
+          var mm2 = ["Styczeń", "Luty", "Marzec", "Kwiecień", "Maj", "Czerwiec", "Lipiec", "Sierpień", "Wrzesień", "Październik", "Listopad", "Grudzień"];
+          var cisnienieskurczowe = document.getElementById('cisnienieskurczowe').value;
+          var cisnienierozkurczowe = document.getElementById('cisnienierozkurczowe').value;
+
+          if (cisnienieskurczowe == "" || cisnienierozkurczowe == "" ) {
+             document.getElementById("label-error0").innerHTML = "Pole wymagane";
+             document.getElementById("label-error1").innerHTML = "Pole wymagane";
+
+          }
+          else{
+
+           firebase.database().ref('users/' + uid + '/Pomiary/Cisnienie/' + msec).set({
+              Dzien: dd,
+              Miesiac: mm2[mm],
+              Miesiac2: mm3,
+              Rok: yyyy,
+              Minuta: minutes,
+              Godzina: hh,
+              Wartoscskurczowe: cisnienieskurczowe,
+              Wartoscrozkurczowe: cisnienierozkurczowe
+           });
+            self.location.reload();
+          
+         }
+}else{
+
+}
+    });
+var labelsCisnienie = [];
+var dataSkurczowe = [];
+var dataRozkurczowe = [];
+var cukier = [];
+var labelCukier = [];
+$(document).ready(function(){
+
+firebase.auth().onAuthStateChanged(function(user) {
+  if(user){
+    var user = firebase.auth().currentUser;
+          var uid = user.uid;
+
+
+  
+  var tablica = [];
+  var tabindex = 0;
+
+var ref = firebase.database().ref('users/' + uid + '/Pomiary/Cisnienie/').orderByKey();
+   ref.on('value',function(pomiarySnapshot){
+
+       pomiarySnapshot.forEach(function(snapshot){
+      var key = snapshot.key;
+      tablica[tabindex] = key;
+      console.log(tablica[tabindex]);
+        tabindex = tabindex + 1;
+        console.log(tablica.length);
+
+
+});
+       var licznik = tablica.length;
+       var licznik2 = tablica.length + 1;
+      
+       for(var i = 1; i <=6; i++){
+var ref2 = firebase.database().ref('users/' + uid + '/Pomiary/Cisnienie/' + tablica[licznik - 1]);
+          ref2.on('value', function(snapshot2){
+            var key2 = snapshot2.val();
+            var data = key2.Dzien + "." + key2.Miesiac2;
+            var skurczowevalue = key2.Wartoscskurczowe;
+            var rozkurczowevalue = key2.Wartoscrozkurczowe;
+            labelsCisnienie.push(data);
+            dataSkurczowe.push(skurczowevalue);
+            dataRozkurczowe.push(rozkurczowevalue);
+              });
+
+        
+          licznik--;
+          }
+
+
+while(licznik2 > 0){
+          var ref3 = firebase.database().ref('users/' + uid + '/Pomiary/Cisnienie/' + tablica[licznik2 - 1]);
+          ref3.on('value', function(snapshot3){
+            var key3 = snapshot3.val();
+            var data2 = key3.Dzien + " " + key3.Miesiac + ", " + key3.Godzina + ":" + key3.Minuta;
+            var skurczowevalue2 = key3.Wartoscskurczowe;
+            var rozkurczowevalue2 = key3.Wartoscrozkurczowe;
+            
+            
+if(licznik2 % 2 != 0){
+            $('#cisnienietabela').append('<tr>      <td class="mdl-data-table__cell--non-numeric" id="cisnieniedata">27 kwiecien, 14:50</td>      <td class="" id="cisnieniewartosc">180/60</td>     </tr>');
+             }
+             else{
+              $('#cisnienietabela').append('<tr style="background-color: #f4f4f4">      <td class="mdl-data-table__cell--non-numeric" id="cisnieniedata">27 kwiecien, 14:50</td>      <td class="" id="cisnieniewartosc">180/60</td>     </tr>');
+             }
+             
+             
+            $(document).ready(function(){
+             var cisnieniedata = document.getElementById('cisnieniedata');
+             var cisnieniewartosc = document.getElementById('cisnieniewartosc');
+             cisnieniedata.setAttribute('id', 'cisnieniedata ' + licznik2);
+             cisnieniedata.innerHTML = data2;
+             cisnieniewartosc.setAttribute('id', 'cisnieniewartosc ' + licznik2);
+             cisnieniewartosc.innerHTML = skurczowevalue2 + "/" + rozkurczowevalue2;
+           });
+              });
+          licznik2--;
+          }
+
+var ctx = document.getElementById("line-chart");
+var myChart = new Chart(ctx,{
+  type: 'line',
+  data: {
+    
+    datasets: [{ 
+        data: dataSkurczowe,
+        label: "ciśn. skurczowe",
+        borderColor: "#67C9C9",
+        backgroundColor: 'rgba(165, 223, 223, 0.3)',
+        fill: true
+      }, { 
+        data: dataRozkurczowe,
+        label: "ciśn. rozkurczowe",
+        borderColor: "#FF6E8C",
+        backgroundColor: 'rgba(255, 110, 140, 0.3)',
+        fill: true
+      }
+    ]
+  },
+  options: {
+    legend: {
+      position: 'bottom'
+    },
+    scales: {
+            xAxes: [{
+                type: 'category',
+                labels: labelsCisnienie,
+            }]
+        },
+    title: {
+      display: false,
+      
+    }
+  }
+});
+
+});
+}else{
+
+}
+
+});
+
+});
+
+firebase.auth().onAuthStateChanged(function(user) {
+  if(user){
+    var user = firebase.auth().currentUser;
+          var uid = user.uid;
+
+// var labelCukier = ['22.07', '22.07', '23.07', '24.07', '25.07', '26.07'];
+// var cukier = [120,140,125,130,160,115];
+  
+  var tablica = [];
+  var tabindex = 0;
+
+
+ var ref = firebase.database().ref('users/' + uid + '/Pomiary/Glukoza/').orderByKey();
+   ref.on('value',function(pomiarySnapshot){
+
+       pomiarySnapshot.forEach(function(snapshot){
+      var key = snapshot.key;
+      tablica[tabindex] = key;
+      console.log(tablica[tabindex]);
+        tabindex = tabindex + 1;
+        console.log(tablica.length);
+
+
+});
+       var licznik = tablica.length;
+       var licznik2 = tablica.length + 1;
+       
+       for(var i = 1; i <=6; i++){
+var ref2 = firebase.database().ref('users/' + uid + '/Pomiary/Glukoza/' + tablica[licznik - 1]);
+          ref2.on('value', function(snapshot2){
+            var key2 = snapshot2.val();
+            var data = key2.Dzien + "." + key2.Miesiac2;
+            var glukozavalue = key2.Wartosc;
+            labelCukier.push(data);
+            cukier.push(glukozavalue);
+            
+              });
+          licznik--;
+          }
+while(licznik2 > 0){
+          var ref3 = firebase.database().ref('users/' + uid + '/Pomiary/Glukoza/' + tablica[licznik2 - 1]);
+          ref3.on('value', function(snapshot3){
+            var key3 = snapshot3.val();
+            var data2 = key3.Dzien + " " + key3.Miesiac + ", " + key3.Godzina + ":" + key3.Minuta;
+            var glukozavalue2 = key3.Wartosc;
+            
+            
+if(licznik2 % 2 != 0){
+            $('#glukozatabela').append('<tr>   <td class="mdl-data-table__cell--non-numeric" id="glukozadata">27 kwiecien, 14:50</td>  <td class="" id="glukozawartosc">180</td>    </tr>');
+             }
+             else{
+              $('#glukozatabela').append('<tr style="background-color: #f4f4f4">   <td class="mdl-data-table__cell--non-numeric" id="glukozadata">27 kwiecien, 14:50</td>  <td class="" id="glukozawartosc">180</td>    </tr>');
+             }
+             
+            $(document).ready(function(){
+             var glukozadata = document.getElementById('glukozadata');
+             var glukozawartosc = document.getElementById('glukozawartosc');
+             glukozadata.setAttribute('id', 'glukozadata ' + licznik2);
+             glukozadata.innerHTML = data2;
+             glukozawartosc.setAttribute('id', 'glukozawartosc ' + licznik2);
+             glukozawartosc.innerHTML = glukozavalue2;
+           });
+              });
+          licznik2--;
+          }
+
+var ctx = document.getElementById("line-chart1");
+var myChart1 = new Chart(ctx,{
+  type: 'line',
+  data: {
+    
+    datasets: [{ 
+        data: cukier,
+        label: "Poziom glukozy we krwi",
+        borderColor: "#FFA31A",
+        backgroundColor: 'rgba(255, 163, 26, 0.3)',
+        fill: true
+      }
+    ]
+  },
+  options: {
+    legend: {
+      position: 'bottom'
+    },
+    scales: {
+            xAxes: [{
+                type: 'category',
+                labels: labelCukier,
+            }]
+        },
+    title: {
+      display: false,
+      
+    }
+  }
+});
+
+});
+}else{
+
+}
+
+});
+
+
+</script>	
+    
+			
+		</div>
+	</body>
+</html>
+
