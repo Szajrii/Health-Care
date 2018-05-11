@@ -12,5 +12,5 @@
 <p><strong>4. Prototyp projektu</strong></p>
 <a href="https://xd.adobe.com/view/2d9159fb-d03b-408d-8986-a49be029cbae/screen/6bb91080-a940-410e-adbc-5c90a4ff8787/Planer">Prototyp</a>
 <p><strong>5. Raport prac każdego członka zespołu</strong></p>
-<a href="https://docs.google.com/spreadsheets/d/1qOhok0YBvTGgU9gzjvHNot3KdCo1VNadxMJoIbUK3xI/edit?usp=sharing">https://docs.google.com/spreadsheets/d/1qOhok0YBvTGgU9gzjvHNot3KdCo1VNadxMJoIbUK3xI/edit?usp=sharing</a>
+<a href="https://docs.google.com/spreadsheets/d/1qOhok0YBvTGgU9gzjvHNot3KdCo1VNadxMJoIbUK3xI/edit?usp=sharing">Raport</a>
 
