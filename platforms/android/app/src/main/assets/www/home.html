@@ -1,0 +1,129 @@
+<html>
+
+<head>
+  <title>Title</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <script src="js/pgb.js"></script>
+  <script src="cordova.js"></script>
+  <!-- UIkit CSS -->
+  <link rel="stylesheet" href="css/uikit.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;subset=latin-ext" rel="stylesheet">
+  <!-- UIkit JS -->
+  <script src="js/jquery-2.1.4.min.js"></script>
+  <script src="js/uikit.min.js"></script>
+  <script src="js/uikit-icons.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-auth.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+  <script type="text/javascript">
+    firebase.initializeApp({
+                apiKey: "AIzaSyDNJfmduRSncwtKmw3wX69KWz36gNgWj9Y",
+                authDomain: "health-care-71096.firebaseapp.com",
+                databaseURL: "https://health-care-71096.firebaseio.com",
+                projectId: "health-care-71096",
+                storageBucket: "",
+                messagingSenderId: "278088023798"
+            });
+  </script>
+</head>
+
+<body onload="myFunction()" style="margin:0;">
+  <div uk-spinner="ratio: 3" id="loader"></div>
+  <div style="padding-bottom: 100px; display:none;" id="myDiv" class="animate-bottom">
+    <nav class="uk-navbar-container " style="position: absolute; width: 100%; background-color: transparent; color: white;">
+      <div class="uk-navbar" style="margin: 15px;">
+        <ul class="uk-navbar-nav">
+          <li>
+            <a href="#offcanvas-slide" uk-icon="icon: table; ratio: 1.2" uk-toggle style="color:white;"></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div id="offcanvas-slide" uk-offcanvas>
+      <div class="uk-offcanvas-bar">
+        <ul class="uk-nav uk-nav-default">
+          <button class="uk-offcanvas-close" type="button" uk-close></button>
+          <li style="font-size: 16px; font-weight: 600;"><a href="" id="signOut"><span uk-icon="icon:  sign-out"></span> Wyloguj</a>
+          </li>
+          <li class="uk-nav-header">Profil</li>
+          <li><a href="profil.html">Zobacz profil</a>
+          </li>
+          <li><a href="updated-profil.html">Zaktualizuj profil</a>
+          </li>
+          <li class="uk-nav-divider"></li>
+          <li><a href="">Oceń aplikację  <br> *in future</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="secound-page-background">
+      <div class="container-top-content">
+        <!-- <div style="position: absolute; top: 20px; left: 30px; color: white;"><span uk-icon="sign-out"></span></div>  -->
+        <div>
+          <img src="img/male.png" alt="" width="40%" height="auto" style="margin-left: 30%;" id="zdjecieprofilowe">
+        </div>
+        <div class="name-user-top" id="daneosobowe"></div>
+      </div>
+    </div>
+    <div class="first-box" id="wyswietlostatniebadanie">
+      <div class="first-box-content" id="ostatnietext">
+        <div class="first-box-date" id="dataostatniegobadania"></div>
+        <div class="first-box-comment">Twoje ostatnie badanie</div>
+      </div>
+      <div class="icon" id="ostatnieicon">
+        <a id="ostatniebadanie" onclick="sendID(this.id)"> <span uk-icon="icon:  chevron-right; ratio: 1.75" style="color: #E36E7B;"></span>
+        </a>
+      </div>
+    </div>
+    <div id="homewyswietlanie"></div>
+    <div id="button-dodaj"></div>
+    <div class="footer" id="navbar" style="">
+      <nav class="uk-navbar-container" uk-navbar style="">
+        <div class="uk-navbar-center">
+          <ul class="uk-navbar-nav" style="">
+            <li class="uk-active">
+              <a href="#" style="text-transform: none; padding: 0 20px;">
+                <div style="display: block;">
+                  <img src="img/menu/home-active.png" alt="">
+                  <br>Home</div>
+              </a>
+            </li>
+            <li>
+              <a href="badania.html" style="text-transform: none; padding: 0 20px;">
+                <div style="display: block;">
+                  <img src="img/menu/badania.png" alt="">
+                  <br>Badania</div>
+              </a>
+            </li>
+            <li>
+              <a href="dziennik.html" style="text-transform: none; padding: 0 20px;">
+                <div style="display: block;">
+                  <img src="img/menu/dziennik.png" alt="">
+                  <br>Dziennik</div>
+              </a>
+            </li>
+            <li>
+              <a href="planer.html" style="text-transform: none; padding: 0 20px;">
+                <div style="display: block;">
+                  <img src="img/menu/planer.png" alt="">
+                  <br>Planer</div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+
+
+<script src="js/min/home.min.js"></script>	
+    
+			
+		</div>
+	</body>
+</html>
+

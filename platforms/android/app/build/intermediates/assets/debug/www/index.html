@@ -1,0 +1,1711 @@
+<!DOCTYPE html>
+ 
+<html>
+    <head>
+      
+        
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width,  minimal-ui, viewport-fit=cover">
+         <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="/css/swiper.min.css">
+        <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+        <script src="js/jquery-2.1.4.min.js"></script>
+        <script src="/js/swiper.min.js"></script>
+        <link rel="stylesheet" href="css/index.css" />
+        <link href="https://fonts.googleapis.com/css?family=Nunito+Sans" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="dist/css/framework7.md.css">
+        <link rel="stylesheet" type="text/css" href="dist/css/framework7.css">
+
+        
+   <!--      <link rel="stylesheet" type="text/css" href="dist/css/framework7.rtl.md.css"> -->
+        <script src="js/jquery.mobile-1.4.5.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-auth.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&amp;subset=latin-ext" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+        <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue-teal.min.css" />
+        <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+        <script src="cordova.js"></script>
+        <script src="js/pgb.js"></script>
+        
+        
+        <script type="text/javascript">
+          
+          firebase.initializeApp({
+            apiKey: "AIzaSyDNJfmduRSncwtKmw3wX69KWz36gNgWj9Y",
+            authDomain: "health-care-71096.firebaseapp.com",
+            databaseURL: "https://health-care-71096.firebaseio.com",
+            projectId: "health-care-71096",
+            storageBucket: "",
+            messagingSenderId: "278088023798"
+        });
+        </script>
+     
+        <link rel="stylesheet" href="/css/swiper.min.css">
+        <title>Health Care - Twoja aplikacja medyczna</title>
+ 
+<style>
+ 
+ 
+
+</style>
+    </head>
+ 
+<body onload="init()">
+
+  <div data-role="page" class="Home">
+  <!-- <div class="Home"> -->
+    
+<!-- <div role="main" class="ui-content view view-main"> -->
+  <div role="main" class="ui-content">
+    
+     <!--  <div data-name="home" class="page"> -->
+         <div data-name="home">
+
+         <div class="page-content">
+      <div style="text-align: center; font-size: 28px; font-weight: 600; padding-top: 30px;color: #1fa4dc; ">Healt<span style="color: #8ed6ce">Care</span></div>
+
+
+
+
+     <div data-pagination='{"el": ".swiper-pagination"}' data-space-between="50" class="swiper-container swiper-init demo-swiper">
+        <div class="swiper-pagination"></div>
+        <div class="swiper-wrapper" >
+        <div class="swiper-slide">
+
+         <div style="padding-top: 60px;">    
+         <img src="img/11.png" alt="" style="display: block; margin-left: auto; margin-right: auto; width: auto;">
+         </div>
+         <div style="padding-top: 30px;text-align: center; font-weight: 700; text-transform: none; font-size: 18px;">Przeanalizuj swoje badania</div>
+         <div style="text-align: center; text-transform: none; padding-top: 10px; font-size:14px; width: 90%; margin-left: 5%; color: #8a8a8a">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque scelerisque augue et sem maximus</div>
+    </div>
+
+    <div class="swiper-slide">
+         <div style="padding-top: 60px;">    
+         <img src="img/11.png" alt="" style="display: block; margin-left: auto; margin-right: auto; width: auto;">
+         </div>
+         <div style="padding-top: 30px;text-align: center; font-weight: 700; text-transform: none; font-size: 18px;">Przeanalizuj swoje badania</div>
+         <div style="text-align: center; text-transform: none; padding-top: 10px; font-size:14px; width: 90%; margin-left: 5%; color: #8a8a8a">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque scelerisque augue et sem maximus</div>
+    </div>
+    <div class="swiper-slide">
+         <div style="padding-top: 60px;">    
+         <img src="img/11.png" alt="" style="display: block; margin-left: auto; margin-right: auto; width: auto;">
+         </div>
+         <div style="padding-top: 30px;text-align: center; font-weight: 700; text-transform: none; font-size: 18px;">Przeanalizuj swoje badania</div>
+         <div style="text-align: center; text-transform: none; padding-top: 10px; font-size:14px; width: 90%; margin-left: 5%; color: #8a8a8a">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque scelerisque augue et sem maximus</div>
+    </div>
+    
+  </div>
+</div>
+
+
+
+
+ 
+   
+  <div style="width: 100%; margin: 50px auto 0px auto; text-align: center;">
+    <a href="#login" data-role="none" class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" style="color: white; width: 70%"> Login </a>
+
+    <a href="#signup" data-role="none" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" style="margin-top: 15px; background-color: #8ed6ce; color: white;  width: 70%;"> Create Account </a><br>
+
+  </div>
+ </div>
+</div>
+ </div>
+</div>
+
+
+
+<div data-role="page" id="login" data-page ="login" >
+ 
+ 
+ 
+    <div role="main" class="ui-content" style="">
+
+ <div style="background-color: white; padding-bottom: 50px; border-bottom: 1px solid #dedede" >
+  <div style="text-align: center; font-size: 28px; font-weight: 600; padding-top: 30px;color: #1fa4dc; ">LOGIN</div>
+  <div style="padding-top: 70px;">
+<img src="img/22.png" alt="" style="display: block; margin-left: auto; margin-right: auto; width: 50%;">
+</div>
+
+<form action="#" style="text-align: center; display: block ">
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0;">
+    <input class="mdl-textfield__input " type="text" id="imejl" data-role="none" >
+    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">Login...</label>
+  </div>
+<br>
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0;">
+    <input class="mdl-textfield__input " type="password" id="pw" data-role="none" >
+    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">Password...</label>
+  </div>
+</form>
+
+
+   <div style="width: 100%; margin: 20px auto 0px auto; text-align: center;">
+    <div>
+    <a href="" data-enhance="false" data-role="button" class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect" id="loginButton" style="width: 70%;"> LOGIN </a>
+    <div style="width: 100%; margin: 20px auto 0px auto; text-align: center;">
+    <a href="" data-enhance="false" data-role="none" class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect" id="googleLogIn" style="width: 70%; background-color: #EA4335; color: white; text-shadow: none;"><i class="fab fa-google-plus-g" style="text-shadow: none; padding-top: 10px;"></i></a>
+     </div>
+     <div style="width: 100%; margin: 20px auto 0px auto; text-align: center;">
+    <a href="" data-enhance="false" data-role="none" class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect" id="googleLogIn1" style="width: 70%; background-color: #3b5998"> <i class="fab fa-facebook-square"  style="text-shadow: none; color: white; padding-top: 10px;"></i></a>
+</div>
+ 
+
+  <div id="statuslog"></div>
+  </div>
+</div>
+  <div>
+  <div style="width: 100%; margin: 20px auto 0px auto; text-align: center; padding-top: 10px;">
+    <a href="#signup" data-role="button" class="mdl-button mdl-js-button mdl-button--accent" id="" style="padding: 0px 120px 0px 120px;"> SIGN  UP </a>
+   
+
+     <div style="width: 100%; margin: 20px auto 0px auto; text-align: center;">
+    <a href="" data-enhance="false" data-role="button" class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect" id="signOut" style="padding: 0px 120px 0px 120px;"> Wyloguj </a>
+  </div>
+  
+
+  
+</div>
+
+  </div>
+  </div>
+    </div>
+  </div>
+
+
+<div data-role="page" id="signup">
+     <div role="main" class="ui-content secound-page">
+      <div style="position: absolute; margin-left: 5%; margin-top: 20px;">
+     <a href="#login" data-role="none" class="mdl-button mdl-js-button mdl-button--fab mdl-button--accent" id="" style="background-color: transparent; border: 1px solid grey; color: grey; height: 30px; min-width: 30px;
+    width: 30px;"> <i class="material-icons">keyboard_arrow_left</i></a>
+      </div>
+      <div style="margin-top: 50px; padding-bottom: 50px; text-align: center; font-size: 22px; font-weight: 600;">Sign Up</div>
+  <div style="width: 80%; margin:0 auto; text-align: center">
+      <form action="#">
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input" type="text" id="imejl2" data-role="none">
+    <label class="mdl-textfield__label" for="sample3" style="text-transform: none">E-mail</label>
+  </div>
+</form>
+<form action="#">
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input" type="password" id="pw2" data-role="none">
+    <label class="mdl-textfield__label" for="sample3" style="text-transform: none">Password</label>
+  </div>
+</form>
+<form action="#">
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input" type="text" id="imie" data-role="none">
+    <label class="mdl-textfield__label" for="sample3" style="text-transform: none">Name</label>
+  </div>
+</form>
+
+<form action="#">
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input class="mdl-textfield__input" type="text" id="nazwisko" data-role="none">
+    <label class="mdl-textfield__label" for="sample3" style="text-transform: none">Surname</label>
+  </div>
+</form>
+<div style=" text-align: left; margin-top: 20px;">
+  <div style="text-transform: none; color: rgba(0,0,0,.26); font-size: 16px; font-size: 400;">Sex</div>
+<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1" style="margin-bottom: 15px; margin-top: 15px;">
+  <input type="radio" id="option-1" class="mdl-radio__button" name="options" value="Kobieta" checked data-role="none">
+  <span class="mdl-radio__label" style="text-transform: none">Kobieta</span>
+</label>
+
+<label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
+  <input type="radio" id="option-2" class="mdl-radio__button" name="options" value="Mężczyzna" data-role="none">
+  <span class="mdl-radio__label" style="text-transform: none" >Mężczyzna</span>
+</label>
+</div>
+</div>
+
+<div style="text-align: center; margin-top: 50px;">
+<a href="#signup" data-role="button" class="mdl-button mdl-js-button mdl-button--accent" id="signUpButton" style="padding: 0px 120px 0px 120px;"> SIGN  UP </a>
+</div>
+</div>
+</div>
+
+
+
+<div data-role="page" id="home">
+ 
+ 
+ 
+    <div role="main" class="ui-content secound-page">
+      <div style="padding-bottom: 80px;">
+      <div class="secound-page-background">
+          <div class="container-top-content"> 
+          <div> <img src="" alt="" width="40%" height="auto" style="margin-left: 30%;" id="zdjecieprofilowe"></div>
+          <div class="name-user-top" id="daneosobowe">Marcin Wojtas</div>
+          </div>          
+      </div>
+      <div class="first-box">
+        
+        <div class="first-box-content">
+          <div class="first-box-date">24 kwiecień</div>
+          <div class="first-box-comment">Twoje ostatnie badanie</div>
+        </div>
+
+        <div class="icon">
+        <i class="fas fa-angle-right"></i>
+        </div> 
+      </div> 
+
+       <div id="homewyswietlanie"> </div>
+      <div class="first-box" id="rest-box">
+        <div class="rest-box-content">
+          <div class="circle"  style="">G</div>
+        </div>
+        
+        <div class="container-element-box">
+          <div style="color: #3A4759;">Glukoza</div> 
+          <span class="value-element-mark">wartość:
+           <span style="color:#E36E7B">powyżej normy</span>
+         </span>
+        </div>
+
+       <div class="value-element-inner">
+        <div style="color: #E36E7B;">115,00 
+          <span style="font-size: 10px; color: #47A0B5">(+12,00)</span>
+        </div>
+         <span class="element-date">Kwi. 24</span>
+       </div>
+      </div>     
+ 
+
+
+      <div class="first-box" id="rest-box">
+        <div class="rest-box-content">
+          <div class="circle"  style="">G</div>
+        </div>
+        
+        <div class="container-element-box">
+          <div style="color: #3A4759;">Glukoza</div> 
+          <span class="value-element-mark">wartość:
+           <span style="color:#E36E7B">powyżej normy</span>
+         </span>
+        </div>
+
+       <div class="value-element-inner">
+        <div style="color: #E36E7B;">115,00 
+          <span style="font-size: 10px; color: #47A0B5">(+12,00)</span>
+        </div>
+         <span class="element-date">Kwi. 24</span>
+       </div>
+      </div>     
+ 
+ 
+
+      <div class="first-box" id="rest-box">
+        <div class="rest-box-content">
+          <div class="circle"  style="">G</div>
+        </div>
+        
+        <div class="container-element-box">
+          <div style="color: #3A4759;">Glukoza</div> 
+          <span class="value-element-mark">wartość:
+           <span style="color:#E36E7B">powyżej normy</span>
+         </span>
+        </div>
+
+       <div class="value-element-inner">
+        <div style="color: #E36E7B;">115,00 
+          <span style="font-size: 10px; color: #47A0B5">(+12,00)</span>
+        </div>
+         <span class="element-date">Kwi. 24</span>
+       </div>
+      </div>     
+  
+ 
+      <div class="first-box" id="rest-box">
+        <div class="rest-box-content">
+          <div class="circle"  style="">G</div>
+        </div>
+        
+        <div class="container-element-box">
+          <div style="color: #3A4759;">Glukoza</div> 
+          <span class="value-element-mark">wartość:
+           <span style="color:#E36E7B">powyżej normy</span>
+         </span>
+        </div>
+
+       <div class="value-element-inner">
+        <div style="color: #E36E7B;">115,00 
+          <span style="font-size: 10px; color: #47A0B5">(+12,00)</span>
+        </div>
+         <span class="element-date">Kwi. 24</span>
+       </div>
+      </div>     
+ 
+
+ 
+ 
+    </div>
+ </div>
+ 
+ 
+    <div data-role="footer" data-position="fixed" style="padding: 10px 0 5px 0;">
+        <ul class="menu-container">
+          <li class="menu-element"><img src="img/icons/home-active.png" alt=""><div>Home</div></li>
+          <li class="menu-element"><a href="#badania" style="text-decoration: none; font-weight: 300; color: #333 "><img src="img/icons/badania.png" alt=""><div>Badania</div></a></li>
+          <li class="menu-element"><img src="img/icons/planer.png" alt=""><div>Planer</div></li>
+          <li class="menu-element"><img src="img/icons/dziennik.png" alt=""><div>Dziennik</div></li>
+          <li class="menu-element"><img src="img/icons/profil.png" alt=""><div>Profil</div></li>
+        </ul>
+    </div>
+</div>
+
+<div data-role="page" id="badania">
+ 
+ 
+ 
+    <div role="main" class="ui-content secound-page">
+      <div style="padding-bottom: 80px;">
+      <div class="secound-page-background">
+         <div style=" display: inline-block; width: 25%; height: 10%; "><a href="#home"><i class="fas fa-angle-left" style="padding-left: 40px; padding-top: 20px;font-size: 24px; color: white;"></i></a></div
+          ><div style=" display: inline-block;width: 50%; height: 10%; margin: 0 auto; text-align: center; padding-bottom: 20px; font-size: 24px; text-transform: none; color:white; ">Moje badanie</div
+            >
+
+         <!-- 
+        <div> <i class="fas fa-angle-left" style="font-size: 24px; color: white; float: left; padding-left: 0px; margin-top: 20px;"></i></div> 
+          <div class="container-top-content"> 
+            
+          <div style="text-align: center; margin-left:0%; width: 100%;"> 
+
+          <div class="" style=" text-align: center; color: white; font-size: 22px; font-weight: 400; text-transform: none;">Moje Badania</div>
+          </div>
+          </div>           -->
+      </div>
+    
+<!--
+
+ tutaj mysle ze beda zwykle <p> i sie funckjami w js to obsluzy, dodaj sobie podkreslenie i ogolnie popraw se te czcionki elo XD 
+
+-->
+<div class="header-element">
+  <ul class="menu-container">
+          
+          <li class="menu-element menu-element2"><span id="wszystkiebadania" style="font-weight: 600;">Wszystkie</span></li>
+          <li class="menu-element menu-element2"><span  id="prawidłowebadania">Prawidłowe</span></li>
+          <li class="menu-element menu-element2"><span id="nieprawidłowebadania">Nieprawidłowe</span></li>
+          
+        </ul>
+
+</div>
+
+<div style="width: 80%; height: 1px; background-color: #CCCCCC; margin: 0 auto;"></div>
+
+      
+     
+      <div id="wyswietlanie">
+        
+
+      </div>
+
+
+ <div class="container-buttons" id="add-button">  
+ 
+ <a href="#dodajbadanie" class="ui-btn  button-home-primary" id="add-href" >Dodaj badanie</a>
+ <br>
+     <a href="" data-role="none" class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" style="margin-top: 15px; background-color: #8ed6ce; color: white;  width: 70%;" onclick="pokazBadanie()"> Create Account </a>
+</div>
+    </div>
+ </div>
+  
+ 
+    <div data-role="footer" data-position="fixed" style="padding: 10px 0 5px 0;">
+        <ul class="menu-container">
+          <li class="menu-element"><a href="#home" style="text-decoration: none; font-weight: 300; color: #333 "><img src="img/icons/home.png" alt=""><div>Home</div></a></li>
+          <li class="menu-element"><img src="img/icons/badania-active.png" alt=""><div>Badania</div></li>
+          <li class="menu-element"><img src="img/icons/planer.png" alt=""><div>Planer</div></li>
+          <li class="menu-element"><img src="img/icons/dziennik.png" alt=""><div>Dziennik</div></li>
+          <li class="menu-element"><img src="img/icons/profil.png" alt=""><div>Profil</div></li>
+        </ul>
+    </div>
+</div>
+
+<div data-role="page" id="dodajbadanie">
+ 
+ 
+ 
+    <div role="main" class="ui-content secound-page">
+      <div style="padding-bottom: 80px;">
+      <div class="secound-page-background">
+         <div style=" display: inline-block; width: 25%; height: 10%; "><a href="#home"><i class="fas fa-angle-left" style="padding-left: 40px; padding-top: 20px;font-size: 24px; color: white;"></i></a></div
+          ><div style=" display: inline-block;width: 50%; height: 10%; margin: 0 auto; text-align: center; padding-bottom: 20px; font-size: 24px; text-transform: none; color:white; ">Nowe badanie</div>
+      </div>
+      <form action="#" style="text-align: center; padding-top: 20px;">
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0;">
+    <input class="mdl-textfield__input " type="number" step="0.0001" min="0" id="bialekrwinki1" data-role="none" >
+    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">WBC Białe krwinki</label>
+  </div>
+<br>
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0;">
+    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0" data-role="none"  id="czerwonekrwinki1">
+    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">RBC Czerwone krwinki (erytrocyty)</label>
+  </div><br>
+
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0;">
+    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0" data-role="none" id="hemoglobina1">
+    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">HGB(Hb) Hemoglobina</label>
+  </div><br>
+
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0;">
+    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0" data-role="none" id="hematokryt1" >
+    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">HCT (Hematokryt)</label>
+  </div><br>
+
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0;">
+    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0" data-role="none" id="limfocyty1">
+    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">LYM (limfocyty)</label>
+  </div><br>
+
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0;">
+    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0" data-role="none" id="monocyty1" >
+    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">(MONO) Monocyty</label>
+  </div><br>
+
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0;">
+    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0" data-role="none"  id="mcv1">
+    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">MCV</label>
+  </div>
+ <br>
+  
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0;">
+    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0" data-role="none"  id="mch1">
+    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">MCH </label>
+  </div>
+ <br>
+  
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0;">
+    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0" data-role="none"  id="mchc1">
+    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">MCHC</label>
+  </div>
+ <br>
+  
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0;">
+    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0" data-role="none"  id="plytkikrwi1">
+    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">PLT (płytki krwi) </label>
+  </div>
+ <br>
+  
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0;">
+    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0" data-role="none"  id="ob1">
+    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">OB</label>
+  </div>
+ <br>
+  
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0;">
+    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0" data-role="none"  id="glukoza1">
+    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">Glukoza</label>
+  </div>
+ <br>
+  
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0;">
+    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0" data-role="none"  id="cholesterol1">
+    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">Cholesterol całkowity</label>
+  </div>
+ <br>
+  
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0;">
+    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0" data-role="none"  id="tsh1">
+    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">TSH</label>
+  </div>
+ <br>
+  
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0;">
+    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0" data-role="none"  id="alat1">
+    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">ALAT</label>
+  </div>
+ <br>
+  
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0;">
+    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0" data-role="none"  id="aspat1">
+    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">AspAT</label>
+  </div>
+ <br>
+  
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0;">
+    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0" data-role="none"  id="potas1">
+    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">Potas</label>
+  </div>
+ <br>
+ 
+   
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0;">
+    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0" data-role="none"  id="sod1">
+    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">Sód</label>
+  </div>
+ <br>
+   
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0;">
+    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0" data-role="none"  id="magnez1">
+    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">Magnez</label>
+  </div>
+ <br>
+   
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0;">
+    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0" data-role="none"  id="wapn1">
+    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">Wapń</label>
+  </div>
+ <br>
+   
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0;">
+    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0" data-role="none"  id="zelazo1">
+    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">Żelazo</label>
+  </div>
+ <br>
+ 
+   
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label " style="background-color: transparent !important; border: 0;">
+    <input class="mdl-textfield__input " type="number"  step="0.0001" min="0" data-role="none"  id="witaminab1">
+    <label class="mdl-textfield__label " for="sample3" style="text-transform: none">Witamina B12</label>
+  </div>
+ <br>
+
+   <div style="text-align: center; margin-top: 50px;">
+<a href="" data-role="button" class="mdl-button mdl-js-button mdl-button--accent" id="dodajbadania" style="padding: 0px 120px 0px 120px;"> Dodaj badanie </a>
+</div>
+</form>
+      <div data-role="footer" data-position="fixed" style="padding: 10px 0 5px 0;">
+        <ul class="menu-container">
+          <li class="menu-element"><a href="#home" style="text-decoration: none; font-weight: 300; color: #333 "><img src="img/icons/home.png" alt=""><div>Home</div></a></li>
+          <li class="menu-element"><img src="img/icons/badania-active.png" alt=""><div>Badania</div></li>
+          <li class="menu-element"><img src="img/icons/planer.png" alt=""><div>Planer</div></li>
+          <li class="menu-element"><img src="img/icons/dziennik.png" alt=""><div>Dziennik</div></li>
+          <li class="menu-element"><img src="img/icons/profil.png" alt=""><div>Profil</div></li>
+        </ul>
+    </div>
+</div>
+  </div>
+</div>
+
+
+
+
+<script>
+        // Initialize Firebase
+        
+
+        const provider = new firebase.auth.GoogleAuthProvider();
+        var database = firebase.database();
+
+
+// var secondaryAppConfig = {
+//    apiKey: "AIzaSyDNJfmduRSncwtKmw3wX69KWz36gNgWj9Y",
+//             authDomain: "health-care-71096.firebaseapp.com",
+//             databaseURL: "https://health-care-71096.firebaseio.com",
+//             storageBucket: ""
+// };
+
+
+// var secondary = firebase.initializeApp(secondaryAppConfig, "dodawanie badan");
+
+// // Retrieve the database.
+// var secondaryDatabase = secondary.database();
+
+
+// const db = firebase.firestore();
+
+document.querySelector('#loginButton').addEventListener('click', function () {
+
+  firebase.auth().signOut().then(function() {
+  // Sign-out successful.
+ 
+}).catch(function(error) {
+  // An error happened.
+});
+          var login = document.getElementById('imejl').value;
+          var pw = document.getElementById('pw').value;
+        firebase.auth().signInWithEmailAndPassword(login, pw).catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  alert(errorMessage);
+  console.log(errorCode);
+  // ...
+});
+        firebase.auth().onAuthStateChanged(function(user) {
+          
+          // setTimeout(function(){
+          //   var user = firebase.auth().currentUser;
+  if (user) {
+    // User is signed in.
+        // alert("witaj dziubasku");
+        // var a = document.getElementById("loginButton");
+        // a.href = "#home";
+    window.location.href = "#home";
+    var user = firebase.auth().currentUser;
+var name, email, photoUrl, uid, emailVerified;
+
+
+  } else {
+        // alert("spierdalaj dziubasku");
+  }
+
+
+// },3000);
+});
+      });
+
+
+        //funkcja sluząca do rejestrowania użytkownika
+document.querySelector('#signUpButton').addEventListener('click', function () {
+          var login = document.getElementById('imejl2').value;
+          var pw = document.getElementById('pw2').value;
+          var imie = document.getElementById('imie').value;
+          var nazwisko = document.getElementById('nazwisko').value;
+          var radio1 = document.getElementById('option-1');
+          var radio2 = document.getElementById('option-2');
+           // var sex = document.getElementById('nazwisko').value;
+firebase.auth().createUserWithEmailAndPassword(login, pw).catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+    alert(errorMessage);
+  console.log(errorCode);
+  // ...
+});
+// var user = firebase.auth().currentUser;
+// user.updateProfile({
+//   displayName: "Marian",
+//   photoURL: "http://printthatthing.xyz/images/chinese-black-dick-lovers-2594.jpg"
+// }).then(function() {
+//   // Update successful.
+// }).catch(function(error) {
+//   // An error happened.
+// });
+
+
+ firebase.auth().onAuthStateChanged(function(user) {
+          
+          
+          //   var user = firebase.auth().currentUser;
+  if (user) {
+    // User is signed in.
+      
+if(radio1.checked){
+ plec = document.getElementById('option-1').value;
+}else{
+  plec = document.getElementById('option-2').value;
+}
+var user = firebase.auth().currentUser;
+ var uid = user.uid;
+         firebase.database().ref('users/' + uid).set({
+    email : login,
+    name : imie,
+    secondname: nazwisko,
+    płeć: plec
+    
+   
+  });
+         firebase.auth().signOut().then(function() {
+  // Sign-out successful.
+
+}).catch(function(error) {
+  // An error happened.
+});
+    window.location.href = "#login";
+
+
+
+}
+  else {
+        
+
+         var errorCode = error.code;
+  var errorMessage = error.message;
+    alert(errorMessage);
+  console.log(errorCode);
+  }
+});
+});
+
+document.querySelector('#signOut').addEventListener('click', function () {
+firebase.auth().signOut().then(function() {
+  // Sign-out successful.
+  alert("wylogowales sie poprawnie dziubasku");
+}).catch(function(error) {
+  // An error happened.
+});
+});
+
+
+
+document.querySelector('#dodajbadania').addEventListener('click', function () {
+ 
+          var user = firebase.auth().currentUser;
+          var uid = user.uid;
+ if(user){
+          var bialekrwinki = document.getElementById('bialekrwinki1').value;
+          var czerwonekrwinki = document.getElementById('czerwonekrwinki1').value;
+          var hemoglobina = document.getElementById('hemoglobina1').value;
+          var hematokryt = document.getElementById('hematokryt1').value;
+          var limfocyty = document.getElementById('limfocyty1').value;
+          var monocyty = document.getElementById('monocyty1').value;
+          var mcv = document.getElementById('mcv1').value;
+          var mch = document.getElementById('mch1').value;
+          var mchc = document.getElementById('mchc1').value;
+          var plytkikrwi = document.getElementById('plytkikrwi1').value;
+          var ob = document.getElementById('ob1').value;
+          var glukoza = document.getElementById('glukoza1').value;
+          var cholesterol = document.getElementById('cholesterol1').value;
+          var tsh = document.getElementById('tsh1').value;
+          var alat = document.getElementById('alat1').value;
+          var aspat = document.getElementById('aspat1').value;
+          var potas = document.getElementById('potas1').value;
+          var sod = document.getElementById('sod1').value;
+          var magnez = document.getElementById('magnez1').value;
+          var wapn = document.getElementById('wapn1').value;
+          var zelazo = document.getElementById('zelazo1').value;
+          var witaminab = document.getElementById('witaminab1').value;
+          var msec = new Date();
+          var text;
+          var text2 = msec.getTime();
+          var wynik;
+          var today = new Date();
+          var dd = today.getDate();
+          var mm = today.getMonth(); //January is 0!
+          var mm2 = ["Styczeń", "Luty", "Marzec", "Kwiecień", "Maj", "Czerwiec", "Lipiec", "Sierpień", "Wrzesień", "Październik", "Listopad", "Grudzień"];
+
+          if( 
+
+            bialekrwinki < 4.1 || bialekrwinki > 11 ||
+            czerwonekrwinki < 4.5 || czerwonekrwinki > 6.5 ||
+            hemoglobina < 13.5 || hemoglobina > 18 ||
+            hematokryt < 40 || hematokryt > 51 ||
+            limfocyty < 20 || limfocyty > 45 ||
+            monocyty  < 0.3 || monocyty > 0.8 ||
+            mcv  < 80 || mcv > 97 ||
+            mch < 26 || mch > 32 ||
+            mchc < 31 || mchc > 36 ||
+            plytkikrwi < 140 || plytkikrwi > 400 ||
+            ob < 3 || ob > 8 ||
+            glukoza < 70 || glukoza > 99 ||
+            cholesterol < 170 || cholesterol > 199 ||
+            tsh < 0.32 || tsh > 5.0 ||
+            alat < 5 || alat > 40 ||
+            aspat < 8 || aspat > 45 ||
+            potas < 3.5 || potas > 5.5 ||
+            sod < 135 || sod > 145 ||
+            magnez < 0.65 || magnez > 1.2 ||
+            wapn < 2.25 || wapn > 2.75 ||
+            zelazo < 50 || zelazo > 158 ||
+            witaminab < 148 || witaminab > 740 
+
+            ){
+              wynik = "Nieprawidłowy"
+          }else{
+            wynik = "Prawidłowy"
+          }
+
+          var yyyy = today.getFullYear();
+          if(dd<10){
+              dd='0'+dd;
+          } 
+         
+          var today = dd+' '+mm2[mm]+' '+yyyy;
+          //var userRef = firebase.database().ref.child('users/' + uid);
+          var licznik;
+          var ref = firebase.database().ref('users/' + uid + '/Badania');
+          ref.once('value', function(snapshot){
+              licznik = snapshot.numChildren();
+            // var licznik2 = Number(licznik);
+               
+               // if(licznik == 0){
+               //  text = "Badanie nr 1";
+               // }else {
+               //  licznik = licznik + 1;
+               //  text = "Badanie nr " + licznik;
+               // }
+
+ firebase.database().ref('users/' + uid + '/Badania/' + text2).set({
+         
+    "Białe_krwinki" : bialekrwinki,
+    "Czerwone_krwinki" : czerwonekrwinki,
+    "Limfocyty" : limfocyty,
+    "Hemoglobina" : hemoglobina,
+    "Hematokryt" : hematokryt,
+    "Monocyty" : monocyty,
+    "MCV" : mcv,
+    "MCH" : mch,
+    "MCHC" : mchc,
+    "Płytki_krwi" : plytkikrwi,
+    "OB" : ob,
+    "Glukoza" : glukoza,
+    "Cholesterol" : cholesterol,
+    "TSH" : tsh,
+    "ALAT" : alat,
+    "AspAT" : aspat,
+    "Potas" : potas,
+    "Sód" : sod,
+    "Magnez" : magnez,
+    "Wapń" : wapn,
+    "Żelazo" : zelazo,
+    "Witamina_B12" : witaminab,
+     Data : today,
+     Wynik: wynik,
+    // "Data msec": text2
+  
+
+  });
+
+          });
+         
+ // alert(licznik);
+         }else{
+          alert("Użytkownik Niezalogowany")
+         }
+         window.location.href = "#badania";
+         location.reload();
+});
+
+
+
+function status(){
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    // User is signed in.
+    var status = document.getElementById('statuslog');
+    status.innerHTML = "użytkownik zalogowany!"
+  } else {
+    // No user is signed in.
+    var status = document.getElementById('statuslog');
+    status.innerHTML = "użytkownik nie zalogowany!"
+  }
+});
+}
+
+function daneOsobowe(){
+ 
+          var dane = document.getElementById('daneosobowe');
+          firebase.auth().onAuthStateChanged(function(user) {
+          var user = firebase.auth().currentUser;
+          var uid = user.uid;
+
+          if(user){
+
+
+        var data =   firebase.database().ref('users/' + uid).child("name");
+       data.on('value', function(snapshot){
+            dane.innerHTML = snapshot.val() + " ";
+         });
+
+       var data2 =   firebase.database().ref('users/' + uid).child("secondname");
+       data2.on('value', function(snapshot){
+        var text = document.createTextNode(snapshot.val());
+          dane.appendChild(text);
+         });
+
+        var data3 =   firebase.database().ref('users/' + uid).child("płeć");
+       data3.on('value', function(snapshot){
+        var plecstatus = snapshot.val();
+       var zdjecie = document.getElementById('zdjecieprofilowe');
+          if(plecstatus == "Kobieta"){
+              zdjecie.src = "img/female.png";
+          }else {
+            zdjecie.src = "img/male.png";
+          }
+         });
+
+    
+        }else {
+}
+        });
+  
+  
+}
+
+status();
+daneOsobowe();
+
+
+
+
+        const hLogInfo = document.querySelector('#logInfo');
+        document.querySelector('#googleLogIn').addEventListener('click', function () {
+            firebase.auth().signInWithRedirect(provider).then(function() {
+              return firebase.auth().getRedirectResult();
+            }).then(function(result) {
+              // This gives you a Google Access Token.
+              // You can use it to access the Google API.
+              var token = result.credential.accessToken;
+              // The signed-in user info.
+              var user = result.user;
+
+               setTimeout(function(){
+ firebase.auth().onAuthStateChanged(function(user) {
+          
+          // setTimeout(function(){
+          //   var user = firebase.auth().currentUser;
+         
+
+
+  if (user) {
+    // User is signed in.
+    window.location.href = "#home";
+  } else {
+        
+  }
+});
+         },6000);      // ...
+            }).catch(function(error) {
+              // Handle Errors here.
+              var errorCode = error.code;
+              var errorMessage = error.message;
+                alert(errorMessage);
+              console.log(errorCode)
+              console.log(errorMessage);
+            });
+        });
+            
+     function pokazBadanie() {
+  var i = 1;
+  var j = 1;   
+  var g = 1;
+  
+          
+
+firebase.auth().onAuthStateChanged(function(user) {
+          var user = firebase.auth().currentUser;
+          var uid = user.uid;
+          var licznik;
+    if(user){
+      
+// function licznik (snapshot){
+//   var licznik;
+//   licznik = snapshot.numChildren();
+//   return licznik;
+// }
+
+var ref = firebase.database().ref('users/' + uid + '/Badania');
+          ref.once('value', function(snapshot){
+             licznik = snapshot.numChildren();
+          
+
+while(i <= licznik){
+
+  
+
+ $( "#wyswietlanie" ).append( ' <div id="sort"> <div class="first-box" id="rest-box"> \
+        <div class="rest-box-content"> \
+          <img src="img/icons/blood-green.png" alt="" id="c"> \
+        </div> \
+        \
+        <div class="container-element-box">  \
+          <div style="color: #3A4759; text-transform: none;">Badanie krwi</div>  \
+          <span class="value-element-mark">wynik: \
+           <span style="color:green;" id="b">prawidłowy</span> \
+         </span> \
+        </div> \
+\
+      <div class="value-element-inner"> \
+        <div style="color: #A6B1C0; text-transform: none; font-weight: 400; font-size: 11px;" id ="asdd">2018 Luty 14 \
+          \
+        </div> \
+         <a href=""><span color ="blue" class="ahrefDecoration">zobacz szczegóły</span></a> \
+       </div> \
+      </div> </div>');
+
+
+                 var x = document.getElementById('asdd');
+            x.setAttribute("id", "data " + i);
+
+            var sort = document.getElementById('sort');
+            sort.setAttribute("id", "sort " + i);
+
+
+     //    firebase.database().ref('users/' + uid + '/Badania/' + badanie).child("Data").once('value').then(function(snapshot){
+     //     var y = document.getElementById(j);
+     //        data = snapshot.val();
+     //       y.innerHTML = snapshot.val();
+     // alert(data);
+     //        // y.innerHTML = data ;
+     //       j = j + 1 ;
+     //         });
+
+            var wynikbadania = document.getElementById('b');
+            var kolor = document.getElementById('c');
+  
+            wynikbadania.setAttribute("id", "wynik " + i);
+            kolor.setAttribute("id", "kolor " + i);
+
+     // firebase.database().ref('users/' + uid + '/Badania/' + badanie).child("Wynik").once('value').then(function(snapshot){
+     //     var r = document.getElementById("wynik " + g);
+     //     var t = document.getElementById("kolor " + g);
+     //       var kolor = snapshot.val();
+     //       if(kolor == "Prawidłowy"){
+     //        r.style.color = "green";
+     //        t.src = "img/icons/blood-green.png"
+     //       }else{
+     //        r.style.color = "red";
+     //        t.src = "img/icons/blood-red.png"
+     //       }
+     //       r.innerHTML = snapshot.val();
+     
+     //        // y.innerHTML = data ;
+     //       g = g + 1 ;
+     //         });
+
+ i = i + 1;
+}
+// for(var a = 1; a <7; a++){
+  // var badanie = "Badanie nr " + a;
+  var j = 1;
+  var g = 1;
+  
+   var ref = firebase.database().ref('users/' + uid + '/Badania/').orderByKey();
+   ref.on('value',function(badaniaSnapshot){
+
+
+
+    badaniaSnapshot.forEach(function(snapshot){
+      var key = snapshot.key;
+     
+
+
+
+   var ref2 = firebase.database().ref('users/' + uid + '/Badania/' + key).child("Data");
+   ref2.on('value',function(snapshot2){
+
+        // snapshot2.forEach(function(childSnapshot2){
+
+
+    var obj = snapshot2.val();
+    console.log(obj);
+
+var y = document.getElementById('data ' + j);
+            
+           y.innerHTML = obj;
+ 
+    j = j + 1;
+ 
+      });
+
+
+    var ref3 = firebase.database().ref('users/' + uid + '/Badania/' + key).child("Wynik");
+     ref3.on('value', function(snapshot3){
+
+        var wynikbadania1 = snapshot3.val();
+
+           var wynik = document.getElementById("wynik " + g);
+           var kolor = document.getElementById("kolor " + g);
+           var sort = document.getElementById("sort " + g);
+           var wynikbadania1  = snapshot3.val();
+           wynik.innerHTML = wynikbadania1;
+           if(wynikbadania1 == "Prawidłowy"){
+            wynik.style.color = "green";
+            kolor.src = "img/icons/blood-green.png"
+            sort.classList.add("Prawidłowa");
+           }else{
+            wynik.style.color = "red";
+            kolor.src = "img/icons/blood-red.png"
+            sort.classList.add("Nieprawidłowa");
+           }
+
+
+           g = g + 1;
+     });
+             });
+            });
+
+
+ 
+
+ });
+}
+else{
+
+}
+  
+  });   
+
+     //      firebase.database().ref('users/' + uid + '/Badania/' + badanie).child("Data").once('value').then(function(snapshot){;
+     //     var y = document.getElementById(j);
+     //        data = snapshot.val();
+     //       y.innerHTML = snapshot.val();
+     // alert(data);
+     //        // y.innerHTML = data ;
+     //       j = j + 1 ;
+     //         });
+
+       
+           
+          
+
+
+
+// for (var i = 1; i < 7; i++) {
+
+//              firebase.database().ref('users/' + uid + '/Badania/' + badanie).child("Data").once('value').then(function(snapshot){
+//          var y = document.getElementById(j);
+//             data = snapshot.val();
+//            y.innerHTML = snapshot.val();
+//      alert(data);
+//             // y.innerHTML = data ;
+//            j = j + 1 ;
+//              });
+//            }
+        } 
+
+pokazBadanie();
+           function addZeroes( num ) {
+            var tostring = num.toString();
+    var value = Number(tostring);
+    var res = tostring.split(".");
+    if(res.length < 10 || (res[1].length < 3)) {
+        value = value.toFixed(2);
+    }else{
+
+    }
+    return value
+}
+console.log(addZeroes(5));
+
+     function homePage () {
+        firebase.auth().onAuthStateChanged(function(user) {
+          var user = firebase.auth().currentUser;
+          var uid = user.uid;
+          var licznik = 0;
+          var tablica = [];
+          var tabindex = 0;
+          var tablica2 = [];
+          var tabindex2 = 0 ;
+          var negatywne = [];
+          var twojewartosci = [];
+          var rozneodnormy = [];
+          var przekroczonawartosc = [];
+          var obliczenia ;
+          var bialekrwinki ;
+          var czerwonekrwinki ;
+          var hemoglobina ;
+          var hematokryt ;
+          var limfocyty ;
+          var monocyty ;
+          var mcv ;
+          var mch ;
+          var mchc ;
+          var plytkikrwi ;
+          var ob ;
+          var glukoza ;
+          var cholesterol ;
+          var tsh ;
+          var alat ;
+          var aspat ;
+          var potas ;
+          var sod ;
+          var magnez ;
+          var wapn ;
+          var zelazo ;
+          var witaminab ;
+    if(user){
+
+      var ref = firebase.database().ref('users/' + uid + '/Badania/').orderByKey();
+   ref.on('value',function(badaniaSnapshot){
+
+
+
+    badaniaSnapshot.forEach(function(snapshot){
+      var key = snapshot.key;
+      tablica[tabindex] = key;
+      console.log(tablica[tabindex]);
+        tabindex = tabindex + 1;
+        console.log(tablica.length);
+});
+
+         var ref2 = firebase.database().ref('users/' + uid + '/Badania/' + tablica[tablica.length - 1]);
+          ref2.on('value', function(snapshot2){
+            var key2 = snapshot2.val();
+            
+            bialekrwinki = key2.Białe_krwinki;
+            czerwonekrwinki = key2.Czerwone_krwinki;
+            hemoglobina = key2.Hemoglobina;
+            hematokryt = key2.Hematokryt;
+            limfocyty = key2.Limfocyty ;
+            monocyty = key2.Monocyty ;
+            mcv = key2.MCV;
+            mch = key2.MCH;
+            mchc = key2.MCHC;
+            plytkikrwi = key2.Płytki_krwi;
+            ob = key2.OB;
+            glukoza = key2.Glukoza;
+            cholesterol = key2.Cholesterol ;
+            tsh = key2.TSH ;
+            alat = key2.ALAT;
+            aspat = key2.AspAT;
+            potas = key2.Potas ;
+            sod = key2.Sód ;
+            magnez = key2.Magnez ;
+            wapn = key2.Wapń;
+            zelazo = key2.Żelazo;
+            witaminab = key2.Witamina_B12 ;
+
+            if( bialekrwinki < 4.1  ){
+              licznik = licznik + 1;
+              negatywne[0] = "Białe krwinki";
+              twojewartosci[0] = addZeroes(bialekrwinki);
+              rozneodnormy[0] = "Poniżej normy";
+              obliczenia = 4.1 - bialekrwinki;
+              przekroczonawartosc[0] = "(- " + addZeroes(obliczenia) + ")";
+            }if(bialekrwinki > 11){
+              licznik = licznik + 1;
+              negatywne[0] = "Białe krwinki";
+              twojewartosci[0] = addZeroes(bialekrwinki);
+              rozneodnormy[0] = "Powyżej normy";
+              obliczenia =  bialekrwinki - 11;
+              przekroczonawartosc[0] = "(+ " + addZeroes(obliczenia) + ")";
+            }else{}
+
+            if(czerwonekrwinki < 4.5 ){
+              licznik = licznik + 1;
+              negatywne.push("Czerwone krwinki");
+              twojewartosci.push(addZeroes(czerwonekrwinki));
+              rozneodnormy.push("Poniżej normy");
+              obliczenia = 4.5 - czerwonekrwinki;
+              przekroczonawartosc.push("(- " + addZeroes(obliczenia) + ")");
+            }if(czerwonekrwinki > 6.5){
+              licznik = licznik + 1;
+              negatywne.push("Czerwone krwinki");
+              twojewartosci.push(addZeroes(czerwonekrwinki));
+              rozneodnormy.push("Powyżej normy");
+              obliczenia =  czerwonekrwinki - 6.5;
+              przekroczonawartosc.push("(+ " + addZeroes(obliczenia) + ")")
+            }else{}
+        
+             if( hemoglobina < 13.5){
+              licznik = licznik + 1;
+              negatywne.push("Hemoglobina");
+              twojewartosci.push(addZeroes(hemoglobina));
+              rozneodnormy.push("Poniżej normy");
+              obliczenia = 13.5 - hemoglobina;
+              przekroczonawartosc.push("(- " + addZeroes(obliczenia) + ")");
+            }if( hemoglobina > 18){
+              licznik = licznik + 1;
+              negatywne.push("Hemoglobina");
+              twojewartosci.push(addZeroes(hemoglobina));
+              rozneodnormy.push("Powyżej normy");
+              obliczenia =  hemoglobina - 18;
+              przekroczonawartosc.push("(+ " + addZeroes(obliczenia) + ")");
+            }else{}
+
+              if( hematokryt < 40 ){
+              licznik = licznik + 1;
+              negatywne.push("Hematokryt");
+              twojewartosci.push(addZeroes(hematokryt));
+              rozneodnormy.push("Poniżej normy");
+              obliczenia = 40 - hematokryt;
+              przekroczonawartosc.push("(- " + addZeroes(obliczenia) + ")");
+            }if( hematokryt > 51){
+              licznik = licznik + 1;
+              negatywne.push("Hematokryt");
+              twojewartosci.push(addZeroes(hematokryt));
+              rozneodnormy.push("Powyżej normy");
+              obliczenia = hematokryt - 51;
+              przekroczonawartosc.push("(+ " + addZeroes(obliczenia) + ")");
+            }else{}
+
+               if(limfocyty < 20 ){
+              licznik = licznik + 1;
+              negatywne.push("Limfocyty");
+              twojewartosci.push(addZeroes(limfocyty));
+              rozneodnormy.push("Poniżej normy");
+              obliczenia = 20 - limfocyty;
+              przekroczonawartosc.push("(- " + addZeroes(obliczenia) + ")");
+            }if(limfocyty > 45){
+              licznik = licznik + 1;
+              negatywne.push("Limfocyty");
+              twojewartosci.push(addZeroes(limfocyty));
+              rozneodnormy.push("Powyżej normy");
+              obliczenia = limfocyty - 45;
+              przekroczonawartosc.push("(+ " + addZeroes(obliczenia) + ")");
+            }else{}
+
+             if( monocyty  < 0.3 ){
+              licznik = licznik + 1;
+              negatywne.push("Monocyty");
+              twojewartosci.push(addZeroes(monocyty));
+              rozneodnormy.push("Poniżej normy");
+              obliczenia = 0.3 - monocyty;
+              przekroczonawartosc.push("(- " + addZeroes(obliczenia) + ")");
+            }if( monocyty > 0.8){
+              licznik = licznik + 1;
+              negatywne.push("Monocyty");
+              twojewartosci.push(addZeroes(monocyty));
+              rozneodnormy.push("Powyżej normy");
+              obliczenia = monocyty - 0.8;
+              przekroczonawartosc.push("(+ " + addZeroes(obliczenia) + ")");
+            }else{}
+
+              if( mcv  < 80 ){
+              licznik = licznik + 1;
+              negatywne.push("MCV");
+              twojewartosci.push(addZeroes(mcv));
+              rozneodnormy.push("Poniżej normy");
+              obliczenia = 80 - mcv;
+              przekroczonawartosc.push("(- " + addZeroes(obliczenia) + ")");
+            }if( mcv > 97){
+              licznik = licznik + 1;
+              negatywne.push("MCV");
+              twojewartosci.push(addZeroes(mcv));
+              rozneodnormy.push("Powyżej normy");
+              obliczenia = mcv - 97;
+              przekroczonawartosc.push("(+ " + addZeroes(obliczenia) + ")");
+            }else{}
+
+
+             if( mch < 26 ){
+              licznik = licznik + 1;
+              negatywne.push("MCH");
+              twojewartosci.push(addZeroes(mch));
+              rozneodnormy.push("Poniżej normy");
+              obliczenia = 26 - mch;
+              przekroczonawartosc.push("(- " + addZeroes(obliczenia) + ")");
+            }if( mch > 32){
+              licznik = licznik + 1;
+              negatywne.push("MCH");
+              twojewartosci.push(addZeroes(mch));
+              rozneodnormy.push("Powyżej normy");
+              obliczenia = mch - 32;
+              przekroczonawartosc.push("(+ " + addZeroes(obliczenia) + ")");
+            }else{}
+
+               if(mchc < 31 ){
+              licznik = licznik + 1;
+              negatywne.push("MCHC");
+              twojewartosci.push(addZeroes(mchc));
+              rozneodnormy.push("Poniżej normy");
+              obliczenia = 31 - mchc;
+              przekroczonawartosc.push("(- " + addZeroes(obliczenia) + ")");
+            }if( mchc > 36){
+              licznik = licznik + 1;
+              negatywne.push("MCHC");
+              twojewartosci.push(addZeroes(mchc));
+              rozneodnormy.push("Powyżej normy");
+              obliczenia = mchc - 36;
+              przekroczonawartosc.push("(+ " + addZeroes(obliczenia) + ")");
+            }else{}
+
+            if( plytkikrwi < 140){
+              licznik = licznik + 1;
+              negatywne.push("Płytki krwi");
+              twojewartosci.push(addZeroes(plytkikrwi));
+              rozneodnormy.push("Poniżej normy");
+              obliczenia = 140 - plytkikrwi;
+              przekroczonawartosc.push("(- " + addZeroes(obliczenia) + ")");
+            }if( plytkikrwi > 400){
+              licznik = licznik + 1;
+              negatywne.push("Płytki krwi");
+              twojewartosci.push(addZeroes(plytkikrwi));
+              rozneodnormy.push("Powyżej normy");
+              obliczenia = plytkikrwi - 400;
+              przekroczonawartosc.push("(+ " + addZeroes(obliczenia) + ")");
+            }else{}
+          
+            if( ob < 3){
+              licznik = licznik + 1;
+              negatywne.push("OB");
+              twojewartosci.push(addZeroes(ob));
+              rozneodnormy.push("Poniżej normy");
+              obliczenia = 3 - ob;
+              przekroczonawartosc.push("(- " + addZeroes(obliczenia) + ")");
+            }if( ob > 8){
+              licznik = licznik + 1;
+              negatywne.push("OB");
+              twojewartosci.push(addZeroes(ob));
+              rozneodnormy.push("Powyżej normy");
+              obliczenia = ob - 8;
+              przekroczonawartosc.push("(+ " + addZeroes(obliczenia) + ")");
+            }else{}
+
+            if( glukoza < 70){
+              licznik = licznik + 1;
+              negatywne.push("Glukoza");
+              twojewartosci.push(addZeroes(glukoza));
+              rozneodnormy.push("Poniżej normy");
+              obliczenia = 70 - glukoza;
+              przekroczonawartosc.push("(- " + addZeroes(obliczenia) + ")");
+            }if( glukoza > 99){
+              licznik = licznik + 1;
+              negatywne.push("Glukoza");
+              twojewartosci.push(addZeroes(glukoza));
+              rozneodnormy.push("Powyżej normy");
+              obliczenia = glukoza - 99;
+              przekroczonawartosc.push("(+ " + addZeroes(obliczenia) + ")");
+            }else{}
+
+              if( cholesterol < 170){
+              licznik = licznik + 1;
+              negatywne.push("Cholesterol");
+              twojewartosci.push(addZeroes(cholesterol));
+              rozneodnormy.push("Poniżej normy");
+              obliczenia = 170 - cholesterol;
+              przekroczonawartosc.push("(- " + addZeroes(obliczenia) + ")");
+            }if( cholesterol > 199){
+              licznik = licznik + 1;
+              negatywne.push("Cholesterol");
+              twojewartosci.push(addZeroes(cholesterol));
+              rozneodnormy.push("Powyżej normy");
+              obliczenia = cholesterol - 199;
+              przekroczonawartosc.push("(+ " + addZeroes(obliczenia) + ")");
+            }else{}
+
+            if( tsh < 0.32){
+              licznik = licznik + 1;
+              negatywne.push("TSH");
+              twojewartosci.push(addZeroes(tsh));
+              rozneodnormy.push("Poniżej normy");
+              obliczenia = 0.32 - tsh;
+              przekroczonawartosc.push("(- " + addZeroes(obliczenia) + ")");
+            }if( tsh > 5.0){
+              licznik = licznik + 1;
+              negatywne.push("TSH");
+              twojewartosci.push(addZeroes(tsh));
+              rozneodnormy.push("Powyżej normy");
+              obliczenia = tsh - 5;
+              przekroczonawartosc.push("(+ " + addZeroes(obliczenia) + ")");
+            }else{}
+
+            if( alat < 5){
+              licznik = licznik + 1;
+              negatywne.push("ALAT");
+              twojewartosci.push(addZeroes(alat));
+              rozneodnormy.push("Poniżej normy");
+              obliczenia = 5 - alat;
+              przekroczonawartosc.push("(- " + addZeroes(obliczenia) + ")");
+            }if( alat > 40){
+              licznik = licznik + 1;
+              negatywne.push("ALAT");
+              twojewartosci.push(addZeroes(alat));
+              rozneodnormy.push("Powyżej normy");
+              obliczenia = alat - 40;
+              przekroczonawartosc.push("(+ " + addZeroes(obliczenia) + ")");
+            }else{}
+
+            if( aspat < 8){
+              licznik = licznik + 1;
+              negatywne.push("AspAT");
+              twojewartosci.push(addZeroes(aspat));
+              rozneodnormy.push("Poniżej normy");
+              obliczenia = 8 - aspat;
+              przekroczonawartosc.push("(- " + addZeroes(obliczenia) + ")");
+            }if( aspat > 45){
+              licznik = licznik + 1;
+              negatywne.push("AspAT");
+              twojewartosci.push(addZeroes(aspat));
+              rozneodnormy.push("Powyżej normy");
+              obliczenia =  aspat - 45;
+              przekroczonawartosc.push("(+ " + addZeroes(obliczenia) + ")");
+            }else{}
+
+            if( potas < 3.5 ){
+              licznik = licznik + 1;
+              negatywne.push("Potas");
+              twojewartosci.push(addZeroes(potas));
+              rozneodnormy.push("Poniżej normy");
+              obliczenia = 3.5 - potas;
+              przekroczonawartosc.push("(- " + addZeroes(obliczenia) + ")");
+            }if( potas > 5.5){
+              licznik = licznik + 1;
+              negatywne.push("Potas");
+              twojewartosci.push(addZeroes(potas));
+              rozneodnormy.push("Powyżej normy");
+              obliczenia = potas - 5.5;
+              przekroczonawartosc.push("(+ " + addZeroes(obliczenia) + ")");
+            }else{}
+
+            if( sod < 135 ){
+              licznik = licznik + 1;
+              negatywne.push("Sód");
+              twojewartosci.push(addZeroes(sod));
+              rozneodnormy.push("Poniżej normy");
+              obliczenia = 135 - sod;
+              przekroczonawartosc.push("(- " + addZeroes(obliczenia) + ")");
+            }if( sod > 145){
+              licznik = licznik + 1;
+              negatywne.push("Sód");
+              twojewartosci.push(addZeroes(sod));
+              rozneodnormy.push("Powyżej normy");
+              obliczenia =  sod - 145 ;
+              przekroczonawartosc.push("(+ " + addZeroes(obliczenia) + ")");
+            }else{}
+
+              if( magnez < 0.65 ){
+              licznik = licznik + 1;
+              negatywne.push("Magnez");
+              twojewartosci.push(addZeroes(magnez));
+              rozneodnormy.push("Poniżej normy");
+              obliczenia = 0.65 - magnez;
+              przekroczonawartosc.push("(- " + addZeroes(obliczenia) + ")");
+            }if( magnez > 1.2){
+              licznik = licznik + 1;
+              negatywne.push("Magnez");
+              twojewartosci.push(addZeroes(magnez));
+              rozneodnormy.push("Powyżej normy");
+              obliczenia =  magnez - 1.2;
+              przekroczonawartosc.push("(+ " + addZeroes(obliczenia) + ")");
+            }else{}
+
+             if( wapn < 2.25 ){
+              licznik = licznik + 1;
+              negatywne.push("Wapń");
+              twojewartosci.push(addZeroes(wapn));
+              rozneodnormy.push("Poniżej normy");
+              obliczenia = 2.25 - wapn;
+              przekroczonawartosc.push("(- " + addZeroes(obliczenia) + ")");
+            }if( wapn > 2.75){
+              licznik = licznik + 1;
+              negatywne.push("Wapń");
+              twojewartosci.push(addZeroes(wapn));
+              rozneodnormy.push("Powyżej normy");
+              obliczenia =  wapn - 2.75;
+              przekroczonawartosc.push("(+ " + addZeroes(obliczenia) + ")");
+            }else{}
+             
+            if( zelazo < 50 ){
+              licznik = licznik + 1;
+              negatywne.push("Żelazo");
+              twojewartosci.push(addZeroes(zelazo));
+              rozneodnormy.push("Poniżej normy");
+              obliczenia = 50 - zelazo;
+              przekroczonawartosc.push("(- " + addZeroes(obliczenia) + ")");
+            }if( zelazo > 158){
+              licznik = licznik + 1;
+              negatywne.push("Żelazo");
+              twojewartosci.push(addZeroes(zelazo));
+              rozneodnormy.push("Powyżej normy");
+              obliczenia =  zelazo - 158;
+              przekroczonawartosc.push("(+ " + addZeroes(obliczenia) + ")");
+            }else{}
+
+            if( witaminab < 148 ){
+              licznik = licznik + 1;
+              negatywne.push("Witamina B12");
+              twojewartosci.push(addZeroes(witaminab));
+              rozneodnormy.push("Poniżej normy");
+              obliczenia = 148 - witaminab;
+              przekroczonawartosc.push("(- " + addZeroes(obliczenia) + ")");
+            }if( witaminab > 740){
+              licznik = licznik + 1;
+              negatywne.push("Witamina B12");
+              twojewartosci.push(addZeroes(witaminab));
+              rozneodnormy.push("Powyżej normy");
+              obliczenia = witaminab - 740;
+              przekroczonawartosc.push("(+ " + addZeroes(obliczenia) + ")");
+            }else{}
+
+            // licznik = negatywne.length;
+            
+console.log(licznik);
+            for(var i=1; i < licznik; i ++){
+
+
+
+$( "#homewyswietlanie" ).append( '  <div class="first-box" id="rest-box"> \
+        <div class="rest-box-content"> \
+          <div class="circle"  style="" id="znakwskaznika">G</div> \
+        </div> \
+         \
+        <div class="container-element-box"> \
+          <div style="color: #3A4759;" id="rodzaj">Glukoza</div>  \
+          <span class="value-element-mark">wartość: \
+           <span style="color:#E36E7B" id="rozneodnormy">powyżej normy</span> \
+         </span> \
+        </div> \
+ \
+       <div class="value-element-inner"> \
+        <div style="color: #E36E7B;" ><span id="wartoscwskaznika">115,00</span>  \
+          <span style="font-size: 10px; color: #47A0B5" id="przekroczonawartosc">(+12,00)</span> \
+        </div> \
+         <span class="element-date">Kwi. 24</span> \
+       </div> \
+      </div>   ');
+
+                      var id = document.getElementById('rodzaj');
+                      var idwartosc = document.getElementById('wartoscwskaznika');
+                      var idnorma = document.getElementById('rozneodnormy')
+                      var idznak = document.getElementById('znakwskaznika');
+                      var idprzekroczonawartosc = document.getElementById('przekroczonawartosc')
+                      id.setAttribute('id', "rodzaj" + i); 
+                      id.innerHTML = negatywne[i-1];
+                      idwartosc.setAttribute('id', 'wartoscwskaznika ' + i);
+                      idwartosc.innerHTML = twojewartosci[i-1];
+                      idnorma.setAttribute('id', 'rozneodnormy ' + i);
+                      idnorma.innerHTML = rozneodnormy[i-1];
+                      idznak.setAttribute('id', 'znakwskaznika ' + i);
+                      idznak.innerHTML = negatywne[i-1].charAt(0);
+                      idprzekroczonawartosc.setAttribute('id', 'przekroczonawartosc ' + i);
+                      idprzekroczonawartosc.innerHTML = przekroczonawartosc[i-1];
+                      
+
+            }
+
+            for(var j=1; j <=licznik; j = j + 2){
+
+              var idznak = document.getElementById('znakwskaznika ' + j);
+              idznak.style.backgroundColor = "#4298b7";
+            }
+        }); 
+     });
+  
+
+
+
+    }else{
+
+    }
+
+        });
+
+
+
+
+     }
+
+     homePage();
+
+    // function wyswietlPrawidlowe () {
+      
+    //   $('.Nierawidłowa').hide();
+    //   $('.Prawidłowa').show();
+      
+    // }
+
+
+    $(document).ready(function(){
+    $("#prawidłowebadania").click(function(){
+        $("#prawidłowebadania").css("font-weight", 600);
+        $("#nieprawidłowebadania").css("font-weight", 300);
+        $("#wszystkiebadania").css("font-weight", 300);
+        $(".Nieprawidłowa").hide();
+        $(".Prawidłowa").show();
+    });
+    $("#nieprawidłowebadania").click(function(){
+        $("#prawidłowebadania").css("font-weight", 300);
+        $("#nieprawidłowebadania").css("font-weight",600);
+        $("#wszystkiebadania").css("font-weight", 300);
+        $(".Prawidłowa").hide();
+        $(".Nieprawidłowa").show();
+    });
+
+    $("#wszystkiebadania").click(function(){
+        $("#prawidłowebadania").css("font-weight", 300);
+        $("#nieprawidłowebadania").css("font-weight", 300);
+        $("#wszystkiebadania").css("font-weight", 600);
+        $(".Prawidłowa").show();
+        $(".Nieprawidłowa").show();
+    });
+
+});
+
+    </script>
+    <script src="dist/js/framework7.js"></script>
+        <!-- <script src="js/my-app.js"></script> -->
+</body>
+ 
+</html>

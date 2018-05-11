@@ -1,0 +1,132 @@
+
+<html>
+    <head>
+        <title>Title</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<script src="js/pgb.js"></script>
+		<script src="cordova.js"></script>
+		<!-- UIkit CSS -->
+		<link rel="stylesheet" href="css/uikit.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;subset=latin-ext" rel="stylesheet">
+
+		<!-- UIkit JS -->
+     <script src="js/jquery-2.1.4.min.js"></script>
+		<script src="js/uikit.min.js"></script>
+		<script src="js/uikit-icons.min.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-auth.js"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+    	<script type="text/javascript">
+          
+          firebase.initializeApp({
+            apiKey: "AIzaSyDNJfmduRSncwtKmw3wX69KWz36gNgWj9Y",
+            authDomain: "health-care-71096.firebaseapp.com",
+            databaseURL: "https://health-care-71096.firebaseio.com",
+            projectId: "health-care-71096",
+            storageBucket: "",
+            messagingSenderId: "278088023798"
+        });
+        </script>
+
+
+	</head>
+	<body onload="myFunction()" style="margin:0;">
+     
+       <div uk-spinner="ratio: 3" id="loader"></div>
+ 
+<div style="padding-bottom: 50px; display:none;" id="myDiv" class="animate-bottom">
+<!-- <div class="secound-page-background">
+         <div style=" display: inline-block; width: 25%; height: 10%; "><a href="#badania"><i class="fas fa-angle-left" style="padding-left: 40px; padding-top: 20px;font-size: 24px; color: white;"></i></a></div
+          ><div style=" display: inline-block;width: 50%; height: 10%; margin: 0 auto; text-align: center; padding-bottom: 20px; font-size: 24px; text-transform: none; color:white; "><span id="data_change">Moje badanie</span></div>
+      </div> -->
+
+      <nav class="uk-navbar-container " uk-navbar="mode: click" style="box-shadow: 0px 9px 24px -5px rgba(0,0,0,0.28); background-color: #259BF3;">
+    
+
+        <ul class="uk-navbar-nav" style="width: 100%; padding: 10px 0;">
+            <li style="width: 10%">
+                <a href="badania.html" style="display: block; height: auto;"><span class="uk-icon-link" uk-icon="icon: arrow-left; ratio: 1.75" style="padding-left: 15px; color: white;"></span></a>
+            </li>
+            <li id="data_change" style="width: 80%; text-align: center; font-size: 22px; color: white; font-weight: 500"> Dodaj badanie </li>
+        </ul>
+
+    
+</nav>
+    
+      
+     
+      <div id="wyswietlanie" class="ocena_badania">
+        <div class="ocena_badania_text">Ogólna ocena badania</div>        
+        <img src="img/dobrze.png" id="testbadanie"></img>        
+      </div>
+
+      <div style="margin-top: 20px;">
+        <table width="100%" >
+
+          <tr>
+
+            <td style="width: 50%; border: 1px solid #eaeaea; border-bottom: 0px; border-left: 0px">
+              <p class="text_table_bold">Prawidłowe 
+                <br>
+                <span style="font-weight: 400; color: #B2B2B2; font-size: 12px;">wskaźników</span>
+              </p>
+            </td>
+            
+            <td style="width: 50%; border: 1px solid #eaeaea; border-bottom: 0px; border-left: 0px; border-right: 0px;">
+              <p class="text_table_bold">Nieprawidłowe
+                <br>
+                <span style="font-weight: 400; color: #B2B2B2; font-size: 12px;">wskaźników</span>
+              </p>
+            </td>
+
+          </tr>
+
+          <tr style="text-align: center;">
+            <td style=" width: 50%; border: 1px solid #eaeaea; border-top: 0px; border-left: 0px;">
+              <div class="conteiner_number_table" id="correctValue"> 12 </div>
+            </td>
+            <td style=" width: 50%; border: 1px solid #eaeaea; border-top: 0px; border-left: 0px; border-right: 0px;">
+              <div class="conteiner_number_table" style="background-color: #D4505E" id="IncorrectValue"> 12 </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="container_szczegoly">
+        <p class="container_szczegoly_inner">Szczegóły badania</p>
+      </div>
+        
+
+<div id="szczegolybadaniamain"></div>
+      
+
+
+
+<div class="footer" id="navbar" style="">
+  <nav class="uk-navbar-container" uk-navbar style="">
+    <div class="uk-navbar-center">
+
+        <ul class="uk-navbar-nav" style="">
+            <li><a href="home.html" style="text-transform: none; padding: 0 20px;"> <div style="display: block;"><img src="img/menu/home.png" alt=""><br>Home</div></a></li>
+            <li class="uk-active"><a href="" style="text-transform: none; padding: 0 20px;"><div style="display: block;"><img src="img/menu/badania-active.png" alt=""><br>Badania</div></a></li>
+            <li><a href="dziennik.html" style="text-transform: none; padding: 0 20px;"><div style="display: block;"><img src="img/menu/dziennik.png" alt=""><br>Dziennik</div></a></li>
+            <li><a href="planer.html" style="text-transform: none; padding: 0 20px;"><div style="display: block;"><img src="img/menu/planer.png" alt=""><br>Planer</div></a></li>
+        </ul>
+
+    </div>
+</nav>
+</div>
+
+</div>
+
+
+<script src ="js/min/badaniaadv.min.js"></script>	
+    
+			
+		</div>
+	</body>
+</html>
+

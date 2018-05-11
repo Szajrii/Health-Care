@@ -1,0 +1,124 @@
+<html>
+
+<head>
+  <title>Title</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <script src="js/pgb.js"></script>
+  <script src="cordova.js"></script>
+  <!-- UIkit CSS -->
+  <link rel="stylesheet" href="css/uikit.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;subset=latin-ext" rel="stylesheet">
+  <!-- UIkit JS -->
+  <script src="js/jquery-2.1.4.min.js"></script>
+  <script src="js/uikit.min.js"></script>
+  <script src="js/uikit-icons.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-auth.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+  <script type="text/javascript">
+    firebase.initializeApp({
+                apiKey: "AIzaSyDNJfmduRSncwtKmw3wX69KWz36gNgWj9Y",
+                authDomain: "health-care-71096.firebaseapp.com",
+                databaseURL: "https://health-care-71096.firebaseio.com",
+                projectId: "health-care-71096",
+                storageBucket: "",
+                messagingSenderId: "278088023798"
+            });
+  </script>
+</head>
+
+<body onload="myFunction()" style="margin:0;">
+  <div uk-spinner="ratio: 3" id="loader"></div>
+  <div style="padding-bottom: 100px; display:none;" id="myDiv" class="animate-bottom">
+    <nav class="uk-navbar-container " uk-navbar="mode: click" style="box-shadow: 0px 9px 24px -5px rgba(0,0,0,0.28); background-color: #259BF3;">
+      <ul class="uk-navbar-nav" style="width: 100%; padding: 10px 0;">
+        <li style="width: 10%"></li>
+        <li style="width: 80%; text-align: center; font-size: 22px; color: white; font-weight: 500">Mój profil</li>
+      </ul>
+    </nav>
+    <div class="" style="margin: 0 auto; text-align: center;">
+      <div style="margin: 15px 0 0px 0;">
+        <img src="img/male-profil.png" alt="" id="profilimage">
+      </div>
+      <div class="uk-margin-remove" style="font-size: 18px; font-weight: 600;" id="profilname">Deontay Wilder</div>
+      <div style="font-size: 14px; color: #49AABE; margin-bottom: 10px; " id="profilgender">mężczyzna</div>
+      <div> <a class="uk-button uk-button-default" href="updated-profil.html" style="border-color: #E36E7B; text-transform: uppercase; color: #E36E7B; font-size: 12px;">Zaktualizuj profil</a>
+      </div>
+    </div>
+    <div style="margin-top: 30px;">
+      <ul class="uk-flex-center" uk-tab>
+        <li class="uk-active"><a href="">Podsumowanie</a>
+        </li>
+      </ul>
+    </div>
+    <div class="uk-text-center uk-text-uppercase" style="color: white; padding-bottom:30px;">
+      <div class="uk-flex uk-flex-center">
+        <div class="uk-width-1-1 uk-padding-small" style="background: #FF724A; margin-left: 10px;">
+          <div style="font-size: 20px; font-weight: 700" id="iloscbadan">14</div>
+          <div style="font-size: 11px; font-weight: 500 ">badań</div>
+        </div>
+        <div class="uk-width-1-1 uk-margin-left uk-padding-small" style="background: #515E68; margin-right: 10px;">
+          <div style="font-size: 20px; font-weight: 700" id="iloscpomiarow">14</div>
+          <div style="font-size: 11px; font-weight: 500 ">pomiarów</div>
+        </div>
+      </div>
+      <div class="uk-flex uk-flex-center uk-margin-top">
+        <div class="uk-width-1-1 uk-padding-small" style="background: #02BFC1; margin-left: 10px;">
+          <div style="font-size: 17px; font-weight: 700" id="dataostatniegobadania">2 dni temu</div>
+          <div style="font-size: 11px; font-weight: 500 ">ostatnie badanie</div>
+        </div>
+        <div class="uk-width-1-1 uk-margin-left uk-padding-small" style="background: #1C98D2; margin-right: 10px;">
+          <div style="font-size: 17px; font-weight: 700" id="dataostatniegopomiaru">2 dni temu</div>
+          <div style="font-size: 11px; font-weight: 500 ">ostatni pomiar</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer" id="navbar" style="">
+      <nav class="uk-navbar-container" uk-navbar style="">
+        <div class="uk-navbar-center">
+          <ul class="uk-navbar-nav" style="">
+            <li>
+              <a href="home.html" style="text-transform: none; padding: 0 20px;">
+                <div style="display: block;">
+                  <img src="img/menu/home.png" alt="">
+                  <br>Home</div>
+              </a>
+            </li>
+            <li>
+              <a href="badania.html" style="text-transform: none; padding: 0 20px;">
+                <div style="display: block;">
+                  <img src="img/menu/badania.png" alt="">
+                  <br>Badania</div>
+              </a>
+            </li>
+            <li>
+              <a href="dziennik.html" style="text-transform: none; padding: 0 20px;">
+                <div style="display: block;">
+                  <img src="img/menu/dziennik.png" alt="">
+                  <br>Dziennik</div>
+              </a>
+            </li>
+            <li class="">
+              <a href="planer.html" style="text-transform: none; padding: 0 20px;">
+                <div style="display: block;">
+                  <img src="img/menu/planer.png" alt="">
+                  <br>Planer</div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
+ 
+ 
+<script src="js/min/profil.min.js"></script>  
+   
+           
+        
+    </body>
+</html>

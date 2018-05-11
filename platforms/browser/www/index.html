@@ -1,292 +1,60 @@
-<!DOCTYPE html>
- 
 <html>
     <head>
-      
-        
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
-        <script src="js/jquery-2.1.4.min.js"></script>
-        <link rel="stylesheet" href="css/index.css" />
-        <link href="https://fonts.googleapis.com/css?family=Nunito+Sans" rel="stylesheet">
-        <script src="js/jquery.mobile-1.4.5.min.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
-        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&amp;subset=latin-ext" rel="stylesheet">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
- 
-        <title>Health Care - Twoja aplikacja medyczna</title>
- 
-<style>
- 
- 
-*{
-  font-family: 'Roboto';
- 
-}
- 
-.ui-content{
-text-shadow:none !important;
-position: absolute;
-top: 0;
-right: 0;
-bottom: 0;
-left: 0;
-}
- 
-.Home{
-  text-shadow: none;
-  background-image: url("img/bg.png");
-}
- 
-.main-text-container{
-margin-top: 40%; 
-padding-bottom: 20px;
-}
- 
-.text-container{
-text-align: center;  
-color:white; 
-font-size: 32px; 
-font-weight: 900;
-}
- 
-.line{
-height: 2px; 
-width: 10%; 
-background-color: #D5515F; 
-margin: 0 auto;
-}
- 
-.text-comment{
-  text-align: center;
-  color: white;
-  padding-top: 25px;
-}
- 
-.container-buttons{
-  width:95%;
-  margin: 40% auto 0 auto;
-}
- 
-.button-home-primary{
-  font-size: 12px; 
-  padding: 15px 0 15px 0; 
-  font-weight: 300; 
-  border-radius: 25px; 
-  border: 0; 
-  text-shadow:none !important;
-  background-color: #D5515F !important; 
-  color: white !important;
-}
- 
-#googleLogOut, #googleCheck{
-  border: 1px solid white;
-  background-color: transparent !important;
-}
- 
-.text-terms{
-  text-align: center; 
-  padding-top: 50px; 
-  color: white; 
-  font-size: 8px; 
-  width: 100%;
-}
- 
-.secound-page{
-  min-height:90vh;
-}
- 
-.secound-page-background{
-  background-image: url('img/bg_2.png');
-  width: 100%;
-}
- 
-.container-top-content{
-padding: 12px 0 40px 0;
-}
- 
-.name-user-top{
-text-align: center;
-color: white;
-font-size: 22px;
-text-transform: none;
-}
- 
-.first-box{
-  width: 80%;
-  height: 75px;
-  background-color: white;
-  border-radius: 20px;
-  margin-left: 10%; 
-  margin-top: -25px;
-  box-shadow: 0px 5px 12px 0px  rgb(0, 0, 0, 0.05);
-}
-.first-box-content{
-  text-align: center; 
-  position: relative;  
-  float: left;  
-  top: 50%;  
-  left: 50%;  
-  transform: translate(-50%, -50%);
-  display: inline-block;
- 
-}
- 
-.first-box-date{
-  color: #47A0B5;
-  font-size: 24px;
-  text-transform: none !important;
-  font-weight: 900;
-}
- 
-.first-box-comment{
-  font-size: 10px;
-  color: #A6B1C0;
- 
-}
-#rest-box{
-  height: 60px;
-  margin-top:30px;
-}
- 
- 
- 
- 
-</style>
+        <title>Title</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <script src="js/pgb.js"></script>
+        <script src="cordova.js"></script>
+        <!-- UIkit CSS -->
+        <link rel="stylesheet" href="css/uikit.min.css" />
+        <link rel="stylesheet" href="css/style.css" />
+
+        <!-- UIkit JS -->
+        <script src="js/uikit.min.js"></script>
+        <script src="js/uikit-icons.min.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;subset=latin-ext" rel="stylesheet">
     </head>
- 
-<body>
-  <div data-role="page" class="Home">
-    <div data-role="header">
-        <h1>HealCare</h1>
+    <body onload="init()">
+
+    
+    <div class="uk-text-center" style="font-size: 35px; font-weight: 700; color:#4CC0D3; padding: 15px 0;">
+        Health<span style="color: #E36E7B">Care</span>
     </div>
- 
-    <div role="main" class="ui-content">
-        <div class="main-text-container">
-            <div class="text-container">
-              Health<span style="color: #64CFE8;">Care</span>
-            </div>
-        </div>        
- 
-        <div class="line"></div>
- 
-        <div class="text-comment">
-          Lorem ipsum doler van susad carno.
-        </div>
- 
- 
-        <div class="container-buttons">       
-                <a href="#two" class="ui-btn  button-home-primary" id="googleLogIn" >Connect with Facebook</a>
-                <a href="#two" class="ui-btn  button-home-primary" id="googleLogOut" >Connect with Google</a>
-                <a href="#two" class="ui-btn  button-home-primary" id="googleCheck" >Check</a>
-                
-                <div class="text-terms">
-                  By continuing, you agree to our Terms & Conditions
+
+    <div uk-slideshow="animation: fade; autoplay: true; autoplay-interval: 5000; pause-on-hover: true" style="margin-top: 20px;">
+        <ul class="uk-slideshow-items" style="padding-bottom: 160px;">
+            <li>
+                <div style="text-align: center;">
+                    <img src="img/1.png" alt="">
+                    <div style="font-weight: 500; font-size: 21px;">Zbadaj swoją krew</div>
+                    <div style="margin: 10px  20px 0 20px; font-size: 14px; ">Dodawaj wyniki swoich badań morfologicznych, aby móc śledzić stan swojego zdrowia.</div>
                 </div>
-        </div>
- 
-      <div data-role="footer" data-position="fixed">
-        <h4>Page Footer</h4>
-      </div>
-    </div>
-  </div>
- 
-<div data-role="page" id="two">
- 
- 
- 
-    <div role="main" class="ui-content secound-page">
-      <div class="secound-page-background">
-          <div class="container-top-content"> 
-          <div> <img src="img/Wojtek.png" alt="" width="40%" height="auto" style="margin-left: 30%;"></div>
-          <div class="name-user-top">Marcin Wojtas</div>
-          </div>          
-      </div>
-      <div class="first-box">
+            </li>
+            <li>
+                <div style="text-align: center;">
+                    <img src="img/2.png" alt="">
+                    <div style="font-weight: 500; font-size: 21px; ">Analizuj swoje badania</div>
+                    <div style="margin: 10px  20px 0 20px; font-size: 14px; ">Aplikacja Health Care zinterpretuje Twoje wyniki oraz wskaże listę zaleceń.</div>
+                </div>
+            </li>
+            <li>
+                <div style="text-align: center;">
+                    <img src="img/3.png" alt="">
+                    <div style="font-weight: 500; font-size: 21px; ">Prowadź swój dziennik</div>
+                    <div style="margin: 10px  20px 0 20px; font-size: 14px; ">Wprowadzaj wyniki pomiarów ciśnienia tętniczego oraz oglądaj swoje postępy na wykresie</div>
+                </div>
+            </li>
+        </ul>
         
-        <div class="first-box-content">
-          <div class="first-box-date">24 kwiecień</div>
-          <div class="first-box-comment">Twoje ostatnie badanie</div>
-        </div>
- 
-        <div style=" position: relative; transform: translate(-50%, -50%);float: left; top: 50%; left: 40%; width: 5%; height: auto;"><img src="img/arrow-right.svg" alt=""></div>
- 
-      </div> 
- 
-      <div class="first-box" id="rest-box"></div>     
- 
-      <div class="first-box" id="rest-box"></div>
- 
-      <div class="first-box" id="rest-box" ></div>
- 
- 
- 
+        <ul class="uk-slideshow-nav uk-dotnav uk-flex-center uk-margin" ></ul>
     </div>
- 
- 
- 
-    <div data-role="footer" data-position="fixed">
-        <h4>Page Footer</h4>
+
+<div style="margin-top: 50px;">
+    <div style="margin: 0 auto; text-align: center;">
+        <a class="uk-button uk-button-primary uk-width-1-2" href="page2.html">Get Started</a>
     </div>
 </div>
-<script>
-        // Initialize Firebase
-        firebase.initializeApp({
-            apiKey: "AIzaSyDNJfmduRSncwtKmw3wX69KWz36gNgWj9Y",
-            authDomain: "health-care-71096.firebaseapp.com",
-            databaseURL: "https://health-care-71096.firebaseio.com",
-            projectId: "health-care-71096",
-            storageBucket: "",
-            messagingSenderId: "278088023798"
-        });
-        const provider = new firebase.auth.GoogleAuthProvider();
-        const hLogInfo = document.querySelector('#logInfo');
-        document.querySelector('#googleLogIn').addEventListener('click', function () {
-            firebase.auth().signInWithPopup(provider).then(function (result) {
-                // This gives you a Google Access Token. You can use it to access the Google API.
-                var token = result.credential.accessToken;
-                // The signed-in user info.
-                var user = result.user;
-                console.log(user);
-                // ...
-            }).catch(function (error) {
-                // Handle Errors here.
-                var errorCode = error.code;
-                var errorMessage = error.message;
-                // The email of the user's account used.
-                var email = error.email;
-                // The firebase.auth.AuthCredential type that was used.
-                var credential = error.credential;
-                console.log(error);
-                // ...
-            });
-        });
-        document.querySelector('#googleLogOut').addEventListener('click', function () {
-            firebase.auth().signOut().then(function () {
-                // Sign-out successful.
-            }).catch(function (error) {
-                // An error happened.
-            });
-        });
-        firebase.auth().onAuthStateChanged(function (user) {
-            if (user) {
-                hLogInfo.textContent = "Zalogowany";
-                console.log(user);
-            } else {
-                hLogInfo.textContent = "Niezalogowany";
-            }
-        });
-        document.querySelector('#googleCheck').addEventListener('click', function () {
-            var user = firebase.auth().currentUser;
-            if (user) {
-                alert("Jestem zalogowany, hy hy.");
-            } else {
-                alert("Nie jestem zalogowany, wut.");
-            }
-        });
-    </script>
-</body>
- 
+
+    </body>
 </html>

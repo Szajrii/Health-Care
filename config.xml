@@ -1,16 +1,15 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="io.cordova.hellocordova" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>Health Care</name>
-
-    <icon src="www/img/ikona.png" />
-
+<widget id="health.care" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Health Care1</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+       Aplikacja Medyczna
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+    <author email="dev@healthcare.com" href="https://github.com/Szajrii/Health-Care">
+        TeamWafle.jpg
     </author>
+    <preference name="AndroidLaunchMode" value="singleTask" />
     <content src="index.html" />
+     <icon src="www/img/ikona.png" />
     <plugin name="cordova-plugin-whitelist" spec="1" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
@@ -26,4 +25,15 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
+    <plugin name="cordova-plugin-buildinfo" spec="^2.0.1" />
+    <plugin name="cordova-plugin-inappbrowser" spec="^3.0.0" />
+    <universal-links>
+        <host name="https://t9x84.app.goo.gl/XktS" scheme="https" />
+        <host name="health-care-71096.firebaseapp.com" scheme="https">
+            <path url="/__/auth/callback" />
+        </host>
+    </universal-links>
+    <plugin name="cordova-plugin-browsertab" spec="^0.2.0" />
+    <plugin name="cordova-universal-links-plugin" spec="https://github.com/walteram/cordova-universal-links-plugin" />
+    <engine name="android" spec="^7.0.0" />
 </widget>
