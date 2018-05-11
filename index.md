@@ -8,9 +8,9 @@
 <p> Dzięki aplikacji HealthCare użytkownik może prowadzić swój osobisty dziennik pomiar&oacute;w ciśnienia krwi oraz poziom glukozy. Użytkownik ma możliwość analizowania na wykresie wprowadzonych przez siebie wartości w wybranym okresie.</p>
 <p> Dodatkową funkcjonalnością aplikacji jest planer badań profilaktycznych, spersonalizowanych pod konkretnego użytkownika - względem wieku oraz płci.</p>
 <p><strong>3. Link do systemu zarządzania projektem</strong></p>
-<a href="https://trello.com/b/2Nr6VJG6/health-care">https://trello.com/b/2Nr6VJG6/health-care</a>
+<p><a href="https://trello.com/b/2Nr6VJG6/health-care">https://trello.com/b/2Nr6VJG6/health-care</a></p>
 <p><strong>4. Prototyp projektu</strong></p>
-<a href="https://xd.adobe.com/view/2d9159fb-d03b-408d-8986-a49be029cbae/screen/6bb91080-a940-410e-adbc-5c90a4ff8787/Planer">Prototyp</a>
+</p><a href="https://xd.adobe.com/view/2d9159fb-d03b-408d-8986-a49be029cbae/screen/6bb91080-a940-410e-adbc-5c90a4ff8787/Planer">Prototyp</a></p>
 <p><strong>5. Raport prac każdego członka zespołu</strong></p>
 <a href="https://docs.google.com/spreadsheets/d/1qOhok0YBvTGgU9gzjvHNot3KdCo1VNadxMJoIbUK3xI/edit?usp=sharing">Raport</a>
 
