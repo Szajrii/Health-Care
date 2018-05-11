@@ -1,98 +1,97 @@
-
 <html>
-    <head>
-        <title>Title</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-		<script src="js/pgb.js"></script>
-		<script src="cordova.js"></script>
-		<!-- UIkit CSS -->
-		<link rel="stylesheet" href="css/uikit.min.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;subset=latin-ext" rel="stylesheet">
 
-		<!-- UIkit JS -->
-     <script src="js/jquery-2.1.4.min.js"></script>
-		<script src="js/uikit.min.js"></script>
-		<script src="js/uikit-icons.min.js"></script>
-		<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-database.js"></script>
-        <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-auth.js"></script>
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
-    	<script type="text/javascript">
-          
-          firebase.initializeApp({
-            apiKey: "AIzaSyDNJfmduRSncwtKmw3wX69KWz36gNgWj9Y",
-            authDomain: "health-care-71096.firebaseapp.com",
-            databaseURL: "https://health-care-71096.firebaseio.com",
-            projectId: "health-care-71096",
-            storageBucket: "",
-            messagingSenderId: "278088023798"
-        });
-        </script>
+<head>
+  <title>Title</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <script src="js/pgb.js"></script>
+  <script src="cordova.js"></script>
+  <!-- UIkit CSS -->
+  <link rel="stylesheet" href="css/uikit.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;subset=latin-ext" rel="stylesheet">
+  <!-- UIkit JS -->
+  <script src="js/jquery-2.1.4.min.js"></script>
+  <script src="js/uikit.min.js"></script>
+  <script src="js/uikit-icons.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-auth.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+  <script type="text/javascript">
+    firebase.initializeApp({
+                apiKey: "AIzaSyDNJfmduRSncwtKmw3wX69KWz36gNgWj9Y",
+                authDomain: "health-care-71096.firebaseapp.com",
+                databaseURL: "https://health-care-71096.firebaseio.com",
+                projectId: "health-care-71096",
+                storageBucket: "",
+                messagingSenderId: "278088023798"
+            });
+  </script>
+</head>
 
-
-	</head>
-	<body onload="myFunction()" style="margin:0;">
-     
-       <div uk-spinner="ratio: 3" id="loader"></div>
- 
-<div style="padding-bottom: 50px; display:none;" id="myDiv" class="animate-bottom">
-<nav class="uk-navbar-container " uk-navbar="mode: click" style="box-shadow: 0px 9px 24px -5px rgba(0,0,0,0.28); background-color: #259BF3;">
-    
-
-        <ul class="uk-navbar-nav" style="width: 100%; padding: 10px 0;">
-            <li style="width: 10%"></li>
-            <li style="width: 80%; text-align: center; font-size: 22px; color: white; font-weight: 500">Mój planner</li>
-        </ul>
-
-    
-</nav>
- 
-
-<div class="uk-alert-primary uk-flex  uk-flex-center" uk-alert>
-    <a class="uk-alert-close" uk-close></a>
-    <p style="font-size: 12px;">Badania okresowe dostarczają lekarzowi wielu informacji, które służą sprawdzeniu czy nie rozwijają się jakieś choroby lub nie pojawiły się ich pierwsze niepokojące objawy</p>
-</div>
-
-<div class="uk-card uk-card-default uk-card-body uk-width-1-2@m typewriter" style="margin: 20px 5%; width: 90%; text-align: center;">
-  <div style="font-size: 20px; font-weight: 600;" id="planerdisplayname"> Witaj Monika! </div>
-    <hr class="uk-divider-small">
-    <div>
-      <img src="img/male-planer.png" alt="" id="planerimg">
+<body onload="myFunction()" style="margin:0;">
+  <div uk-spinner="ratio: 3" id="loader"></div>
+  <div style="padding-bottom: 50px; display:none;" id="myDiv" class="animate-bottom">
+    <nav class="uk-navbar-container " uk-navbar="mode: click" style="box-shadow: 0px 9px 24px -5px rgba(0,0,0,0.28); background-color: #259BF3;">
+      <ul class="uk-navbar-nav" style="width: 100%; padding: 10px 0;">
+        <li style="width: 10%"></li>
+        <li style="width: 80%; text-align: center; font-size: 22px; color: white; font-weight: 500">Mój planner</li>
+      </ul>
+    </nav>
+    <div class="uk-alert-primary uk-flex  uk-flex-center" uk-alert>
+      <a class="uk-alert-close" uk-close></a>
+      <p style="font-size: 12px;">Badania okresowe dostarczają lekarzowi wielu informacji, które służą sprawdzeniu czy nie rozwijają się jakieś choroby lub nie pojawiły się ich pierwsze niepokojące objawy</p>
     </div>
-
-    <p style="font-size: 12px;">Poniżej znajduję się spersonalizowana specjalnie dla Ciebie listabadań profilaktycznych, uwzględniając przy tym wiek jak i płeć! </p>
-
-    <a href="#target1" class="uk-button uk-button-default uk-width-1-1" type="button" uk-toggle="target: .toggle" style="font-size: 13px; text-transform: none;" uk-scroll id="tooglebutton">Zobacz liste</a>
-</div>
-
-<div style="margin: 20px 5%; width: 90%;" class="toggle" id="target1" hidden>
-<dl class="uk-description-list uk-description-list-divider" id="planer-lista" >
-
-</dl>
-
-</div>
-
-
-
-<div class="footer" id="navbar" style="">
-  <nav class="uk-navbar-container" uk-navbar style="">
-    <div class="uk-navbar-center">
-
-        <ul class="uk-navbar-nav" style="" >
-            <li><a href="home.html" style="text-transform: none; padding: 0 20px;"> <div style="display: block;"><img src="img/menu/home.png" alt=""><br>Home</div></a></li>
-            <li><a href="badania.html" style="text-transform: none; padding: 0 20px;"><div style="display: block;"><img src="img/menu/badania.png" alt=""><br>Badania</div></a></li>
-            <li><a href="dziennik.html" style="text-transform: none; padding: 0 20px;"><div style="display: block;"><img src="img/menu/dziennik.png" alt=""><br>Dziennik</div></a></li>
-            <li class="uk-active"><a href="" style="text-transform: none; padding: 0 20px;"><div style="display: block;"><img src="img/menu/planer-active.png" alt=""><br>Planer</div></a></li>
-        </ul>
-
+    <div class="uk-card uk-card-default uk-card-body uk-width-1-2@m typewriter" style="margin: 20px 5%; width: 90%; text-align: center;">
+      <div style="font-size: 20px; font-weight: 600;" id="planerdisplayname">Witaj Monika!</div>
+      <hr class="uk-divider-small">
+      <div>
+        <img src="img/male-planer.png" alt="" id="planerimg">
+      </div>
+      <p style="font-size: 12px;">Poniżej znajduję się spersonalizowana specjalnie dla Ciebie listabadań profilaktycznych, uwzględniając przy tym wiek jak i płeć!</p> <a href="#target1" class="uk-button uk-button-default uk-width-1-1" type="button" uk-toggle="target: .toggle" style="font-size: 13px; text-transform: none;" uk-scroll id="tooglebutton">Zobacz liste</a>
     </div>
-</nav>
-</div>
-
-</div>
+    <div style="margin: 20px 5%; width: 90%;" class="toggle" id="target1" hidden>
+      <dl class="uk-description-list uk-description-list-divider" id="planer-lista"></dl>
+    </div>
+    <div class="footer" id="navbar" style="">
+      <nav class="uk-navbar-container" uk-navbar style="">
+        <div class="uk-navbar-center">
+          <ul class="uk-navbar-nav" style="">
+            <li>
+              <a href="home.html" style="text-transform: none; padding: 0 20px;">
+                <div style="display: block;">
+                  <img src="img/menu/home.png" alt="">
+                  <br>Home</div>
+              </a>
+            </li>
+            <li>
+              <a href="badania.html" style="text-transform: none; padding: 0 20px;">
+                <div style="display: block;">
+                  <img src="img/menu/badania.png" alt="">
+                  <br>Badania</div>
+              </a>
+            </li>
+            <li>
+              <a href="dziennik.html" style="text-transform: none; padding: 0 20px;">
+                <div style="display: block;">
+                  <img src="img/menu/dziennik.png" alt="">
+                  <br>Dziennik</div>
+              </a>
+            </li>
+            <li class="uk-active">
+              <a href="" style="text-transform: none; padding: 0 20px;">
+                <div style="display: block;">
+                  <img src="img/menu/planer-active.png" alt="">
+                  <br>Planer</div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </div>
 
 
 <script>
