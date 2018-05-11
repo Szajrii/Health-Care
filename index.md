@@ -14,6 +14,4 @@
 <p><strong>4. Prototyp projektu</strong></p>
 <p></p>
 <p><strong>5. Raport prac każdego członka zespołu</strong></p>
-<p> Wykaz wykonanych prac</p>
-<p> Czas wykonania każdej z prac (z dokładnością do pół)</p>
-<p> Łączny bilans godzin każdego z członk&oacute;w zespołu</p>
+<p>https://docs.google.com/spreadsheets/d/1qOhok0YBvTGgU9gzjvHNot3KdCo1VNadxMJoIbUK3xI/edit?usp=sharing</p>
