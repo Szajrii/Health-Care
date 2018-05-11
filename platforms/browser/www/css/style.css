@@ -456,3 +456,7 @@ color: #259BF3 !important;
 .content-dd{
 font-size: 12px !important;
 }
+
+/*input.formInvalid::-webkit-input-placeholder {
+   color: red;
+}*/

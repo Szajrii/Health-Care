@@ -72,11 +72,11 @@
       <div class="uk-flex uk-flex-center">
         <div style="margin-left: 10px; margin-right: 5px;">
           <div style="font-size: 11px">Imię</div>
-          <input class="uk-input uk-width-1-1" type="text" placeholder="Marianna" id="profilimie">
+          <input class="uk-input uk-width-1-1" type="text" placeholder="Marianna" id="profilimie" pattern=".{1,}">
         </div>
         <div style="margin-right: 10px; margin-left: 5px">
           <div style="font-size: 11px">Nazwisko</div>
-          <input class="uk-input uk-width-1-1" type="text" placeholder="Lipska" id="profilnazwiko">
+          <input class="uk-input uk-width-1-1" type="text" placeholder="Lipska" id="profilnazwiko" pattern=".{1,}">
         </div>
       </div>
     </div>
@@ -91,10 +91,10 @@
         </div>
         <div style="margin-right: 10px; margin-left: 5px">
           <div style="font-size: 11px">Wiek</div>
-          <input class="uk-input uk-width-1-1" type="text" placeholder="Wpisz wiek" id="profilwiek">
+          <input class="uk-input uk-width-1-1" type="text" placeholder="Wpisz wiek" id="profilwiek" pattern=".{1,}">
         </div>
       </div>
-      <div style="text-align: center; margin-top: 20px;"> <a class="uk-button uk-button-default" href="profil.html" style="border-color: #E36E7B; text-transform: uppercase; color: #E36E7B; font-size: 12px;" id="profilupdate">Zaktualizuj profil</a>
+      <div style="text-align: center; margin-top: 20px;"> <a class="uk-button uk-button-default"  style="border-color: #E36E7B; text-transform: uppercase; color: #E36E7B; font-size: 12px;" id="profilupdate">Zaktualizuj profil</a>
       </div>
     </div>
     <div class="footer" id="navbar" style="">
@@ -136,150 +136,7 @@
   </div>
 
 
-<script>
-
-
-  var myVar;
-  var plecstatus;
-  var wiek;
-
-  const provider = new firebase.auth.GoogleAuthProvider();
-        var database = firebase.database();
-        
-
-     
-
-function myFunction() {
-    myVar = setTimeout(showPage, 1000);
-}
-
-function showPage() {
-  document.getElementById("loader").style.display = "none";
-  document.getElementById("myDiv").style.display = "block";
-}
-
-document.querySelector('#profilupdate').addEventListener('click', function () {
- firebase.auth().onAuthStateChanged(function(user) {
-    if(user){
-  var user = firebase.auth().currentUser;
-  var uid = user.uid;
-  var imie = document.getElementById('profilimie').value;
-  var nazwisko = document.getElementById('profilnazwiko').value;
-  var wiek = document.getElementById('profilwiek').value;
-  // var plec1 = document.getElementById('option1').value;
-  // var plec2 = document.getElementById('option2').value;
-  var plec1 = document.getElementById("profilplec");
-  var plec = plec1.options[plec1.selectedIndex].value; 
-console.log(plec); console.log(imie); console.log(nazwisko); console.log(wiek);
-
-      firebase.database().ref('users/' + uid).update({
-    email: user.email,
-    name : imie,
-    secondname: nazwisko,
-    płeć: plec,
-    wiek: wiek
-   
-   
-   
-  });
-    }else{
-
-    }
-  });
-});
-
-function personalData(){
-firebase.auth().onAuthStateChanged(function(user) {
-    if(user){
-  var user = firebase.auth().currentUser;
-  var uid = user.uid;
-  var data =   firebase.database().ref('users/' + uid).child("name");
-       data.on('value', function(snapshot){
-        var name = document.getElementById('displayname');
-        var imie = document.getElementById('profilimie');
-            
-            if(snapshot.val() == ""){
-              imie.placeholder = "Wpisz imię";
-              name.innerHTML = "Brak danych";
-            }else{
-            imie.placeholder = snapshot.val();
-            name.innerHTML = snapshot.val();
-          }
-       });
-
-     var data2 =   firebase.database().ref('users/' + uid).child("secondname");
-       data2.on('value', function(snapshot){
-        var secondname = document.getElementById('displaysecondname');
-            
-       var nazwisko = document.getElementById('profilnazwiko');
-            
-            if(snapshot.val() == ""){
-              nazwisko.placeholder = "Wpisz nazwisko";
-              secondname.innerHTML = "Brak danych"
-            }else{
-            nazwisko.placeholder = snapshot.val();
-            secondname.innerHTML = snapshot.val();
-          }
-
-       });
-
-
-    var data3 =   firebase.database().ref('users/' + uid).child("płeć");
-       data3.on('value', function(snapshot){
-        var gender = document.getElementById('displaygender');
-            if(snapshot.val() == ""){
-              gender.innerHTML = "Brak danych";
-            
-        }else{
-          gender.innerHTML = snapshot.val();
-        }
-       });
-
-       var data4 =   firebase.database().ref('users/' + uid).child("wiek");
-       data4.on('value', function(snapshot){
-        var age = document.getElementById('displayage');
-            
-            var wiek = document.getElementById('profilwiek');
-               if(snapshot.val() == ""){
-              wiek.placeholder = "Wpisz wiek";
-              age.innerHTML = "Brak danych";
-            }else{
-            wiek.placeholder = snapshot.val();
-            age.innerHTML = snapshot.val() + " lat";
-          }
-
-       });
-
-     }else{
-      window.location.href = "page2.html"
-     }
-   });
-  }
-
-  personalData();
-  var prevScrollpos = window.pageYOffset;
-
-
-
-window.onscroll = function() {
-var currentScrollPos = window.pageYOffset;
-  if (prevScrollpos > currentScrollPos) {
-    document.getElementById("navbar").style.bottom = "0";
-
-
-  } else {
-    document.getElementById("navbar").style.bottom = "-81px";
-  }
-  prevScrollpos = currentScrollPos;
-}
-
-
-
-
-
-
-
-</script>	
+<script src="js/updatedprofil.js"></script>	
     
 			
 		</div>
