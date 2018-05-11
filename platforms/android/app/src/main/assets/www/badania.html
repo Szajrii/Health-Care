@@ -289,9 +289,7 @@ var y = document.getElementById('data ' + j);
 
  
 }else{
-  $('#wyswietlanie').append('<div id="brakbadan">Aktualnie nie masz żadnych dodanych badań</div>')
-  // var ddocument = document.getElementById('brakbadan');
-  // ddocument.innerHTML = "Aktualnie nie masz żadnych dodanych badań";
+  $('#wyswietlanie').append('<div id="brakbadan"><div class="uk-alert-danger uk-text-center uk-margin-top" uk-alert><p>Aktualnie masz żadnych badań!</p></div><div class="uk-text-center"><a href="dodajbadanie.html" class="uk-button uk-button-primary">Dodaj Badanie</a></div></div>')
 }
  });
 

@@ -1,0 +1,289 @@
+
+<html>
+    <head>
+        <title>Title</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+		<script src="js/pgb.js"></script>
+		<script src="cordova.js"></script>
+		<!-- UIkit CSS -->
+		<link rel="stylesheet" href="css/uikit.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;subset=latin-ext" rel="stylesheet">
+
+		<!-- UIkit JS -->
+     <script src="js/jquery-2.1.4.min.js"></script>
+		<script src="js/uikit.min.js"></script>
+		<script src="js/uikit-icons.min.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-auth.js"></script>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+    	<script type="text/javascript">
+          
+          firebase.initializeApp({
+            apiKey: "AIzaSyDNJfmduRSncwtKmw3wX69KWz36gNgWj9Y",
+            authDomain: "health-care-71096.firebaseapp.com",
+            databaseURL: "https://health-care-71096.firebaseio.com",
+            projectId: "health-care-71096",
+            storageBucket: "",
+            messagingSenderId: "278088023798"
+        });
+        </script>
+
+
+	</head>
+	<body onload="myFunction()" style="margin:0;">
+     
+       <div uk-spinner="ratio: 3" id="loader"></div>
+ 
+<div style="padding-bottom: 50px; display:none;" id="myDiv" class="animate-bottom">
+<nav class="uk-navbar-container " uk-navbar="mode: click" style="box-shadow: 0px 9px 24px -5px rgba(0,0,0,0.28); background-color: #259BF3;">
+    
+
+        <ul class="uk-navbar-nav" style="width: 100%; padding: 10px 0;">
+            <li style="width: 10%"></li>
+            <li style="width: 80%; text-align: center; font-size: 22px; color: white; font-weight: 500">Edytuj Profil</li>
+        </ul>
+
+    
+</nav>
+ 
+
+<div class="uk-text-center uk-text-uppercase" style="color: white;margin-top: 20px;">
+  <div class="uk-flex uk-flex-center">
+    <div class="uk-width-1-1 uk-padding-small" style="background: #FF724A; margin-left: 10px;">
+       <div style="font-size: 20px; font-weight: 700" id="displayname"></div>
+       <div style="font-size: 11px; font-weight: 500 ">imię</div>
+    </div>
+    <div class="uk-width-1-1 uk-margin-left uk-padding-small" style="background: #515E68; margin-right: 10px;">
+       <div style="font-size: 20px; font-weight: 700" id="displaysecondname"></div>
+       <div style="font-size: 11px; font-weight: 500 ">nazwisko</div>
+    </div>
+  </div>
+
+  <div class="uk-flex uk-flex-center uk-margin-top">
+    <div class="uk-width-1-1 uk-padding-small" style="background: #02BFC1; margin-left: 10px;">
+       <div style="font-size: 20px; font-weight: 700" id="displaygender"></div>
+       <div style="font-size: 11px; font-weight: 500 ">płeć</div>
+    </div>
+    <div class="uk-width-1-1 uk-margin-left uk-padding-small" style="background: #1C98D2; margin-right: 10px;">
+       <div style="font-size: 20px; font-weight: 700" id="displayage"></div>
+       <div style="font-size: 11px; font-weight: 500 ">wiek</div>
+    </div>
+  </div>
+</div>
+
+<div style="margin-top: 30px;">
+  <ul class="uk-flex-center" uk-tab>
+    <li class="uk-active"><a href="">Zaktualizuj profil</a></li>
+  </ul>
+</div>
+
+<div>
+  <div class="uk-flex uk-flex-center" >
+    <div style="margin-left: 10px; margin-right: 5px;">
+      <div style="font-size: 11px">Imię</div>
+      <input class="uk-input uk-width-1-1" type="text" placeholder="Marianna" id="profilimie">
+    </div>
+      <div style="margin-right: 10px; margin-left: 5px">
+        <div style="font-size: 11px">Nazwisko</div>
+        <input class="uk-input uk-width-1-1" type="text" placeholder="Lipska" id="profilnazwiko">
+    </div>
+      </div>
+</div>
+
+<div style="margin-top: 20px;">
+  <div class="uk-flex uk-flex-center" >
+    <div style="margin-left: 10px; margin-right: 5px;" class="uk-width-1-1">
+      <div style="font-size: 11px">Płeć</div>
+      <select class="uk-select" type="text"  id="profilplec">
+        <option value="Mężczyzna" id="option1">Mężczyzna</option>
+        <option value="Kobieta" id="option2">Kobieta</option>
+      </select>
+    </div>
+      <div style="margin-right: 10px; margin-left: 5px">
+        <div style="font-size: 11px">Wiek</div>
+        <input class="uk-input uk-width-1-1" type="text" placeholder="Wpisz wiek" id="profilwiek">
+    </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 20px;">
+      <a class="uk-button uk-button-default" href="updated-profil.html"   style="border-color: #E36E7B; text-transform: uppercase; color: #E36E7B; font-size: 12px;" id="profilupdate">Zaktualizuj profil</a>
+    </div>
+</div>
+
+
+
+
+
+
+<div class="footer" id="navbar" style="">
+  <nav class="uk-navbar-container" uk-navbar style="">
+    <div class="uk-navbar-center">
+
+        <ul class="uk-navbar-nav" style="" >
+            <li><a href="home.html" style="text-transform: none; padding: 0 20px;"> <div style="display: block;"><img src="img/menu/home.png" alt=""><br>Home</div></a></li>
+            <li><a href="badania.html" style="text-transform: none; padding: 0 20px;"><div style="display: block;"><img src="img/menu/badania.png" alt=""><br>Badania</div></a></li>
+            <li><a href="dziennik.html" style="text-transform: none; padding: 0 20px;"><div style="display: block;"><img src="img/menu/dziennik.png" alt=""><br>Dziennik</div></a></li>
+            <li class="uk-active"><a href="" style="text-transform: none; padding: 0 20px;"><div style="display: block;"><img src="img/menu/planer-active.png" alt=""><br>Planer</div></a></li>
+        </ul>
+
+    </div>
+</nav>
+</div>
+
+</div>
+
+
+<script>
+
+
+  var myVar;
+  var plecstatus;
+  var wiek;
+
+  const provider = new firebase.auth.GoogleAuthProvider();
+        var database = firebase.database();
+        
+
+     
+
+function myFunction() {
+    myVar = setTimeout(showPage, 1000);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+}
+
+document.querySelector('#profilupdate').addEventListener('click', function () {
+ firebase.auth().onAuthStateChanged(function(user) {
+    if(user){
+  var user = firebase.auth().currentUser;
+  var uid = user.uid;
+  var imie = document.getElementById('profilimie').value;
+  var nazwisko = document.getElementById('profilnazwiko').value;
+  var wiek = document.getElementById('profilwiek').value;
+  // var plec1 = document.getElementById('option1').value;
+  // var plec2 = document.getElementById('option2').value;
+  var plec1 = document.getElementById("profilplec");
+  var plec = plec1.options[plec1.selectedIndex].value; 
+console.log(plec); console.log(imie); console.log(nazwisko); console.log(wiek);
+
+      firebase.database().ref('users/' + uid).update({
+    email: user.email,
+    name : imie,
+    secondname: nazwisko,
+    płeć: plec,
+    wiek: wiek
+   
+   
+   
+  });
+    }else{
+
+    }
+  });
+});
+
+function personalData(){
+firebase.auth().onAuthStateChanged(function(user) {
+    if(user){
+  var user = firebase.auth().currentUser;
+  var uid = user.uid;
+  var data =   firebase.database().ref('users/' + uid).child("name");
+       data.on('value', function(snapshot){
+        var name = document.getElementById('displayname');
+        var imie = document.getElementById('profilimie');
+            
+            if(snapshot.val() == ""){
+              imie.placeholder = "Wpisz imię";
+              name.innerHTML = "Brak danych";
+            }else{
+            imie.placeholder = snapshot.val();
+            name.innerHTML = snapshot.val();
+          }
+       });
+
+     var data2 =   firebase.database().ref('users/' + uid).child("secondname");
+       data2.on('value', function(snapshot){
+        var secondname = document.getElementById('displaysecondname');
+            
+       var nazwisko = document.getElementById('profilnazwiko');
+            
+            if(snapshot.val() == ""){
+              nazwisko.placeholder = "Wpisz nazwisko";
+              secondname.innerHTML = "Brak danych"
+            }else{
+            nazwisko.placeholder = snapshot.val();
+            secondname.innerHTML = snapshot.val();
+          }
+
+       });
+
+
+    var data3 =   firebase.database().ref('users/' + uid).child("płeć");
+       data3.on('value', function(snapshot){
+        var gender = document.getElementById('displaygender');
+            if(snapshot.val() == ""){
+              gender.innerHTML = "Brak danych";
+            
+        }else{
+          gender.innerHTML = snapshot.val();
+        }
+       });
+
+       var data4 =   firebase.database().ref('users/' + uid).child("wiek");
+       data4.on('value', function(snapshot){
+        var age = document.getElementById('displayage');
+            
+            var wiek = document.getElementById('profilwiek');
+               if(snapshot.val() == ""){
+              wiek.placeholder = "Wpisz wiek";
+              age.innerHTML = "Brak danych";
+            }else{
+            wiek.placeholder = snapshot.val();
+            age.innerHTML = snapshot.val() + " lat";
+          }
+
+       });
+
+     }else{
+      window.location.href = "page2.html"
+     }
+   });
+  }
+
+  personalData();
+  var prevScrollpos = window.pageYOffset;
+
+
+
+window.onscroll = function() {
+var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("navbar").style.bottom = "0";
+
+
+  } else {
+    document.getElementById("navbar").style.bottom = "-81px";
+  }
+  prevScrollpos = currentScrollPos;
+}
+
+
+
+
+
+
+
+</script>	
+    
+			
+		</div>
+	</body>
+</html>
+

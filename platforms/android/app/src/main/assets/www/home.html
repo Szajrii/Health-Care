@@ -86,7 +86,7 @@
 <div class="first-box" id="wyswietlostatniebadanie">
         
   <div class="first-box-content" id="ostatnietext">
-    <div class="first-box-date" id="dataostatniegobadania">24 kwiecień</div>
+    <div class="first-box-date" id="dataostatniegobadania"></div>
     <div class="first-box-comment">Twoje ostatnie badanie</div>
   </div>
 
@@ -97,7 +97,7 @@
 </div> 
 
 <div id="homewyswietlanie"> </div>
-
+<div id="button-dodaj"></div>
 
 <div class="footer" id="navbar" style="">
   <nav class="uk-navbar-container" uk-navbar style="">
@@ -157,7 +157,14 @@ var currentScrollPos = window.pageYOffset;
   prevScrollpos = currentScrollPos;
 }
 
+firebase.auth().onAuthStateChanged(function(user) {
+ if(user){
+}
 
+  else{
+   window.location.href = "page2.html";
+ }
+});
 
  
 // function checkIfGoogle(){
@@ -501,6 +508,7 @@ $( "#homewyswietlanie" ).append( '  <div class="first-box" id="rest-box"> \
               $('#ostatnietext').remove();
               $('#ostatnieicon').remove();
               $('#wyswietlostatniebadanie').append('  <div class="first-box-content">  <div class="first-box-date" id="dataostatniegobadania">Brak Badań</div>   <div class="first-box-comment">Dodaj swoje badanie</div>   </div>   <div class="icon">     <a  href="dodajbadanie.html"> <span uk-icon="icon:  chevron-right; ratio: 1.75" style="color: #E36E7B;"></span></a>   </div>   ');
+              $('#button-dodaj').append('<div class="uk-text-center" style="margin-top:30px;"><a href="dodajbadanie.html" class="uk-button uk-button-primary">Dodaj Badanie</a></div>')
             }
      });
   
