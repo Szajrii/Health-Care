@@ -420,7 +420,6 @@ for(var i = 1; i<=22; i++){
  if(licznikpomocniczy > 4){
   licznikpomocniczy = 4;
  }else {}
-  alert(tabindex);
   // if(tabindex != 0){
             var ref2 = firebase.database().ref('users/' + uid + '/Badania/' + tablica[tablica.length - 1]).child("Data");
           ref2.on('value', function(snapshot4){
@@ -501,7 +500,7 @@ $( "#homewyswietlanie" ).append( '  <div class="first-box" id="rest-box"> \
               idznak.style.backgroundColor = "#4298b7";
             }
           }else{
-            $( "#homewyswietlanie" ).append('<div>Wszystkie wyniki w normie</div>')
+            $( "#homewyswietlanie" ).append('<div class="uk-text-center" style="margin: 30px 0;"><div class="uk-alert-success" uk-alert><a class="uk-alert-close" uk-close></a><p>Wszysie wyniki w normie. <br> <span style="font-size: 25px; font-weight: 600; ">HURA</span>.</p></div></div>')
           }
 
           });
