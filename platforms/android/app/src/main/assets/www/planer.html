@@ -93,7 +93,7 @@
 </ul> -->
 <div style="margin: 20px 5%; width: 90%;" class="toggle" id="target1" hidden>
 <dl class="uk-description-list uk-description-list-divider" id="planer-lista" >
-    <dt>
+   <!--  <dt>
       <div class="tittle-dt">Lipidogram</div>
       <div><span class="uk-label uk-label-danger">Raz na pół roku</span></div>
     </dt>
@@ -107,7 +107,7 @@
       <div class="tittle-dt">Kontrola stomatologiczna i czyszczenie zębów z osadu</div>
       <div><span class="uk-label uk-label-danger">Raz na rok</span></div>
     </dt>
-    <dd class="content-dd">Celem czyszczenia zębów z osadu jest usunięcie niezmineralizowanych jeszcze osadów, które nieusunięte przekształciłyby się w płytkę nazębną.</dd>
+    <dd class="content-dd">Celem czyszczenia zębów z osadu jest usunięcie niezmineralizowanych jeszcze osadów, które nieusunięte przekształciłyby się w płytkę nazębną.</dd> -->
 </dl>
 
 </div>
@@ -189,15 +189,15 @@ var zdjecie  = document.getElementById('planerimg')
 
 if(plecstatus == "Mężczyzna"){
               switch(true){
-  case (wiek >= 20 || wiek < 29):
+  case (wiek >= 20 && wiek < 29):
     licznik = 8;
     wiekpomocniczy = 20;
     break;
-  case (wiek >= 30 || wiek < 39):
+  case (wiek >= 30 && wiek < 39):
     licznik = 10;
     wiekpomocniczy = 30;
     break;
-  case (wiek >= 40 || wiek < 49):
+  case (wiek >= 40 && wiek < 49):
     licznik = 13;
     wiekpomocniczy = 40;
     break;
@@ -208,15 +208,15 @@ if(plecstatus == "Mężczyzna"){
 }
 } else if(plecstatus == "Kobieta"){
              switch(true){
-  case (wiek >= 20 || wiek < 29):
+  case (wiek >= 20 && wiek < 29):
     licznik = 7;
     wiekpomocniczy = 20;
     break;
-  case (wiek >= 30 || wiek < 39):
+  case (wiek >= 30 && wiek < 39):
     licznik = 8;
     wiekpomocniczy = 30;
     break;
-  case (wiek >= 40 || wiek < 49):
+  case (wiek >= 40 && wiek < 49):
     licznik = 10;
     wiekpomocniczy = 40;
     break;
@@ -375,7 +375,7 @@ if(plecstatus == "Mężczyzna"){
 });
 });  
            }else{
-
+window.location.href = "page2.html";
      }
      });
 

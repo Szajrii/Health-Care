@@ -54,22 +54,22 @@
 <div class="uk-text-center uk-text-uppercase" style="color: white;margin-top: 20px;">
   <div class="uk-flex uk-flex-center">
     <div class="uk-width-1-1 uk-padding-small" style="background: #FF724A; margin-left: 10px;">
-       <div style="font-size: 20px; font-weight: 700">Marianna</div>
+       <div style="font-size: 20px; font-weight: 700" id="displayname"></div>
        <div style="font-size: 11px; font-weight: 500 ">imię</div>
     </div>
     <div class="uk-width-1-1 uk-margin-left uk-padding-small" style="background: #515E68; margin-right: 10px;">
-       <div style="font-size: 20px; font-weight: 700">Lipska</div>
+       <div style="font-size: 20px; font-weight: 700" id="displaysecondname"></div>
        <div style="font-size: 11px; font-weight: 500 ">nazwisko</div>
     </div>
   </div>
 
   <div class="uk-flex uk-flex-center uk-margin-top">
     <div class="uk-width-1-1 uk-padding-small" style="background: #02BFC1; margin-left: 10px;">
-       <div style="font-size: 20px; font-weight: 700">Kobieta</div>
+       <div style="font-size: 20px; font-weight: 700" id="displaygender"></div>
        <div style="font-size: 11px; font-weight: 500 ">płeć</div>
     </div>
     <div class="uk-width-1-1 uk-margin-left uk-padding-small" style="background: #1C98D2; margin-right: 10px;">
-       <div style="font-size: 20px; font-weight: 700">20 lat</div>
+       <div style="font-size: 20px; font-weight: 700" id="displayage"></div>
        <div style="font-size: 11px; font-weight: 500 ">wiek</div>
     </div>
   </div>
@@ -85,11 +85,11 @@
   <div class="uk-flex uk-flex-center" >
     <div style="margin-left: 10px; margin-right: 5px;">
       <div style="font-size: 11px">Imię</div>
-      <input class="uk-input uk-width-1-1" type="text" placeholder="Marianna">
+      <input class="uk-input uk-width-1-1" type="text" placeholder="Marianna" id="profilimie">
     </div>
       <div style="margin-right: 10px; margin-left: 5px">
         <div style="font-size: 11px">Nazwisko</div>
-        <input class="uk-input uk-width-1-1" type="text" placeholder="Lipska">
+        <input class="uk-input uk-width-1-1" type="text" placeholder="Lipska" id="profilnazwiko">
     </div>
       </div>
 </div>
@@ -98,19 +98,19 @@
   <div class="uk-flex uk-flex-center" >
     <div style="margin-left: 10px; margin-right: 5px;" class="uk-width-1-1">
       <div style="font-size: 11px">Płeć</div>
-      <select class="uk-select" type="text" placeholder="Marianna">
-        <option value="1">Mężczyzna</option>
-        <option value="2">Kobieta</option>
+      <select class="uk-select" type="text"  id="profilplec">
+        <option value="Mężczyzna" id="option1">Mężczyzna</option>
+        <option value="Kobieta" id="option2">Kobieta</option>
       </select>
     </div>
       <div style="margin-right: 10px; margin-left: 5px">
         <div style="font-size: 11px">Wiek</div>
-        <input class="uk-input uk-width-1-1" type="text" placeholder="Wpisz wiek">
+        <input class="uk-input uk-width-1-1" type="text" placeholder="Wpisz wiek" id="profilwiek">
     </div>
       </div>
 
       <div style="text-align: center; margin-top: 20px;">
-      <a class="uk-button uk-button-default" href="updated-profil.html"  style="border-color: #E36E7B; text-transform: uppercase; color: #E36E7B; font-size: 12px;">Zaktualizuj profil</a>
+      <a class="uk-button uk-button-default" href="updated-profil.html"   style="border-color: #E36E7B; text-transform: uppercase; color: #E36E7B; font-size: 12px;" id="profilupdate">Zaktualizuj profil</a>
     </div>
 </div>
 
@@ -159,226 +159,107 @@ function showPage() {
   document.getElementById("myDiv").style.display = "block";
 }
 
-function planerDisplay(){
-  var licznik;
-  var wiekpomocniczy;
-  var licznikpomocniczy = 1;
-  var tablica = [];
+document.querySelector('#profilupdate').addEventListener('click', function () {
+ firebase.auth().onAuthStateChanged(function(user) {
+    if(user){
+  var user = firebase.auth().currentUser;
+  var uid = user.uid;
+  var imie = document.getElementById('profilimie').value;
+  var nazwisko = document.getElementById('profilnazwiko').value;
+  var wiek = document.getElementById('profilwiek').value;
+  // var plec1 = document.getElementById('option1').value;
+  // var plec2 = document.getElementById('option2').value;
+  var plec1 = document.getElementById("profilplec");
+  var plec = plec1.options[plec1.selectedIndex].value; 
+console.log(plec); console.log(imie); console.log(nazwisko); console.log(wiek);
 
-      firebase.auth().onAuthStateChanged(function(user) {
-          var user = firebase.auth().currentUser;
-          var uid = user.uid;
-
-          if(user){
-  var data3 =   firebase.database().ref('users/' + uid).child("płeć");
-           data3.on('value', function(snapshot){
-           plecstatus = snapshot.val();
-
-
-   var data4 =   firebase.database().ref('users/' + uid).child("wiek");
-          data4.on('value', function(snapshot){
-          wiek = snapshot.val();
-
-if(plecstatus == "Mężczyzna"){
-              switch(true){
-  case (wiek >= 20 || wiek < 29):
-    licznik = 8;
-    wiekpomocniczy = 20;
-    break;
-  case (wiek >= 30 || wiek < 39):
-    licznik = 10;
-    wiekpomocniczy = 30;
-    break;
-  case (wiek >= 40 || wiek < 49):
-    licznik = 13;
-    wiekpomocniczy = 40;
-    break;
-  case (wiek >= 50):
-    licznik = 13;
-    wiekpomocniczy = 50;
-    
-}
-} else if(plecstatus == "Kobieta"){
-             switch(true){
-  case (wiek >= 20 || wiek < 29):
-    licznik = 7;
-    wiekpomocniczy = 20;
-    break;
-  case (wiek >= 30 || wiek < 39):
-    licznik = 8;
-    wiekpomocniczy = 30;
-    break;
-  case (wiek >= 40 || wiek < 49):
-    licznik = 10;
-    wiekpomocniczy = 40;
-    break;
-  case (wiek >= 50):
-    licznik = 10;
-    wiekpomocniczy = 50;
-    
-}
-}
-
-for(var i = 1; i <= licznik; i++){
-$( "#planer-lista" ).append('<dt> \
-      <div class="tittle-dt" id="planername">Lipidogram</div> \
-      <div><span class="uk-label uk-label-danger" id="planertime">Raz na pół roku</span></div> \
-    </dt> \
-    <dd class="content-dd" id="planeropis">Badanie określające poziom cholesterolu cholesterolu całkowitego, frakcji HDL i LDL oraz trójglicerydów we krwi.</dd>');
-     }
-
-    
-
-
-if(plecstatus == "Mężczyzna"){
-  for(var i = 1; i <= licznik; i++){
-    $(document).ready(function(){
-     var planername = document.getElementById('planername');
-     planername.setAttribute('id', 'planername ' + i);
-     var planertime = document.getElementById('planertime');
-     planertime.setAttribute('id', 'planertime ' + i);
-     var planeropis = document.getElementById('planeropis');
-     planeropis.setAttribute('id', 'planeropis ' + i);
-
-    var file = "https://health-care-71096.firebaseio.com/Profilaktyka/Mezczyzna/" + wiekpomocniczy + "/Badanie" + i +  "/Name.json";
-    
-     var xhttp = new XMLHttpRequest();
-           
-            xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                   // Typical action to be performed when the document is ready:
-                    
-                  
-                   planername.innerHTML = xhttp.responseText.replace(/['"]+/g, '');
-                
-                }
-            };
-            xhttp.open("GET", file, true);
-            xhttp.send();
-
-
-            var file2 = "https://health-care-71096.firebaseio.com/Profilaktyka/Mezczyzna/" + wiekpomocniczy + "/Badanie" + i +  "/Czas.json";
-    
-           var xhttp2 = new XMLHttpRequest();
-           
-            xhttp2.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                   // Typical action to be performed when the document is ready:
-                    
-                  
-                   planertime.innerHTML = xhttp2.responseText.replace(/['"]+/g, '');
-                
-                }
-            };
-            xhttp2.open("GET", file2, true);
-            xhttp2.send();
-
-
-            var file3 = "https://health-care-71096.firebaseio.com/Profilaktyka/Mezczyzna/" + wiekpomocniczy + "/Badanie" + i +  "/Opis.json";
-    
-             var xhttp3 = new XMLHttpRequest();
-           
-            xhttp3.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                   // Typical action to be performed when the document is ready:
-                    
-                  
-                   planeropis.innerHTML = xhttp3.responseText.replace(/['"]+/g, '');
-                
-                }
-            };
-            xhttp3.open("GET", file3, true);
-            xhttp3.send();
-        }); 
-
-
-  }
-
-} else if(plecstatus == "Kobieta"){
-
-   for(var i = 1; i <= licznik; i++){
-    $(document).ready(function(){
-     var planername = document.getElementById('planername');
-     planername.setAttribute('id', 'planername ' + i);
-     var planertime = document.getElementById('planertime');
-     planertime.setAttribute('id', 'planertime ' + i);
-     var planeropis = document.getElementById('planeropis');
-     planeropis.setAttribute('id', 'planeropis ' + i);
-
-    var file = "https://health-care-71096.firebaseio.com/Profilaktyka/Kobieta/" + wiekpomocniczy + "/Badanie" + i +  "/Name.json";
-    
-     var xhttp = new XMLHttpRequest();
-           
-            xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                   // Typical action to be performed when the document is ready:
-                    
-                  
-                   planername.innerHTML = xhttp.responseText.replace(/['"]+/g, '');
-                
-                }
-            };
-            xhttp.open("GET", file, true);
-            xhttp.send();
-
-
-            var file2 = "https://health-care-71096.firebaseio.com/Profilaktyka/Kobieta/" + wiekpomocniczy + "/Badanie" + i +  "/Czas.json";
-    
-           var xhttp2 = new XMLHttpRequest();
-           
-            xhttp2.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                   // Typical action to be performed when the document is ready:
-                    
-                  
-                   planertime.innerHTML = xhttp2.responseText.replace(/['"]+/g, '');
-                
-                }
-            };
-            xhttp2.open("GET", file2, true);
-            xhttp2.send();
-
-
-            var file3 = "https://health-care-71096.firebaseio.com/Profilaktyka/Kobieta/" + wiekpomocniczy + "/Badanie" + i +  "/Opis.json";
-    
-             var xhttp3 = new XMLHttpRequest();
-           
-            xhttp3.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                   // Typical action to be performed when the document is ready:
-                    
-                  
-                   planeropis.innerHTML = xhttp3.responseText.replace(/['"]+/g, '');
-                
-                }
-            };
-            xhttp3.open("GET", file3, true);
-            xhttp3.send();
-        }); 
-
-
-  }
-
-}
+      firebase.database().ref('users/' + uid).update({
+    email: user.email,
+    name : imie,
+    secondname: nazwisko,
+    płeć: plec,
+    wiek: wiek
    
    
-          
+   
+  });
+    }else{
 
+    }
+  });
 });
-});  
-           }else{
 
+function personalData(){
+firebase.auth().onAuthStateChanged(function(user) {
+    if(user){
+  var user = firebase.auth().currentUser;
+  var uid = user.uid;
+  var data =   firebase.database().ref('users/' + uid).child("name");
+       data.on('value', function(snapshot){
+        var name = document.getElementById('displayname');
+        var imie = document.getElementById('profilimie');
+            
+            if(snapshot.val() == ""){
+              imie.placeholder = "Wpisz imię";
+              name.innerHTML = "Brak danych";
+            }else{
+            imie.placeholder = snapshot.val();
+            name.innerHTML = snapshot.val();
+          }
+       });
+
+     var data2 =   firebase.database().ref('users/' + uid).child("secondname");
+       data2.on('value', function(snapshot){
+        var secondname = document.getElementById('displaysecondname');
+            
+       var nazwisko = document.getElementById('profilnazwiko');
+            
+            if(snapshot.val() == ""){
+              nazwisko.placeholder = "Wpisz nazwisko";
+              secondname.innerHTML = "Brak danych"
+            }else{
+            nazwisko.placeholder = snapshot.val();
+            secondname.innerHTML = snapshot.val();
+          }
+
+       });
+
+
+    var data3 =   firebase.database().ref('users/' + uid).child("płeć");
+       data3.on('value', function(snapshot){
+        var gender = document.getElementById('displaygender');
+            if(snapshot.val() == ""){
+              gender.innerHTML = "Brak danych";
+            
+        }else{
+          gender.innerHTML = snapshot.val();
+        }
+       });
+
+       var data4 =   firebase.database().ref('users/' + uid).child("wiek");
+       data4.on('value', function(snapshot){
+        var age = document.getElementById('displayage');
+            
+            var wiek = document.getElementById('profilwiek');
+               if(snapshot.val() == ""){
+              wiek.placeholder = "Wpisz wiek";
+              age.innerHTML = "Brak danych";
+            }else{
+            wiek.placeholder = snapshot.val();
+            age.innerHTML = snapshot.val() + " lat";
+          }
+
+       });
+
+     }else{
+      window.location.href = "page2.html"
      }
-     });
+   });
+  }
 
-
-
-
-}
-
-planerDisplay();
-
+  personalData();
   var prevScrollpos = window.pageYOffset;
+
 
 
 window.onscroll = function() {

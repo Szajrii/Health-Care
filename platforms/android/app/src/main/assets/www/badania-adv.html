@@ -494,7 +494,7 @@ $(document).ready(function(){
               }
           }
         }
-      }else{
+      }else if(plecstatus == "Kobieta"){
 
         for(var i = 1; i<=22; i++){
             if(wartosc[i - 1] != 0){
@@ -741,9 +741,9 @@ console.log(licznik);
   
 
 
-console.log("Twoja plec robaczku4324 to: " +  plecstatus);
-    }else{
 
+    }else{
+window.location.href = "page2.html";
     }
 
         });

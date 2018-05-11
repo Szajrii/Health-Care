@@ -496,6 +496,15 @@ var currentScrollPos = window.pageYOffset;
          
 });
 
+firebase.auth().onAuthStateChanged(function(user) {
+          var user = firebase.auth().currentUser;
+          var uid = user.uid;
+if(user){
+}
+else{
+window.location.href = "page2.html";
+}
+});
 </script>	
     
 			

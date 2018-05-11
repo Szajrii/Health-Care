@@ -71,6 +71,12 @@ text-transform: none;
   color: #A6B1C0;
  
 }
+.rest-box{
+  height: 60px;
+  margin-top:30px;
+  position: relative;
+}
+
 #rest-box{
   height: 60px;
   margin-top:30px;

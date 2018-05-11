@@ -54,14 +54,14 @@
 <div class="" style="margin: 0 auto; text-align: center;">
    
     <div style="margin: 15px 0 0px 0;">
-      <img src="img/male-profil.png" alt="">
+      <img src="img/male-profil.png" alt="" id="profilimage">
     </div>
  
-    <div class="uk-margin-remove"  style="font-size: 18px; font-weight: 600;">
+    <div class="uk-margin-remove"  style="font-size: 18px; font-weight: 600;" id="profilname">
       Deontay Wilder
     </div>
  
-    <div style="font-size: 14px; color: #49AABE; margin-bottom: 10px; " >
+    <div style="font-size: 14px; color: #49AABE; margin-bottom: 10px; " id="profilgender" >
       mężczyzna
     </div>
  
@@ -250,9 +250,35 @@ if(user){
                 iloscpomiarow.innerHTML = licznik;
  
           });
-           });        
+           });   
+
+
+           var data33 =   firebase.database().ref('users/' + uid).child("płeć");
+       data33.on('value', function(snapshot){
+        var image = document.getElementById('profilimage');
+        var gender = document.getElementById('profilgender');
+        gender.innerHTML = snapshot.val();
+        if(snapshot.val() == "Mężczyzna"){
+          image.src = "img/male-profil.png"
+        }else if(snapshot.val() == "Kobieta"){
+          image.src = "img/female-profil.png"
+        }
+       });    
+
+        var data34 =   firebase.database().ref('users/' + uid).child("name");
+       data34.on('value', function(snapshot){ 
+        var name = document.getElementById('profilname');
+        name.innerHTML = snapshot.val() + " ";
+});
+         var data35 =   firebase.database().ref('users/' + uid).child("secondname");
+       data35.on('value', function(snapshot){ 
+        var name = document.getElementById('profilname');
+         var text = document.createTextNode(snapshot.val());
+         name.appendChild(text);
+       
+       });
 }else{
- 
+ window.location.href = "page2.html";
 }
 });
 }
